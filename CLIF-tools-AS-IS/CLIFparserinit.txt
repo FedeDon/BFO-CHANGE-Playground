@@ -1,0 +1,91 @@
+% INIT-file to parametrize the behavior of the BFO2020style-CLIFparser
+% The file is loaded using the Prolog 'include(+File)' directive and must conform to the specifications for files appropriate to be included.
+% Lines starting with '%' are comments. Text appearing after '%' in a line too.
+
+% The next line, when not commented out, forces the program to start immediately after double clicking the source file under MS Windows environment. 
+:- initialization(once(((run ; true), halt))).
+% When the previous line is commented out, type 'run.' to start the program.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parameters allowed to be changed for BMI510
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% projectname(string)			% OPTIONAL
+								% Prefixes each output file with the provided string followed by '-'
+								% If no valid projectname is provided, it will default to "ANONYMOUS"
+projectname("BCHANGE").			% Set projectname to BCHANGE
+
+
+%% ontology(string, stringlist)	% REQUIRED
+								% Identify specific files in <stringlist> as belonging to the ontology named in <string>
+								% <stringlist> must be a list of strings in a format acceptable for filenames within the operating system
+								% The ontology name will be used as prefix for axiom IDs provided in the CLIF files.
+								%	For example, if the ontology name is "BFO", the axiom with index 'udu-1' will be prefixed as 'BFO-udu-1'.
+								% Multiple occurrences allowed but no expanded filenames may overlap over distinct ontologies
+ontology("BFOCE",["*.clc"]).	% Declare all filenames with extention 'clc' as belonging to BFOCE
+ontology("BFO",["*.cl"]).
+
+
+%% ont_uses(string, stringlist)	% OPTIONAL
+								% Declare the ontology with name in <string> as dependent on ontologies named in <stringlist>
+ont_uses("BFOCE",["BFO"]).
+
+
+progress_notification(minimal).	% options are: minimal, verbose. 'verbose' is for debugging CLIF-files in case of parse-errors
+
+minimum_constant_length(3).		% set minimum character length for non-outdiscourse constants. If omitted or non-integer
+								%   given, defaults to 2.
+
+typo_detection(0.95).			% level for approximate detection of term similarity to identify possible spelling mistakes. 
+								%	lower levels increase sensitivity at the cost of false positives
+								%	higher levels decrease sensitivity at the cost of false negatives
+								%	reasonable values are between 0.8 and 0.98
+								%	defaults to 0.95 if omitted or unacceptable value provided
+
+non_typo_display(3).			% possible typo's are detected on the basis of deviations from similar term with higher occurrence
+								%	all occurrences of term suggestive of typo are displayed
+								%	this setting shows also the occurrences of the non-typo term when it occurs less or equal than set
+								%	default when non-set is 3
+
+odd_pred_struc(5).				% threshold for displaying abnormal predicate structures. Default = 5.	
+
+rare_term_use(2).				% threshold for warning about terms used less or equal than number of times set. default = 2. 
+								%	these may be typo's without similarity to other terms, or terms with have little effect on reasoning.
+
+missing_pred_percent(80).		% threshold to force warning about potentially missing predicate for constant in ontology as compared
+								%	to other constants in the ontology, or an ontology which is used by the ontology.
+								%	Default is 80, allowed values is between 0 (everything shown) to 100.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parameters not to be touched for BMI510
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% skolem_mode(<atom>).			% REQUIRED
+								% Sets how skolem constants and functions are generated
+								%	scoped: standard way as function of which UQvars scoping EQvars are arguments
+								%	mapped: as tokens expressed as either constants or variables as determined by variable_mode parameter
+								%			produces a map of the tokens and what functions they are derived from  (not completely implemented yet)
+								% BFO2020style-CLIFreasoner requires 'scoped'!
+skolem_mode(scoped).			% set skolem_mode to scoped
+
+
+%% variable_mode(<atom>).		% REQUIRED
+								% Sets the format of variables
+								% options are: unbound, ground
+variable_mode(unbound).			% options are: unbound, ground
+
+fixed_args(yes).				% specify whether predicates with same predicate name must have always the same number of arguments
+								%	options are: yes, no.  Default is yes.
+
+% Outputfiles to produce. Please comment out unneeded ones. 
+%outputfile(sci).				% sci = single condition implications
+%outputfile(rules_per_axiom).	% rulebase representation sorted per axiom
+%outputfile(cnf).				% conjunctive normal form
+outputfile(cf).					% clausal form
+outputfile(kowalski).			% kowalski representation
+%outputfile(satchmo).			% satchmo representation
+outputfile(vocabulary).			% terms used in context
+%outputfile(nnf).	% original axioms in negation normal form. Prolog list syntax.
+%outputfile(nsat).	% similar to cf but with axioms negated for satisfiability testing.
