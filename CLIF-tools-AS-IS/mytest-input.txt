@@ -25,10 +25,10 @@ t([0,instance-of, c, continuant, t1]).
 t([0,participates-in, c, p, t1]).
 */
 
-%%%%%%%%%%% NEW MODELS   %%%%%%%%%%%
+%%%%%%%%%%%  PROSPECTED MODELS   %%%%%%%%%%%
 
-/*
-%% generic antimodel: two bodies in the same place. TAKES FOREVER
+/*  
+%% generic antimodel, Scenario  S00A: two bodies in the same place. TAKES FOREVER
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,occupies-spatial-region, b, r1, t1]).
@@ -37,7 +37,7 @@ t([-1,identical, a, b]).
 
 
 /*
-%% Model-0 for total-location-change: two bodies switch place in the same change
+%% Scenario S000 for total-location-change: two bodies switch place in the same change
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,occupies-spatial-region, b, r2, t1]).
@@ -52,7 +52,7 @@ t([0,happens-to, c2, b, t]).
 
 
 /*
-%% Model-1 for total-location-change: two bodies switch place in two simple changes
+%% Scenario S001 for total-location-change: two bodies switch place in two simple changes
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,occupies-spatial-region, b, r2, t1]).
@@ -70,7 +70,7 @@ t([0,happens-to, c2, b, t]).
 */
 
 /*
-%% Model-2 for motion: two bodies switch place
+%% Scenario S002 for motion: two bodies switch place
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,occupies-spatial-region, b, r2, t1]).
@@ -87,7 +87,7 @@ t([0,happens-to, c2, b, t]).
 
 
 /*
-%% Model-3 for motion: teleporting  is motion   CONFIRMED!
+%% Scenario S003 for motion: teleporting  is motion   CONFIRMED!
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
@@ -101,7 +101,7 @@ t([0,happens-to, c1, a, t]).
 
 
 /*
-%% Model-4 for motion: a proper part of a body moves inside it   
+%% Scenario-4 for motion: a proper part of a body moves inside it   
 t([0,occupies-spatial-region, part, r1, t1]).
 t([0,occupies-spatial-region, part, r2, t2]).
 t([0,proper-continuant-part-of, part, a, t]).
@@ -115,7 +115,7 @@ t([-1,happens-to, c, a, t]).
 
 
 /*
-%% Model-5? for motion2: a proper part of a body moves inside it   
+%% Scenario-5? for motion2: a proper part of a body moves inside it   
 t([0,occupies-spatial-region, part, r1, t1]).
 t([0,occupies-spatial-region, part, r2, t2]).
 t([0,proper-continuant-part-of, part, a, t]).
@@ -131,7 +131,7 @@ t([-1,happens-to, c2, a, t]).
 
 
 /*
-%% Model-5 for motion2: teleporting  is motion2    NO CONTRADICTION FOUND IN TIME
+%% Scenario-5 for motion2: teleporting  is motion2    NO CONTRADICTION FOUND IN TIME
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
@@ -143,8 +143,8 @@ t([0,happens-to, c1, a, t]).
 */
 
 
-
-%% Model-5bis for motion2: teleporting  is motion2     
+/*
+%% Scenario-5bis for motion2: teleporting  is motion2     
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
@@ -154,16 +154,16 @@ t([0,happens-throughout, c1, t]).
 t([0,instance-of, t, temporal-interval, t]).
 t([-1,overlaps, r1, r2, t]).
 t([0,happens-to, c1, a, t]).
+*/
 
 
 
 
-
-%%%%%%%%%   ANTIMODELS    %%%%%%%%
+%%%%%%%%%   PROSECTED ANTIMODELS    %%%%%%%%
 
 
 /*
-%% Antimodel-1 for motion: swelling    NOT CONFIRMED IN TIME
+%% Scenario  1 for motion: swelling    NOT CONFIRMED IN TIME
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
@@ -179,23 +179,23 @@ t([0,happens-to, c1, a, t]).
 
 
 
-/*
-%% Antiodel-2 for motion: shrinking
+
+%% Antimodel  Scenario S012   for motion: shrinking   
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
 t([0,last-instant-of, t2, t]).
 t([0,instance-of, c1,motion, t]).
 t([0,happens-throughout, c1, t]).
-t([0,continuant-part-of, r2, r1]).
+t([0,continuant-part-of, r2, r1, t]). 
 t([0,happens-to, c1, a, t]).
-*/
+
 
 
 
 
 /*
-%% Antimodel-3 for motion2: swelling again      NOT CONCLUSIVE; OVERGENERATION OF INDIVIDUALS
+%% AntiScenario-3 for motion  S013 :swelling again      NOT CONCLUSIVE; OVERGENERATION OF INDIVIDUALS
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
@@ -216,7 +216,7 @@ t([0,first-instant-of, t1, t]).
 t([0,last-instant-of, t2, t]).
 t([0,instance-of, c1,motion2, t]).
 t([0,happens-throughout, c1, t]).
-t([0,continuant-part-of, r2, r1]).
+t([0,continuant-part-of, r2, r1, t]).
 t([0,happens-to, c1, a, t]).
 */
 
@@ -227,7 +227,7 @@ t([0,happens-to, c1, a, t]).
 
 
 /*
-%% Antimodel-6 for motion: 
+%% AntiScenario-6 for motion: 
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
