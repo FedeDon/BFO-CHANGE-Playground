@@ -60,10 +60,10 @@ To be done:
 
 
 
-(cl:comment "auxiliary axioms")
+(cl:comment "auxiliary axioms" )
 
 
-    (cl:comment   "overlap"  
+    (cl:comment   "overlap [aux-01]"  
 	   (forall (x y t)
 	   (iff 
 		 (exists (z)
@@ -98,7 +98,7 @@ To be done:
 		
 
 	
-	(cl:comment "location change declaration"  
+	(cl:comment "location change declaration "  
 	   (universal total-location-change) )
 	
 

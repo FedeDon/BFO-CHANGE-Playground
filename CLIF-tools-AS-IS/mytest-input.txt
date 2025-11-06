@@ -27,13 +27,39 @@ t([0,participates-in, c, p, t1]).
 
 %%%%%%%%%%%  PROSPECTED MODELS   %%%%%%%%%%%
 
-/*  
-%% generic antimodel, Scenario  S00A: two bodies in the same place. TAKES FOREVER
+
+%% BFO antimodel, Scenario  S00A: two objects in the same place.   
 t([0,occupies-spatial-region, a, r1, t1]).
-t([0,occupies-spatial-region, a, r2, t2]).
 t([0,occupies-spatial-region, b, r1, t1]).
+t([0, instance-of, a, object, t1]).
+t([0, instance-of, b, object, t1]).
+t([-1, instance-of, a, object-aggregate, t1]).
+t([-1, instance-of, b, object-aggregate, t1]).
+t([-1,identical, a, b]).
+
+
+
+/*
+%% BFO antimodel, Scenario  S00B: two obj or obj-aggr in the same place.   NOT CONCLUSIVE !!! MAYBE PROBLEM IN BFO!
+t([0,occupies-spatial-region, a, r1, t1]).
+t([0,occupies-spatial-region, b, r1, t1]).
+t([0, instance-of, a, object, t1]).
+t([0, instance-of, b, object, t1]).
 t([-1,identical, a, b]).
 */
+
+
+/*
+%% generic BFO model?, Scenario  S00C: two bodies in the same place.   NOT CONCLUSIVE !!!
+t([0,occupies-spatial-region, a, r1, t1]).
+t([0,occupies-spatial-region, b, r1, t1]).
+t([0, instance-of, a, material-entity, t1]).
+t([0, instance-of, b, material-entity, t1]).
+t([-1,identical, a, b]).
+*/
+
+
+
 
 
 /*
@@ -163,7 +189,7 @@ t([0,happens-to, c1, a, t]).
 
 
 /*
-%% Scenario  1 for motion: swelling    NOT CONFIRMED IN TIME
+%% Scenario  1 for motion: swelling    NOT CONFIRMED IN SWIPL; CONFIRMED  AS ANTIM BY ALAN
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
@@ -179,8 +205,8 @@ t([0,happens-to, c1, a, t]).
 
 
 
-
-%% Antimodel  Scenario S012   for motion: shrinking   
+/*
+%% Antimodel  Scenario S012   for motion: shrinking   NOT CONFIRMED IN SWIPL; CONFIRMED AS ANTIM BY ALAN
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
@@ -189,13 +215,24 @@ t([0,instance-of, c1,motion, t]).
 t([0,happens-throughout, c1, t]).
 t([0,continuant-part-of, r2, r1, t]). 
 t([0,happens-to, c1, a, t]).
+*/
 
+
+
+/*
+%% Anti Scenario-3 for motion  S013 :swelling again      NOT CONCLUSIVE FOR SWIPL NOR ALAN; OVERGENERATION OF INDIVIDUALS
+t([0,instance-of, c1,motion2, t]).
+t([0,happens-throughout, c1, t]).
+t([
+t([0,continuant-part-of, r1, r2, t]).
+t([0,happens-to, c1, a, t]).
+*/
 
 
 
 
 /*
-%% AntiScenario-3 for motion  S013 :swelling again      NOT CONCLUSIVE; OVERGENERATION OF INDIVIDUALS
+%% Anti Scenario-3 for motion  S013 :swelling again      NOT CONCLUSIVE FOR SWIPL NOR ALAN; OVERGENERATION OF INDIVIDUALS
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
@@ -209,7 +246,7 @@ t([0,happens-to, c1, a, t]).
 
 
 /*
-%% Antiodel-4 for motion2: shrinking again
+%% Antimodel-4 for motion2: shrinking again   NOT CONCLUSIVE FOR SWIPL NOR ALAN;
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
@@ -224,10 +261,8 @@ t([0,happens-to, c1, a, t]).
 
 
 
-
-
 /*
-%% AntiScenario-6 for motion: 
+%% AntiScenario-6 for motion:   NOT CONCLUSIVE FOR SWIPL NOR ALAN;
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, a, r2, t2]).
 t([0,first-instant-of, t1, t]).
