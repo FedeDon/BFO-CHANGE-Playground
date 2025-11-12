@@ -1,17 +1,17 @@
 % Clausal form: each separate clause is a list of disjunctions.
 
 
-% overlap
-posax(1,1,"BFOCE-unmarked",[[-1,overlaps,A,B,C],[0,'continuant-part-of',[sk1,A,B,C],A,C]]).
-posax(2,1,"BFOCE-unmarked",[[-1,overlaps,A,B,C],[0,'continuant-part-of',[sk1,A,B,C],B,C]]).
-posax(3,0,"BFOCE-unmarked",[[-1,'continuant-part-of',A,B,D],[-1,'continuant-part-of',A,C,D],[0,overlaps,B,C,D]]).
+% overlap [aux-01]
+posax(1,1,"BFOCE-aux-01",[[-1,overlaps,A,B,C],[0,'continuant-part-of',[sk1,A,B,C],A,C]]).
+posax(2,1,"BFOCE-aux-01",[[-1,overlaps,A,B,C],[0,'continuant-part-of',[sk1,A,B,C],B,C]]).
+posax(3,0,"BFOCE-aux-01",[[-1,'continuant-part-of',A,B,D],[-1,'continuant-part-of',A,C,D],[0,overlaps,B,C,D]]).
 
 % A material entity changes location before and after a temporal region if it occupies different spatial regions at two temporal parts of that temporal region [bmi-01]
 posax(4,1,"BFOCE-bmi-01",[[-1,'happens-to',C,D,E],[-1,identical,A,B],[-1,'instance-of',C,'total-location-change',E],[-1,'occupies-spatial-region',D,A,[sk2,C,D,E]],[-1,'occupies-spatial-region',D,B,[sk3,C,D,E]]]).
 posax(5,1,"BFOCE-bmi-01",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'total-location-change',C],[0,'has-last-instant',C,[sk3,A,B,C]]]).
 posax(6,1,"BFOCE-bmi-01",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'total-location-change',C],[0,'has-first-instant',C,[sk2,A,B,C]]]).
 
-% location change declaration
+% location change declaration 
 posax(7,0,"BFOCE-unmarked",[[0,universal,'total-location-change']]).
 
 % A material entity moves or teleport during a temporal region if it occupies spatial regions that are not part of the other at two temporal parts of that temporal region [bmi-02].

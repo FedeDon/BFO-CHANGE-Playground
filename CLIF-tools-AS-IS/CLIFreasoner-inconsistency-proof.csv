@@ -1,4 +1,4 @@
-nf,42,"CRT","ERROR",inconsistency,,,,,<--,-102, BFOCE-cha-02, inc, 7, 41
-pf,41,"CRT","TRUE",'instance-of',c,continuant,t2,,<--,46, BFOCE-cha-02, mpp, 4
-pf,7,"CRT","FALSE",'instance-of',c,continuant,t2,,<--,0, unmarked, input
-pf,4,"CRT","TRUE",'happens-to',ch,c,t2,,<--,0, unmarked, input
+nf,9,"CRT","ERROR",inconsistency,,,,,<--,-102, BFOCE-cha-02, inc, 5, 8
+pf,8,"CRT","TRUE",'instance-of',c,continuant,t2,,<--,46, BFOCE-cha-02, mpp, 1
+pf,5,"CRT","FALSE",'instance-of',c,continuant,t2,,<--,0, unmarked, input
+pf,1,"CRT","TRUE",'happens-to',ch,c,t2,,<--,0, unmarked, input

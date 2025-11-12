@@ -31,8 +31,7 @@
 
 %  Axioms without index:
 %   change - BMI510.clc
-%    overlap
-%    location change declaration
+%    location change declaration 
 %    motion2
 %    composition-change declaration
 
@@ -196,9 +195,9 @@
 %  <Unique ID>/<Order in axiom file>/<Comment>:
 
 %   1. change - BMI510.clc
-%      1 / 1 / overlap
+%      1 / 1 / overlap [aux-01]
 %      2 / 2 / A material entity changes location before and after a temporal region if it occupies different spatial regions at two temporal parts of that temporal region [bmi-01]
-%      3 / 3 / location change declaration
+%      3 / 3 / location change declaration 
 %      4 / 4 / A material entity moves or teleport during a temporal region if it occupies spatial regions that are not part of the other at two temporal parts of that temporal region [bmi-02].
 %      5 / 5 / motion2
 %      6 / 6 /    motion 2 is a change sequence of total-location-changes [bmi-02b]. 

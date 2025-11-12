@@ -63,6 +63,8 @@ To be done:
 (cl:comment "auxiliary axioms" )
 
 
+ 
+
     (cl:comment   "overlap [aux-01]"  
 	   (forall (x y t)
 	   (iff 

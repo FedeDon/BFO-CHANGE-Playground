@@ -1,15 +1,15 @@
 
-% overlap
-r(1,1,[1],[],"BFOCE-unmarked",kow(if([[overlaps,A,B,C]]),then(['continuant-part-of',[e,1,[A,B,C]],A,C]))).
-r(2,1,[1],[],"BFOCE-unmarked",kow(if([[overlaps,A,B,C]]),then(['continuant-part-of',[e,1,[A,B,C]],B,C]))).
-r(3,2,[],[],"BFOCE-unmarked",kow(if([['continuant-part-of',A,B,D],['continuant-part-of',A,C,D]]),then([overlaps,B,C,D]))).
+% overlap [aux-01]
+r(1,1,[1],[],"BFOCE-aux-01",kow(if([[overlaps,A,B,C]]),then(['continuant-part-of',[e,1,[A,B,C]],A,C]))).
+r(2,1,[1],[],"BFOCE-aux-01",kow(if([[overlaps,A,B,C]]),then(['continuant-part-of',[e,1,[A,B,C]],B,C]))).
+r(3,2,[],[],"BFOCE-aux-01",kow(if([['continuant-part-of',A,B,D],['continuant-part-of',A,C,D]]),then([overlaps,B,C,D]))).
 
 % A material entity changes location before and after a temporal region if it occupies different spatial regions at two temporal parts of that temporal region [bmi-01]
 r(4,5,[],[2,3],"BFOCE-bmi-01",kow(if([['happens-to',C,D,E],[identical,A,B],['instance-of',C,'total-location-change',E],['occupies-spatial-region',D,A,[e,2,[C,D,E]]],['occupies-spatial-region',D,B,[e,3,[C,D,E]]]]),false)).
 r(5,2,[3],[],"BFOCE-bmi-01",kow(if([['happens-to',A,B,C],['instance-of',A,'total-location-change',C]]),then(['has-last-instant',C,[e,3,[A,B,C]]]))).
 r(6,2,[2],[],"BFOCE-bmi-01",kow(if([['happens-to',A,B,C],['instance-of',A,'total-location-change',C]]),then(['has-first-instant',C,[e,2,[A,B,C]]]))).
 
-% location change declaration
+% location change declaration 
 r(7,0,[],[],"BFOCE-unmarked",kow(true,then([universal,'total-location-change']))).
 
 % A material entity moves or teleport during a temporal region if it occupies spatial regions that are not part of the other at two temporal parts of that temporal region [bmi-02].
@@ -2278,7 +2278,7 @@ r(1466,2,[],[],"BFO-luc-1",kow(if([['instance-of',A,'three-dimensional-spatial-r
 
 % Skolem use information
 % Function ID, Axiom ID, function in antecedents of rule, function in consequents
-sk_use(1,"BFOCE-unmarked",[],[1,2]).
+sk_use(1,"BFOCE-aux-01",[],[1,2]).
 sk_use(2,"BFOCE-bmi-01",[4],[6]).
 sk_use(3,"BFOCE-bmi-01",[4],[5]).
 sk_use(4,"BFOCE-bmi-02",[8,9],[11]).
@@ -2489,12 +2489,12 @@ sk_use(215,"BFO-cop-1",[],[739,740,741,742,743,744,745,746,747,748,749,750]).
 
 % Predicate use information
 % Predicate name, v(ariables amongst arguments) or c(onstants only), rule ID, Axiom ID
-p_in(overlaps,v,1,"BFOCE-unmarked").
-p_in('continuant-part-of',v,1,"BFOCE-unmarked").
-p_in(overlaps,v,2,"BFOCE-unmarked").
-p_in('continuant-part-of',v,2,"BFOCE-unmarked").
-p_in('continuant-part-of',v,3,"BFOCE-unmarked").
-p_in(overlaps,v,3,"BFOCE-unmarked").
+p_in(overlaps,v,1,"BFOCE-aux-01").
+p_in('continuant-part-of',v,1,"BFOCE-aux-01").
+p_in(overlaps,v,2,"BFOCE-aux-01").
+p_in('continuant-part-of',v,2,"BFOCE-aux-01").
+p_in('continuant-part-of',v,3,"BFOCE-aux-01").
+p_in(overlaps,v,3,"BFOCE-aux-01").
 p_in('happens-to',v,4,"BFOCE-bmi-01").
 p_in(identical,v,4,"BFOCE-bmi-01").
 p_in('instance-of',v,4,"BFOCE-bmi-01").
@@ -5035,8 +5035,8 @@ p_in('instance-of',v,1464,"BFO-luc-1").
 p_in('instance-of',v,1465,"BFO-luc-1").
 p_in('instance-of',v,1466,"BFO-luc-1").
 % Predicate name, count of axioms used in, axiom list
-pax(overlaps,1,["BFOCE-unmarked"]).
-pax('continuant-part-of',35,["BFO-adm-1","BFO-bao-1","BFO-bdd-1","BFO-cez-1","BFO-czc-1","BFO-dok-1","BFO-eld-1","BFO-evk-1","BFO-evu-1","BFO-fsy-1","BFO-fyf-1","BFO-glc-1","BFO-grv-1","BFO-gzr-1","BFO-izr-1","BFO-jgo-1","BFO-kbr-1","BFO-mcd-1","BFO-mlb-1","BFO-mqp-1","BFO-nfe-1","BFO-plp-1","BFO-scr-1","BFO-sls-1","BFO-tab-1","BFO-txf-1","BFO-uas-1","BFO-udu-1","BFO-uns-1","BFO-uxo-1","BFO-wty-1","BFO-xcx-1","BFOCE-bmi-02","BFOCE-bmi-03","BFOCE-unmarked"]).
+pax(overlaps,1,["BFOCE-aux-01"]).
+pax('continuant-part-of',35,["BFO-adm-1","BFO-bao-1","BFO-bdd-1","BFO-cez-1","BFO-czc-1","BFO-dok-1","BFO-eld-1","BFO-evk-1","BFO-evu-1","BFO-fsy-1","BFO-fyf-1","BFO-glc-1","BFO-grv-1","BFO-gzr-1","BFO-izr-1","BFO-jgo-1","BFO-kbr-1","BFO-mcd-1","BFO-mlb-1","BFO-mqp-1","BFO-nfe-1","BFO-plp-1","BFO-scr-1","BFO-sls-1","BFO-tab-1","BFO-txf-1","BFO-uas-1","BFO-udu-1","BFO-uns-1","BFO-uxo-1","BFO-wty-1","BFO-xcx-1","BFOCE-aux-01","BFOCE-bmi-02","BFOCE-bmi-03"]).
 pax('happens-to',25,["BFOCE-bmi-01","BFOCE-bmi-02","BFOCE-bmi-03","BFOCE-cch-04","BFOCE-cch-05","BFOCE-cha-02","BFOCE-cha-04","BFOCE-cha-05","BFOCE-cha-06","BFOCE-cha-07","BFOCE-chp-03","BFOCE-chp-04","BFOCE-ext-03","BFOCE-gen-03","BFOCE-gen-04","BFOCE-ind-05","BFOCE-ins-02","BFOCE-ins-03","BFOCE-sch-02","BFOCE-spe-03","BFOCE-spe-04","BFOCE-ter-04","BFOCE-ter-05","BFOCE-trp-03","BFOCE-trp-04"]).
 pax(identical,46,["BFO-adm-1","BFO-aeu-1","BFO-dbp-1","BFO-dki-1","BFO-evk-1","BFO-fdb-1","BFO-fwf-1","BFO-fyf-1","BFO-glc-1","BFO-grv-1","BFO-ibd-1","BFO-jgo-1","BFO-jtq-1","BFO-miz-1","BFO-myu-1","BFO-nis-1","BFO-nui-1","BFO-ogd-1","BFO-okr-1","BFO-pir-2","BFO-qnf-1","BFO-qsp-1","BFO-scr-1","BFO-suk-1","BFO-tab-1","BFO-tao-1","BFO-uqt-1","BFO-wff-1","BFO-woe-1","BFO-wzd-1","BFO-xkl-1","BFO-xlu-1","BFO-xtf-1","BFO-zdq-1","BFO-zek-1","BFO-zls-1","BFOCE-bmi-01","BFOCE-chs-03","BFOCE-ett-04","BFOCE-htr-04","BFOCE-ins-03","BFOCE-sch-02","BFOCE-sch-03","BFOCE-spe-05","BFOCE-tlo-03","BFOCE-trp-05"]).
 pax('instance-of',269,["BFO-abh-1","BFO-abo-1","BFO-acg-1","BFO-adm-1","BFO-aff-1","BFO-akq-1","BFO-alm-1","BFO-apt-1","BFO-atz-1","BFO-ayr-1","BFO-bao-1","BFO-bdd-1","BFO-bee-1","BFO-bfv-1","BFO-bge-1","BFO-bjp-1","BFO-bks-1","BFO-bld-1","BFO-blj-1","BFO-bnt-2","BFO-bre-1","BFO-bvr-1","BFO-bwk-1","BFO-bzp-1","BFO-ccz-1","BFO-cez-1","BFO-cfs-1","BFO-cgn-1","BFO-cig-1","BFO-cik-1","BFO-cmy-2","BFO-cop-1","BFO-cqf-1","BFO-csk-1","BFO-cvr-2","BFO-cwp-1","BFO-daf-1","BFO-dbj-2","BFO-dbp-1","BFO-dhv-1","BFO-dhy-1","BFO-dki-1","BFO-dok-1","BFO-dor-1","BFO-duz-1","BFO-dvq-1","BFO-dyv-1","BFO-eeg-2","BFO-ees-1","BFO-ejl-1","BFO-ekm-1","BFO-ekp-1","BFO-eom-2","BFO-esh-1","BFO-evk-1","BFO-faf-1","BFO-fda-1","BFO-fmm-1","BFO-fok-1","BFO-fpd-1","BFO-fpl-1","BFO-fsy-1","BFO-fwk-2","BFO-fxd-1","BFO-fye-1","BFO-fyf-1","BFO-fzg-1","BFO-fzn-1","BFO-fzy-1","BFO-geq-1","BFO-ghs-1","BFO-gjl-2","BFO-glc-1","BFO-grv-1","BFO-gsg-1","BFO-gzr-1","BFO-hbj-1","BFO-hbn-1","BFO-hdk-1","BFO-hgs-1","BFO-hke-1","BFO-hpc-1","BFO-hww-1","BFO-hxo-1","BFO-ibd-1","BFO-ibk-1","BFO-ijx-1","BFO-ild-1","BFO-ilw-1","BFO-iqe-1","BFO-iup-1","BFO-ixo-1","BFO-ixz-1","BFO-izr-1","BFO-jdo-1","BFO-jgo-1","BFO-jhe-1","BFO-jiv-1","BFO-jqd-1","BFO-jtk-2","BFO-jyh-1","BFO-kbr-1","BFO-kcq-1","BFO-kfj-1","BFO-kkl-1","BFO-kqv-1","BFO-ksk-1","BFO-kte-1","BFO-lal-1","BFO-les-1","BFO-lnj-1","BFO-lqn-1","BFO-lso-1","BFO-luc-1","BFO-lyx-2","BFO-lzw-1","BFO-mbf-1","BFO-mcd-1","BFO-mdb-1","BFO-mei-2","BFO-mem-1","BFO-mic-1","BFO-mjj-1","BFO-mjn-2","BFO-mlb-1","BFO-mvd-1","BFO-myl-1","BFO-nbm-1","BFO-nfo-1","BFO-nhd-1","BFO-nis-1","BFO-njq-1","BFO-nlc-1","BFO-nui-1","BFO-oap-1","BFO-ocw-1","BFO-okt-1","BFO-oot-1","BFO-opd-1","BFO-otk-1","BFO-owb-1","BFO-pir-2","BFO-ptm-1","BFO-pvu-1","BFO-qaf-1","BFO-qfe-1","BFO-qga-1","BFO-qix-1","BFO-qnf-1","BFO-qpr-1","BFO-qsp-1","BFO-qyy-1","BFO-rlf-1","BFO-rog-1","BFO-rph-1","BFO-ruj-1","BFO-rzv-1","BFO-scq-1","BFO-scr-1","BFO-sen-1","BFO-sij-1","BFO-sjf-1","BFO-suk-1","BFO-tab-1","BFO-taj-1","BFO-tao-1","BFO-tcd-1","BFO-tcp-1","BFO-tfw-1","BFO-tgs-1","BFO-thk-1","BFO-tht-1","BFO-trl-1","BFO-tvx-2","BFO-twc-1","BFO-txf-1","BFO-txn-1","BFO-udu-1","BFO-uhs-1","BFO-uld-1","BFO-uqb-1","BFO-uxo-1","BFO-uzz-1","BFO-vbm-1","BFO-vbw-1","BFO-vgn-1","BFO-vsa-1","BFO-vvo-1","BFO-vvy-1","BFO-wne-1","BFO-wnm-1","BFO-wrf-1","BFO-wsg-2","BFO-wte-1","BFO-wyq-1","BFO-xco-2","BFO-xcx-1","BFO-xkl-1","BFO-xlm-1","BFO-xot-1","BFO-yhc-1","BFO-yir-1","BFO-ylr-1","BFO-ysp-1","BFO-yuh-1","BFO-zkj-1","BFO-zlp-1","BFO-zmr-1","BFO-zuj-1","BFO-zuw-1","BFO-zyw-1","BFOCE-bmi-01","BFOCE-bmi-02","BFOCE-bmi-02b","BFOCE-cch-01","BFOCE-cch-02","BFOCE-cch-03","BFOCE-cch-04","BFOCE-cch-05","BFOCE-cha-01","BFOCE-cha-02","BFOCE-cha-03","BFOCE-chp-01","BFOCE-chp-02","BFOCE-chp-03","BFOCE-chp-04","BFOCE-chs-01","BFOCE-chs-02","BFOCE-chs-03","BFOCE-ett-01","BFOCE-ett-03","BFOCE-ext-01","BFOCE-ext-02","BFOCE-ext-03","BFOCE-gen-01","BFOCE-gen-02","BFOCE-gen-03","BFOCE-gen-04","BFOCE-gen-05","BFOCE-htr-01","BFOCE-htr-03","BFOCE-htr-05","BFOCE-ind-01","BFOCE-ind-02","BFOCE-ind-04","BFOCE-ind-05","BFOCE-ins-01","BFOCE-ins-02","BFOCE-ins-03","BFOCE-sch-01","BFOCE-sch-02","BFOCE-sch-03","BFOCE-spe-01","BFOCE-spe-02","BFOCE-spe-03","BFOCE-spe-04","BFOCE-spe-05","BFOCE-ter-01","BFOCE-ter-02","BFOCE-ter-04","BFOCE-ter-05","BFOCE-ter-06","BFOCE-tlo-01","BFOCE-trp-01","BFOCE-trp-02","BFOCE-trp-03","BFOCE-trp-04","BFOCE-trp-05","BFOCE-ueq-01"]).
@@ -5102,8 +5102,9 @@ pax('has-temporal-part',4,["BFO-bnt-2","BFO-boo-1","BFO-eeg-2","BFO-pir-2"]).
 pax('has-proper-temporal-part',1,["BFO-dbc-1"]).
 pax(entity,1,["BFO-vgn-1"]).
 % Axiom ID, N rules in axiom, N predicate names containing variables used, variable predicate list, constant pred list
-axs("BFOCE-unmarked",6,2,['continuant-part-of',overlaps],[universal]).
+axs("BFOCE-aux-01",3,2,['continuant-part-of',overlaps],[]).
 axs("BFOCE-bmi-01",3,6,['happens-to','has-first-instant','has-last-instant',identical,'instance-of','occupies-spatial-region'],[]).
+axs("BFOCE-unmarked",3,0,[],[universal]).
 axs("BFOCE-bmi-02",4,6,['continuant-part-of','happens-to','has-first-instant','has-last-instant','instance-of','occupies-spatial-region'],[]).
 axs("BFOCE-bmi-02b",4,2,['instance-of','is-sequence-part-of'],[]).
 axs("BFOCE-bmi-03",6,3,['continuant-part-of','happens-to','temporal-part-of'],[]).

@@ -1,19 +1,19 @@
 %% test database for change
 
-/*
-%% should fail and does
+
+/%% should fail and does
 t([0,happens-throughout, ch, t]).
 t([0,happens-to, ch, c, t2]).
 t([-1,instance-of, c, continuant, t2]).
-*/
 
 
-/*
-%% should fail and does
+
+
+/* %% should fail and does
 t([0,happens-throughout, ch, t]).
 t([0,happens-to, ch, c, t2]).
 t([0,instance-of, c, process, t2]).
-*/
+ */
 
 
 /*
@@ -27,7 +27,7 @@ t([0,participates-in, c, p, t1]).
 
 %%%%%%%%%%%  PROSPECTED MODELS   %%%%%%%%%%%
 
-
+/*
 %% BFO antimodel, Scenario  S00A: two objects in the same place.   
 t([0,occupies-spatial-region, a, r1, t1]).
 t([0,occupies-spatial-region, b, r1, t1]).
@@ -36,7 +36,7 @@ t([0, instance-of, b, object, t1]).
 t([-1, instance-of, a, object-aggregate, t1]).
 t([-1, instance-of, b, object-aggregate, t1]).
 t([-1,identical, a, b]).
-
+*/
 
 
 /*

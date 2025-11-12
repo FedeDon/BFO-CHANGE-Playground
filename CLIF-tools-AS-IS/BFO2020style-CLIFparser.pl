@@ -10,7 +10,7 @@
 	1) tautology detection leading to elimination of useless Kowalski rules
 	2) generates sk_use data in Kowalski file for improved skolem function use in reasoner
 */
-:- use_module(library(dcg/basics)).
+:- use_module(library(dcg/basics)).    
 :- use_module(library(pure_input)).
 :-dynamic outdiscourses/1,		%% stores per CLIF file processed the used predicates
 		  error/2,				%% stores errors found during processing (not all error types can be tagged)
