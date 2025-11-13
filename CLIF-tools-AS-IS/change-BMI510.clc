@@ -127,7 +127,8 @@ To be done:
 
 	(cl:comment "motion2 [dec-02b]"
 	   (universal motion2) )
-	
+	  
+	  
 	
 	(cl:comment "   motion 2 is a change sequence of total-location-changes [bmi-02b]"
 		(forall (m t)
@@ -153,8 +154,9 @@ To be done:
 	(cl:comment "A material entity undergoes compositional change during a temporal region if it gains or loses a continuant part between the first and last instant of that temporal region [bmi-03]"
 		(forall (x t)
 		  (iff   
-			(happens-to compositional-change x t)        
-			(exists (t1 t2)       
+		    (instance-of ch compositional-change t)  
+			(happens-to ch x t)        
+			(exists (t1 t2)          
 			  (and
 				(has-first-instant t t1)  
 				(has-last-instant t t2)   
@@ -171,7 +173,8 @@ To be done:
 	(cl:comment "A material entity undergoes qualitative change during a temporal region if it gains or loses a quality between the first and last instant of that temporal region [bmi-04]"
 		(forall (x t)
 		  (iff   
-			(happens-to qualitative-change x t)        
+			(instance-of ch qualitative-change t)  
+			(happens-to ch x t)        
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
@@ -192,7 +195,8 @@ To be done:
 	(cl:comment "A material entity undergoes dispositional change during a temporal region if it gains or loses a disposition between the first and last instant of that temporal region [bmi-05]"
 		(forall (x t)
 		  (iff   
-			(happens-to qualitative-change x t)        
+			(instance-of ch dispositional-change t)  
+			(happens-to ch x t)        
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
@@ -219,7 +223,8 @@ To be done:
 	(cl:comment "A material entity undergoes role change during a temporal region if it gains or loses a role between the first and last instant of that temporal region [bmi-06]"
 		(forall (x t)
 		  (iff   
-			(happens-to role-change x t)        
+			(instance-of ch role-change t)  
+			(happens-to ch x t)        
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
@@ -239,7 +244,8 @@ To be done:
 	(cl:comment "A material entity undergoes relational change during a temporal region if it gains or loses a role between the first and last instant of that temporal region [bmi-07]"
 		(forall (x t)
 		  (iff   
-			(happens-to role-change x t)        
+			(instance-of ch relational-change t)  
+			(happens-to ch x t)        
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
@@ -257,7 +263,13 @@ To be done:
 	   (universal extrinsic-change) )
 
 
-
+    (cl:comment "if an extrinsic change happens, then there is a process where the changed entity and another entity participate in [bmi-08]"
+		(forall (x t)
+		   (if   
+		   
+		   )
+		)
+    
 
 
 )))
