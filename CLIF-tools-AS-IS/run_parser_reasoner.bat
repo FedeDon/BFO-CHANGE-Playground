@@ -11,6 +11,7 @@ taskkill /IM swipl.exe /F >nul 2>&1
 :: Run parser with forced inputdata override
 echo Running parser.pl...
 echo. | swipl -s "BFO2020style-CLIFparser.pl" -g "retractall(inputdata(_)), asserta(inputdata('%INPUT%')), run, halt"
+:: "echo. |"  is needed to provide a newline input to SWI-Prolog
 
 :: Run reasoner with forced inputdata override
 echo Running reasoner.pl...

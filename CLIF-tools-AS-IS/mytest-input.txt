@@ -1,12 +1,11 @@
 %% test database for change
 
-
+/* 
 /%% should fail and does
 t([0,happens-throughout, ch, t]).
 t([0,happens-to, ch, c, t2]).
 t([-1,instance-of, c, continuant, t2]).
-
-
+ */
 
 
 /* %% should fail and does

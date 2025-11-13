@@ -1,0 +1,254 @@
+(cl:comment '
+Axiomatization of change in BFO2020 as described in the FOIS 2025 paper
+Towards Representing Change in the BFO
+Authors: Werner Ceusters, Alan Ruttenberg
+version 2025/06/29 - work in progress
+
+This work is licensed under a Creative Commons "Attribution 4.0 International" license:
+https://creativecommons.org/licengses/by/4.0/
+
+History:
+ - Since 2025/03/15:
+ -	corrected ett-03: added process-boundary as exclusion next to process
+ -  corrected ins-03: added that t1 and t2 may not be identical and that c must exist at t2
+ -  time indexing removed from happens-in as it is between occurrents
+To be done:
+	- distinct declarations including with BFO2020
+	- disjoint declarations
+	- further subtyping of changes (increases, decreases, motions, part loss and acquisitions, ...)
+	- tighter integration with BFO2020 relations
+	- ...'
+
+ (cl:text
+
+  (cl:ttl Proposal for BFO2020 extension for changes
+
+   (cl:outdiscourse 
+		change-profile-of
+		changes-to
+		continuant-part-of
+		mono-sequential-change-of
+		exists-at
+		exists-throughout
+		gains-type
+		happens-in
+		happens-throughout
+		happens-to
+		has-first-instant
+		has-last-instant
+		individuates-at
+		inheres-in
+		instance-of
+		is-sequence-part-of
+		loses-type
+		occupies-temporal-region
+		occupies-spatial-region 
+		occurrent-part-of
+		overlaps
+		participates-in
+		particular
+		precedes
+		proper-temporal-part-of
+		proper-occurrent-part-of
+		replaces-type
+		temporal-part-of
+		temporal-layer-of
+		ceases-to-exist-at
+		uni-equivalent
+		universal
+
+ )
+
+
+
+(cl:comment "auxiliary axioms" )
+
+
+ 
+
+    (cl:comment   "overlap [aux-01]"  
+	   (forall (x y t)
+	   (iff 
+		 (exists (z)
+		   (and 
+		    (continuant-part-of z x t)
+            (continuant-part-of z y t) ) )
+		 (overlaps x y t) )
+		      ))
+
+
+(cl:comment "NEW tentative axioms introduced in Fall2025 for BMI510")
+ 
+
+	(cl:comment "A material entity changes location before and after a temporal region if it occupies different spatial regions at two temporal parts of that temporal region [bmi-01]"
+		(forall (tlc x t)
+		  (if
+		   (and 
+		    (instance-of tlc total-location-change t)
+			(happens-to tlc x t) )     
+		   (exists (t1 t2)     
+			  (and
+				(has-first-instant t t1)  
+				(has-last-instant t t2)   
+				(forall (l1 l2)
+				  (if
+					(and 
+					  (occupies-spatial-region x l1 t1)
+					  (occupies-spatial-region x l2 t2))
+				    (not (= l1 l2)   )
+					)))))  ) ) 
+		
+		
+
+	
+	(cl:comment "location change declaration "  
+	   (universal total-location-change) )
+	
+
+
+	(cl:comment "A material entity moves or teleport during a temporal region if it occupies spatial regions that are not part of the other at two temporal parts of that temporal region [bmi-02]."
+		(forall (m x t)
+		  (if
+		   (and 
+		    (instance-of m motion t)
+			(happens-to m x t) )     
+		   (exists (t1 t2)     
+			  (and
+				(has-first-instant t t1)  
+				(has-last-instant t t2)   
+				(forall (l1 l2)
+				  (if
+					(and 
+					  (occupies-spatial-region x l1 t1)
+					  (occupies-spatial-region x l2 t2))
+				    (not (or (continuant-part-of l1 l2 t) (continuant-part-of l2 l1 t)  ) )
+					)))))  ) ) 
+
+
+	(cl:comment "motion2"  
+	   (universal motion2) )
+	
+	
+	(cl:comment "   motion 2 is a change sequence of total-location-changes [bmi-02b]. "
+		(forall (m t)
+		  (iff  
+		  	(and
+			  (instance-of m change-profile t)
+			  (forall (tlc) 
+			    (if
+				  (is-sequence-part-of tlc m) 
+				  (instance-of tlc total-location-change t) 
+					 ) )  )
+			(instance-of m motion2 t)
+		       )   )  ) 
+
+
+(cl:comment 'INTRINSIC CHANGES' )
+
+
+    (cl:comment "compositional-change declaration  [dec-03] "  
+	   (universal composition-change) )
+	
+
+	(cl:comment "A material entity undergoes compositional change during a temporal region if it gains or loses a continuant part between the first and last instant of that temporal region [bmi-03]"
+		(forall (x t)
+		  (iff   
+			(happens-to compositional-change x t)        
+			(exists (t1 t2)       
+			  (and
+				(has-first-instant t t1)  
+				(has-last-instant t t2)   
+				  (exists (y)
+					(or 
+					   (and (continuant-part-of y x t1) (not(continuant-part-of y x t2)) ) 
+					   (and (not(continuant-part-of y x t1)) (continuant-part-of y x t2) ) 
+					)   ))))) )  
+
+
+    (cl:comment "qualitative-change declaration  [dec-04] "  
+	   (universal qualitative-change) )
+
+	(cl:comment "A material entity undergoes qualitative change during a temporal region if it gains or loses a quality between the first and last instant of that temporal region [bmi-04]"
+		(forall (x t)
+		  (iff   
+			(happens-to qualitative-change x t)        
+			(exists (t1 t2)       
+			  (and
+				(has-first-instant t t1)  
+				(has-last-instant t t2)    
+				  (exists (y)
+				    (and (instance-of y quality t)    
+						(or 
+						(and (inheres-in y x t1) (not(inheres-in y x t2)) ) 
+						(and (not(inheres-in y x t1)) (inheres-in y x t2) ) 
+					    )
+					)   ))))) )  
+
+
+    (cl:comment "disositional-change declaration  [dec-05] "  
+	   (universal dispositional-change) )
+
+	(cl:comment "A material entity undergoes dispositional change during a temporal region if it gains or loses a disposition between the first and last instant of that temporal region [bmi-05]"
+		(forall (x t)
+		  (iff   
+			(happens-to qualitative-change x t)        
+			(exists (t1 t2)       
+			  (and
+				(has-first-instant t t1)  
+				(has-last-instant t t2)    
+				  (exists (y)
+				    (and (instance-of y disposition t)    
+						(or 
+						(and (inheres-in y x t1) (not(inheres-in y x t2)) ) 
+						(and (not(inheres-in y x t1)) (inheres-in y x t2) ) 
+					    )
+					)   ))))) )  
+
+
+
+
+(cl:comment 'EXTRINSIC CHANGES' )
+
+	
+
+    (cl:comment "role-change declaration  [dec-06] "  
+	   (universal role-change) )
+
+	(cl:comment "A material entity undergoes role change during a temporal region if it gains or loses a role between the first and last instant of that temporal region [bmi-06]"
+		(forall (x t)
+		  (iff   
+			(happens-to role-change x t)        
+			(exists (t1 t2)       
+			  (and
+				(has-first-instant t t1)  
+				(has-last-instant t t2)    
+				  (exists (y)
+				    (and (instance-of y role t)    
+						(or 
+						(and (inheres-in y x t1) (not(inheres-in y x t2)) ) 
+						(and (not(inheres-in y x t1)) (inheres-in y x t2) ) 
+					    )
+					)   ))))) )  
+
+    (cl:comment "relational-change declaration  [dec-07] "  
+	   (universal relational-change) )
+
+	(cl:comment "A material entity undergoes relational change during a temporal region if it gains or loses a role between the first and last instant of that temporal region [bmi-07]"
+		(forall (x t)
+		  (iff   
+			(happens-to role-change x t)        
+			(exists (t1 t2)       
+			  (and
+				(has-first-instant t t1)  
+				(has-last-instant t t2)    
+				  (exists (y)
+				    (and (instance-of y relational-quality t)    
+						(or 
+						(and (inheres-in y x t1) (not(inheres-in y x t2)) ) 
+						(and (not(inheres-in y x t1)) (inheres-in y x t2) ) 
+					    )
+					)   ))))) )  
+
+)))
+
+
