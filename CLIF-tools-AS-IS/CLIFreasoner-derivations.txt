@@ -1,9 +1,0 @@
-ds1(0,0,0,1,1,0,0,unmarked,input,[happens-to,ch,c,t2],[]).
-ds1(0,0,0,2,2,0,0,identity,none,[identical,ch,ch],[1]).
-ds1(0,0,0,3,3,0,0,identity,none,[identical,c,c],[1]).
-ds1(0,0,0,4,4,0,0,identity,none,[identical,t2,t2],[1]).
-ds1(0,0,0,5,5,-1,0,unmarked,input,[instance-of,c,continuant,t2],[]).
-ds1(0,0,0,6,6,0,44,BFOCE-cha-02,mpp,[instance-of,ch,change,t2],[1]).
-ds1(0,0,0,7,7,0,45,BFOCE-cha-02,mpp,[instance-of,t2,temporal-region,t2],[1]).
-ds1(0,0,0,8,8,0,46,BFOCE-cha-02,mpp,[instance-of,c,continuant,t2],[1]).
-inconsistent([],[-102,[],[[instance-of,c,continuant,t2]]],0,BFOCE-cha-02).

@@ -125,11 +125,11 @@ To be done:
 					)))))  ) ) 
 
 
-	(cl:comment "motion2"  
+	(cl:comment "motion2 [dec-02b]"
 	   (universal motion2) )
 	
 	
-	(cl:comment "   motion 2 is a change sequence of total-location-changes [bmi-02b]. "
+	(cl:comment "   motion 2 is a change sequence of total-location-changes [bmi-02b]"
 		(forall (m t)
 		  (iff  
 		  	(and
@@ -146,8 +146,8 @@ To be done:
 (cl:comment 'INTRINSIC CHANGES' )
 
 
-    (cl:comment "compositional-change declaration  [dec-03] "  
-	   (universal composition-change) )
+    (cl:comment "compositional-change declaration  [dec-03]"  
+	   (universal compositional-change) )
 	
 
 	(cl:comment "A material entity undergoes compositional change during a temporal region if it gains or loses a continuant part between the first and last instant of that temporal region [bmi-03]"
@@ -177,15 +177,16 @@ To be done:
 				(has-first-instant t t1)  
 				(has-last-instant t t2)    
 				  (exists (y)
-				    (and (instance-of y quality t)    
+				    (and (instance-of y quality t) 
+					     (inheres-in y x)   
 						(or 
-						(and (inheres-in y x t1) (not(inheres-in y x t2)) ) 
-						(and (not(inheres-in y x t1)) (inheres-in y x t2) ) 
+						(and (exists-at y t1) (not(exists-at y t2)) ) 
+						(and (not(exists-at y t1)) (exists-at y t2) ) 
 					    )
 					)   ))))) )  
 
 
-    (cl:comment "disositional-change declaration  [dec-05] "  
+    (cl:comment "disositional-change declaration  [dec-05]"  
 	   (universal dispositional-change) )
 
 	(cl:comment "A material entity undergoes dispositional change during a temporal region if it gains or loses a disposition between the first and last instant of that temporal region [bmi-05]"
@@ -197,10 +198,11 @@ To be done:
 				(has-first-instant t t1)  
 				(has-last-instant t t2)    
 				  (exists (y)
-				    (and (instance-of y disposition t)    
+				    (and(instance-of y disposition t)    
+						(inheres-in y x)   
 						(or 
-						(and (inheres-in y x t1) (not(inheres-in y x t2)) ) 
-						(and (not(inheres-in y x t1)) (inheres-in y x t2) ) 
+						(and (exists-at y t1) (not(exists-at y t2)) ) 
+						(and (not(exists-at y t1)) (exists-at y t2) )  
 					    )
 					)   ))))) )  
 
@@ -224,10 +226,11 @@ To be done:
 				(has-last-instant t t2)    
 				  (exists (y)
 				    (and (instance-of y role t)    
-						(or 
-						(and (inheres-in y x t1) (not(inheres-in y x t2)) ) 
-						(and (not(inheres-in y x t1)) (inheres-in y x t2) ) 
-					    )
+						 (inheres-in y x)   
+						 (or 
+						  (and (exists-at y t1) (not(exists-at y t2)) ) 
+						  (and (not(exists-at y t1)) (exists-at y t2) ) 
+					     )
 					)   ))))) )  
 
     (cl:comment "relational-change declaration  [dec-07] "  
@@ -243,11 +246,19 @@ To be done:
 				(has-last-instant t t2)    
 				  (exists (y)
 				    (and (instance-of y relational-quality t)    
+						(inheres-in y x)   
 						(or 
-						(and (inheres-in y x t1) (not(inheres-in y x t2)) ) 
-						(and (not(inheres-in y x t1)) (inheres-in y x t2) ) 
-					    )
+						(and (exists-at y t1) (not(exists-at y t2)) ) 
+						(and (not(exists-at y t1)) (exists-at y t2) ) 
+						)
 					)   ))))) )  
+
+    (cl:comment "extrinsic change  [dec-08] "  
+	   (universal extrinsic-change) )
+
+
+
+
 
 )))
 

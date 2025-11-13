@@ -63,21 +63,42 @@ To be done:
 (cl:comment ' --- PROSPECTED MODELS --- ' )
 
 
+
+
+
+
+
+
 	(cl:comment "A car has a part, then loses it and this is compositional change [s-020]"
 	   (and 
-	        (instance-of car1 object t)
-			(instance-of w1 object t)
-			(instance-of c compositional-change t)
-			(has-first-instant t t1)  
-			(has-last-instant t t2)
-			(happens-to c car1 t)
-	        (continuant-part-of w1 car1 t1) 
-		    (not(continuant-part-of w1 car1 t2))
+	        (instance-of car1 object tt)
+			(instance-of wheel1 object tt)
+			(instance-of comp1 compositional-change tt)
+			(has-first-instant tt temp1)  
+			(has-last-instant tt temp2)
+			(happens-to comp1 car1 tt)
+	        (continuant-part-of wheel1 car1 temp1) 
+		    (not(continuant-part-of wheel1 car1 temp1))
 
 		)    
 	)
 
+(cl:comment ' 
 
+ (cl:comment ".......c1 [dec-000]"  
+	   (and (particular c1) 
+	        (particular t1) 
+			(particular x1)
+	    )
+ )
+
+
+/%% should fail and does
+t([0,happens-throughout, ch, t]).
+t([0,happens-to, ch, c, t2]).
+t([-1,instance-of, c, continuant, t2]).
+ */
+ 
 	(cl:comment "A car has a quality, then loses it and this is qualitative change [s-024]"
 	   (and 
 	        (instance-of car1 object t)
@@ -107,14 +128,14 @@ To be done:
 		)    
 	)
 
-
+  ' )
 
 
 
 
 (cl:comment ' --- PROSPECTED ANTIMODELS --- ' )
 
-
+(cl:comment ' 
 	(cl:comment "A spatial region has a part, then loses it and this is compositional change [s-021]"
 	   (and 
 	        (instance-of s1 spatial-region t)
@@ -156,7 +177,7 @@ To be done:
 
 		)    
 	)
-
+  ' )
 
 
 )))

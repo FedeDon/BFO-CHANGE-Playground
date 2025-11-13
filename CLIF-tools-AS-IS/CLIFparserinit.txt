@@ -33,7 +33,7 @@ ont_uses("BFOCE",["BFO"]).
 
 progress_notification(minimal).	% options are: minimal, verbose. 'verbose' is for debugging CLIF-files in case of parse-errors
 
-minimum_constant_length(3).		% set minimum character length for non-outdiscourse constants. If omitted or non-integer
+minimum_constant_length(1).		% set minimum character length for non-outdiscourse constants. If omitted or non-integer
 								%   given, defaults to 2.
 
 typo_detection(0.95).			% level for approximate detection of term similarity to identify possible spelling mistakes. 

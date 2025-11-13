@@ -1,94 +1,213 @@
-% ERRORS
-%  Remaining non-standardized variables in transformed axiom:
-%    "s(c)" in axiom number 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%    "s(s1)" in axiom number 2 [BFOCE-s-021] in file myinput-BMI510.clc
-%  Constants with length smaller than the minimum_constant_length specified in the init-file:
-%    "t" in axiom number 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%    "w1" in axiom number 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%    "c" in axiom number 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%    "t1" in axiom number 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%    "t2" in axiom number 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%    "s1" in axiom number 2 [BFOCE-s-021] in file myinput-BMI510.clc
-%    "t" in axiom number 2 [BFOCE-s-021] in file myinput-BMI510.clc
-%    "w1" in axiom number 2 [BFOCE-s-021] in file myinput-BMI510.clc
-%    "c" in axiom number 2 [BFOCE-s-021] in file myinput-BMI510.clc
-%    "t1" in axiom number 2 [BFOCE-s-021] in file myinput-BMI510.clc
-%    "t2" in axiom number 2 [BFOCE-s-021] in file myinput-BMI510.clc
-%  Outdiscourse terms with variable number of arguments found. See warnings for details !
-
 
 % WARNINGS
 
 
 %  Possible orthographic errors assumed from lexical similarity:
-%    "compositional-change" (times used = 4)  /  "composition-change" (times used = 1)
-%        composition-change:
-%           axiom number 7 [BFOCE-dec-03] in file change-BMI510.clc
 %    "motion2" (times used = 3)  /  "motion" (times used = 1)
 %        motion2:
 %           axiom number 6 [BFOCE-bmi-02b] in file change-BMI510.clc
-%           axiom number 5 [BFOCE-unmarked] in file change-BMI510.clc
+%           axiom number 5 [BFOCE-dec-02b] in file change-BMI510.clc
 %        motion:
 %           axiom number 4 [BFOCE-bmi-02] in file change-BMI510.clc
 
 
-%  Predicates with variable numbers of arguments:
-%    inheres-in: 32 times used with 3 arguments.
-%       has 2 arguments in axiom number 5 [BFO-otx-1] in file generic-dependence.cl
-
-
 %  Predicates with uncommon placement of variables (v) or constants (s):
 %    "continuant-part-of" most often (89) used with arguments [v,v,v]. Exceptions are: 
-%       "[continuant-part-of,w1,car1,t1]" in axiom 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%       "[continuant-part-of,w1,car1,t2]" in axiom 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%       "[continuant-part-of,w1,s1,t1]" in axiom 2 [BFOCE-s-021] in file myinput-BMI510.clc
-%       "[continuant-part-of,w1,s1,t2]" in axiom 2 [BFOCE-s-021] in file myinput-BMI510.clc
+%       "[continuant-part-of,wheel1,car1,temp1]" in axiom 1 [BFOCE-s-020] in file zmyinput-BMI510.clc
 %    "happens-to" most often (28) used with arguments [v,v,v]. Exceptions are: 
-%       "[happens-to,c,car1,t]" in axiom 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%       "[happens-to,c,s1,t]" in axiom 2 [BFOCE-s-021] in file myinput-BMI510.clc
+%       "[happens-to,comp1,car1,tt]" in axiom 1 [BFOCE-s-020] in file zmyinput-BMI510.clc
 %    "has-first-instant" most often (56) used with arguments [v,v]. Exceptions are: 
-%       "[has-first-instant,t,t1]" in axiom 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%       "[has-first-instant,t,t1]" in axiom 2 [BFOCE-s-021] in file myinput-BMI510.clc
+%       "[has-first-instant,tt,temp1]" in axiom 1 [BFOCE-s-020] in file zmyinput-BMI510.clc
 %    "has-last-instant" most often (61) used with arguments [v,v]. Exceptions are: 
-%       "[has-last-instant,t,t2]" in axiom 1 [BFOCE-s-020] in file myinput-BMI510.clc
-%       "[has-last-instant,t,t2]" in axiom 2 [BFOCE-s-021] in file myinput-BMI510.clc
+%       "[has-last-instant,tt,temp2]" in axiom 1 [BFOCE-s-020] in file zmyinput-BMI510.clc
+%    "instance-of" most often (56) used with arguments [v,v,v]. Exceptions are: 
+%       "[instance-of,car1,object,tt]" in axiom 1 [BFOCE-s-020] in file zmyinput-BMI510.clc
+%       "[instance-of,comp1,compositional-change,tt]" in axiom 1 [BFOCE-s-020] in file zmyinput-BMI510.clc
+%       "[instance-of,wheel1,object,tt]" in axiom 1 [BFOCE-s-020] in file zmyinput-BMI510.clc
 
 
 %  Terms used less or equal than set in rare_term_use() in init-file:
-%    "composition-change" used in:
-%       axiom 7 [BFOCE-dec-03] in file change-BMI510.clc
+%    "comp1" used in:
+%       axiom 1 [BFOCE-s-020] in file zmyinput-BMI510.clc
 %    "dispositional-change" used in:
 %       axiom 11 [BFOCE-dec-05] in file change-BMI510.clc
+%    "extrinsic-change" used in:
+%       axiom 17 [BFOCE-dec-08] in file change-BMI510.clc
 %    "motion" used in:
 %       axiom 4 [BFOCE-bmi-02] in file change-BMI510.clc
 %    "relational-change" used in:
 %       axiom 15 [BFOCE-dec-07] in file change-BMI510.clc
+%    "temp2" used in:
+%       axiom 1 [BFOCE-s-020] in file zmyinput-BMI510.clc
 
 
 
 %  Terms not used in some relation which 80% of terms do have. See missing_pred_percent() setting in init-file:
 %    Comparing term/predicate occurrences internally in BFOCE:
 %      Terms in BFOCE missing the relation "instance-of" while 82% of terms in BFOCE have it:
-%          composition-change in ['change-BMI510.clc']
 %          dispositional-change in ['change-BMI510.clc']
+%          extrinsic-change in ['change-BMI510.clc']
 %          qualitative-change in ['change-BMI510.clc']
 %          relational-change in ['change-BMI510.clc']
 %          role-change in ['change-BMI510.clc']
-%          t1 in ['myinput-BMI510.clc']
-%          t2 in ['myinput-BMI510.clc']
+%          temp1 in ['zmyinput-BMI510.clc']
+%          temp2 in ['zmyinput-BMI510.clc']
 
 
 
 %  Axioms without index:
 %   change-BMI510.clc
 %    location change declaration 
-%    motion2
 
 
-%  Axiom indices used in distinct axiom comments:
-%   BFO-uns-1: 
-%     existence-instantiation.cl: exists-at is dissective on first argument when it is a continuant [uns-1]
-%     continuant-mereology.cl: exists-at is dissective on first argumentwhen it is a continuant [uns-1]
+%  11 out of 426 axioms generated clauses with trivial 'P and not(P)' disjunctions:
+%   <Axiom ID> / Comment
+%    <Axiom with implications replaced by disjunctions>
+
+%   BFOCE-bmi-03 / A material entity undergoes compositional change during a temporal region if it gains or loses a continuant part between the first and last instant of that temporal region [bmi-03]
+%    [forall,[G,H],[and,[or,[not,['happens-to','compositional-change',G,H]],[exists,[B,C],[and,['has-first-instant',H,B],['has-last-instant',H,C],[exists,[A],[or,[and,['continuant-part-of',A,G,B],[not,['continuant-part-of',A,G,C]]],[and,[not,['continuant-part-of',A,G,B]],['continuant-part-of',A,G,C]]]]]]],[or,[forall,[E,F],[or,[forall,[D],[and,[or,[not,['continuant-part-of',D,G,F]],['continuant-part-of',D,G,E]],[or,['continuant-part-of',D,G,F],[not,['continuant-part-of',D,G,E]]]]],[not,['has-last-instant',H,F]],[not,['has-first-instant',H,E]]]],['happens-to','compositional-change',G,H]]]]
+%     6 retained clauses out of 8
+%      kow(if([['continuant-part-of',A,D,C],['has-first-instant',E,B],['has-last-instant',E,C]]),then_or([['continuant-part-of',A,D,B],['happens-to','compositional-change',D,E]]))
+%      kow(if([['continuant-part-of',A,D,B],['has-first-instant',E,B],['has-last-instant',E,C]]),then_or([['continuant-part-of',A,D,C],['happens-to','compositional-change',D,E]]))
+%      kow(if([['happens-to','compositional-change',A,B]]),then_or([['continuant-part-of',[e,7,[A,B]],A,[e,8,[A,B]]],['continuant-part-of',[e,7,[A,B]],A,[e,9,[A,B]]]]))
+%      kow(if([['continuant-part-of',[e,7,[A,B]],A,[e,8,[A,B]]],['continuant-part-of',[e,7,[A,B]],A,[e,9,[A,B]]],['happens-to','compositional-change',A,B]]),false)
+%      kow(if([['happens-to','compositional-change',A,B]]),then(['has-first-instant',B,[e,8,[A,B]]]))
+%      kow(if([['happens-to','compositional-change',A,B]]),then(['has-last-instant',B,[e,9,[A,B]]]))
+%     2 removed clauses out of 8
+%      [continuant-part-of,[e,7,[A,B]],A,[e,9,[A,B]]] -- in: [[continuant-part-of,[e,7,[A,B]],A,[e,9,[A,B]]],[happens-to,compositional-change,A,B]] --> then([continuant-part-of,[e,7,[A,B]],A,[e,9,[A,B]]])
+%      [continuant-part-of,[e,7,[A,B]],A,[e,8,[A,B]]] -- in: [[continuant-part-of,[e,7,[A,B]],A,[e,8,[A,B]]],[happens-to,compositional-change,A,B]] --> then([continuant-part-of,[e,7,[A,B]],A,[e,8,[A,B]]])
+
+%   BFOCE-bmi-04 / A material entity undergoes qualitative change during a temporal region if it gains or loses a quality between the first and last instant of that temporal region [bmi-04]
+%    [forall,[G,H],[and,[or,[not,['happens-to','qualitative-change',G,H]],[exists,[B,C],[and,['has-first-instant',H,B],['has-last-instant',H,C],[exists,[A],[and,['instance-of',A,quality,H],['inheres-in',A,G],[or,[and,['exists-at',A,B],[not,['exists-at',A,C]]],[and,[not,['exists-at',A,B]],['exists-at',A,C]]]]]]]],[or,[forall,[E,F],[or,[forall,[D],[or,[and,[or,[not,['exists-at',D,F]],['exists-at',D,E]],[or,['exists-at',D,F],[not,['exists-at',D,E]]]],[not,['inheres-in',D,G]],[not,['instance-of',D,quality,H]]]],[not,['has-last-instant',H,F]],[not,['has-first-instant',H,E]]]],['happens-to','qualitative-change',G,H]]]]
+%     8 retained clauses out of 10
+%      kow(if([['exists-at',A,C],['has-first-instant',E,B],['has-last-instant',E,C],['inheres-in',A,D],['instance-of',A,quality,E]]),then_or([['exists-at',A,B],['happens-to','qualitative-change',D,E]]))
+%      kow(if([['exists-at',A,B],['has-first-instant',E,B],['has-last-instant',E,C],['inheres-in',A,D],['instance-of',A,quality,E]]),then_or([['exists-at',A,C],['happens-to','qualitative-change',D,E]]))
+%      kow(if([['happens-to','qualitative-change',A,B]]),then_or([['exists-at',[e,10,[A,B]],[e,11,[A,B]]],['exists-at',[e,10,[A,B]],[e,12,[A,B]]]]))
+%      kow(if([['exists-at',[e,10,[A,B]],[e,11,[A,B]]],['exists-at',[e,10,[A,B]],[e,12,[A,B]]],['happens-to','qualitative-change',A,B]]),false)
+%      kow(if([['happens-to','qualitative-change',A,B]]),then(['inheres-in',[e,10,[A,B]],A]))
+%      kow(if([['happens-to','qualitative-change',A,B]]),then(['instance-of',[e,10,[A,B]],quality,B]))
+%      kow(if([['happens-to','qualitative-change',A,B]]),then(['has-first-instant',B,[e,11,[A,B]]]))
+%      kow(if([['happens-to','qualitative-change',A,B]]),then(['has-last-instant',B,[e,12,[A,B]]]))
+%     2 removed clauses out of 10
+%      [exists-at,[e,10,[A,B]],[e,12,[A,B]]] -- in: [[exists-at,[e,10,[A,B]],[e,12,[A,B]]],[happens-to,qualitative-change,A,B]] --> then([exists-at,[e,10,[A,B]],[e,12,[A,B]]])
+%      [exists-at,[e,10,[A,B]],[e,11,[A,B]]] -- in: [[exists-at,[e,10,[A,B]],[e,11,[A,B]]],[happens-to,qualitative-change,A,B]] --> then([exists-at,[e,10,[A,B]],[e,11,[A,B]]])
+
+%   BFOCE-bmi-05 / A material entity undergoes dispositional change during a temporal region if it gains or loses a disposition between the first and last instant of that temporal region [bmi-05]
+%    [forall,[G,H],[and,[or,[not,['happens-to','qualitative-change',G,H]],[exists,[B,C],[and,['has-first-instant',H,B],['has-last-instant',H,C],[exists,[A],[and,['instance-of',A,disposition,H],['inheres-in',A,G],[or,[and,['exists-at',A,B],[not,['exists-at',A,C]]],[and,[not,['exists-at',A,B]],['exists-at',A,C]]]]]]]],[or,[forall,[E,F],[or,[forall,[D],[or,[and,[or,[not,['exists-at',D,F]],['exists-at',D,E]],[or,['exists-at',D,F],[not,['exists-at',D,E]]]],[not,['inheres-in',D,G]],[not,['instance-of',D,disposition,H]]]],[not,['has-last-instant',H,F]],[not,['has-first-instant',H,E]]]],['happens-to','qualitative-change',G,H]]]]
+%     8 retained clauses out of 10
+%      kow(if([['exists-at',A,C],['has-first-instant',E,B],['has-last-instant',E,C],['inheres-in',A,D],['instance-of',A,disposition,E]]),then_or([['exists-at',A,B],['happens-to','qualitative-change',D,E]]))
+%      kow(if([['exists-at',A,B],['has-first-instant',E,B],['has-last-instant',E,C],['inheres-in',A,D],['instance-of',A,disposition,E]]),then_or([['exists-at',A,C],['happens-to','qualitative-change',D,E]]))
+%      kow(if([['happens-to','qualitative-change',A,B]]),then_or([['exists-at',[e,13,[A,B]],[e,14,[A,B]]],['exists-at',[e,13,[A,B]],[e,15,[A,B]]]]))
+%      kow(if([['exists-at',[e,13,[A,B]],[e,14,[A,B]]],['exists-at',[e,13,[A,B]],[e,15,[A,B]]],['happens-to','qualitative-change',A,B]]),false)
+%      kow(if([['happens-to','qualitative-change',A,B]]),then(['inheres-in',[e,13,[A,B]],A]))
+%      kow(if([['happens-to','qualitative-change',A,B]]),then(['instance-of',[e,13,[A,B]],disposition,B]))
+%      kow(if([['happens-to','qualitative-change',A,B]]),then(['has-first-instant',B,[e,14,[A,B]]]))
+%      kow(if([['happens-to','qualitative-change',A,B]]),then(['has-last-instant',B,[e,15,[A,B]]]))
+%     2 removed clauses out of 10
+%      [exists-at,[e,13,[A,B]],[e,15,[A,B]]] -- in: [[exists-at,[e,13,[A,B]],[e,15,[A,B]]],[happens-to,qualitative-change,A,B]] --> then([exists-at,[e,13,[A,B]],[e,15,[A,B]]])
+%      [exists-at,[e,13,[A,B]],[e,14,[A,B]]] -- in: [[exists-at,[e,13,[A,B]],[e,14,[A,B]]],[happens-to,qualitative-change,A,B]] --> then([exists-at,[e,13,[A,B]],[e,14,[A,B]]])
+
+%   BFOCE-bmi-06 / A material entity undergoes role change during a temporal region if it gains or loses a role between the first and last instant of that temporal region [bmi-06]
+%    [forall,[G,H],[and,[or,[not,['happens-to','role-change',G,H]],[exists,[B,C],[and,['has-first-instant',H,B],['has-last-instant',H,C],[exists,[A],[and,['instance-of',A,role,H],['inheres-in',A,G],[or,[and,['exists-at',A,B],[not,['exists-at',A,C]]],[and,[not,['exists-at',A,B]],['exists-at',A,C]]]]]]]],[or,[forall,[E,F],[or,[forall,[D],[or,[and,[or,[not,['exists-at',D,F]],['exists-at',D,E]],[or,['exists-at',D,F],[not,['exists-at',D,E]]]],[not,['inheres-in',D,G]],[not,['instance-of',D,role,H]]]],[not,['has-last-instant',H,F]],[not,['has-first-instant',H,E]]]],['happens-to','role-change',G,H]]]]
+%     8 retained clauses out of 10
+%      kow(if([['exists-at',A,C],['has-first-instant',E,B],['has-last-instant',E,C],['inheres-in',A,D],['instance-of',A,role,E]]),then_or([['exists-at',A,B],['happens-to','role-change',D,E]]))
+%      kow(if([['exists-at',A,B],['has-first-instant',E,B],['has-last-instant',E,C],['inheres-in',A,D],['instance-of',A,role,E]]),then_or([['exists-at',A,C],['happens-to','role-change',D,E]]))
+%      kow(if([['happens-to','role-change',A,B]]),then_or([['exists-at',[e,16,[A,B]],[e,17,[A,B]]],['exists-at',[e,16,[A,B]],[e,18,[A,B]]]]))
+%      kow(if([['exists-at',[e,16,[A,B]],[e,17,[A,B]]],['exists-at',[e,16,[A,B]],[e,18,[A,B]]],['happens-to','role-change',A,B]]),false)
+%      kow(if([['happens-to','role-change',A,B]]),then(['inheres-in',[e,16,[A,B]],A]))
+%      kow(if([['happens-to','role-change',A,B]]),then(['instance-of',[e,16,[A,B]],role,B]))
+%      kow(if([['happens-to','role-change',A,B]]),then(['has-first-instant',B,[e,17,[A,B]]]))
+%      kow(if([['happens-to','role-change',A,B]]),then(['has-last-instant',B,[e,18,[A,B]]]))
+%     2 removed clauses out of 10
+%      [exists-at,[e,16,[A,B]],[e,18,[A,B]]] -- in: [[exists-at,[e,16,[A,B]],[e,18,[A,B]]],[happens-to,role-change,A,B]] --> then([exists-at,[e,16,[A,B]],[e,18,[A,B]]])
+%      [exists-at,[e,16,[A,B]],[e,17,[A,B]]] -- in: [[exists-at,[e,16,[A,B]],[e,17,[A,B]]],[happens-to,role-change,A,B]] --> then([exists-at,[e,16,[A,B]],[e,17,[A,B]]])
+
+%   BFOCE-bmi-07 / A material entity undergoes relational change during a temporal region if it gains or loses a role between the first and last instant of that temporal region [bmi-07]
+%    [forall,[G,H],[and,[or,[not,['happens-to','role-change',G,H]],[exists,[B,C],[and,['has-first-instant',H,B],['has-last-instant',H,C],[exists,[A],[and,['instance-of',A,'relational-quality',H],['inheres-in',A,G],[or,[and,['exists-at',A,B],[not,['exists-at',A,C]]],[and,[not,['exists-at',A,B]],['exists-at',A,C]]]]]]]],[or,[forall,[E,F],[or,[forall,[D],[or,[and,[or,[not,['exists-at',D,F]],['exists-at',D,E]],[or,['exists-at',D,F],[not,['exists-at',D,E]]]],[not,['inheres-in',D,G]],[not,['instance-of',D,'relational-quality',H]]]],[not,['has-last-instant',H,F]],[not,['has-first-instant',H,E]]]],['happens-to','role-change',G,H]]]]
+%     8 retained clauses out of 10
+%      kow(if([['exists-at',A,C],['has-first-instant',E,B],['has-last-instant',E,C],['inheres-in',A,D],['instance-of',A,'relational-quality',E]]),then_or([['exists-at',A,B],['happens-to','role-change',D,E]]))
+%      kow(if([['exists-at',A,B],['has-first-instant',E,B],['has-last-instant',E,C],['inheres-in',A,D],['instance-of',A,'relational-quality',E]]),then_or([['exists-at',A,C],['happens-to','role-change',D,E]]))
+%      kow(if([['happens-to','role-change',A,B]]),then_or([['exists-at',[e,19,[A,B]],[e,20,[A,B]]],['exists-at',[e,19,[A,B]],[e,21,[A,B]]]]))
+%      kow(if([['exists-at',[e,19,[A,B]],[e,20,[A,B]]],['exists-at',[e,19,[A,B]],[e,21,[A,B]]],['happens-to','role-change',A,B]]),false)
+%      kow(if([['happens-to','role-change',A,B]]),then(['inheres-in',[e,19,[A,B]],A]))
+%      kow(if([['happens-to','role-change',A,B]]),then(['instance-of',[e,19,[A,B]],'relational-quality',B]))
+%      kow(if([['happens-to','role-change',A,B]]),then(['has-first-instant',B,[e,20,[A,B]]]))
+%      kow(if([['happens-to','role-change',A,B]]),then(['has-last-instant',B,[e,21,[A,B]]]))
+%     2 removed clauses out of 10
+%      [exists-at,[e,19,[A,B]],[e,21,[A,B]]] -- in: [[exists-at,[e,19,[A,B]],[e,21,[A,B]]],[happens-to,role-change,A,B]] --> then([exists-at,[e,19,[A,B]],[e,21,[A,B]]])
+%      [exists-at,[e,19,[A,B]],[e,20,[A,B]]] -- in: [[exists-at,[e,19,[A,B]],[e,20,[A,B]]],[happens-to,role-change,A,B]] --> then([exists-at,[e,19,[A,B]],[e,20,[A,B]]])
+
+%   BFO-glc-1 / If at all times that two object-aggreates exist each is part of the other, then they are identical [glc-1]
+%    [forall,[C,D],[or,[or,[exists,[B],[or,[and,[not,['continuant-part-of',C,D,B]],['continuant-part-of',D,C,B]],[and,[not,['continuant-part-of',D,C,B]],['continuant-part-of',C,D,B]]]],[forall,[A],[or,[not,['continuant-part-of',D,C,A]],[not,['continuant-part-of',C,D,A]],[not,['instance-of',C,'object-aggregate',A]]]]],[identical,C,D]]]
+%     2 retained clauses out of 4
+%      kow(if([['continuant-part-of',B,C,A],['continuant-part-of',B,C,[e,77,[B,C]]],['continuant-part-of',C,B,A],['continuant-part-of',C,B,[e,77,[B,C]]],['instance-of',B,'object-aggregate',A]]),then([identical,B,C]))
+%      kow(if([['continuant-part-of',B,C,A],['continuant-part-of',C,B,A],['instance-of',B,'object-aggregate',A]]),then_or([['continuant-part-of',B,C,[e,77,[B,C]]],['continuant-part-of',C,B,[e,77,[B,C]]],[identical,B,C]]))
+%     2 removed clauses out of 4
+%      [continuant-part-of,C,B,[e,77,[B,C]]] -- in: [[continuant-part-of,B,C,A],[continuant-part-of,C,B,A],[continuant-part-of,C,B,[e,77,[B,C]]],[instance-of,B,object-aggregate,A]] --> then_or([[continuant-part-of,C,B,[e,77,[B,C]]],[identical,B,C]])
+%      [continuant-part-of,B,C,[e,77,[B,C]]] -- in: [[continuant-part-of,B,C,A],[continuant-part-of,B,C,[e,77,[B,C]]],[continuant-part-of,C,B,A],[instance-of,B,object-aggregate,A]] --> then_or([[continuant-part-of,B,C,[e,77,[B,C]]],[identical,B,C]])
+
+%   BFO-bee-1 / If you exist you instatiate a universal and vice-versa [bee-1]
+%    [forall,[C,D],[and,[or,[forall,[A],[or,[not,['instance-of',D,'temporal-region',D]],[not,['instance-of',C,A,D]],[not,[universal,A]]]],[and,[particular,C],['instance-of',D,'temporal-region',D],['exists-at',C,D]]],[or,[or,[not,['exists-at',C,D]],[not,['instance-of',D,'temporal-region',D]],[not,[particular,C]]],[exists,[B],[and,[universal,B],['instance-of',C,B,D],['instance-of',D,'temporal-region',D]]]]]]
+%     4 retained clauses out of 6
+%      kow(if([['exists-at',A,B],['instance-of',B,'temporal-region',B],[particular,A]]),then([universal,[e,87,[A,B]]]))
+%      kow(if([['exists-at',A,B],['instance-of',B,'temporal-region',B],[particular,A]]),then(['instance-of',A,[e,87,[A,B]],B]))
+%      kow(if([['instance-of',B,A,C],['instance-of',C,'temporal-region',C],[universal,A]]),then([particular,B]))
+%      kow(if([['instance-of',B,A,C],['instance-of',C,'temporal-region',C],[universal,A]]),then(['exists-at',B,C]))
+%     2 removed clauses out of 6
+%      [instance-of,B,temporal-region,B] -- in: [[exists-at,A,B],[instance-of,B,temporal-region,B],[particular,A]] --> then([instance-of,B,temporal-region,B])
+%      [instance-of,C,temporal-region,C] -- in: [[instance-of,B,A,C],[instance-of,C,temporal-region,C],[universal,A]] --> then([instance-of,C,temporal-region,C])
+
+%   BFO-czc-1 / occurs-in is lower bound location [czc-1]
+%    [forall,[B,C,D],[or,[or,[exists,[A],[or,[and,[not,['exists-at',B,A]],[and,['exists-at',D,A],['continuant-part-of',C,D,A]]],[and,[or,[not,['continuant-part-of',C,D,A]],[not,['exists-at',D,A]]],['exists-at',B,A]]]],[not,['occurs-in',B,C]]],['occurs-in',B,D]]]
+%     3 retained clauses out of 6
+%      kow(if([['continuant-part-of',B,C,[e,162,[A,B,C]]],['exists-at',A,[e,162,[A,B,C]]],['exists-at',C,[e,162,[A,B,C]]],['occurs-in',A,B]]),then(['occurs-in',A,C]))
+%      kow(if([['occurs-in',A,B]]),then_or([['continuant-part-of',B,C,[e,162,[A,B,C]]],['exists-at',A,[e,162,[A,B,C]]],['occurs-in',A,C]]))
+%      kow(if([['occurs-in',A,B]]),then_or([['exists-at',A,[e,162,[A,B,C]]],['exists-at',C,[e,162,[A,B,C]]],['occurs-in',A,C]]))
+%     3 removed clauses out of 6
+%      [continuant-part-of,B,C,[e,162,[A,B,C]]] -- in: [[continuant-part-of,B,C,[e,162,[A,B,C]]],[exists-at,C,[e,162,[A,B,C]]],[occurs-in,A,B]] --> then_or([[continuant-part-of,B,C,[e,162,[A,B,C]]],[occurs-in,A,C]])
+%      [exists-at,C,[e,162,[A,B,C]]] -- in: [[continuant-part-of,B,C,[e,162,[A,B,C]]],[exists-at,C,[e,162,[A,B,C]]],[occurs-in,A,B]] --> then_or([[exists-at,C,[e,162,[A,B,C]]],[occurs-in,A,C]])
+%      [exists-at,A,[e,162,[A,B,C]]] -- in: [[exists-at,A,[e,162,[A,B,C]]],[occurs-in,A,B]] --> then_or([[exists-at,A,[e,162,[A,B,C]]],[occurs-in,A,C]])
+
+%   BFO-yex-1 / occurs-in is a lower bound on second argument [yex-1]
+%    [forall,[B,C,D],[or,[or,[exists,[A],[or,[and,[not,['exists-at',B,A]],['located-in',C,D,A]],[and,[not,['located-in',C,D,A]],['exists-at',B,A]]]],[not,['occurs-in',B,C]]],['occurs-in',B,D]]]
+%     2 retained clauses out of 4
+%      kow(if([['exists-at',A,[e,172,[A,B,C]]],['located-in',B,C,[e,172,[A,B,C]]],['occurs-in',A,B]]),then(['occurs-in',A,C]))
+%      kow(if([['occurs-in',A,B]]),then_or([['exists-at',A,[e,172,[A,B,C]]],['located-in',B,C,[e,172,[A,B,C]]],['occurs-in',A,C]]))
+%     2 removed clauses out of 4
+%      [located-in,B,C,[e,172,[A,B,C]]] -- in: [[located-in,B,C,[e,172,[A,B,C]]],[occurs-in,A,B]] --> then_or([[located-in,B,C,[e,172,[A,B,C]]],[occurs-in,A,C]])
+%      [exists-at,A,[e,172,[A,B,C]]] -- in: [[exists-at,A,[e,172,[A,B,C]]],[occurs-in,A,B]] --> then_or([[exists-at,A,[e,172,[A,B,C]]],[occurs-in,A,C]])
+
+%   BFO-zlp-1 / any temporal instant that precedes the last instant of an interval and which is preceded by the first instant is part of the interval [zlp-1]
+%    [forall,[E,F],[or,[or,[not,['instance-of',F,'temporal-interval',F]],[not,['instance-of',E,'temporal-instant',E]]],[or,['has-first-instant',F,E],['has-last-instant',F,E],[and,[or,[forall,[A,B],[or,[not,[precedes,A,E]],[not,[precedes,E,B]],[not,['has-last-instant',F,B]],[not,['has-first-instant',F,A]],[not,['instance-of',F,'temporal-interval',F]]]],['proper-temporal-part-of',E,F]],[or,[not,['proper-temporal-part-of',E,F]],[exists,[C,D],[and,['instance-of',F,'temporal-interval',F],['has-first-instant',F,C],['has-last-instant',F,D],[precedes,E,D],[precedes,C,E]]]]]]]]
+%     5 retained clauses out of 6
+%      kow(if([['instance-of',A,'temporal-instant',A],['instance-of',B,'temporal-interval',B],['proper-temporal-part-of',A,B]]),then_or([['has-first-instant',B,A],['has-first-instant',B,[e,223,[A,B]]],['has-last-instant',B,A]]))
+%      kow(if([['instance-of',A,'temporal-instant',A],['instance-of',B,'temporal-interval',B],['proper-temporal-part-of',A,B]]),then_or([['has-first-instant',B,A],['has-last-instant',B,A],['has-last-instant',B,[e,224,[A,B]]]]))
+%      kow(if([['instance-of',A,'temporal-instant',A],['instance-of',B,'temporal-interval',B],['proper-temporal-part-of',A,B]]),then_or([['has-first-instant',B,A],['has-last-instant',B,A],[precedes,A,[e,224,[A,B]]]]))
+%      kow(if([['instance-of',A,'temporal-instant',A],['instance-of',B,'temporal-interval',B],['proper-temporal-part-of',A,B]]),then_or([['has-first-instant',B,A],['has-last-instant',B,A],[precedes,[e,223,[A,B]],A]]))
+%      kow(if([['has-first-instant',D,A],['has-last-instant',D,B],['instance-of',C,'temporal-instant',C],['instance-of',D,'temporal-interval',D],[precedes,A,C],[precedes,C,B]]),then_or([['has-first-instant',D,C],['has-last-instant',D,C],['proper-temporal-part-of',C,D]]))
+%     1 removed clauses out of 6
+%      [instance-of,B,temporal-interval,B] -- in: [[instance-of,A,temporal-instant,A],[instance-of,B,temporal-interval,B],[proper-temporal-part-of,A,B]] --> then_or([[has-first-instant,B,A],[has-last-instant,B,A],[instance-of,B,temporal-interval,B]])
+
+%   BFO-xkl-1 / two intervals are identical if their first and last instants are the same and if an instant is part of one of the intervals it is also part of the other [xkl-1]
+%    [forall,[C,D],[or,[or,[not,['instance-of',D,'temporal-interval',D]],[not,['instance-of',C,'temporal-interval',C]]],[or,[forall,[A,B],[or,[or,[and,[not,['temporal-part-of',A,C]],['temporal-part-of',A,D]],[and,[not,['temporal-part-of',A,D]],['temporal-part-of',A,C]]],[or,[and,[not,['temporal-part-of',B,C]],['temporal-part-of',B,D]],[and,[not,['temporal-part-of',B,D]],['temporal-part-of',B,C]]],[not,['has-last-instant',D,B]],[not,['has-last-instant',C,B]],[not,['has-first-instant',D,A]],[not,['has-first-instant',C,A]]]],[identical,C,D]]]]
+%     4 retained clauses out of 16
+%      kow(if([['has-first-instant',C,A],['has-first-instant',D,A],['has-last-instant',C,B],['has-last-instant',D,B],['instance-of',C,'temporal-interval',C],['instance-of',D,'temporal-interval',D],['temporal-part-of',A,C],['temporal-part-of',A,D]]),then_or([[identical,C,D],['temporal-part-of',B,C],['temporal-part-of',B,D]]))
+%      kow(if([['has-first-instant',C,A],['has-first-instant',D,A],['has-last-instant',C,B],['has-last-instant',D,B],['instance-of',C,'temporal-interval',C],['instance-of',D,'temporal-interval',D],['temporal-part-of',A,C],['temporal-part-of',A,D],['temporal-part-of',B,C],['temporal-part-of',B,D]]),then([identical,C,D]))
+%      kow(if([['has-first-instant',C,A],['has-first-instant',D,A],['has-last-instant',C,B],['has-last-instant',D,B],['instance-of',C,'temporal-interval',C],['instance-of',D,'temporal-interval',D]]),then_or([[identical,C,D],['temporal-part-of',A,C],['temporal-part-of',A,D],['temporal-part-of',B,C],['temporal-part-of',B,D]]))
+%      kow(if([['has-first-instant',C,A],['has-first-instant',D,A],['has-last-instant',C,B],['has-last-instant',D,B],['instance-of',C,'temporal-interval',C],['instance-of',D,'temporal-interval',D],['temporal-part-of',B,C],['temporal-part-of',B,D]]),then_or([[identical,C,D],['temporal-part-of',A,C],['temporal-part-of',A,D]]))
+%     12 removed clauses out of 16
+%      [temporal-part-of,B,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,D],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,D],[temporal-part-of,B,D]])
+%      [temporal-part-of,A,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,D]] --> then_or([[identical,C,D],[temporal-part-of,A,D],[temporal-part-of,B,C],[temporal-part-of,B,D]])
+%      [temporal-part-of,B,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,A,D],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,B,D]])
+%      [temporal-part-of,A,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,D],[temporal-part-of,B,C],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,D]])
+%      [temporal-part-of,B,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,D],[temporal-part-of,B,C]] --> then_or([[identical,C,D],[temporal-part-of,A,D],[temporal-part-of,B,C]])
+%      [temporal-part-of,B,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,A,D],[temporal-part-of,B,C]] --> then_or([[identical,C,D],[temporal-part-of,B,C]])
+%      [temporal-part-of,B,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,A,D],[temporal-part-of,B,D]])
+%      [temporal-part-of,B,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,B,D]])
+%      [temporal-part-of,A,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,B,C],[temporal-part-of,B,D]])
+%      [temporal-part-of,B,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,B,C]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,A,D],[temporal-part-of,B,C]])
+%      [temporal-part-of,A,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,B,C],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,C]])
+%      [temporal-part-of,B,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,B,C]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,B,C]])
 
 
 %  Axiom indices occurring in multiple axiom files:
@@ -112,47 +231,47 @@
 %   <Axiom with implications replaced by disjunctions>
 %     <Axiom ID> / <Unique ID>
 %   [forall,[D,E,F],[or,[or,[not,['participates-in',D,E,F]],[not,['instance-of',D,'generically-dependent-continuant',F]]],[exists,[B,C],[and,['temporal-part-of',B,F],[concretizes,C,D,B],[or,[and,['instance-of',C,'specifically-dependent-continuant',B],[exists,[A],[and,['specifically-depends-on',C,A],['participates-in',A,E,B]]]],[and,['occurrent-part-of',C,E],['exists-at',C,B]]]]]]]
-%     BFO-fmm-1 / 139
-%     BFO-fmm-1 / 206
+%     BFO-fmm-1 / 140
+%     BFO-fmm-1 / 205
 %   [forall,[C,D,E],[or,[or,[not,['participates-in',C,D,E]],[not,['instance-of',C,'specifically-dependent-continuant',E]]],[exists,[A,B],[and,['instance-of',A,'temporal-region',A],['temporal-part-of',A,E],['instance-of',B,'independent-continuant',A],[not,['instance-of',B,'spatial-region',A]],['specifically-depends-on',C,B],['participates-in',B,D,A]]]]]
-%     BFO-cgn-1 / 205
-%     BFO-cgn-1 / 274
+%     BFO-cgn-1 / 204
+%     BFO-cgn-1 / 273
 %   [forall,[C,D],[or,[or,[forall,[A],[or,[identical,A,C],[not,['continuant-part-of',A,C,D]]]],[not,['instance-of',C,'material-entity',D]]],[exists,[B],[and,[not,[identical,B,C]],['continuant-part-of',B,C,D],[not,['instance-of',B,'immaterial-entity',D]]]]]]
-%     BFO-adm-1 / 117
-%     BFO-adm-1 / 157
+%     BFO-adm-1 / 118
+%     BFO-adm-1 / 158
 %   [forall,[B,C],[or,[or,[exists,[A],[and,['temporal-part-of',A,B],['temporal-part-of',A,C]]],[not,['instance-of',C,'temporal-interval',C]],[not,['instance-of',B,'temporal-interval',B]]],[or,[precedes,B,C],[precedes,C,B]]]]
-%     BFO-owb-1 / 197
-%     BFO-owb-1 / 312
+%     BFO-owb-1 / 196
+%     BFO-owb-1 / 311
 %   [forall,[A,B,C,D],[or,[or,[not,['temporal-part-of',D,C]],[not,['instance-of',A,B,C]]],['instance-of',A,B,D]]]
-%     BFO-qaf-1 / 125
-%     BFO-qaf-1 / 289
+%     BFO-qaf-1 / 126
+%     BFO-qaf-1 / 288
 %   [forall,[A,B,C,D],[or,[or,[not,[precedes,C,D]],[not,['has-first-instant',B,D]],[not,['has-last-instant',A,C]]],[precedes,A,B]]]
-%     BFO-qqv-1 / 187
-%     BFO-qqv-1 / 297
+%     BFO-qqv-1 / 186
+%     BFO-qqv-1 / 296
 %   [forall,[A,B,C,D],[or,[or,[not,[identical,C,D]],[not,['has-first-instant',B,D]],[not,['has-last-instant',A,C]],['instance-of',B,'temporal-instant',B],['instance-of',A,'temporal-instant',A]],[precedes,A,B]]]
-%     BFO-suk-1 / 194
-%     BFO-suk-1 / 308
+%     BFO-suk-1 / 193
+%     BFO-suk-1 / 307
 %   [forall,[A,B,C,D],[or,[or,[identical,C,D],[not,['has-first-instant',B,D]],[not,['has-last-instant',A,C]],[not,[precedes,A,B]]],[precedes,C,D]]]
-%     BFO-miz-1 / 191
-%     BFO-miz-1 / 302
+%     BFO-miz-1 / 190
+%     BFO-miz-1 / 301
 %   [forall,[A,B,C],[or,[or,[not,['has-last-instant',A,C]],[not,['has-first-instant',A,B]],['instance-of',A,'temporal-instant',A]],[precedes,B,C]]]
-%     BFO-rzv-1 / 190
-%     BFO-rzv-1 / 301
+%     BFO-rzv-1 / 189
+%     BFO-rzv-1 / 300
 %   [forall,[A,B,C],[or,[or,[not,['continuant-part-of',C,A,B]],[not,['exists-at',A,B]]],['exists-at',C,B]]]
-%     BFO-uns-1 / 87
-%     BFO-uns-1 / 124
+%     BFO-uns-1 / 88
+%     BFO-uns-1 / 125
 %   [forall,[A,B],[or,[or,[not,['instance-of',B,'temporal-instant',B]],[not,['instance-of',A,'temporal-instant',A]]],[or,[precedes,A,B],[precedes,B,A],[identical,A,B]]]]
-%     BFO-qnf-1 / 193
-%     BFO-qnf-1 / 306
+%     BFO-qnf-1 / 192
+%     BFO-qnf-1 / 305
 %   [forall,[A,B],[or,[or,[not,['has-last-instant',B,A]],['instance-of',B,'temporal-instant',B],[not,['instance-of',B,'temporal-region',B]],[not,['instance-of',A,'temporal-instant',A]]],[and,[or,['temporal-part-of',A,B],[precedes,B,A]],[or,[not,[precedes,B,A]],[not,['temporal-part-of',A,B]]]]]]
-%     BFO-acg-1 / 195
-%     BFO-acg-1 / 310
+%     BFO-acg-1 / 194
+%     BFO-acg-1 / 309
 %   [forall,[A,B],[or,[or,[not,['has-first-instant',B,A]],['instance-of',B,'temporal-instant',B],[not,['instance-of',B,'temporal-region',B]],[not,['instance-of',A,'temporal-instant',A]]],[and,[or,['temporal-part-of',A,B],[precedes,A,B]],[or,[not,[precedes,A,B]],[not,['temporal-part-of',A,B]]]]]]
-%     BFO-qga-1 / 196
-%     BFO-qga-1 / 311
+%     BFO-qga-1 / 195
+%     BFO-qga-1 / 310
 %   [forall,[A,B],[or,[not,['instance-of',A,'temporal-region',B]],['temporal-part-of',B,A]]]
-%     BFO-njq-1 / 281
-%     BFO-njq-1 / 364
+%     BFO-njq-1 / 280
+%     BFO-njq-1 / 363
 
 
 % PROCESSING INFORMATION
@@ -164,455 +283,441 @@
 %      2 / 2 / A material entity changes location before and after a temporal region if it occupies different spatial regions at two temporal parts of that temporal region [bmi-01]
 %      3 / 3 / location change declaration 
 %      4 / 4 / A material entity moves or teleport during a temporal region if it occupies spatial regions that are not part of the other at two temporal parts of that temporal region [bmi-02].
-%      5 / 5 / motion2
-%      6 / 6 /    motion 2 is a change sequence of total-location-changes [bmi-02b]. 
-%      7 / 7 / compositional-change declaration  [dec-03] 
+%      5 / 5 / motion2 [dec-02b]
+%      6 / 6 /    motion 2 is a change sequence of total-location-changes [bmi-02b]
+%      7 / 7 / compositional-change declaration  [dec-03]
 %      8 / 8 / A material entity undergoes compositional change during a temporal region if it gains or loses a continuant part between the first and last instant of that temporal region [bmi-03]
 %      9 / 9 / qualitative-change declaration  [dec-04] 
 %      10 / 10 / A material entity undergoes qualitative change during a temporal region if it gains or loses a quality between the first and last instant of that temporal region [bmi-04]
-%      11 / 11 / disositional-change declaration  [dec-05] 
+%      11 / 11 / disositional-change declaration  [dec-05]
 %      12 / 12 / A material entity undergoes dispositional change during a temporal region if it gains or loses a disposition between the first and last instant of that temporal region [bmi-05]
 %      13 / 13 / role-change declaration  [dec-06] 
 %      14 / 14 / A material entity undergoes role change during a temporal region if it gains or loses a role between the first and last instant of that temporal region [bmi-06]
 %      15 / 15 / relational-change declaration  [dec-07] 
 %      16 / 16 / A material entity undergoes relational change during a temporal region if it gains or loses a role between the first and last instant of that temporal region [bmi-07]
+%      17 / 17 / extrinsic change  [dec-08] 
 
 %   2. change.clc
-%      17 / 1 / exists-throughout has as domain particular and as range temporal-region [ett-01]
-%      18 / 2 / p exists-throughout t means that every temporal-region at which p exists is a temporal part of t [ett-02]
-%      19 / 3 / if a process p occupies-temporal-region t, then p exists-throughout t [ett-03]
-%      20 / 4 / there is precisely one temporal region at which a particular exists-throughout [ett-04]
-%      21 / 5 / happens-throughout has domain change and range temporal region [htr-01]
-%      22 / 6 / x exists-throughout t if x happens-throughout t [htr-02]
-%      23 / 7 / if x exists-throughout t and x is a change, x happens throughout t [htr-03]
-%      24 / 8 / there is precisely one temporal region at which a change happens-throughout [htr-04]
-%      25 / 9 / at any time t a change ch exists, t is a temporal part of the temporal region throughout which ch happens [htr-05]
-%      26 / 10 / all changes are occurrents [cha-01]
-%      27 / 11 / happens-to is time-indexed and has domain change and range continuant except spatial region [cha-02]
-%      28 / 12 / happens-in has domain change and range process [cha-03]
-%      29 / 13 / if a change exists, there exists also a process in which the change happens, and a continuant to which the change happens [cha-04]
-%      30 / 14 / any change happens to a continuant that participates in a process in which the change happens [cha-05]
-%      31 / 15 / any change happens in a process in which participates a continuant to which the change happens [cha-06]
-%      32 / 16 / at all times a change that happens to a continuant and in a process that continuant participates in that process [cha-07]
-%      33 / 17 / all existence changes are changes [ext-01]
-%      34 / 18 / the only existence changes are individuations and terminations [ext-02]
-%      35 / 19 / existence changes happen only to continuants [ext-03]
-%      36 / 20 / all individuations are existence changes [ind-01]
-%      37 / 21 / individuates-at has domain process or continuant but not spatial region and range temporal region [ind-02]
-%      38 / 22 / a particular individuates at the first instant of the temporal region throughout which it exists [ind-03]
-%      39 / 23 / a particular individuates at the last instant of the temporal region throughout which the individuation happens [ind-04]
-%      40 / 24 / a particular x individuates at a time which is the last instant of the temporal region throughout which some individuation s happens whereby s happens to x if x is a continuant or s happens to a continuant c which participates in x [ind-05]
-%      41 / 25 / all terminations are existence changes [ter-01]
-%      42 / 26 / ceases-to-exist-at has domain process or continuant but not spatial region and range temporal region [ter-02]
-%      43 / 27 / a particular ceases to exist at the last instant of the temporal region throughout which it exists [ter-03]
-%      44 / 28 / if a termination happens to a continuant, that continuant ceases to exist at the last instant of the temporal region throughout which the termination happens [ter-04]
-%      45 / 29 / if a continuant ceases to exist at a time, a termination happens to it at that time [ter-05]
-%      46 / 30 / if a process ceases to exist at t, it exists for the last time at t [ter-06]
-%      47 / 31 / all instantiation changes are changes [ins-01]
-%      48 / 32 / an instantiation change happens to a continuant c when not all the universals instantiated by c prior to the change are instantiated by c after the change or vice versa [ins-02]
-%      49 / 33 / an instantiation change happens to a continuant c when not all the universals instantiated by c prior to the change are instantiated by c after the change or vice versa (strong version) [ins-03]
-%      50 / 34 / all specializations are instantiation changes [spe-01]
-%      51 / 35 / gains-type has domain continuant and range universal [spe-02]
-%      52 / 36 / if a specialization happens to a continuant, that continuant gains a type [spe-03]
-%      53 / 37 / if a continuant gains a type, a specialization happens to it [spe-04]
-%      54 / 38 / a continuant c gains a type iff c becomes instance of a type while keeping all existing instantiations [spe-05]
-%      55 / 39 / all generalizations are instantiation changes [gen-01]
-%      56 / 40 / loses-type has domain continuant and range universal [gen-02]
-%      57 / 41 / if a generalization happens to a continuant, that continuant loses a type [gen-03]
-%      58 / 42 / if a continuant loses a type, a generalization happens to it [gen-04]
-%      59 / 43 / a continuant loses a type whenever it doesn't instantiate a type it did before and doesn't gain a type [gen-05]
-%      60 / 44 / all type replacements are instantiation changes [trp-01]
-%      61 / 45 / replaces-type is time-indexed and has as domain continuant and as range two universals [trp-02]
-%      62 / 46 / if a type replacement happens to a continuant, that continuant replaces a type [trp-03]
-%      63 / 47 / if a continuant replaces a type, a type-replacement happens to it [trp-04]
-%      64 / 48 / a continuant c replaces a type u1 for u2 whenever all the univerals (except u1) c instantiates before the replacement are also instantiated by c (in addition to u2) after the replacement [trp-05]
-%      65 / 49 / all simple-changes are mono-sequential changes [sch-01]
-%      66 / 50 / a simple-change happens to only one continuant [sch-02]
-%      67 / 51 / A simple change does not have other changes as occurrent parts [sch-03]
-%      68 / 52 / all mono-sequential changes are changes [cch-01]
-%      69 / 53 / a mono-sequential-change is a change c all whose occurrent parts that are changes stand in the temporal layer-of relation to c [cch-02]
-%      70 / 54 / mono-sequential-change-of has domain mono-sequential change and range continuant [cch-03]
-%      71 / 55 / if x is a mono-sequential-change-of y then x is a mono-sequential change and all temporal layers of x are changes that happen to y [cch-04]
-%      72 / 56 / x mono-sequential-change-of c if x is a mono-sequential change and all temporal layers of x are changes that happen to c [cch-05]
-%      73 / 57 / all change sequences are changes [chs-01]
-%      74 / 58 / is-sequence-part-of has domain mono-sequential change and range change sequence [chs-02]
-%      75 / 59 / a change sequence is a change whose proper-temporal parts that are mono-sequential changes are temporally ordered [chs-03]
-%      76 / 60 / all change profiles are change sequences [chp-01]
-%      77 / 61 / change-profile-of has domain change-profile and range continuant [chp-02]
-%      78 / 62 / a change profile is a change sequence whose sequence parts are mono-sequential changes all of which are simple changes that happen to the same continuant [chp-03]
-%      79 / 63 / if x is a change profile of y, then all sequence parts of x are mono-sequential changes all of which are simple changes that happen to y [chp-04]
-%      80 / 64 / a is a temporal layer of b iff a is an occurrent part of b, both exists throughout the same time, but neither are temporal regions [tlo-01]
-%      81 / 65 / temporal-layer-of is transitive [tlo-02]
-%      82 / 66 / temporal-layer-of is antisymmetric [tlo-03]
-%      83 / 67 / Two continuants are uni-equivalent at the times they both instantiate all the same universals [ueq-01]
+%      18 / 1 / exists-throughout has as domain particular and as range temporal-region [ett-01]
+%      19 / 2 / p exists-throughout t means that every temporal-region at which p exists is a temporal part of t [ett-02]
+%      20 / 3 / if a process p occupies-temporal-region t, then p exists-throughout t [ett-03]
+%      21 / 4 / there is precisely one temporal region at which a particular exists-throughout [ett-04]
+%      22 / 5 / happens-throughout has domain change and range temporal region [htr-01]
+%      23 / 6 / x exists-throughout t if x happens-throughout t [htr-02]
+%      24 / 7 / if x exists-throughout t and x is a change, x happens throughout t [htr-03]
+%      25 / 8 / there is precisely one temporal region at which a change happens-throughout [htr-04]
+%      26 / 9 / at any time t a change ch exists, t is a temporal part of the temporal region throughout which ch happens [htr-05]
+%      27 / 10 / all changes are occurrents [cha-01]
+%      28 / 11 / happens-to is time-indexed and has domain change and range continuant except spatial region [cha-02]
+%      29 / 12 / happens-in has domain change and range process [cha-03]
+%      30 / 13 / if a change exists, there exists also a process in which the change happens, and a continuant to which the change happens [cha-04]
+%      31 / 14 / any change happens to a continuant that participates in a process in which the change happens [cha-05]
+%      32 / 15 / any change happens in a process in which participates a continuant to which the change happens [cha-06]
+%      33 / 16 / at all times a change that happens to a continuant and in a process that continuant participates in that process [cha-07]
+%      34 / 17 / all existence changes are changes [ext-01]
+%      35 / 18 / the only existence changes are individuations and terminations [ext-02]
+%      36 / 19 / existence changes happen only to continuants [ext-03]
+%      37 / 20 / all individuations are existence changes [ind-01]
+%      38 / 21 / individuates-at has domain process or continuant but not spatial region and range temporal region [ind-02]
+%      39 / 22 / a particular individuates at the first instant of the temporal region throughout which it exists [ind-03]
+%      40 / 23 / a particular individuates at the last instant of the temporal region throughout which the individuation happens [ind-04]
+%      41 / 24 / a particular x individuates at a time which is the last instant of the temporal region throughout which some individuation s happens whereby s happens to x if x is a continuant or s happens to a continuant c which participates in x [ind-05]
+%      42 / 25 / all terminations are existence changes [ter-01]
+%      43 / 26 / ceases-to-exist-at has domain process or continuant but not spatial region and range temporal region [ter-02]
+%      44 / 27 / a particular ceases to exist at the last instant of the temporal region throughout which it exists [ter-03]
+%      45 / 28 / if a termination happens to a continuant, that continuant ceases to exist at the last instant of the temporal region throughout which the termination happens [ter-04]
+%      46 / 29 / if a continuant ceases to exist at a time, a termination happens to it at that time [ter-05]
+%      47 / 30 / if a process ceases to exist at t, it exists for the last time at t [ter-06]
+%      48 / 31 / all instantiation changes are changes [ins-01]
+%      49 / 32 / an instantiation change happens to a continuant c when not all the universals instantiated by c prior to the change are instantiated by c after the change or vice versa [ins-02]
+%      50 / 33 / an instantiation change happens to a continuant c when not all the universals instantiated by c prior to the change are instantiated by c after the change or vice versa (strong version) [ins-03]
+%      51 / 34 / all specializations are instantiation changes [spe-01]
+%      52 / 35 / gains-type has domain continuant and range universal [spe-02]
+%      53 / 36 / if a specialization happens to a continuant, that continuant gains a type [spe-03]
+%      54 / 37 / if a continuant gains a type, a specialization happens to it [spe-04]
+%      55 / 38 / a continuant c gains a type iff c becomes instance of a type while keeping all existing instantiations [spe-05]
+%      56 / 39 / all generalizations are instantiation changes [gen-01]
+%      57 / 40 / loses-type has domain continuant and range universal [gen-02]
+%      58 / 41 / if a generalization happens to a continuant, that continuant loses a type [gen-03]
+%      59 / 42 / if a continuant loses a type, a generalization happens to it [gen-04]
+%      60 / 43 / a continuant loses a type whenever it doesn't instantiate a type it did before and doesn't gain a type [gen-05]
+%      61 / 44 / all type replacements are instantiation changes [trp-01]
+%      62 / 45 / replaces-type is time-indexed and has as domain continuant and as range two universals [trp-02]
+%      63 / 46 / if a type replacement happens to a continuant, that continuant replaces a type [trp-03]
+%      64 / 47 / if a continuant replaces a type, a type-replacement happens to it [trp-04]
+%      65 / 48 / a continuant c replaces a type u1 for u2 whenever all the univerals (except u1) c instantiates before the replacement are also instantiated by c (in addition to u2) after the replacement [trp-05]
+%      66 / 49 / all simple-changes are mono-sequential changes [sch-01]
+%      67 / 50 / a simple-change happens to only one continuant [sch-02]
+%      68 / 51 / A simple change does not have other changes as occurrent parts [sch-03]
+%      69 / 52 / all mono-sequential changes are changes [cch-01]
+%      70 / 53 / a mono-sequential-change is a change c all whose occurrent parts that are changes stand in the temporal layer-of relation to c [cch-02]
+%      71 / 54 / mono-sequential-change-of has domain mono-sequential change and range continuant [cch-03]
+%      72 / 55 / if x is a mono-sequential-change-of y then x is a mono-sequential change and all temporal layers of x are changes that happen to y [cch-04]
+%      73 / 56 / x mono-sequential-change-of c if x is a mono-sequential change and all temporal layers of x are changes that happen to c [cch-05]
+%      74 / 57 / all change sequences are changes [chs-01]
+%      75 / 58 / is-sequence-part-of has domain mono-sequential change and range change sequence [chs-02]
+%      76 / 59 / a change sequence is a change whose proper-temporal parts that are mono-sequential changes are temporally ordered [chs-03]
+%      77 / 60 / all change profiles are change sequences [chp-01]
+%      78 / 61 / change-profile-of has domain change-profile and range continuant [chp-02]
+%      79 / 62 / a change profile is a change sequence whose sequence parts are mono-sequential changes all of which are simple changes that happen to the same continuant [chp-03]
+%      80 / 63 / if x is a change profile of y, then all sequence parts of x are mono-sequential changes all of which are simple changes that happen to y [chp-04]
+%      81 / 64 / a is a temporal layer of b iff a is an occurrent part of b, both exists throughout the same time, but neither are temporal regions [tlo-01]
+%      82 / 65 / temporal-layer-of is transitive [tlo-02]
+%      83 / 66 / temporal-layer-of is antisymmetric [tlo-03]
+%      84 / 67 / Two continuants are uni-equivalent at the times they both instantiate all the same universals [ueq-01]
 
 %   3. continuant-mereology.cl
-%      84 / 1 / continuant-part-of and has-continuant-part are inverse relations [eld-1]
-%      85 / 2 / continuant-part-of is reflexive at a time [mcd-1]
-%      86 / 3 / proper-continuant-part-of and has-proper-continuant-part are inverse relations [hpm-1]
-%      87 / 4 / exists-at is dissective on first argumentwhen it is a continuant [uns-1]
-%      88 / 5 / A fiat point has no parts other than itself [jgo-1]
-%      89 / 6 / continuant-part-of is dissective on third argument, a temporal region [mqp-1]
-%      90 / 7 / If a has-continuant-part b then if a is an instance of fiat-point then b is an instance of fiat-point [jqd-1]
-%      91 / 8 / x proper continuant part of y means x is a continuant part of y but y is not continuant part of x [sls-1]
-%      92 / 9 / proper-continuant-part-of is dissective on third argument, a temporal region [vjv-1]
-%      93 / 10 / If a continuant-part-of b then if a is an instance of material-entity then b is an instance of material-entity [dok-1]
-%      94 / 11 / If a continuant-part-of b then if a is an instance of spatial-region then b is an instance of spatial-region, and vice-versa [kbr-1]
-%      95 / 12 / If a has-continuant-part b then if a is an instance of fiat-surface then b is an instance of continuant-fiat-boundary [ysp-1]
-%      96 / 13 / If a has-continuant-part b then if a is an instance of three-dimensional-spatial-region then b is an instance of spatial-region [fzg-1]
-%      97 / 14 / If a has-continuant-part b then if a is an instance of continuant-fiat-boundary then b is an instance of continuant-fiat-boundary [ixo-1]
-%      98 / 15 / If a continuant-part-of b then if a is an instance of site then b is an instance of site or material-entity  [izr-1]
-%      99 / 16 / If a continuant-part-of b then if a is an instance of independent-continuant then b is an instance of independent-continuant, and vice-versa [cez-1]
-%      100 / 17 / continuant-part-of is transitive at a time [plp-1]
-%      101 / 18 / continuant-part-of is time indexed and has domain: continuant and range: continuant [bdd-1]
-%      102 / 19 / If a has-continuant-part b then if a is an instance of fiat-line then b is an instance of fiat-line or fiat-point  [cwp-1]
-%      103 / 20 / If a has-continuant-part b then if a is an instance of site then b is an instance of site or continuant-fiat-boundary  [mjj-1]
-%      104 / 21 / proper-continuant-part-of is time indexed and has domain: continuant and range: continuant [kte-1]
-%      105 / 22 / If a has-continuant-part b then if a is an instance of zero-dimensional-spatial-region then b is an instance of zero-dimensional-spatial-region [bfv-1]
-%      106 / 23 / proper-continuant-part-of is transitive at a time [xpg-1]
-%      107 / 24 / A fiat line occupies a one-dimensional spatial region [kcq-1]
-%      108 / 25 / A fiat point occupies a zero-dimensional spatial region [alm-1]
-%      109 / 26 / A fiat surface occupies a two-dimensional spatial region [fpl-1]
-%      110 / 27 / If a has-continuant-part b then if a is an instance of material-entity then b is an instance of site or continuant-fiat-boundary or material-entity  [mic-1]
-%      111 / 28 / If a has-continuant-part b then if a is an instance of one-dimensional-spatial-region then b is an instance of one-dimensional-spatial-region or zero-dimensional-spatial-region  [wne-1]
-%      112 / 29 / If at all times that two object-aggreates exist each is part of the other, then they are identical [glc-1]
-%      113 / 30 / The dimensionality of the region of something occupying a one dimensional spatial region does not change [qfe-1]
-%      114 / 31 / The dimensionality of the region of something occupying a two dimensional spatial region does not change [dor-1]
-%      115 / 32 / The dimensionality of the region of something occupying a zero dimensional spatial region does not change [fok-1]
-%      116 / 33 / The dimensionality of the region of something occupying a three dimensional spatial region does not change [rlf-1]
-%      117 / 34 / If a material entity has a proper part, then at least one of its proper parts is not an immaterial entity [adm-1]
-%      118 / 35 / If a has-continuant-part b then if a is an instance of two-dimensional-spatial-region then b is an instance of two-dimensional-spatial-region or one-dimensional-spatial-region or zero-dimensional-spatial-region  [hbn-1]
-%      119 / 36 / If at any time that two non-object aggreates exist each is part of the other, then they are identical [tab-1]
-%      120 / 37 / continuant-part-of has weak supplementation [fyf-1]
-%      121 / 38 / continuant-part-of has a unique product at a time [gzr-1]
+%      85 / 1 / continuant-part-of and has-continuant-part are inverse relations [eld-1]
+%      86 / 2 / continuant-part-of is reflexive at a time [mcd-1]
+%      87 / 3 / proper-continuant-part-of and has-proper-continuant-part are inverse relations [hpm-1]
+%      88 / 4 / exists-at is dissective on first argumentwhen it is a continuant [uns-1]
+%      89 / 5 / A fiat point has no parts other than itself [jgo-1]
+%      90 / 6 / continuant-part-of is dissective on third argument, a temporal region [mqp-1]
+%      91 / 7 / If a has-continuant-part b then if a is an instance of fiat-point then b is an instance of fiat-point [jqd-1]
+%      92 / 8 / x proper continuant part of y means x is a continuant part of y but y is not continuant part of x [sls-1]
+%      93 / 9 / proper-continuant-part-of is dissective on third argument, a temporal region [vjv-1]
+%      94 / 10 / If a continuant-part-of b then if a is an instance of material-entity then b is an instance of material-entity [dok-1]
+%      95 / 11 / If a continuant-part-of b then if a is an instance of spatial-region then b is an instance of spatial-region, and vice-versa [kbr-1]
+%      96 / 12 / If a has-continuant-part b then if a is an instance of fiat-surface then b is an instance of continuant-fiat-boundary [ysp-1]
+%      97 / 13 / If a has-continuant-part b then if a is an instance of three-dimensional-spatial-region then b is an instance of spatial-region [fzg-1]
+%      98 / 14 / If a has-continuant-part b then if a is an instance of continuant-fiat-boundary then b is an instance of continuant-fiat-boundary [ixo-1]
+%      99 / 15 / If a continuant-part-of b then if a is an instance of site then b is an instance of site or material-entity  [izr-1]
+%      100 / 16 / If a continuant-part-of b then if a is an instance of independent-continuant then b is an instance of independent-continuant, and vice-versa [cez-1]
+%      101 / 17 / continuant-part-of is transitive at a time [plp-1]
+%      102 / 18 / continuant-part-of is time indexed and has domain: continuant and range: continuant [bdd-1]
+%      103 / 19 / If a has-continuant-part b then if a is an instance of fiat-line then b is an instance of fiat-line or fiat-point  [cwp-1]
+%      104 / 20 / If a has-continuant-part b then if a is an instance of site then b is an instance of site or continuant-fiat-boundary  [mjj-1]
+%      105 / 21 / proper-continuant-part-of is time indexed and has domain: continuant and range: continuant [kte-1]
+%      106 / 22 / If a has-continuant-part b then if a is an instance of zero-dimensional-spatial-region then b is an instance of zero-dimensional-spatial-region [bfv-1]
+%      107 / 23 / proper-continuant-part-of is transitive at a time [xpg-1]
+%      108 / 24 / A fiat line occupies a one-dimensional spatial region [kcq-1]
+%      109 / 25 / A fiat point occupies a zero-dimensional spatial region [alm-1]
+%      110 / 26 / A fiat surface occupies a two-dimensional spatial region [fpl-1]
+%      111 / 27 / If a has-continuant-part b then if a is an instance of material-entity then b is an instance of site or continuant-fiat-boundary or material-entity  [mic-1]
+%      112 / 28 / If a has-continuant-part b then if a is an instance of one-dimensional-spatial-region then b is an instance of one-dimensional-spatial-region or zero-dimensional-spatial-region  [wne-1]
+%      113 / 29 / If at all times that two object-aggreates exist each is part of the other, then they are identical [glc-1]
+%      114 / 30 / The dimensionality of the region of something occupying a one dimensional spatial region does not change [qfe-1]
+%      115 / 31 / The dimensionality of the region of something occupying a two dimensional spatial region does not change [dor-1]
+%      116 / 32 / The dimensionality of the region of something occupying a zero dimensional spatial region does not change [fok-1]
+%      117 / 33 / The dimensionality of the region of something occupying a three dimensional spatial region does not change [rlf-1]
+%      118 / 34 / If a material entity has a proper part, then at least one of its proper parts is not an immaterial entity [adm-1]
+%      119 / 35 / If a has-continuant-part b then if a is an instance of two-dimensional-spatial-region then b is an instance of two-dimensional-spatial-region or one-dimensional-spatial-region or zero-dimensional-spatial-region  [hbn-1]
+%      120 / 36 / If at any time that two non-object aggreates exist each is part of the other, then they are identical [tab-1]
+%      121 / 37 / continuant-part-of has weak supplementation [fyf-1]
+%      122 / 38 / continuant-part-of has a unique product at a time [gzr-1]
 
 %   4. existence-instantiation.cl
-%      122 / 1 / Particulars exist at some time [nmq-1]
-%      123 / 2 / Every universal is instantiated at least once [mbf-1]
-%      124 / 3 / exists-at is dissective on first argument when it is a continuant [uns-1]
-%      125 / 4 / instance-of is dissective on third argument, a temporal region [qaf-1]
-%      126 / 5 / Relata of exists-at are particulars. [oap-1]
-%      127 / 6 / Relata of instance-of are particular, universal, temporal-region. [lqn-1]
-%      128 / 7 / There is always something that exists [nis-1]
-%      129 / 8 / if m is a material entity, then there is some one-dimensional temporal region during which m exists [zuw-1]
-%      130 / 9 / If you exist you instatiate a universal and vice-versa [bee-1]
+%      123 / 1 / Particulars exist at some time [nmq-1]
+%      124 / 2 / Every universal is instantiated at least once [mbf-1]
+%      126 / 4 / instance-of is dissective on third argument, a temporal region [qaf-1]
+%      127 / 5 / Relata of exists-at are particulars. [oap-1]
+%      128 / 6 / Relata of instance-of are particular, universal, temporal-region. [lqn-1]
+%      129 / 7 / There is always something that exists [nis-1]
+%      130 / 8 / if m is a material entity, then there is some one-dimensional temporal region during which m exists [zuw-1]
+%      131 / 9 / If you exist you instatiate a universal and vice-versa [bee-1]
 
 %   5. generic-dependence.cl
-%      131 / 1 / concretizes and is-concretized-by are inverse relations [zba-1]
-%      132 / 2 / generically-depends-on and is-carrier-of are inverse relations [mvp-1]
-%      133 / 3 / concretizes is dissective on third argument, a temporal region [nyz-1]
-%      134 / 4 / A generically dependent continuant is at all times at which it exists concretized by something [ibk-1]
-%      135 / 5 / a g-dependent continuant b g-depends on an independent continuant c at t means: there inheres in c at t an s-dependent continuant which concretizes b at t [otx-1]
-%      136 / 6 / concretizes is time indexed and has domain: specifically-dependent-continuant or process  and range: generically-dependent-continuant [rog-1]
-%      137 / 7 / generically-depends-on is time indexed and has domain: generically-dependent-continuant and range: independent-continuant but not spatial-region [ekp-1]
-%      138 / 8 / If a specifically-dependent-continuant concretizes a gdc then the gdc generically-depends-on the bearer of the sdc [cik-1]
-%      139 / 9 / If a generically dependent continuant participates in a process p then, if it is concretized as a process, that process is part of p, fand if concretized as an sdc then the bearer of that sdc participates in the process [fmm-1]
+%      132 / 1 / concretizes and is-concretized-by are inverse relations [zba-1]
+%      133 / 2 / generically-depends-on and is-carrier-of are inverse relations [mvp-1]
+%      134 / 3 / concretizes is dissective on third argument, a temporal region [nyz-1]
+%      135 / 4 / A generically dependent continuant is at all times at which it exists concretized by something [ibk-1]
+%      136 / 5 / a g-dependent continuant b g-depends on an independent continuant c at t means: there inheres in c at t an s-dependent continuant which concretizes b at t [otx-1]
+%      137 / 6 / concretizes is time indexed and has domain: specifically-dependent-continuant or process  and range: generically-dependent-continuant [rog-1]
+%      138 / 7 / generically-depends-on is time indexed and has domain: generically-dependent-continuant and range: independent-continuant but not spatial-region [ekp-1]
+%      139 / 8 / If a specifically-dependent-continuant concretizes a gdc then the gdc generically-depends-on the bearer of the sdc [cik-1]
+%      140 / 9 / If a generically dependent continuant participates in a process p then, if it is concretized as a process, that process is part of p, fand if concretized as an sdc then the bearer of that sdc participates in the process [fmm-1]
 
 %   6. history.cl
-%      140 / 1 / history-of and has-history are inverse relations [abx-1]
-%      141 / 2 / history-of is functional on second argument [zek-1]
-%      142 / 3 / history-of is functional on first argument [woe-1]
-%      143 / 4 / every history is the history of something [vvy-1]
-%      144 / 5 / every material-entity has a history [okt-1]
-%      145 / 6 / a material entity participates in its history [lga-1]
-%      146 / 7 / material entity and its history exist at exactly the same times [uzz-1]
-%      147 / 8 / history-of has domain history and range material-entity [rph-1]
+%      141 / 1 / history-of and has-history are inverse relations [abx-1]
+%      142 / 2 / history-of is functional on second argument [zek-1]
+%      143 / 3 / history-of is functional on first argument [woe-1]
+%      144 / 4 / every history is the history of something [vvy-1]
+%      145 / 5 / every material-entity has a history [okt-1]
+%      146 / 6 / a material entity participates in its history [lga-1]
+%      147 / 7 / material entity and its history exist at exactly the same times [uzz-1]
+%      148 / 8 / history-of has domain history and range material-entity [rph-1]
 
 %   7. material-entity.cl
-%      148 / 1 / member-part-of and has-member-part are inverse relations [jrm-1]
-%      149 / 2 / member-part-of is dissective on third argument, a temporal region [yip-1]
-%      150 / 3 / An object aggregate always has at least one member [uhs-1]
-%      151 / 4 / member-part-of is time indexed and has domain: object and range: object-aggregate [dvq-1]
-%      152 / 5 / A fiat object part =def a proper part of an object [yir-1]
-%      153 / 6 / i is an immaterial entity = Def. i is an independent continuant that has no material entities as parts. [udu-1]
-%      154 / 7 / Any continuant that doesn't s-depend or g-depend on something is an independant continuant [ilw-1]
-%      155 / 8 / An object aggregate has more than one member at at least one time [ibd-1]
-%      156 / 9 / all parts of an aggregate overlap some member [fsy-1]
-%      157 / 10 / If a material entity has a proper part, then at least one of its proper parts is not an immaterial entity [adm-1]
-%      158 / 11 / An object aggregate has member parts only disjoint objects [evk-1]
+%      149 / 1 / member-part-of and has-member-part are inverse relations [jrm-1]
+%      150 / 2 / member-part-of is dissective on third argument, a temporal region [yip-1]
+%      151 / 3 / An object aggregate always has at least one member [uhs-1]
+%      152 / 4 / member-part-of is time indexed and has domain: object and range: object-aggregate [dvq-1]
+%      153 / 5 / A fiat object part =def a proper part of an object [yir-1]
+%      154 / 6 / i is an immaterial entity = Def. i is an independent continuant that has no material entities as parts. [udu-1]
+%      155 / 7 / Any continuant that doesn't s-depend or g-depend on something is an independant continuant [ilw-1]
+%      156 / 8 / An object aggregate has more than one member at at least one time [ibd-1]
+%      157 / 9 / all parts of an aggregate overlap some member [fsy-1]
+%      159 / 11 / An object aggregate has member parts only disjoint objects [evk-1]
 
-%   8. myinput-BMI510.clc
-%      159 / 1 / A car has a part, then loses it and this is compositional change [s-020]
-%      160 / 2 / A spatial region has a part, then loses it and this is compositional change [s-021]
+%   8. occurrent-mereology.cl
+%      160 / 1 / occurrent-part-of and has-occurrent-part are inverse relations [yvi-1]
+%      161 / 2 / proper-occurrent-part-of and has-proper-occurrent-part are inverse relations [wim-1]
+%      162 / 3 / occurrent-part-of is reflexive [hbj-1]
+%      163 / 4 / occurrent-part-of is antisymmetric [xlu-1]
+%      164 / 5 / A proper occurrent part of b means a is an occurrent part of b and a is not the same as b [okr-1]
+%      165 / 6 / occurrent-part-of is transitive [kad-1]
+%      166 / 7 / If one occurrent is part of another, then the temporal region on which the former projects is a part of the temporal region on which the latter projects [ybr-1]
+%      167 / 8 / If a occurrent-part-of b then if a is an instance of temporal-region then b is an instance of temporal-region, and vice-versa [gjl-2]
+%      168 / 9 / occurrent-part-of has domain occurrent and range occurrent [zmr-1]
+%      169 / 10 / If a occurrent-part-of b then if a is an instance of process then b is an instance of process [csk-1]
+%      170 / 11 / proper-temporal-part-of has domain occurrent and range occurrent [ees-1]
+%      171 / 12 / proper-occurrent-part-of has domain occurrent and range occurrent [yhc-1]
+%      172 / 13 / every process has a process boundary [aff-1]
+%      173 / 14 / definition of temporal part for temporal regions [cmy-2]
+%      174 / 15 / If a has-occurrent-part b then if a is an instance of process-boundary then b is an instance of process-boundary [hdk-1]
+%      175 / 16 / If a occurrent-part-of b then if a is an instance of spatiotemporal-region then b is an instance of spatiotemporal-region, and vice-versa [myl-1]
+%      176 / 17 / If a has-occurrent-part b then if a is an instance of process then b is an instance of process or process-boundary  [ccz-1]
+%      177 / 18 / If a occurrent-part-of b then if a is an instance of process-boundary then b is an instance of process or process-boundary  [ptm-1]
+%      178 / 19 / a process boundary is any temporal part of a process that has no proper temporal parts. [esh-1]
+%      179 / 20 / occurrent-part-of has a unique product [hpc-1]
+%      180 / 21 / At least one process boundary needs to be at the first or last instant of the process it bounds [qsp-1]
+%      181 / 22 / b temporal part c (both spatiotemporal regions) iff b temporal projection is part of c's temporal projection, and for all parts of b's existence, if it spatially-projects-onto s at that time, then so does c [eom-2]
+%      182 / 23 / Two spatiotemporal regions are parts when they are temporal parts and their spatial projects are always parts [txf-1]
 
-%   9. occurrent-mereology.cl
-%      161 / 1 / occurrent-part-of and has-occurrent-part are inverse relations [yvi-1]
-%      162 / 2 / proper-occurrent-part-of and has-proper-occurrent-part are inverse relations [wim-1]
-%      163 / 3 / occurrent-part-of is reflexive [hbj-1]
-%      164 / 4 / occurrent-part-of is antisymmetric [xlu-1]
-%      165 / 5 / A proper occurrent part of b means a is an occurrent part of b and a is not the same as b [okr-1]
-%      166 / 6 / occurrent-part-of is transitive [kad-1]
-%      167 / 7 / If one occurrent is part of another, then the temporal region on which the former projects is a part of the temporal region on which the latter projects [ybr-1]
-%      168 / 8 / If a occurrent-part-of b then if a is an instance of temporal-region then b is an instance of temporal-region, and vice-versa [gjl-2]
-%      169 / 9 / occurrent-part-of has domain occurrent and range occurrent [zmr-1]
-%      170 / 10 / If a occurrent-part-of b then if a is an instance of process then b is an instance of process [csk-1]
-%      171 / 11 / proper-temporal-part-of has domain occurrent and range occurrent [ees-1]
-%      172 / 12 / proper-occurrent-part-of has domain occurrent and range occurrent [yhc-1]
-%      173 / 13 / every process has a process boundary [aff-1]
-%      174 / 14 / definition of temporal part for temporal regions [cmy-2]
-%      175 / 15 / If a has-occurrent-part b then if a is an instance of process-boundary then b is an instance of process-boundary [hdk-1]
-%      176 / 16 / If a occurrent-part-of b then if a is an instance of spatiotemporal-region then b is an instance of spatiotemporal-region, and vice-versa [myl-1]
-%      177 / 17 / If a has-occurrent-part b then if a is an instance of process then b is an instance of process or process-boundary  [ccz-1]
-%      178 / 18 / If a occurrent-part-of b then if a is an instance of process-boundary then b is an instance of process or process-boundary  [ptm-1]
-%      179 / 19 / a process boundary is any temporal part of a process that has no proper temporal parts. [esh-1]
-%      180 / 20 / occurrent-part-of has a unique product [hpc-1]
-%      181 / 21 / At least one process boundary needs to be at the first or last instant of the process it bounds [qsp-1]
-%      182 / 22 / b temporal part c (both spatiotemporal regions) iff b temporal projection is part of c's temporal projection, and for all parts of b's existence, if it spatially-projects-onto s at that time, then so does c [eom-2]
-%      183 / 23 / Two spatiotemporal regions are parts when they are temporal parts and their spatial projects are always parts [txf-1]
+%   9. order.cl
+%      183 / 1 / precedes and preceded-by are inverse relations [tib-1]
+%      184 / 2 / precedes is antisymmetric [hew-1]
+%      185 / 3 / precedes is transitive [ctz-1]
+%      186 / 4 / If the last instant of a temporal region precedes the first instant of another, then the first region precedes the second [qqv-1]
+%      187 / 5 / precedes has domain occurrent and range occurrent [sen-1]
+%      188 / 6 / If you are part of something that precedes something else, you also precede it [wix-1]
+%      189 / 7 / First instant of a temporal region that is not an instant precedes last instant [rzv-1]
+%      190 / 8 / If one temporal region precedes another then the first last time point precedes the second first time point [miz-1]
+%      191 / 9 / if one occurrent precedes another then they do not overlap temporally [aou-1]
+%      192 / 10 / temporal instants are totally ordered [qnf-1]
+%      193 / 11 / If the last instant of a temporal region is the first instant of another, the first region precedes the second [suk-1]
+%      194 / 12 / A last instant is either part of an extended region or is preceded by it [acg-1]
+%      195 / 13 / A first instant is either part of an extended region or precedes it [qga-1]
+%      196 / 14 / If two temporal intervals do not overlap then one of them precedes the other [owb-1]
+%      197 / 15 / If you temporally occupy part of something that precedes something else, you also precede it [wff-1]
+%      198 / 16 / If two processes that occupy temporal intervals do not overlap, one of them precedes the other [duz-1]
 
-%   10. order.cl
-%      184 / 1 / precedes and preceded-by are inverse relations [tib-1]
-%      185 / 2 / precedes is antisymmetric [hew-1]
-%      186 / 3 / precedes is transitive [ctz-1]
-%      187 / 4 / If the last instant of a temporal region precedes the first instant of another, then the first region precedes the second [qqv-1]
-%      188 / 5 / precedes has domain occurrent and range occurrent [sen-1]
-%      189 / 6 / If you are part of something that precedes something else, you also precede it [wix-1]
-%      190 / 7 / First instant of a temporal region that is not an instant precedes last instant [rzv-1]
-%      191 / 8 / If one temporal region precedes another then the first last time point precedes the second first time point [miz-1]
-%      192 / 9 / if one occurrent precedes another then they do not overlap temporally [aou-1]
-%      193 / 10 / temporal instants are totally ordered [qnf-1]
-%      194 / 11 / If the last instant of a temporal region is the first instant of another, the first region precedes the second [suk-1]
-%      195 / 12 / A last instant is either part of an extended region or is preceded by it [acg-1]
-%      196 / 13 / A first instant is either part of an extended region or precedes it [qga-1]
-%      197 / 14 / If two temporal intervals do not overlap then one of them precedes the other [owb-1]
-%      198 / 15 / If you temporally occupy part of something that precedes something else, you also precede it [wff-1]
-%      199 / 16 / If two processes that occupy temporal intervals do not overlap, one of them precedes the other [duz-1]
+%   10. participation.cl
+%      199 / 1 / participates-in and has-participant are inverse relations [xjr-1]
+%      200 / 2 / At every time a process exists it has a participant [trl-1]
+%      201 / 3 / participates-in is dissective on third argument, a temporal region [yjm-1]
+%      202 / 4 / If c participates in p at t and p occupies-temporal-region r then t is part of r [kxe-1]
+%      203 / 5 / participates-in is time indexed and has domain: independent-continuant but not spatial-region or specifically-dependent-continuant or generically-dependent-continuant  and range: process [ild-1]
+%      204 / 6 / At every time a specific dependent s participates in a process p there's a part of that time, during which there's an independent-continuant that s s-depends on, and that participates in p at that time [cgn-1]
 
-%   11. participation.cl
-%      200 / 1 / participates-in and has-participant are inverse relations [xjr-1]
-%      201 / 2 / At every time a process exists it has a participant [trl-1]
-%      202 / 3 / participates-in is dissective on third argument, a temporal region [yjm-1]
-%      203 / 4 / If c participates in p at t and p occupies-temporal-region r then t is part of r [kxe-1]
-%      204 / 5 / participates-in is time indexed and has domain: independent-continuant but not spatial-region or specifically-dependent-continuant or generically-dependent-continuant  and range: process [ild-1]
-%      205 / 6 / At every time a specific dependent s participates in a process p there's a part of that time, during which there's an independent-continuant that s s-depends on, and that participates in p at that time [cgn-1]
-%      206 / 7 / If a generically dependent continuant participates in a process p then, if it is concretized as a process, that process is part of p, fand if concretized as an sdc then the bearer of that sdc participates in the process [fmm-1]
+%   11. spatial.cl
+%      206 / 1 / occurs-in and environs are inverse relations [uys-1]
+%      207 / 2 / located-in and location-of are inverse relations [kaw-1]
+%      208 / 3 / occurs-in is dissective on first argumentwhen it is an occurrent [jil-1]
+%      209 / 4 / If a process (or process-boundary) occurs in a continuant, that continuant exists at least as long as the process does [dxv-1]
+%      210 / 5 / located-in is dissective on third argument, a temporal region [put-1]
+%      211 / 6 / located-in is a lower bound on second argument [evu-1]
+%      212 / 7 / located-in is dissective on first argumentwhen it is a continuant [wty-1]
+%      213 / 8 / occupies-spatial-region is functional on second argument [zls-1]
+%      214 / 9 / occupies-spatial-region is dissective on third argument, a temporal region [mud-1]
+%      215 / 10 / spatially-projects-onto is dissective on third argument, a temporal region [ivt-1]
+%      216 / 11 / located-in is transitive at a time [ets-1]
+%      217 / 12 / If a location-of b then if a is an instance of continuant-fiat-boundary then b is an instance of continuant-fiat-boundary [wte-1]
+%      218 / 13 / All spatial regions are part of a 3-dimensional spatial region [xcx-1]
+%      219 / 14 / occurs-in is lower bound location [czc-1]
+%      220 / 15 / If something is located in something else then the region of the first is part of the region of the second [uas-1]
+%      221 / 16 / occurs-in has domain process or process-boundary  and range material-entity or site  [tfw-1]
+%      222 / 17 / spatial regions don't change what they are part of. [mlb-1]
+%      223 / 18 / occupies-spatial-region is time indexed and has domain: independent-continuant but not spatial-region and range: spatial-region [lzw-1]
+%      224 / 19 / If there are two independent continuants that are not spatial regions, and one is part of the other, then it is located in the other [bao-1]
+%      225 / 20 / spatial-region is the union of zero-dimensional-spatial-region, one-dimensional-spatial-region, two-dimensional-spatial-region, and three-dimensional-spatial-region  [wnm-1]
+%      226 / 21 / No two material entities occupy the same space unless they coincide [scr-1]
+%      227 / 22 / located-in is time indexed and has domain: independent-continuant but not spatial-region and range: independent-continuant but not spatial-region [bge-1]
+%      228 / 23 / at all times t, there's a part of t when c occupies-spatial-region r iff every part of c occupies a part of r, and there isn't a smaller part of r that c occupies. [grv-1]
 
-%   12. spatial.cl
-%      207 / 1 / occurs-in and environs are inverse relations [uys-1]
-%      208 / 2 / located-in and location-of are inverse relations [kaw-1]
-%      209 / 3 / occurs-in is dissective on first argumentwhen it is an occurrent [jil-1]
-%      210 / 4 / If a process (or process-boundary) occurs in a continuant, that continuant exists at least as long as the process does [dxv-1]
-%      211 / 5 / located-in is dissective on third argument, a temporal region [put-1]
-%      212 / 6 / located-in is a lower bound on second argument [evu-1]
-%      213 / 7 / located-in is dissective on first argumentwhen it is a continuant [wty-1]
-%      214 / 8 / occupies-spatial-region is functional on second argument [zls-1]
-%      215 / 9 / occupies-spatial-region is dissective on third argument, a temporal region [mud-1]
-%      216 / 10 / spatially-projects-onto is dissective on third argument, a temporal region [ivt-1]
-%      217 / 11 / located-in is transitive at a time [ets-1]
-%      218 / 12 / If a location-of b then if a is an instance of continuant-fiat-boundary then b is an instance of continuant-fiat-boundary [wte-1]
-%      219 / 13 / All spatial regions are part of a 3-dimensional spatial region [xcx-1]
-%      220 / 14 / occurs-in is lower bound location [czc-1]
-%      221 / 15 / If something is located in something else then the region of the first is part of the region of the second [uas-1]
-%      222 / 16 / occurs-in has domain process or process-boundary  and range material-entity or site  [tfw-1]
-%      223 / 17 / spatial regions don't change what they are part of. [mlb-1]
-%      224 / 18 / occupies-spatial-region is time indexed and has domain: independent-continuant but not spatial-region and range: spatial-region [lzw-1]
-%      225 / 19 / If there are two independent continuants that are not spatial regions, and one is part of the other, then it is located in the other [bao-1]
-%      226 / 20 / spatial-region is the union of zero-dimensional-spatial-region, one-dimensional-spatial-region, two-dimensional-spatial-region, and three-dimensional-spatial-region  [wnm-1]
-%      227 / 21 / No two material entities occupy the same space unless they coincide [scr-1]
-%      228 / 22 / located-in is time indexed and has domain: independent-continuant but not spatial-region and range: independent-continuant but not spatial-region [bge-1]
-%      229 / 23 / at all times t, there's a part of t when c occupies-spatial-region r iff every part of c occupies a part of r, and there isn't a smaller part of r that c occupies. [grv-1]
+%   12. spatiotemporal.cl
+%      229 / 1 / If something occupies a temporal region, then it exists at that region [bmc-1]
+%      230 / 2 / exists-at is a lower bound on first argument [jqz-1]
+%      231 / 3 / occupies-temporal-region is functional on second argument [wzd-1]
+%      232 / 4 / temporally-projects-onto is functional on second argument [jtq-1]
+%      233 / 5 / spatially-projects-onto is functional on second argument [fdb-1]
+%      234 / 6 / occupies-spatiotemporal-region is functional on second argument [uqt-1]
+%      235 / 7 / occurs-in is a lower bound on second argument [yex-1]
+%      236 / 8 / If a occupies-spatial-region b then if a is an instance of site then b is an instance of three-dimensional-spatial-region [uqb-1]
+%      237 / 9 / The temporal region during which a process occurs is the same as that which the spatiotemporal region the process occupies temporally projects onto [cur-1]
+%      238 / 10 / temporally-projects-onto has domain spatiotemporal-region and range temporal-region [cvr-2]
+%      239 / 11 / If a occupies-spatial-region b then if a is an instance of material-entity then b is an instance of three-dimensional-spatial-region [ocw-1]
+%      240 / 12 / A process boundary occupies a spatiotemporal instant [atz-1]
+%      241 / 13 / for every process there's a corresponding spatiotemporal-region [qyy-1]
+%      242 / 14 / Spatiotemporal regions always project on to some temporal region [scq-1]
+%      243 / 15 / Every temporal region is a projection from a spatiotemporal region [xco-2]
+%      244 / 16 / spatially-projects-onto is time indexed and has domain: spatiotemporal-region and range: spatial-region [blj-1]
+%      245 / 17 / occupies-temporal-region has domain process or process-boundary  and range temporal-region [lyx-2]
+%      246 / 18 / Spatiotemporal regions always project on to some spatial region at any time [geq-1]
+%      247 / 19 / Every spatial region is a projection from a spatiotemporal region [mdb-1]
+%      248 / 20 / occupies-spatiotemporal-region has domain process or process-boundary  and range spatiotemporal-region [vvo-1]
+%      249 / 21 / A process occupies at least a temporal interval [fzy-1]
+%      250 / 22 / If one occurrent is part of another, then the temporal region of the first is part of the temporal region of the second [jiv-1]
+%      251 / 23 / If one process or process boundary is part of another, then their corresponding temporal regions are also in a parthood relation [iqe-1]
+%      252 / 24 / If a process or process boundary is part of another, their spatiotemporal regions are part too [kqv-1]
+%      253 / 25 / process or process-boundary p occupies-temporal-region t iff every part of p temporally occupies a part of t, and there isn't a smaller part of t that p occupies. [tao-1]
+%      254 / 26 / process p (or boundary) occupies-spatiotemporal-region st iff every part of p  occupies-spatiotemporal-region a part of st, and there isn't a smaller part of st that p occupies. [dki-1]
 
-%   13. spatiotemporal.cl
-%      230 / 1 / If something occupies a temporal region, then it exists at that region [bmc-1]
-%      231 / 2 / exists-at is a lower bound on first argument [jqz-1]
-%      232 / 3 / occupies-temporal-region is functional on second argument [wzd-1]
-%      233 / 4 / temporally-projects-onto is functional on second argument [jtq-1]
-%      234 / 5 / spatially-projects-onto is functional on second argument [fdb-1]
-%      235 / 6 / occupies-spatiotemporal-region is functional on second argument [uqt-1]
-%      236 / 7 / occurs-in is a lower bound on second argument [yex-1]
-%      237 / 8 / If a occupies-spatial-region b then if a is an instance of site then b is an instance of three-dimensional-spatial-region [uqb-1]
-%      238 / 9 / The temporal region during which a process occurs is the same as that which the spatiotemporal region the process occupies temporally projects onto [cur-1]
-%      239 / 10 / temporally-projects-onto has domain spatiotemporal-region and range temporal-region [cvr-2]
-%      240 / 11 / If a occupies-spatial-region b then if a is an instance of material-entity then b is an instance of three-dimensional-spatial-region [ocw-1]
-%      241 / 12 / A process boundary occupies a spatiotemporal instant [atz-1]
-%      242 / 13 / for every process there's a corresponding spatiotemporal-region [qyy-1]
-%      243 / 14 / Spatiotemporal regions always project on to some temporal region [scq-1]
-%      244 / 15 / Every temporal region is a projection from a spatiotemporal region [xco-2]
-%      245 / 16 / spatially-projects-onto is time indexed and has domain: spatiotemporal-region and range: spatial-region [blj-1]
-%      246 / 17 / occupies-temporal-region has domain process or process-boundary  and range temporal-region [lyx-2]
-%      247 / 18 / Spatiotemporal regions always project on to some spatial region at any time [geq-1]
-%      248 / 19 / Every spatial region is a projection from a spatiotemporal region [mdb-1]
-%      249 / 20 / occupies-spatiotemporal-region has domain process or process-boundary  and range spatiotemporal-region [vvo-1]
-%      250 / 21 / A process occupies at least a temporal interval [fzy-1]
-%      251 / 22 / If one occurrent is part of another, then the temporal region of the first is part of the temporal region of the second [jiv-1]
-%      252 / 23 / If one process or process boundary is part of another, then their corresponding temporal regions are also in a parthood relation [iqe-1]
-%      253 / 24 / If a process or process boundary is part of another, their spatiotemporal regions are part too [kqv-1]
-%      254 / 25 / process or process-boundary p occupies-temporal-region t iff every part of p temporally occupies a part of t, and there isn't a smaller part of t that p occupies. [tao-1]
-%      255 / 26 / process p (or boundary) occupies-spatiotemporal-region st iff every part of p  occupies-spatiotemporal-region a part of st, and there isn't a smaller part of st that p occupies. [dki-1]
+%   13. specific-dependency.cl
+%      255 / 1 / inheres-in and bearer-of are inverse relations [dzz-1]
+%      256 / 2 / realizes and has-realization are inverse relations [pvk-1]
+%      257 / 3 / has-material-basis and material-basis-of are inverse relations [tla-1]
+%      258 / 4 / specifically-depends-on and specifically-depended-on-by are inverse relations [yct-1]
+%      259 / 5 / When a role is realized the bearer of the role participates in the realization process [grx-1]
+%      260 / 6 / has-material-basis is dissective on third argument, a temporal region [hnl-1]
+%      261 / 7 / realizes has domain process and range realizable-entity [oot-1]
+%      262 / 8 / specifically-depends-on is transitive [myu-1]
+%      263 / 9 / if s s-depends_on c then s and c never share common parts (s,c continuants) [nfe-1]
+%      264 / 10 / A realizable entity exists at least at the beginning of the realization process [vhg-1]
+%      265 / 11 / has-material-basis is time indexed and has domain: disposition and range: material-entity [cfs-1]
+%      266 / 12 / If s s-depends-on c then there's at least one time when they both exist and whenever s exists, c must also exist [iyu-1]
+%      267 / 13 / No role changes type during its existence [bks-1]
+%      268 / 14 / DEFINITION: b is a relational quality = Def. b is a quality and there exists distinct c and d such that at all times t, b inheres in c if and only b specifically-depends-on. [dbp-1]
+%      269 / 15 / a inheres_in b =Def. a is a specifically dependent continuant and b is an independent continuant that is not a spatial region and a s-depends_on b. [tht-1]
+%      270 / 16 / Definition of specifically dependent continuant. [akq-1]
+%      271 / 17 / The material basis of a disposition is part of the bearer of the disposition [uxo-1]
+%      272 / 18 / specifically-depends-on has domain specifically-dependent-continuant and range specifically-dependent-continuant or independent-continuant but not spatial-region  [kkl-1]
 
-%   14. specific-dependency.cl
-%      256 / 1 / inheres-in and bearer-of are inverse relations [dzz-1]
-%      257 / 2 / realizes and has-realization are inverse relations [pvk-1]
-%      258 / 3 / has-material-basis and material-basis-of are inverse relations [tla-1]
-%      259 / 4 / specifically-depends-on and specifically-depended-on-by are inverse relations [yct-1]
-%      260 / 5 / When a role is realized the bearer of the role participates in the realization process [grx-1]
-%      261 / 6 / has-material-basis is dissective on third argument, a temporal region [hnl-1]
-%      262 / 7 / realizes has domain process and range realizable-entity [oot-1]
-%      263 / 8 / specifically-depends-on is transitive [myu-1]
-%      264 / 9 / if s s-depends_on c then s and c never share common parts (s,c continuants) [nfe-1]
-%      265 / 10 / A realizable entity exists at least at the beginning of the realization process [vhg-1]
-%      266 / 11 / has-material-basis is time indexed and has domain: disposition and range: material-entity [cfs-1]
-%      267 / 12 / If s s-depends-on c then there's at least one time when they both exist and whenever s exists, c must also exist [iyu-1]
-%      268 / 13 / No role changes type during its existence [bks-1]
-%      269 / 14 / DEFINITION: b is a relational quality = Def. b is a quality and there exists distinct c and d such that at all times t, b inheres in c if and only b specifically-depends-on. [dbp-1]
-%      270 / 15 / a inheres_in b =Def. a is a specifically dependent continuant and b is an independent continuant that is not a spatial region and a s-depends_on b. [tht-1]
-%      271 / 16 / Definition of specifically dependent continuant. [akq-1]
-%      272 / 17 / The material basis of a disposition is part of the bearer of the disposition [uxo-1]
-%      273 / 18 / specifically-depends-on has domain specifically-dependent-continuant and range specifically-dependent-continuant or independent-continuant but not spatial-region  [kkl-1]
-%      274 / 19 / At every time a specific dependent s participates in a process p there's a part of that time, during which there's an independent-continuant that s s-depends on, and that participates in p at that time [cgn-1]
+%   14. temporal-region.cl
+%      274 / 1 / has-last-instant and last-instant-of are inverse relations [wal-1]
+%      275 / 2 / has-first-instant and first-instant-of are inverse relations [bon-1]
+%      276 / 3 / temporal-part-of and has-temporal-part are inverse relations [boo-1]
+%      277 / 4 / temporal-part-of for occurrents implies occurrent-part-of [bal-1]
+%      278 / 5 / temporal-part-of is reflexive [dbj-2]
+%      279 / 6 / proper-temporal-part-of and has-proper-temporal-part are inverse relations [dbc-1]
+%      280 / 7 / If something is an instance of temporal region at t, then t is part of that temporal region [njq-1]
+%      281 / 8 / temporal-part-of is reflexive [bvr-1]
+%      282 / 9 / temporal-part-of is antisymmetric [zdq-1]
+%      283 / 10 / proper-temporal-part-of is asymmetric [aqu-1]
+%      284 / 11 / has-last-instant is functional on second argument [ogd-1]
+%      285 / 12 / has-first-instant is functional on second argument [fwf-1]
+%      286 / 13 / a proper temporal part of b means a is a temporal part of b and b a is not the same as b [aeu-1]
+%      287 / 14 / The only part of a temporal instant is itself [pir-2]
+%      289 / 16 / temporal-part-of is transitive [bfq-1]
+%      290 / 17 / The first and last time points for an instant are the instant itself [nfo-1]
+%      291 / 18 / temporal regions are instances at themselves [tvx-2]
+%      292 / 19 / If a temporal-part-of b then if a is an instance of temporal-region then b is an instance of temporal-region, and vice-versa [mjn-2]
+%      293 / 20 / has-last-instant has domain temporal-region and range temporal-instant [jtk-2]
+%      294 / 21 / proper-temporal-part-of is transitive [mns-1]
+%      295 / 22 / has-first-instant has domain temporal-region and range temporal-instant [fwk-2]
+%      297 / 24 / any temporal region has a first and last instant [daf-1]
+%      298 / 25 / All temporal regions are part of a temporal interval [mvd-1]
+%      299 / 26 / temporal-part-of has domain occurrent and range occurrent [ruj-1]
+%      302 / 29 / If a temporal-part-of b then if a is an instance of one-dimensional-temporal-region then b is an instance of one-dimensional-temporal-region [mei-2]
+%      303 / 30 / A one-dimensional temporal region has at least one interval as part [jhe-1]
+%      304 / 31 / If a has-temporal-part b then if a is an instance of zero-dimensional-temporal-region then b is an instance of zero-dimensional-temporal-region [bnt-2]
+%      306 / 33 / temporal-region is the union of zero-dimensional-temporal-region and one-dimensional-temporal-region  [hgs-1]
+%      308 / 35 / If a has-temporal-part b then if a is an instance of one-dimensional-temporal-region then b is an instance of one-dimensional-temporal-region or zero-dimensional-temporal-region  [eeg-2]
+%      312 / 39 / The first temporal instant is such that it precedes every part of the interval that doesn't have the first instant as part [ixz-1]
+%      313 / 40 / The last temporal instant is such that every part of the interval that doesn't have the last instant as part precedes it [nhd-1]
+%      314 / 41 / intervals have no internal gaps [ekm-1]
+%      315 / 42 / temporal-part-of has weak-supplementation [vbw-1]
+%      316 / 43 / any temporal instant that precedes the last instant of an interval and which is preceded by the first instant is part of the interval [zlp-1]
+%      317 / 44 / two intervals are identical if their first and last instants are the same and if an instant is part of one of the intervals it is also part of the other [xkl-1]
+%      318 / 45 / temporal-part-of has unique-product [wsg-2]
+%      319 / 46 / An interval has no gaps [nui-1]
+%      320 / 47 / intervals have no gaps - strong version - every two instants without another in between bound an interval [cop-1]
 
-%   15. temporal-region.cl
-%      275 / 1 / has-last-instant and last-instant-of are inverse relations [wal-1]
-%      276 / 2 / has-first-instant and first-instant-of are inverse relations [bon-1]
-%      277 / 3 / temporal-part-of and has-temporal-part are inverse relations [boo-1]
-%      278 / 4 / temporal-part-of for occurrents implies occurrent-part-of [bal-1]
-%      279 / 5 / temporal-part-of is reflexive [dbj-2]
-%      280 / 6 / proper-temporal-part-of and has-proper-temporal-part are inverse relations [dbc-1]
-%      281 / 7 / If something is an instance of temporal region at t, then t is part of that temporal region [njq-1]
-%      282 / 8 / temporal-part-of is reflexive [bvr-1]
-%      283 / 9 / temporal-part-of is antisymmetric [zdq-1]
-%      284 / 10 / proper-temporal-part-of is asymmetric [aqu-1]
-%      285 / 11 / has-last-instant is functional on second argument [ogd-1]
-%      286 / 12 / has-first-instant is functional on second argument [fwf-1]
-%      287 / 13 / a proper temporal part of b means a is a temporal part of b and b a is not the same as b [aeu-1]
-%      288 / 14 / The only part of a temporal instant is itself [pir-2]
-%      289 / 15 / instance-of is dissective on third argument, a temporal region [qaf-1]
-%      290 / 16 / temporal-part-of is transitive [bfq-1]
-%      291 / 17 / The first and last time points for an instant are the instant itself [nfo-1]
-%      292 / 18 / temporal regions are instances at themselves [tvx-2]
-%      293 / 19 / If a temporal-part-of b then if a is an instance of temporal-region then b is an instance of temporal-region, and vice-versa [mjn-2]
-%      294 / 20 / has-last-instant has domain temporal-region and range temporal-instant [jtk-2]
-%      295 / 21 / proper-temporal-part-of is transitive [mns-1]
-%      296 / 22 / has-first-instant has domain temporal-region and range temporal-instant [fwk-2]
-%      297 / 23 / If the last instant of a temporal region precedes the first instant of another, then the first region precedes the second [qqv-1]
-%      298 / 24 / any temporal region has a first and last instant [daf-1]
-%      299 / 25 / All temporal regions are part of a temporal interval [mvd-1]
-%      300 / 26 / temporal-part-of has domain occurrent and range occurrent [ruj-1]
-%      301 / 27 / First instant of a temporal region that is not an instant precedes last instant [rzv-1]
-%      302 / 28 / If one temporal region precedes another then the first last time point precedes the second first time point [miz-1]
-%      303 / 29 / If a temporal-part-of b then if a is an instance of one-dimensional-temporal-region then b is an instance of one-dimensional-temporal-region [mei-2]
-%      304 / 30 / A one-dimensional temporal region has at least one interval as part [jhe-1]
-%      305 / 31 / If a has-temporal-part b then if a is an instance of zero-dimensional-temporal-region then b is an instance of zero-dimensional-temporal-region [bnt-2]
-%      306 / 32 / temporal instants are totally ordered [qnf-1]
-%      307 / 33 / temporal-region is the union of zero-dimensional-temporal-region and one-dimensional-temporal-region  [hgs-1]
-%      308 / 34 / If the last instant of a temporal region is the first instant of another, the first region precedes the second [suk-1]
-%      309 / 35 / If a has-temporal-part b then if a is an instance of one-dimensional-temporal-region then b is an instance of one-dimensional-temporal-region or zero-dimensional-temporal-region  [eeg-2]
-%      310 / 36 / A last instant is either part of an extended region or is preceded by it [acg-1]
-%      311 / 37 / A first instant is either part of an extended region or precedes it [qga-1]
-%      312 / 38 / If two temporal intervals do not overlap then one of them precedes the other [owb-1]
-%      313 / 39 / The first temporal instant is such that it precedes every part of the interval that doesn't have the first instant as part [ixz-1]
-%      314 / 40 / The last temporal instant is such that every part of the interval that doesn't have the last instant as part precedes it [nhd-1]
-%      315 / 41 / intervals have no internal gaps [ekm-1]
-%      316 / 42 / temporal-part-of has weak-supplementation [vbw-1]
-%      317 / 43 / any temporal instant that precedes the last instant of an interval and which is preceded by the first instant is part of the interval [zlp-1]
-%      318 / 44 / two intervals are identical if their first and last instants are the same and if an instant is part of one of the intervals it is also part of the other [xkl-1]
-%      319 / 45 / temporal-part-of has unique-product [wsg-2]
-%      320 / 46 / An interval has no gaps [nui-1]
-%      321 / 47 / intervals have no gaps - strong version - every two instants without another in between bound an interval [cop-1]
+%   15. universal-declaration.cl
+%      321 / 1 / role is a universal [ewm-1]
+%      322 / 2 / site is a universal [yhb-1]
+%      323 / 3 / object is a universal [kxo-1]
+%      324 / 4 / history is a universal [gki-1]
+%      325 / 5 / process is a universal [bsm-1]
+%      326 / 6 / quality is a universal [mit-1]
+%      327 / 7 / function is a universal [rym-1]
+%      328 / 8 / fiat-line is a universal [spk-1]
+%      329 / 9 / occurrent is a universal [lkt-1]
+%      330 / 10 / continuant is a universal [axs-1]
+%      331 / 11 / fiat-point is a universal [rns-1]
+%      332 / 12 / disposition is a universal [mld-1]
+%      333 / 13 / fiat-surface is a universal [ebw-1]
+%      334 / 14 / spatial-region is a universal [rej-1]
+%      335 / 15 / material-entity is a universal [hru-1]
+%      336 / 16 / temporal-region is a universal [toj-1]
+%      337 / 17 / fiat-object-part is a universal [csp-1]
+%      338 / 18 / object-aggregate is a universal [cqv-1]
+%      339 / 19 / process-boundary is a universal [zqv-1]
+%      340 / 20 / temporal-instant is a universal [bjs-1]
+%      341 / 21 / immaterial-entity is a universal [zcc-1]
+%      342 / 22 / realizable-entity is a universal [gpp-1]
+%      343 / 23 / temporal-interval is a universal [kuz-1]
+%      344 / 24 / relational-quality is a universal [zrp-1]
+%      345 / 25 / spatiotemporal-region is a universal [mdh-1]
+%      346 / 26 / independent-continuant is a universal [ufw-1]
+%      347 / 27 / continuant-fiat-boundary is a universal [zvi-1]
+%      348 / 28 / one-dimensional-spatial-region is a universal [zwl-1]
+%      349 / 29 / two-dimensional-spatial-region is a universal [whi-1]
+%      350 / 30 / one-dimensional-temporal-region is a universal [qar-1]
+%      351 / 31 / zero-dimensional-spatial-region is a universal [vij-1]
+%      352 / 32 / generically-dependent-continuant is a universal [qiz-1]
+%      353 / 33 / three-dimensional-spatial-region is a universal [qov-1]
+%      354 / 34 / zero-dimensional-temporal-region is a universal [bau-1]
+%      355 / 35 / specifically-dependent-continuant is a universal [wda-1]
+%      356 / 36 / universals are not particulars [qkp-1]
+%      357 / 37 / history is subclass of process [zuj-1]
+%      358 / 38 / process is subclass of occurrent [lso-1]
+%      359 / 39 / function is subclass of disposition [lnj-1]
+%      360 / 40 / object is subclass of material-entity [vbm-1]
+%      361 / 41 / role is subclass of realizable-entity [tcp-1]
+%      362 / 42 / site is subclass of immaterial-entity [tcd-1]
+%      364 / 44 / temporal-region is subclass of occurrent [ejl-1]
+%      365 / 45 / disposition, role are mutually disjoint [bwk-1]
+%      366 / 46 / process-boundary is subclass of occurrent [xot-1]
+%      367 / 47 / relational-quality is subclass of quality [taj-1]
+%      368 / 48 / disposition is subclass of realizable-entity [fxd-1]
+%      369 / 49 / continuant, occurrent are mutually disjoint [wrf-1]
+%      370 / 50 / spatiotemporal-region is subclass of occurrent [les-1]
+%      371 / 51 / fiat-object-part is subclass of material-entity [lal-1]
+%      372 / 52 / object-aggregate is subclass of material-entity [fda-1]
+%      373 / 53 / spatial-region is subclass of immaterial-entity [bre-1]
+%      374 / 54 / independent-continuant is subclass of continuant [wyq-1]
+%      375 / 55 / fiat-line is subclass of continuant-fiat-boundary [dhy-1]
+%      376 / 56 / quality, realizable-entity are mutually disjoint [ksk-1]
+%      377 / 57 / fiat-point is subclass of continuant-fiat-boundary [xlm-1]
+%      378 / 58 / fiat-surface is subclass of continuant-fiat-boundary [kfj-1]
+%      379 / 59 / material-entity is subclass of independent-continuant [faf-1]
+%      380 / 60 / immaterial-entity is subclass of independent-continuant [bzp-1]
+%      381 / 61 / quality is subclass of specifically-dependent-continuant [nbm-1]
+%      382 / 62 / continuant-fiat-boundary is subclass of immaterial-entity [tgs-1]
+%      383 / 63 / material-entity, immaterial-entity are mutually disjoint [sij-1]
+%      384 / 64 / generically-dependent-continuant is subclass of continuant [zyw-1]
+%      385 / 65 / specifically-dependent-continuant is subclass of continuant [dhv-1]
+%      386 / 66 / one-dimensional-spatial-region is subclass of spatial-region [fzn-1]
+%      387 / 67 / two-dimensional-spatial-region is subclass of spatial-region [abo-1]
+%      388 / 68 / zero-dimensional-spatial-region is subclass of spatial-region [abh-1]
+%      389 / 69 / one-dimensional-temporal-region is subclass of temporal-region [fpd-1]
+%      390 / 70 / three-dimensional-spatial-region is subclass of spatial-region [apt-1]
+%      391 / 71 / zero-dimensional-temporal-region is subclass of temporal-region [pvu-1]
+%      392 / 72 / temporal-instant is subclass of zero-dimensional-temporal-region [bjp-1]
+%      393 / 73 / temporal-interval is subclass of one-dimensional-temporal-region [fye-1]
+%      394 / 74 / Entity is either universal or particular, so not all are instantiated. Instead make a predicate 'entity' analogous to particular universal [vgn-1]
+%      395 / 75 / realizable-entity is subclass of specifically-dependent-continuant [qix-1]
+%      396 / 76 / If something is a role at any time then as long as it exists it is a role. [hxo-1]
+%      397 / 77 / If something is a site at any time then as long as it exists it is a site. [txn-1]
+%      398 / 78 / If something is a quality at any time then as long as it exists it is a quality. [jdo-1]
+%      399 / 79 / If something is a function at any time then as long as it exists it is a function. [hww-1]
+%      400 / 80 / one-dimensional-temporal-region, zero-dimensional-temporal-region are mutually disjoint [zkj-1]
+%      401 / 81 / If something is a fiat-line at any time then as long as it exists it is a fiat-line. [ylr-1]
+%      402 / 82 / If something is a continuant at any time then as long as it exists it is a continuant. [ghs-1]
+%      403 / 83 / If something is a fiat-point at any time then as long as it exists it is a fiat-point. [cqf-1]
+%      404 / 84 / If something is a disposition at any time then as long as it exists it is a disposition. [ijx-1]
+%      405 / 85 / If something is a fiat-surface at any time then as long as it exists it is a fiat-surface. [dyv-1]
+%      406 / 86 / If something is a spatial-region at any time then as long as it exists it is a spatial-region. [thk-1]
+%      407 / 87 / If something is a material-entity at any time then as long as it exists it is a material-entity. [opd-1]
+%      408 / 88 / If something is a immaterial-entity at any time then as long as it exists it is a immaterial-entity. [nlc-1]
+%      409 / 89 / If something is a realizable-entity at any time then as long as it exists it is a realizable-entity. [gsg-1]
+%      410 / 90 / If something is a relational-quality at any time then as long as it exists it is a relational-quality. [jyh-1]
+%      411 / 91 / If something is a independent-continuant at any time then as long as it exists it is a independent-continuant. [otk-1]
+%      412 / 92 / If something is a continuant-fiat-boundary at any time then as long as it exists it is a continuant-fiat-boundary. [yuh-1]
+%      413 / 93 / If something is a one-dimensional-spatial-region at any time then as long as it exists it is a one-dimensional-spatial-region. [bld-1]
+%      414 / 94 / If something is a two-dimensional-spatial-region at any time then as long as it exists it is a two-dimensional-spatial-region. [uld-1]
+%      415 / 95 / If something is a zero-dimensional-spatial-region at any time then as long as it exists it is a zero-dimensional-spatial-region. [vsa-1]
+%      416 / 96 / If something is a generically-dependent-continuant at any time then as long as it exists it is a generically-dependent-continuant. [iup-1]
+%      417 / 97 / If something is a three-dimensional-spatial-region at any time then as long as it exists it is a three-dimensional-spatial-region. [qpr-1]
+%      418 / 98 / If something is a specifically-dependent-continuant at any time then as long as it exists it is a specifically-dependent-continuant. [hke-1]
+%      419 / 99 / No occurrent changes type during its existence [ayr-1]
+%      420 / 100 / fiat-surface, fiat-line, fiat-point are mutually disjoint [sjf-1]
+%      421 / 101 / site, spatial-region, continuant-fiat-boundary are mutually disjoint [twc-1]
+%      422 / 102 / specifically-dependent-continuant, independent-continuant, generically-dependent-continuant are mutually disjoint [cig-1]
+%      423 / 103 / process, spatiotemporal-region, process-boundary, temporal-region are mutually disjoint [mem-1]
+%      424 / 104 / continuant, material-entity, object, fiat-object-part, object-aggregate, site, immaterial-entity, continuant-fiat-boundary, fiat-surface, fiat-line, fiat-point, spatial-region, three-dimensional-spatial-region, two-dimensional-spatial-region, one-dimensional-spatial-region, zero-dimensional-spatial-region, independent-continuant, generically-dependent-continuant, specifically-dependent-continuant, quality, relational-quality, function, disposition, realizable-entity, role, occurrent, process, process-boundary, temporal-region, zero-dimensional-temporal-region, temporal-instant, one-dimensional-temporal-region, temporal-interval, history, spatiotemporal-region are all different [xtf-1]
+%      425 / 105 / zero-dimensional-spatial-region, one-dimensional-spatial-region, two-dimensional-spatial-region, three-dimensional-spatial-region are mutually disjoint [luc-1]
 
-%   16. universal-declaration.cl
-%      322 / 1 / role is a universal [ewm-1]
-%      323 / 2 / site is a universal [yhb-1]
-%      324 / 3 / object is a universal [kxo-1]
-%      325 / 4 / history is a universal [gki-1]
-%      326 / 5 / process is a universal [bsm-1]
-%      327 / 6 / quality is a universal [mit-1]
-%      328 / 7 / function is a universal [rym-1]
-%      329 / 8 / fiat-line is a universal [spk-1]
-%      330 / 9 / occurrent is a universal [lkt-1]
-%      331 / 10 / continuant is a universal [axs-1]
-%      332 / 11 / fiat-point is a universal [rns-1]
-%      333 / 12 / disposition is a universal [mld-1]
-%      334 / 13 / fiat-surface is a universal [ebw-1]
-%      335 / 14 / spatial-region is a universal [rej-1]
-%      336 / 15 / material-entity is a universal [hru-1]
-%      337 / 16 / temporal-region is a universal [toj-1]
-%      338 / 17 / fiat-object-part is a universal [csp-1]
-%      339 / 18 / object-aggregate is a universal [cqv-1]
-%      340 / 19 / process-boundary is a universal [zqv-1]
-%      341 / 20 / temporal-instant is a universal [bjs-1]
-%      342 / 21 / immaterial-entity is a universal [zcc-1]
-%      343 / 22 / realizable-entity is a universal [gpp-1]
-%      344 / 23 / temporal-interval is a universal [kuz-1]
-%      345 / 24 / relational-quality is a universal [zrp-1]
-%      346 / 25 / spatiotemporal-region is a universal [mdh-1]
-%      347 / 26 / independent-continuant is a universal [ufw-1]
-%      348 / 27 / continuant-fiat-boundary is a universal [zvi-1]
-%      349 / 28 / one-dimensional-spatial-region is a universal [zwl-1]
-%      350 / 29 / two-dimensional-spatial-region is a universal [whi-1]
-%      351 / 30 / one-dimensional-temporal-region is a universal [qar-1]
-%      352 / 31 / zero-dimensional-spatial-region is a universal [vij-1]
-%      353 / 32 / generically-dependent-continuant is a universal [qiz-1]
-%      354 / 33 / three-dimensional-spatial-region is a universal [qov-1]
-%      355 / 34 / zero-dimensional-temporal-region is a universal [bau-1]
-%      356 / 35 / specifically-dependent-continuant is a universal [wda-1]
-%      357 / 36 / universals are not particulars [qkp-1]
-%      358 / 37 / history is subclass of process [zuj-1]
-%      359 / 38 / process is subclass of occurrent [lso-1]
-%      360 / 39 / function is subclass of disposition [lnj-1]
-%      361 / 40 / object is subclass of material-entity [vbm-1]
-%      362 / 41 / role is subclass of realizable-entity [tcp-1]
-%      363 / 42 / site is subclass of immaterial-entity [tcd-1]
-%      364 / 43 / If something is an instance of temporal region at t, then t is part of that temporal region [njq-1]
-%      365 / 44 / temporal-region is subclass of occurrent [ejl-1]
-%      366 / 45 / disposition, role are mutually disjoint [bwk-1]
-%      367 / 46 / process-boundary is subclass of occurrent [xot-1]
-%      368 / 47 / relational-quality is subclass of quality [taj-1]
-%      369 / 48 / disposition is subclass of realizable-entity [fxd-1]
-%      370 / 49 / continuant, occurrent are mutually disjoint [wrf-1]
-%      371 / 50 / spatiotemporal-region is subclass of occurrent [les-1]
-%      372 / 51 / fiat-object-part is subclass of material-entity [lal-1]
-%      373 / 52 / object-aggregate is subclass of material-entity [fda-1]
-%      374 / 53 / spatial-region is subclass of immaterial-entity [bre-1]
-%      375 / 54 / independent-continuant is subclass of continuant [wyq-1]
-%      376 / 55 / fiat-line is subclass of continuant-fiat-boundary [dhy-1]
-%      377 / 56 / quality, realizable-entity are mutually disjoint [ksk-1]
-%      378 / 57 / fiat-point is subclass of continuant-fiat-boundary [xlm-1]
-%      379 / 58 / fiat-surface is subclass of continuant-fiat-boundary [kfj-1]
-%      380 / 59 / material-entity is subclass of independent-continuant [faf-1]
-%      381 / 60 / immaterial-entity is subclass of independent-continuant [bzp-1]
-%      382 / 61 / quality is subclass of specifically-dependent-continuant [nbm-1]
-%      383 / 62 / continuant-fiat-boundary is subclass of immaterial-entity [tgs-1]
-%      384 / 63 / material-entity, immaterial-entity are mutually disjoint [sij-1]
-%      385 / 64 / generically-dependent-continuant is subclass of continuant [zyw-1]
-%      386 / 65 / specifically-dependent-continuant is subclass of continuant [dhv-1]
-%      387 / 66 / one-dimensional-spatial-region is subclass of spatial-region [fzn-1]
-%      388 / 67 / two-dimensional-spatial-region is subclass of spatial-region [abo-1]
-%      389 / 68 / zero-dimensional-spatial-region is subclass of spatial-region [abh-1]
-%      390 / 69 / one-dimensional-temporal-region is subclass of temporal-region [fpd-1]
-%      391 / 70 / three-dimensional-spatial-region is subclass of spatial-region [apt-1]
-%      392 / 71 / zero-dimensional-temporal-region is subclass of temporal-region [pvu-1]
-%      393 / 72 / temporal-instant is subclass of zero-dimensional-temporal-region [bjp-1]
-%      394 / 73 / temporal-interval is subclass of one-dimensional-temporal-region [fye-1]
-%      395 / 74 / Entity is either universal or particular, so not all are instantiated. Instead make a predicate 'entity' analogous to particular universal [vgn-1]
-%      396 / 75 / realizable-entity is subclass of specifically-dependent-continuant [qix-1]
-%      397 / 76 / If something is a role at any time then as long as it exists it is a role. [hxo-1]
-%      398 / 77 / If something is a site at any time then as long as it exists it is a site. [txn-1]
-%      399 / 78 / If something is a quality at any time then as long as it exists it is a quality. [jdo-1]
-%      400 / 79 / If something is a function at any time then as long as it exists it is a function. [hww-1]
-%      401 / 80 / one-dimensional-temporal-region, zero-dimensional-temporal-region are mutually disjoint [zkj-1]
-%      402 / 81 / If something is a fiat-line at any time then as long as it exists it is a fiat-line. [ylr-1]
-%      403 / 82 / If something is a continuant at any time then as long as it exists it is a continuant. [ghs-1]
-%      404 / 83 / If something is a fiat-point at any time then as long as it exists it is a fiat-point. [cqf-1]
-%      405 / 84 / If something is a disposition at any time then as long as it exists it is a disposition. [ijx-1]
-%      406 / 85 / If something is a fiat-surface at any time then as long as it exists it is a fiat-surface. [dyv-1]
-%      407 / 86 / If something is a spatial-region at any time then as long as it exists it is a spatial-region. [thk-1]
-%      408 / 87 / If something is a material-entity at any time then as long as it exists it is a material-entity. [opd-1]
-%      409 / 88 / If something is a immaterial-entity at any time then as long as it exists it is a immaterial-entity. [nlc-1]
-%      410 / 89 / If something is a realizable-entity at any time then as long as it exists it is a realizable-entity. [gsg-1]
-%      411 / 90 / If something is a relational-quality at any time then as long as it exists it is a relational-quality. [jyh-1]
-%      412 / 91 / If something is a independent-continuant at any time then as long as it exists it is a independent-continuant. [otk-1]
-%      413 / 92 / If something is a continuant-fiat-boundary at any time then as long as it exists it is a continuant-fiat-boundary. [yuh-1]
-%      414 / 93 / If something is a one-dimensional-spatial-region at any time then as long as it exists it is a one-dimensional-spatial-region. [bld-1]
-%      415 / 94 / If something is a two-dimensional-spatial-region at any time then as long as it exists it is a two-dimensional-spatial-region. [uld-1]
-%      416 / 95 / If something is a zero-dimensional-spatial-region at any time then as long as it exists it is a zero-dimensional-spatial-region. [vsa-1]
-%      417 / 96 / If something is a generically-dependent-continuant at any time then as long as it exists it is a generically-dependent-continuant. [iup-1]
-%      418 / 97 / If something is a three-dimensional-spatial-region at any time then as long as it exists it is a three-dimensional-spatial-region. [qpr-1]
-%      419 / 98 / If something is a specifically-dependent-continuant at any time then as long as it exists it is a specifically-dependent-continuant. [hke-1]
-%      420 / 99 / No occurrent changes type during its existence [ayr-1]
-%      421 / 100 / fiat-surface, fiat-line, fiat-point are mutually disjoint [sjf-1]
-%      422 / 101 / site, spatial-region, continuant-fiat-boundary are mutually disjoint [twc-1]
-%      423 / 102 / specifically-dependent-continuant, independent-continuant, generically-dependent-continuant are mutually disjoint [cig-1]
-%      424 / 103 / process, spatiotemporal-region, process-boundary, temporal-region are mutually disjoint [mem-1]
-%      425 / 104 / continuant, material-entity, object, fiat-object-part, object-aggregate, site, immaterial-entity, continuant-fiat-boundary, fiat-surface, fiat-line, fiat-point, spatial-region, three-dimensional-spatial-region, two-dimensional-spatial-region, one-dimensional-spatial-region, zero-dimensional-spatial-region, independent-continuant, generically-dependent-continuant, specifically-dependent-continuant, quality, relational-quality, function, disposition, realizable-entity, role, occurrent, process, process-boundary, temporal-region, zero-dimensional-temporal-region, temporal-instant, one-dimensional-temporal-region, temporal-interval, history, spatiotemporal-region are all different [xtf-1]
-%      426 / 105 / zero-dimensional-spatial-region, one-dimensional-spatial-region, two-dimensional-spatial-region, three-dimensional-spatial-region are mutually disjoint [luc-1]
+%   16. zmyinput-BMI510.clc
+%      426 / 1 / A car has a part, then loses it and this is compositional change [s-020]
