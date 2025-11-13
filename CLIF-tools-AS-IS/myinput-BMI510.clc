@@ -78,7 +78,7 @@ To be done:
 			(has-last-instant tt temp2)
 			(happens-to comp1 car1 tt)
 	        (continuant-part-of wheel1 car1 temp1) 
-		    (not(continuant-part-of wheel1 car1 temp1))
+		    (not(continuant-part-of wheel1 car1 temp2))
 
 		)    
 	)
