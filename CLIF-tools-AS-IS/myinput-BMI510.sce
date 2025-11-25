@@ -10,7 +10,7 @@ https://creativecommons.org/licengses/by/4.0/
 History:
  - Since 2025/03/15:
  -	corrected ett-03: added process-boundary as exclusion next to process
- -  corrected ins-03: added that t1 and t2 may not be identical and that c must exist at t2
+ -  corrected insce-03: added that t1 and t2 may not be identical and that c must exist at t2
  -  time indexing removed from happens-in as it is between occurrents
 To be done:
 	- distinct declarations including with BFO2020
@@ -60,16 +60,16 @@ To be done:
  )
 
 
-(cl:comment ' --- PROSPECTED MODELS --- ' )
+(cl:comment ' ------- PROSPECTED MODELS ------- ' )
 
 
 
 
 
+(cl:comment ' 
 
 
-
-	(cl:comment "A car has a part, then loses it and this is compositional change [s-020]"
+	(cl:comment "A car has a part, then loses it and this is compositional change [sce-020]"
 	   (and 
 	        (instance-of car1 object tt)
 			(instance-of wheel1 object tt)
@@ -83,7 +83,7 @@ To be done:
 		)    
 	)
 
-(cl:comment ' 
+
 
  (cl:comment ".......c1 [dec-000]"  
 	   (and (particular c1) 
@@ -93,13 +93,7 @@ To be done:
  )
 
 
-/%% should fail and does
-t([0,happens-throughout, ch, t]).
-t([0,happens-to, ch, c, t2]).
-t([-1,instance-of, c, continuant, t2]).
- */
- 
-	(cl:comment "A car has a quality, then loses it and this is qualitative change [s-024]"
+	(cl:comment "A car has a quality, then loses it and this is qualitative change [sce-024]"
 	   (and 
 	        (instance-of car1 object t)
 			(instance-of q1 disposition t)
@@ -114,7 +108,7 @@ t([-1,instance-of, c, continuant, t2]).
 	)
 
 
-	(cl:comment "A car has a disposition, then loses it and this is dispositional change [s-025]"
+	(cl:comment "A car has a disposition, then loses it and this is dispositional change [sce-025]"
 	   (and 
 	        (instance-of car1 object t)
 			(instance-of d1 disposition t)
@@ -129,14 +123,40 @@ t([-1,instance-of, c, continuant, t2]).
 	)
 
   ' )
+  
+	(cl:comment "Bob Dylan gains the role of Nobel Prize nominee, but does not participate in the process of notimation[sce-026]"
+	   (and 
+	        (instance-of bd object t)
+			(instance-of r1 role t)
+            (instance-of p1 process t)
+			(instance-of c role-gain t) 
+			(has-first-instant t t1)  
+			(has-last-instant t t2)
+			(happens-to c bd t)
+	        (inheres-in r1 bd) 
+			(not (exists-at r1 t1))
+			(exists-at r1 t2) 
+		    (not(participates-in bd p1 t))
+
+		)    
+	)
 
 
 
 
-(cl:comment ' --- PROSPECTED ANTIMODELS --- ' )
+
+
+
+
+
+(cl:comment ' ------- PROSPECTED ANTIMODELS ------- ' )
+
+
+
 
 (cl:comment ' 
-	(cl:comment "A spatial region has a part, then loses it and this is compositional change [s-021]"
+
+	(cl:comment "A spatial region has a part, then loses it and this is compositional change [sce-021]"
 	   (and 
 	        (instance-of s1 spatial-region t)
 			(instance-of w1 object t)
@@ -150,7 +170,7 @@ t([-1,instance-of, c, continuant, t2]).
 		)    
 	)
 
-(cl:comment "A quality has a part, then loses it and this is compositional change [s-022]"
+(cl:comment "A quality has a part, then loses it and this is compositional change [sce-022]"
 	   (and 
 	        (instance-of q1 quality t)
 			(instance-of w1 object t)
@@ -164,7 +184,7 @@ t([-1,instance-of, c, continuant, t2]).
 		)    
 	)
 
-	(cl:comment "A car has a part, then loses it and this is NOT compositional change [s-023]"
+	(cl:comment "A car has a part, then loses it and this is NOT compositional change [sce-023]"
 	   (and 
 	        (instance-of car1 object t)
 			(instance-of w1 object t)
@@ -177,7 +197,29 @@ t([-1,instance-of, c, continuant, t2]).
 
 		)    
 	)
+
+	(cl:comment "Bob Dylan is in a role gain change,, but gains no role[sce-027]"
+	   (and 
+	        (instance-of bd object t)
+			(instance-of r1 role t)
+			(instance-of c role-gain t) 
+			(has-first-instant t t1)  
+			(has-last-instant t t2)
+			(happens-to c bd t)
+			(not( exists (x)  
+			        (and (instance-of x role t)
+					     (inheres-in x bd) 
+			             (not (exists-at r1 t1))
+			             (exists-at r1 t2)   ) ))
+		)  
+
+
+
   ' )
+
+
+
+
 
 
 )))

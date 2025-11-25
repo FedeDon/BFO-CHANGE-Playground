@@ -16,19 +16,21 @@
 projectname("BCHANGE").			% Set projectname to BCHANGE
 
 
-%% ontology(string, stringlist)	% REQUIRED
-								% Identify specific files in <stringlist> as belonging to the ontology named in <string>
-								% <stringlist> must be a list of strings in a format acceptable for filenames within the operating system
-								% The ontology name will be used as prefix for axiom IDs provided in the CLIF files.
-								%	For example, if the ontology name is "BFO", the axiom with index 'udu-1' will be prefixed as 'BFO-udu-1'.
-								% Multiple occurrences allowed but no expanded filenames may overlap over distinct ontologies
-ontology("BFOCE",["*.clc"]).	% Declare all filenames with extention 'clc' as belonging to BFOCE
-ontology("BFO",["*.cl"]).
+%% input(atom,string,stringlist)	% Identify specific files in <stringlist> as belonging to the ontology named in <string>
+									% <stringlist> must be a list of strings in a format acceptable for filenames within the operating system
+									% The ontology name will be used as prefix for axiom IDs provided in the CLIF files.
+									%	For example, if the ontology name is "BFO", the axiom with index 'udu-1' will be prefixed as 'BFO-udu-1'.
+									% Multiple occurrences allowed but no expanded filenames may overlap over distinct ontologies
+									% where atom is now either ontology or scenario.
+input(ontology,"BFOCE",["*.clc"]).	% Declare all filenames with extention 'clc' as belonging to ontology BFOCE
+input(ontology,"BFO",["*.cl"]).	% Declare all filenames with extention 'cl' as belonging to ontology BFO
+input(scenario,"SCE",["myinput-BMI510.sce"]).	% Declare all filenames with extention 'sce' as belonging to scenario SCE
 
 
-%% ont_uses(string, stringlist)	% OPTIONAL
-								% Declare the ontology with name in <string> as dependent on ontologies named in <stringlist>
-ont_uses("BFOCE",["BFO"]).
+%% input_uses(string, stringlist)	% OPTIONAL
+							     	% Declare the ontology or scenarios file with name in <string> as dependent on ontologies named in <stringlist>
+input_uses("BFOCE",["BFO"]).
+input_uses("SCE",["BFO","BFOCE"]).
 
 
 progress_notification(minimal).	% options are: minimal, verbose. 'verbose' is for debugging CLIF-files in case of parse-errors

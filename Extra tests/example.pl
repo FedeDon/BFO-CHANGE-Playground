@@ -1,2 +1,0 @@
-man(fede).
-girl(tara).

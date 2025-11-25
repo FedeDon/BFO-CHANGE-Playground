@@ -1,21 +1,18 @@
 % CONSTANTS USED:
-ot(s(car1)).
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp1)]
-   % [s(happens-to),s(comp1),s(car1),s(tt)]
-   % [s(instance-of),s(car1),s(object),s(tt)]
+ot(s(bd)).
+   % [s(happens-to),s(c),s(bd),s(t)]
+   % [s(inheres-in),s(r1),s(bd)]
+   % [s(instance-of),s(bd),s(object),s(t)]
+   % [s(participates-in),s(bd),s(p1),s(t)]
+ot(s(c)).
+   % [s(happens-to),s(c),s(bd),s(t)]
+   % [s(instance-of),s(c),s(role-gain),s(t)]
 ot(s(change)).
    % [s(instance-of),v,s(change),v]
 ot(s(change-profile)).
    % [s(instance-of),v,s(change-profile),v]
 ot(s(change-sequence)).
    % [s(instance-of),v,s(change-sequence),v]
-ot(s(comp1)).
-   % [s(happens-to),s(comp1),s(car1),s(tt)]
-   % [s(instance-of),s(comp1),s(compositional-change),s(tt)]
-ot(s(compositional-change)).
-   % [s(happens-to),s(compositional-change),v,v]
-   % [s(instance-of),s(comp1),s(compositional-change),s(tt)]
-   % [s(universal),s(compositional-change)]
 ot(s(continuant)).
    % [s(identical),s(continuant),s(continuant-fiat-boundary)]
    % [s(identical),s(continuant),s(disposition)]
@@ -127,8 +124,6 @@ ot(s(disposition)).
    % [s(identical),s(zero-dimensional-spatial-region),s(disposition)]
    % [s(instance-of),v,s(disposition),v]
    % [s(universal),s(disposition)]
-ot(s(dispositional-change)).
-   % [s(universal),s(dispositional-change)]
 ot(s(existence-change)).
    % [s(instance-of),v,s(existence-change),v]
 ot(s(extrinsic-change)).
@@ -511,11 +506,6 @@ ot(s(material-entity)).
    % [s(universal),s(material-entity)]
 ot(s(mono-sequential-change)).
    % [s(instance-of),v,s(mono-sequential-change),v]
-ot(s(motion)).
-   % [s(instance-of),v,s(motion),v]
-ot(s(motion2)).
-   % [s(instance-of),v,s(motion2),v]
-   % [s(universal),s(motion2)]
 ot(s(object)).
    % [s(identical),s(continuant),s(object)]
    % [s(identical),s(material-entity),s(object)]
@@ -552,8 +542,7 @@ ot(s(object)).
    % [s(identical),s(object),s(zero-dimensional-spatial-region)]
    % [s(identical),s(object),s(zero-dimensional-temporal-region)]
    % [s(instance-of),v,s(object),v]
-   % [s(instance-of),s(car1),s(object),s(tt)]
-   % [s(instance-of),s(wheel1),s(object),s(tt)]
+   % [s(instance-of),s(bd),s(object),s(t)]
    % [s(universal),s(object)]
 ot(s(object-aggregate)).
    % [s(identical),s(continuant),s(object-aggregate)]
@@ -703,6 +692,9 @@ ot(s(one-dimensional-temporal-region)).
    % [s(identical),s(zero-dimensional-temporal-region),s(one-dimensional-temporal-region)]
    % [s(instance-of),v,s(one-dimensional-temporal-region),v]
    % [s(universal),s(one-dimensional-temporal-region)]
+ot(s(p1)).
+   % [s(instance-of),s(p1),s(process),s(t)]
+   % [s(participates-in),s(bd),s(p1),s(t)]
 ot(s(process)).
    % [s(identical),s(continuant),s(process)]
    % [s(identical),s(continuant-fiat-boundary),s(process)]
@@ -739,6 +731,7 @@ ot(s(process)).
    % [s(identical),s(two-dimensional-spatial-region),s(process)]
    % [s(identical),s(zero-dimensional-spatial-region),s(process)]
    % [s(instance-of),v,s(process),v]
+   % [s(instance-of),s(p1),s(process),s(t)]
    % [s(universal),s(process)]
 ot(s(process-boundary)).
    % [s(identical),s(continuant),s(process-boundary)]
@@ -777,9 +770,6 @@ ot(s(process-boundary)).
    % [s(identical),s(zero-dimensional-spatial-region),s(process-boundary)]
    % [s(instance-of),v,s(process-boundary),v]
    % [s(universal),s(process-boundary)]
-ot(s(qualitative-change)).
-   % [s(happens-to),s(qualitative-change),v,v]
-   % [s(universal),s(qualitative-change)]
 ot(s(quality)).
    % [s(identical),s(continuant),s(quality)]
    % [s(identical),s(continuant-fiat-boundary),s(quality)]
@@ -817,6 +807,11 @@ ot(s(quality)).
    % [s(identical),s(zero-dimensional-spatial-region),s(quality)]
    % [s(instance-of),v,s(quality),v]
    % [s(universal),s(quality)]
+ot(s(r1)).
+   % [s(exists-at),s(r1),s(t1)]
+   % [s(exists-at),s(r1),s(t2)]
+   % [s(inheres-in),s(r1),s(bd)]
+   % [s(instance-of),s(r1),s(role),s(t)]
 ot(s(realizable-entity)).
    % [s(identical),s(continuant),s(realizable-entity)]
    % [s(identical),s(continuant-fiat-boundary),s(realizable-entity)]
@@ -854,8 +849,6 @@ ot(s(realizable-entity)).
    % [s(identical),s(zero-dimensional-spatial-region),s(realizable-entity)]
    % [s(instance-of),v,s(realizable-entity),v]
    % [s(universal),s(realizable-entity)]
-ot(s(relational-change)).
-   % [s(universal),s(relational-change)]
 ot(s(relational-quality)).
    % [s(identical),s(continuant),s(relational-quality)]
    % [s(identical),s(continuant-fiat-boundary),s(relational-quality)]
@@ -929,10 +922,12 @@ ot(s(role)).
    % [s(identical),s(two-dimensional-spatial-region),s(role)]
    % [s(identical),s(zero-dimensional-spatial-region),s(role)]
    % [s(instance-of),v,s(role),v]
+   % [s(instance-of),s(r1),s(role),s(t)]
    % [s(universal),s(role)]
-ot(s(role-change)).
-   % [s(happens-to),s(role-change),v,v]
-   % [s(universal),s(role-change)]
+ot(s(role-gain)).
+   % [s(instance-of),v,s(role-gain),v]
+   % [s(instance-of),s(c),s(role-gain),s(t)]
+   % [s(universal),s(role-gain)]
 ot(s(simple-change)).
    % [s(instance-of),v,s(simple-change),v]
 ot(s(site)).
@@ -1085,11 +1080,21 @@ ot(s(specifically-dependent-continuant)).
    % [s(identical),s(zero-dimensional-spatial-region),s(specifically-dependent-continuant)]
    % [s(instance-of),v,s(specifically-dependent-continuant),v]
    % [s(universal),s(specifically-dependent-continuant)]
-ot(s(temp1)).
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp1)]
-   % [s(has-first-instant),s(tt),s(temp1)]
-ot(s(temp2)).
-   % [s(has-last-instant),s(tt),s(temp2)]
+ot(s(t)).
+   % [s(happens-to),s(c),s(bd),s(t)]
+   % [s(has-first-instant),s(t),s(t1)]
+   % [s(has-last-instant),s(t),s(t2)]
+   % [s(instance-of),s(bd),s(object),s(t)]
+   % [s(instance-of),s(c),s(role-gain),s(t)]
+   % [s(instance-of),s(p1),s(process),s(t)]
+   % [s(instance-of),s(r1),s(role),s(t)]
+   % [s(participates-in),s(bd),s(p1),s(t)]
+ot(s(t1)).
+   % [s(exists-at),s(r1),s(t1)]
+   % [s(has-first-instant),s(t),s(t1)]
+ot(s(t2)).
+   % [s(exists-at),s(r1),s(t2)]
+   % [s(has-last-instant),s(t),s(t2)]
 ot(s(temporal-instant)).
    % [s(identical),s(continuant),s(temporal-instant)]
    % [s(identical),s(continuant-fiat-boundary),s(temporal-instant)]
@@ -1240,16 +1245,6 @@ ot(s(three-dimensional-spatial-region)).
    % [s(identical),s(three-dimensional-spatial-region),s(zero-dimensional-temporal-region)]
    % [s(instance-of),v,s(three-dimensional-spatial-region),v]
    % [s(universal),s(three-dimensional-spatial-region)]
-ot(s(total-location-change)).
-   % [s(instance-of),v,s(total-location-change),v]
-   % [s(universal),s(total-location-change)]
-ot(s(tt)).
-   % [s(happens-to),s(comp1),s(car1),s(tt)]
-   % [s(has-first-instant),s(tt),s(temp1)]
-   % [s(has-last-instant),s(tt),s(temp2)]
-   % [s(instance-of),s(car1),s(object),s(tt)]
-   % [s(instance-of),s(comp1),s(compositional-change),s(tt)]
-   % [s(instance-of),s(wheel1),s(object),s(tt)]
 ot(s(two-dimensional-spatial-region)).
    % [s(identical),s(continuant),s(two-dimensional-spatial-region)]
    % [s(identical),s(continuant-fiat-boundary),s(two-dimensional-spatial-region)]
@@ -1289,9 +1284,6 @@ ot(s(two-dimensional-spatial-region)).
    % [s(universal),s(two-dimensional-spatial-region)]
 ot(s(type-replacement)).
    % [s(instance-of),v,s(type-replacement),v]
-ot(s(wheel1)).
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp1)]
-   % [s(instance-of),s(wheel1),s(object),s(tt)]
 ot(s(zero-dimensional-spatial-region)).
    % [s(identical),s(continuant),s(zero-dimensional-spatial-region)]
    % [s(identical),s(continuant-fiat-boundary),s(zero-dimensional-spatial-region)]
@@ -1380,13 +1372,14 @@ pr(s(concretizes)).
    % [s(concretizes),v,v,v]
 pr(s(continuant-part-of)).
    % [s(continuant-part-of),v,v,v]
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp1)]
 pr(s(entity)).
    % [s(entity),v]
 pr(s(environs)).
    % [s(environs),v,v]
 pr(s(exists-at)).
    % [s(exists-at),v,v]
+   % [s(exists-at),s(r1),s(t1)]
+   % [s(exists-at),s(r1),s(t2)]
 pr(s(exists-throughout)).
    % [s(exists-throughout),v,v]
 pr(s(first-instant-of)).
@@ -1401,20 +1394,17 @@ pr(s(happens-throughout)).
    % [s(happens-throughout),v,v]
 pr(s(happens-to)).
    % [s(happens-to),v,v,v]
-   % [s(happens-to),s(comp1),s(car1),s(tt)]
-   % [s(happens-to),s(compositional-change),v,v]
-   % [s(happens-to),s(qualitative-change),v,v]
-   % [s(happens-to),s(role-change),v,v]
+   % [s(happens-to),s(c),s(bd),s(t)]
 pr(s(has-continuant-part)).
    % [s(has-continuant-part),v,v,v]
 pr(s(has-first-instant)).
    % [s(has-first-instant),v,v]
-   % [s(has-first-instant),s(tt),s(temp1)]
+   % [s(has-first-instant),s(t),s(t1)]
 pr(s(has-history)).
    % [s(has-history),v,v]
 pr(s(has-last-instant)).
    % [s(has-last-instant),v,v]
-   % [s(has-last-instant),s(tt),s(temp2)]
+   % [s(has-last-instant),s(t),s(t2)]
 pr(s(has-material-basis)).
    % [s(has-material-basis),v,v,v]
 pr(s(has-member-part)).
@@ -2036,6 +2026,7 @@ pr(s(individuates-at)).
    % [s(individuates-at),v,v]
 pr(s(inheres-in)).
    % [s(inheres-in),v,v]
+   % [s(inheres-in),s(r1),s(bd)]
 pr(s(instance-of)).
    % [s(instance-of),v,v,v]
    % [s(instance-of),v,s(change),v]
@@ -2059,8 +2050,6 @@ pr(s(instance-of)).
    % [s(instance-of),v,s(instantiation-change),v]
    % [s(instance-of),v,s(material-entity),v]
    % [s(instance-of),v,s(mono-sequential-change),v]
-   % [s(instance-of),v,s(motion),v]
-   % [s(instance-of),v,s(motion2),v]
    % [s(instance-of),v,s(object),v]
    % [s(instance-of),v,s(object-aggregate),v]
    % [s(instance-of),v,s(occurrent),v]
@@ -2072,6 +2061,7 @@ pr(s(instance-of)).
    % [s(instance-of),v,s(realizable-entity),v]
    % [s(instance-of),v,s(relational-quality),v]
    % [s(instance-of),v,s(role),v]
+   % [s(instance-of),v,s(role-gain),v]
    % [s(instance-of),v,s(simple-change),v]
    % [s(instance-of),v,s(site),v]
    % [s(instance-of),v,s(spatial-region),v]
@@ -2083,14 +2073,14 @@ pr(s(instance-of)).
    % [s(instance-of),v,s(temporal-region),v]
    % [s(instance-of),v,s(termination),v]
    % [s(instance-of),v,s(three-dimensional-spatial-region),v]
-   % [s(instance-of),v,s(total-location-change),v]
    % [s(instance-of),v,s(two-dimensional-spatial-region),v]
    % [s(instance-of),v,s(type-replacement),v]
    % [s(instance-of),v,s(zero-dimensional-spatial-region),v]
    % [s(instance-of),v,s(zero-dimensional-temporal-region),v]
-   % [s(instance-of),s(car1),s(object),s(tt)]
-   % [s(instance-of),s(comp1),s(compositional-change),s(tt)]
-   % [s(instance-of),s(wheel1),s(object),s(tt)]
+   % [s(instance-of),s(bd),s(object),s(t)]
+   % [s(instance-of),s(c),s(role-gain),s(t)]
+   % [s(instance-of),s(p1),s(process),s(t)]
+   % [s(instance-of),s(r1),s(role),s(t)]
 pr(s(is-carrier-of)).
    % [s(is-carrier-of),v,v,v]
 pr(s(is-concretized-by)).
@@ -2123,9 +2113,9 @@ pr(s(occurrent-part-of)).
 pr(s(occurs-in)).
    % [s(occurs-in),v,v]
 pr(s(overlaps)).
-   % [s(overlaps),v,v,v]
 pr(s(participates-in)).
    % [s(participates-in),v,v,v]
+   % [s(participates-in),s(bd),s(p1),s(t)]
 pr(s(particular)).
    % [s(particular),v]
 pr(s(preceded-by)).
@@ -2159,11 +2149,9 @@ pr(s(uni-equivalent)).
    % [s(uni-equivalent),v,v,v]
 pr(s(universal)).
    % [s(universal),v]
-   % [s(universal),s(compositional-change)]
    % [s(universal),s(continuant)]
    % [s(universal),s(continuant-fiat-boundary)]
    % [s(universal),s(disposition)]
-   % [s(universal),s(dispositional-change)]
    % [s(universal),s(extrinsic-change)]
    % [s(universal),s(fiat-line)]
    % [s(universal),s(fiat-object-part)]
@@ -2175,7 +2163,6 @@ pr(s(universal)).
    % [s(universal),s(immaterial-entity)]
    % [s(universal),s(independent-continuant)]
    % [s(universal),s(material-entity)]
-   % [s(universal),s(motion2)]
    % [s(universal),s(object)]
    % [s(universal),s(object-aggregate)]
    % [s(universal),s(occurrent)]
@@ -2183,13 +2170,11 @@ pr(s(universal)).
    % [s(universal),s(one-dimensional-temporal-region)]
    % [s(universal),s(process)]
    % [s(universal),s(process-boundary)]
-   % [s(universal),s(qualitative-change)]
    % [s(universal),s(quality)]
    % [s(universal),s(realizable-entity)]
-   % [s(universal),s(relational-change)]
    % [s(universal),s(relational-quality)]
    % [s(universal),s(role)]
-   % [s(universal),s(role-change)]
+   % [s(universal),s(role-gain)]
    % [s(universal),s(site)]
    % [s(universal),s(spatial-region)]
    % [s(universal),s(spatiotemporal-region)]
@@ -2198,7 +2183,6 @@ pr(s(universal)).
    % [s(universal),s(temporal-interval)]
    % [s(universal),s(temporal-region)]
    % [s(universal),s(three-dimensional-spatial-region)]
-   % [s(universal),s(total-location-change)]
    % [s(universal),s(two-dimensional-spatial-region)]
    % [s(universal),s(zero-dimensional-spatial-region)]
    % [s(universal),s(zero-dimensional-temporal-region)]
@@ -2245,6 +2229,7 @@ pr(s(universal)).
   % s(o2p)
   % s(o1p)
   % s(f2)
+  % s(l1)
   % s(i2)
   % s(i1)
   % s(st2)
@@ -2269,6 +2254,7 @@ pr(s(universal)).
   % s(w)
   % s(overlap)
   % s(mp)
+  % s(m)
   % s(s1)
   % s(tp)
   % s(fp)
@@ -2283,6 +2269,7 @@ pr(s(universal)).
   % s(ch1)
   % s(tc)
   % s(ts)
+  % s(z)
   % s(cch)
   % s(chs)
   % s(c1)
@@ -2295,15 +2282,10 @@ pr(s(universal)).
   % s(s)
   % s(c)
   % s(tr)
-  % s(ch)
   % s(p)
-  % s(m)
-  % s(tlc)
+  % s(t)
+  % s(x)
   % s(t2)
   % s(t1)
-  % s(l2)
-  % s(l1)
-  % s(t)
   % s(y)
-  % s(x)
-  % s(z)
+  % s(ch)

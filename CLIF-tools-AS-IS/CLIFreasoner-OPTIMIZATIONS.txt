@@ -1,0 +1,52 @@
+
+kow(if([['instance-of',A,'temporal-region',A],['temporal-part-of',B,A]]),then(['instance-of',B,'temporal-region',B]))
+kow(if([['instance-of',A,'temporal-region',A],['temporal-part-of',A,B]]),then(['instance-of',B,'temporal-region',B]))
+[679,BFO-mjn-2] [680,BFO-mjn-2] 
+[680,BFO-mjn-2] removed.
+
+kow(if([['member-part-of',A,B,C]]),then(['instance-of',B,'object-aggregate',C]))
+kow(if([['member-part-of',A,B,C]]),then(['instance-of',B,'object-aggregate',C]))
+[310,BFO-dvq-1] [337,BFO-evk-1] 
+[337,BFO-evk-1] removed.
+
+kow(if([['member-part-of',A,B,C]]),then(['instance-of',A,object,C]))
+kow(if([['member-part-of',A,B,C]]),then(['instance-of',A,object,C]))
+[311,BFO-dvq-1] [336,BFO-evk-1] 
+[336,BFO-evk-1] removed.
+
+kow(if([['instance-of',A,'immaterial-entity',B]]),then(['instance-of',A,'independent-continuant',B]))
+kow(if([['instance-of',A,'immaterial-entity',B]]),then(['instance-of',A,'independent-continuant',B]))
+[318,BFO-udu-1] [803,BFO-bzp-1] 
+[803,BFO-bzp-1] removed.
+
+kow(if([['instance-of',A,'temporal-region',A]]),then(['temporal-part-of',A,A]))
+kow(if([['instance-of',A,'temporal-region',B]]),then(['temporal-part-of',B,A]))
+[659,BFO-dbj-2] [662,BFO-njq-1] 
+[662,BFO-njq-1] removed.
+
+kow(if([['instance-of',A,B,C],['temporal-part-of',D,C]]),then(['instance-of',A,B,D]))
+kow(if([['instance-of',A,'temporal-region',A],['temporal-part-of',B,A]]),then(['instance-of',B,'temporal-region',B]))
+[248,BFO-qaf-1] [679,BFO-mjn-2] 
+[679,BFO-mjn-2] removed.
+
+Detected inverse relations
+eqp(BFO-eld-1,has-continuant-part,BFO-eld-1,continuant-part-of,c)
+eqp(BFO-hpm-1,has-proper-continuant-part,BFO-hpm-1,proper-continuant-part-of,c)
+eqp(BFO-zba-1,is-concretized-by,BFO-zba-1,concretizes,c)
+eqp(BFO-mvp-1,is-carrier-of,BFO-mvp-1,generically-depends-on,c)
+eqp(BFO-abx-1,has-history,BFO-abx-1,history-of,c)
+eqp(BFO-jrm-1,has-member-part,BFO-jrm-1,member-part-of,c)
+eqp(BFO-yvi-1,has-occurrent-part,BFO-yvi-1,occurrent-part-of,c)
+eqp(BFO-wim-1,has-proper-occurrent-part,BFO-wim-1,proper-occurrent-part-of,c)
+eqp(BFO-tib-1,preceded-by,BFO-tib-1,precedes,c)
+eqp(BFO-xjr-1,has-participant,BFO-xjr-1,participates-in,c)
+eqp(BFO-uys-1,environs,BFO-uys-1,occurs-in,c)
+eqp(BFO-kaw-1,location-of,BFO-kaw-1,located-in,c)
+eqp(BFO-dzz-1,bearer-of,BFO-dzz-1,inheres-in,c)
+eqp(BFO-pvk-1,has-realization,BFO-pvk-1,realizes,c)
+eqp(BFO-tla-1,material-basis-of,BFO-tla-1,has-material-basis,c)
+eqp(BFO-yct-1,specifically-depended-on-by,BFO-yct-1,specifically-depends-on,c)
+eqp(BFO-wal-1,last-instant-of,BFO-wal-1,has-last-instant,c)
+eqp(BFO-bon-1,first-instant-of,BFO-bon-1,has-first-instant,c)
+eqp(BFO-boo-1,has-temporal-part,BFO-boo-1,temporal-part-of,c)
+eqp(BFO-dbc-1,has-proper-temporal-part,BFO-dbc-1,proper-temporal-part-of,c)

@@ -1,4 +1,5 @@
 /* History
+2025-11-15: improvement: accepting scenario input in BFO2020-FOL style CLIF-template
 2025-01-14: improvement: identification of constants used both as individual and relation
 2024-12-31: bug-fix: taut/4 was not declared
 2024-01-24: bug-fix: prevented negated axiom file generator to run when parser found errors
@@ -10,7 +11,7 @@
 	1) tautology detection leading to elimination of useless Kowalski rules
 	2) generates sk_use data in Kowalski file for improved skolem function use in reasoner
 */
-:- use_module(library(dcg/basics)).    
+:- use_module(library(dcg/basics)).
 :- use_module(library(pure_input)).
 :-dynamic outdiscourses/1,		%% stores per CLIF file processed the used predicates
 		  error/2,				%% stores errors found during processing (not all error types can be tagged)
@@ -88,8 +89,8 @@
 		  ont/2,				%% files belonging to specific ontology
 		  ous/2,				%% dependency between ontologies
 %% for the following series, see init.txt
-		  ontology/2,			%% [Abbreviation / files]
-		  ont_uses/2,
+		  input/3,			
+		  input_uses/2,
 		  skolem_mode/1,
 		  variable_mode/1,
 		  outputfile/1,
@@ -142,52 +143,69 @@ get_projectname(N):-
 
 
 start_conditions_ok(H):-
-	!,ref_ontologies,
-	findall(File,ont(_,File),Files),
-	sort(Files,H),
-		( H = [],
-		  write("Specified input file(s) do not exist. Check CLIFparserinit.txt for the 'inputfiles(\"...\")' parameter."),
+	!,ref_input,						% check whether input is in expected format
+	(	input(scenario, SCE, _),			% retrieve the name given to the input scenario if any
+		findall(File,ont(SCE,File),SCEs),	% retrieve the filenames for the scenario
+		( SCEs = [],
+		  writeln(""),
+		  write("Specified scenario file(s) do not exist. Check CLIFparserinit.txt for the 'input(...)' parameter."),
 		  !,fail
-		; 
-		  ( skolem_par_ok(1),
-			(variable_par_ok(1),
-			   findall(F,outputfile(F),Outputs),
-				( Outputs \== [],
-				  check_outputs(Outputs, [], Errors),
-				  ( Errors \== [],
-					write("Invalid output filetype(s) specified in first argument of 'outputfile(\"...\")': "),
-					writeln(Errors),
-				    write("Options are for each parameter one of: sci, rules_per_axiom, kowalski, satchmo, cnf, cf, vocabulary, nnf, nsat."),
-					!, fail
-				  ; !, true
-				  )
-				; writeln("No outputfile specified. Check init.txt for the 'outputfile(\"...\")' parameter(s)."),
-				  write("Options are for each parameter one of: sci, rules_per_axiom, kowalski, satchmo, cnf, cf, vocabulary, nnf, nsat."),
-			      !,fail
-				)
-			; variable_par_ok(2),
-			  writeln("Incorrect variable mode specified. Check init.txt for the 'variable_mode(\"...\")' parameter."),
-		      write("Options are one of: unbound, ground."),
-			  !,fail
-			; variable_par_ok(3),
-			  writeln("More than one variable mode specified. Check init.txt for the 'variable_mode(\"...\")' parameter."),
-		      write("Options are one of: unbound, ground."),
-			  !,fail
-		    ; write("Variable mode parameter missing. Check init.txt for the 'variable_mode(\"...\")' parameter."),
-			!,fail
+		; true),
+		sort(SCEs, SCEss)
+	;	SCEss = []							% if no scenario provided, continue with empty list
+	),
+	findall( File,							% retrieve filenames for all ontologies 
+			 ( input(ontology, ONE, _),
+			   ont(ONE,File)
+			 ), 
+			 ONTs
+		   ),
+	sort(ONTs,ONTss),
+	append([SCEss,ONTss],H),				% put scenario files on top of list
+	( H = [],
+	  writeln(""),
+	  write("Specified input file(s) do not exist. Check CLIFparserinit.txt for the 'input(...)' parameter."),
+	  !,fail
+	; 
+	  ( skolem_par_ok(1),
+		(variable_par_ok(1),
+		   findall(F,outputfile(F),Outputs),
+			( Outputs \== [],
+			  check_outputs(Outputs, [], Errors),
+			  ( Errors \== [],
+				write("Invalid output filetype(s) specified in first argument of 'outputfile(\"...\")': "),
+				writeln(Errors),
+			    write("Options are for each parameter one of: sci, rules_per_axiom, kowalski, satchmo, cnf, cf, vocabulary, nnf, nsat."),
+				!, fail
+			  ; !, true
+			  )
+			; writeln("No outputfile specified. Check init.txt for the 'outputfile(\"...\")' parameter(s)."),
+			  write("Options are for each parameter one of: sci, rules_per_axiom, kowalski, satchmo, cnf, cf, vocabulary, nnf, nsat."),
+		      !,fail
 			)
-		  ; skolem_par_ok(2),
-			writeln("Incorrect processing mode for skolemization specified. Correct in init.txt the 'skolem_mode(\"...\")' parameter."),
-			writeln("Options are one of: scoped, mapped."),
-			!,fail
-		  ; skolem_par_ok(3),
-			writeln("More than one processing mode for skolemization specified. Check init.txt for the 'skolem_mode(\"...\")' parameter."),
-		    write("Options are one of: scoped, mapped."),
-			!,fail
-		  ; write("Skolemization parameter missing. Check init.txt for the 'skolem_mode(\"...\")' parameter."),
-			!,fail
-		  )
-		),
+		; variable_par_ok(2),
+		  writeln("Incorrect variable mode specified. Check init.txt for the 'variable_mode(\"...\")' parameter."),
+	      write("Options are one of: unbound, ground."),
+		  !,fail
+		; variable_par_ok(3),
+		  writeln("More than one variable mode specified. Check init.txt for the 'variable_mode(\"...\")' parameter."),
+	      write("Options are one of: unbound, ground."),
+		  !,fail
+	    ; write("Variable mode parameter missing. Check init.txt for the 'variable_mode(\"...\")' parameter."),
+		!,fail
+		)
+	  ; skolem_par_ok(2),
+		writeln("Incorrect processing mode for skolemization specified. Correct in init.txt the 'skolem_mode(\"...\")' parameter."),
+		writeln("Options are one of: scoped, mapped."),
+		!,fail
+	  ; skolem_par_ok(3),
+		writeln("More than one processing mode for skolemization specified. Check init.txt for the 'skolem_mode(\"...\")' parameter."),
+	    write("Options are one of: scoped, mapped."),
+		!,fail
+	  ; write("Skolemization parameter missing. Check init.txt for the 'skolem_mode(\"...\")' parameter."),
+		!,fail
+	  )
+	),
 	( progress_notification(PN),
 		( 	PN==minimal
 		;	PN==verbose
@@ -249,7 +267,7 @@ start_conditions_ok(H):-
 		)
 	;	asserta(missing_pred_percent(80))
 	),
-	!,check_ont_uses,
+	!,check_input_uses,
 	!.
 
 skolem_par_ok(1):-
@@ -288,21 +306,24 @@ check_outputs([H|R], In, Out):-
 	!,check_outputs(R,[H|In],Out).
 
 
-ref_ontologies:-
-	\+ontology(_,_),
-	write("Check init-file! 'ontology(string, stringlist)' statement(s) missing !"),
+ref_input:-
+	\+input(_,_,_),
+	write("Check init-file! 'input(atom,string, stringlist)' statement(s) missing !"),
 	!,fail.
-ref_ontologies:-
-	ontology(A,B),
-	(	\+string(A),
-		write("Check init-file! First argument of "),write_canonical(ontology(A,B)),writeln(" must be a string within double quotes!"),
+ref_input:-
+	input(C,A,B),
+	(	\+(C = ontology ; C = scenario),
+		write("Check init-file! First argument of "),write_canonical(input(C,A,B)),writeln(" must be either 'ontology' or 'scenario' (without single quotes)!"),
+		!,fail
+	;	\+string(A),
+		write("Check init-file! Second argument of "),write_canonical(input(C,A,B)),writeln(" must be a string within double quotes!"),
 		!,fail
 	;	\+maplist(string, B),
-		write("Check init-file! Second argument of "),write_canonical(ontology(A,B)),writeln(" must be a list of strings each string within double quotes!"),
+		write("Check init-file! Third argument of "),write_canonical(input(C,A,B)),writeln(" must be a list of strings each string within double quotes!"),
 		!,fail
 	),fail.
-ref_ontologies:-
-	forall(ontology(ID,Files),
+ref_input:-
+	forall(input(_,ID,Files),
 		forall(member(X,Files),
 			(	expand_file_name(X, Xs),
 				forall(member(Y,Xs),
@@ -311,17 +332,17 @@ ref_ontologies:-
 		   )
 		  ),!.
 
-check_ont_uses:-
-	ont_uses(A,B),
+check_input_uses:-
+	input_uses(A,B),
 	(	\+string(A),
-		write("Check init-file! First argument of "),write_canonical(ont_uses(A,B)),writeln(" must be a string within double quotes!"),
+		write("Check init-file! First argument of "),write_canonical(input_uses(A,B)),writeln(" must be a string within double quotes!"),
 		!,fail
 	;	\+maplist(string, B),
-		write("Check init-file! Second argument of "),write_canonical(ont_uses(A,B)),writeln(" must be a list of strings each string within double quotes!"),
+		write("Check init-file! Second argument of "),write_canonical(input_uses(A,B)),writeln(" must be a list of strings each string within double quotes!"),
 		!,fail
 	),fail.
-check_ont_uses:-
-	forall(ont_uses(Dependent,Sup),
+check_input_uses:-
+	forall(input_uses(Dependent,Sup),
 		forall(member(X,Sup),
 				asserta_once(ous(Dependent,X)))
 			),!.
@@ -494,9 +515,9 @@ isFolLengthError(X):-
 	assertz(error(4, info(F, E, X))),
 	!.
 
-
-
 %% --------------------- END PARSER
+
+
 
 % check whether there are constants that are not used in any predicate, if so, error5
 nonquants_unused:-
@@ -689,7 +710,7 @@ global_checking:-
 	rare_terms,									% identification of rarely used terms
 
 	% compare use of constants in predicate types internally for each declared ontology 
-	findall(X,ontology(X,_),Xs), 				% collect in Xs all declared ontologies
+	findall(X,input(_,X,_),Xs), 				% collect in Xs all declared ontologies
 	maplist(const_nu_pred,Xs,Xs),				% compare for each one of them there constant use relative to themselves
 
 	% compare use of constants in predicate types in depending ontologies relative to such use in ontologies they depend on 
@@ -943,7 +964,7 @@ print_errors(_):-!.
 print_standard_error(Out, ErrorNum):-
 	findall(X, error(ErrorNum,X),Xs),
 	(	ErrorNum==1,
-			Text="Remaining non-standardized variables in transformed axiom:"
+			Text="Symbol used both as quantified variable and as constant in the same axiom:"
 	;	ErrorNum==2,
 			Text="Constants with length smaller than the minimum_constant_length specified in the init-file:"
 	;	ErrorNum==3,
