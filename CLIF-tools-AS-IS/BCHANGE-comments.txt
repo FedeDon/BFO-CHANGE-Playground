@@ -1,13 +1,10 @@
-% ERRORS
-%  Constants used as predicate name but not declared in (cl:outdiscourse ...):
-%    "instance-0f" in axiom number 1 [SCE-sce-020] in file myinput-BMI510.sce
-
 
 % WARNINGS
 
 
 %  Predicates with uncommon placement of variables (v) or constants (s):
 %    "happens-to" most often (28) used with arguments [v,v,v]. Exceptions are: 
+%       "[happens-to,v1,car1,tt]" in axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
 %       "[happens-to,comp1,car1,tt]" in axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
 %    "has-first-instant" most often (46) used with arguments [v,v]. Exceptions are: 
 %       "[has-first-instant,tt,temp1]" in axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
@@ -16,6 +13,7 @@
 %    "instance-of" most often (56) used with arguments [v,v,v]. Exceptions are: 
 %       "[instance-of,car1,object,tt]" in axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
 %       "[instance-of,comp1,compositional-change,tt]" in axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
+%       "[instance-of,tt,temporal-interval,tt]" in axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
 %       "[instance-of,wheel1,object,tt]" in axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
 %    "proper-continuant-part-of" most often (15) used with arguments [v,v,v]. Exceptions are: 
 %       "[proper-continuant-part-of,wheel1,car1,temp1]" in axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
@@ -23,14 +21,10 @@
 
 
 %  Terms used less or equal than set in rare_term_use() in init-file:
-%    "comp1" used in:
-%       axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
 %    "compositional-change" used in:
 %       axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
 %    "extrinsic-change" used in:
 %       axiom 3 [BFOCE-dec-08] in file change-BMI510.clc
-%    "instance-0f" used in:
-%       axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
 %    "temp1" used in:
 %       axiom 1 [SCE-sce-020] in file myinput-BMI510.sce
 %    "temp2" used in:
@@ -47,7 +41,6 @@
 %          car1 in ['myinput-BMI510.sce']
 %          comp1 in ['myinput-BMI510.sce']
 %          compositional-change in ['myinput-BMI510.sce']
-%          instance-0f in ['myinput-BMI510.sce']
 %          object in ['myinput-BMI510.sce']
 %          temp1 in ['myinput-BMI510.sce']
 %          temp2 in ['myinput-BMI510.sce']
@@ -56,10 +49,81 @@
 
 
 
-%  Axiom indices used in distinct axiom comments:
-%   BFO-uns-1: 
-%     existence-instantiation.cl: exists-at is dissective on first argument when it is a continuant [uns-1]
-%     continuant-mereology.cl: exists-at is dissective on first argumentwhen it is a continuant [uns-1]
+%  6 out of 412 axioms generated clauses with trivial 'P and not(P)' disjunctions:
+%   <Axiom ID> / Comment
+%    <Axiom with implications replaced by disjunctions>
+
+%   BFO-glc-1 / If at all times that two object-aggreates exist each is part of the other, then they are identical [glc-1]
+%    [forall,[C,D],[or,[or,[exists,[B],[or,[and,[not,['continuant-part-of',C,D,B]],['continuant-part-of',D,C,B]],[and,[not,['continuant-part-of',D,C,B]],['continuant-part-of',C,D,B]]]],[forall,[A],[or,[not,['continuant-part-of',D,C,A]],[not,['continuant-part-of',C,D,A]],[not,['instance-of',C,'object-aggregate',A]]]]],[identical,C,D]]]
+%     2 retained clauses out of 4
+%      kow(if([['continuant-part-of',B,C,A],['continuant-part-of',B,C,[e,60,[B,C]]],['continuant-part-of',C,B,A],['continuant-part-of',C,B,[e,60,[B,C]]],['instance-of',B,'object-aggregate',A]]),then([identical,B,C]))
+%      kow(if([['continuant-part-of',B,C,A],['continuant-part-of',C,B,A],['instance-of',B,'object-aggregate',A]]),then_or([['continuant-part-of',B,C,[e,60,[B,C]]],['continuant-part-of',C,B,[e,60,[B,C]]],[identical,B,C]]))
+%     2 removed clauses out of 4
+%      [continuant-part-of,C,B,[e,60,[B,C]]] -- in: [[continuant-part-of,B,C,A],[continuant-part-of,C,B,A],[continuant-part-of,C,B,[e,60,[B,C]]],[instance-of,B,object-aggregate,A]] --> then_or([[continuant-part-of,C,B,[e,60,[B,C]]],[identical,B,C]])
+%      [continuant-part-of,B,C,[e,60,[B,C]]] -- in: [[continuant-part-of,B,C,A],[continuant-part-of,B,C,[e,60,[B,C]]],[continuant-part-of,C,B,A],[instance-of,B,object-aggregate,A]] --> then_or([[continuant-part-of,B,C,[e,60,[B,C]]],[identical,B,C]])
+
+%   BFO-bee-1 / If you exist you instatiate a universal and vice-versa [bee-1]
+%    [forall,[C,D],[and,[or,[forall,[A],[or,[not,['instance-of',D,'temporal-region',D]],[not,['instance-of',C,A,D]],[not,[universal,A]]]],[and,[particular,C],['instance-of',D,'temporal-region',D],['exists-at',C,D]]],[or,[or,[not,['exists-at',C,D]],[not,['instance-of',D,'temporal-region',D]],[not,[particular,C]]],[exists,[B],[and,[universal,B],['instance-of',C,B,D],['instance-of',D,'temporal-region',D]]]]]]
+%     4 retained clauses out of 6
+%      kow(if([['exists-at',A,B],['instance-of',B,'temporal-region',B],[particular,A]]),then([universal,[e,70,[A,B]]]))
+%      kow(if([['exists-at',A,B],['instance-of',B,'temporal-region',B],[particular,A]]),then(['instance-of',A,[e,70,[A,B]],B]))
+%      kow(if([['instance-of',B,A,C],['instance-of',C,'temporal-region',C],[universal,A]]),then([particular,B]))
+%      kow(if([['instance-of',B,A,C],['instance-of',C,'temporal-region',C],[universal,A]]),then(['exists-at',B,C]))
+%     2 removed clauses out of 6
+%      [instance-of,B,temporal-region,B] -- in: [[exists-at,A,B],[instance-of,B,temporal-region,B],[particular,A]] --> then([instance-of,B,temporal-region,B])
+%      [instance-of,C,temporal-region,C] -- in: [[instance-of,B,A,C],[instance-of,C,temporal-region,C],[universal,A]] --> then([instance-of,C,temporal-region,C])
+
+%   BFO-czc-1 / occurs-in is lower bound location [czc-1]
+%    [forall,[B,C,D],[or,[or,[exists,[A],[or,[and,[not,['exists-at',B,A]],[and,['exists-at',D,A],['continuant-part-of',C,D,A]]],[and,[or,[not,['continuant-part-of',C,D,A]],[not,['exists-at',D,A]]],['exists-at',B,A]]]],[not,['occurs-in',B,C]]],['occurs-in',B,D]]]
+%     3 retained clauses out of 6
+%      kow(if([['continuant-part-of',B,C,[e,145,[A,B,C]]],['exists-at',A,[e,145,[A,B,C]]],['exists-at',C,[e,145,[A,B,C]]],['occurs-in',A,B]]),then(['occurs-in',A,C]))
+%      kow(if([['occurs-in',A,B]]),then_or([['continuant-part-of',B,C,[e,145,[A,B,C]]],['exists-at',A,[e,145,[A,B,C]]],['occurs-in',A,C]]))
+%      kow(if([['occurs-in',A,B]]),then_or([['exists-at',A,[e,145,[A,B,C]]],['exists-at',C,[e,145,[A,B,C]]],['occurs-in',A,C]]))
+%     3 removed clauses out of 6
+%      [continuant-part-of,B,C,[e,145,[A,B,C]]] -- in: [[continuant-part-of,B,C,[e,145,[A,B,C]]],[exists-at,C,[e,145,[A,B,C]]],[occurs-in,A,B]] --> then_or([[continuant-part-of,B,C,[e,145,[A,B,C]]],[occurs-in,A,C]])
+%      [exists-at,C,[e,145,[A,B,C]]] -- in: [[continuant-part-of,B,C,[e,145,[A,B,C]]],[exists-at,C,[e,145,[A,B,C]]],[occurs-in,A,B]] --> then_or([[exists-at,C,[e,145,[A,B,C]]],[occurs-in,A,C]])
+%      [exists-at,A,[e,145,[A,B,C]]] -- in: [[exists-at,A,[e,145,[A,B,C]]],[occurs-in,A,B]] --> then_or([[exists-at,A,[e,145,[A,B,C]]],[occurs-in,A,C]])
+
+%   BFO-yex-1 / occurs-in is a lower bound on second argument [yex-1]
+%    [forall,[B,C,D],[or,[or,[exists,[A],[or,[and,[not,['exists-at',B,A]],['located-in',C,D,A]],[and,[not,['located-in',C,D,A]],['exists-at',B,A]]]],[not,['occurs-in',B,C]]],['occurs-in',B,D]]]
+%     2 retained clauses out of 4
+%      kow(if([['exists-at',A,[e,155,[A,B,C]]],['located-in',B,C,[e,155,[A,B,C]]],['occurs-in',A,B]]),then(['occurs-in',A,C]))
+%      kow(if([['occurs-in',A,B]]),then_or([['exists-at',A,[e,155,[A,B,C]]],['located-in',B,C,[e,155,[A,B,C]]],['occurs-in',A,C]]))
+%     2 removed clauses out of 4
+%      [located-in,B,C,[e,155,[A,B,C]]] -- in: [[located-in,B,C,[e,155,[A,B,C]]],[occurs-in,A,B]] --> then_or([[located-in,B,C,[e,155,[A,B,C]]],[occurs-in,A,C]])
+%      [exists-at,A,[e,155,[A,B,C]]] -- in: [[exists-at,A,[e,155,[A,B,C]]],[occurs-in,A,B]] --> then_or([[exists-at,A,[e,155,[A,B,C]]],[occurs-in,A,C]])
+
+%   BFO-zlp-1 / any temporal instant that precedes the last instant of an interval and which is preceded by the first instant is part of the interval [zlp-1]
+%    [forall,[E,F],[or,[or,[not,['instance-of',F,'temporal-interval',F]],[not,['instance-of',E,'temporal-instant',E]]],[or,['has-first-instant',F,E],['has-last-instant',F,E],[and,[or,[forall,[A,B],[or,[not,[precedes,A,E]],[not,[precedes,E,B]],[not,['has-last-instant',F,B]],[not,['has-first-instant',F,A]],[not,['instance-of',F,'temporal-interval',F]]]],['proper-temporal-part-of',E,F]],[or,[not,['proper-temporal-part-of',E,F]],[exists,[C,D],[and,['instance-of',F,'temporal-interval',F],['has-first-instant',F,C],['has-last-instant',F,D],[precedes,E,D],[precedes,C,E]]]]]]]]
+%     5 retained clauses out of 6
+%      kow(if([['instance-of',A,'temporal-instant',A],['instance-of',B,'temporal-interval',B],['proper-temporal-part-of',A,B]]),then_or([['has-first-instant',B,A],['has-first-instant',B,[e,206,[A,B]]],['has-last-instant',B,A]]))
+%      kow(if([['instance-of',A,'temporal-instant',A],['instance-of',B,'temporal-interval',B],['proper-temporal-part-of',A,B]]),then_or([['has-first-instant',B,A],['has-last-instant',B,A],['has-last-instant',B,[e,207,[A,B]]]]))
+%      kow(if([['instance-of',A,'temporal-instant',A],['instance-of',B,'temporal-interval',B],['proper-temporal-part-of',A,B]]),then_or([['has-first-instant',B,A],['has-last-instant',B,A],[precedes,A,[e,207,[A,B]]]]))
+%      kow(if([['instance-of',A,'temporal-instant',A],['instance-of',B,'temporal-interval',B],['proper-temporal-part-of',A,B]]),then_or([['has-first-instant',B,A],['has-last-instant',B,A],[precedes,[e,206,[A,B]],A]]))
+%      kow(if([['has-first-instant',D,A],['has-last-instant',D,B],['instance-of',C,'temporal-instant',C],['instance-of',D,'temporal-interval',D],[precedes,A,C],[precedes,C,B]]),then_or([['has-first-instant',D,C],['has-last-instant',D,C],['proper-temporal-part-of',C,D]]))
+%     1 removed clauses out of 6
+%      [instance-of,B,temporal-interval,B] -- in: [[instance-of,A,temporal-instant,A],[instance-of,B,temporal-interval,B],[proper-temporal-part-of,A,B]] --> then_or([[has-first-instant,B,A],[has-last-instant,B,A],[instance-of,B,temporal-interval,B]])
+
+%   BFO-xkl-1 / two intervals are identical if their first and last instants are the same and if an instant is part of one of the intervals it is also part of the other [xkl-1]
+%    [forall,[C,D],[or,[or,[not,['instance-of',D,'temporal-interval',D]],[not,['instance-of',C,'temporal-interval',C]]],[or,[forall,[A,B],[or,[or,[and,[not,['temporal-part-of',A,C]],['temporal-part-of',A,D]],[and,[not,['temporal-part-of',A,D]],['temporal-part-of',A,C]]],[or,[and,[not,['temporal-part-of',B,C]],['temporal-part-of',B,D]],[and,[not,['temporal-part-of',B,D]],['temporal-part-of',B,C]]],[not,['has-last-instant',D,B]],[not,['has-last-instant',C,B]],[not,['has-first-instant',D,A]],[not,['has-first-instant',C,A]]]],[identical,C,D]]]]
+%     4 retained clauses out of 16
+%      kow(if([['has-first-instant',C,A],['has-first-instant',D,A],['has-last-instant',C,B],['has-last-instant',D,B],['instance-of',C,'temporal-interval',C],['instance-of',D,'temporal-interval',D],['temporal-part-of',A,C],['temporal-part-of',A,D]]),then_or([[identical,C,D],['temporal-part-of',B,C],['temporal-part-of',B,D]]))
+%      kow(if([['has-first-instant',C,A],['has-first-instant',D,A],['has-last-instant',C,B],['has-last-instant',D,B],['instance-of',C,'temporal-interval',C],['instance-of',D,'temporal-interval',D],['temporal-part-of',A,C],['temporal-part-of',A,D],['temporal-part-of',B,C],['temporal-part-of',B,D]]),then([identical,C,D]))
+%      kow(if([['has-first-instant',C,A],['has-first-instant',D,A],['has-last-instant',C,B],['has-last-instant',D,B],['instance-of',C,'temporal-interval',C],['instance-of',D,'temporal-interval',D]]),then_or([[identical,C,D],['temporal-part-of',A,C],['temporal-part-of',A,D],['temporal-part-of',B,C],['temporal-part-of',B,D]]))
+%      kow(if([['has-first-instant',C,A],['has-first-instant',D,A],['has-last-instant',C,B],['has-last-instant',D,B],['instance-of',C,'temporal-interval',C],['instance-of',D,'temporal-interval',D],['temporal-part-of',B,C],['temporal-part-of',B,D]]),then_or([[identical,C,D],['temporal-part-of',A,C],['temporal-part-of',A,D]]))
+%     12 removed clauses out of 16
+%      [temporal-part-of,B,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,D],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,D],[temporal-part-of,B,D]])
+%      [temporal-part-of,A,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,D]] --> then_or([[identical,C,D],[temporal-part-of,A,D],[temporal-part-of,B,C],[temporal-part-of,B,D]])
+%      [temporal-part-of,B,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,A,D],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,B,D]])
+%      [temporal-part-of,A,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,D],[temporal-part-of,B,C],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,D]])
+%      [temporal-part-of,B,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,D],[temporal-part-of,B,C]] --> then_or([[identical,C,D],[temporal-part-of,A,D],[temporal-part-of,B,C]])
+%      [temporal-part-of,B,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,A,D],[temporal-part-of,B,C]] --> then_or([[identical,C,D],[temporal-part-of,B,C]])
+%      [temporal-part-of,B,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,A,D],[temporal-part-of,B,D]])
+%      [temporal-part-of,B,D] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,B,D]])
+%      [temporal-part-of,A,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,B,C],[temporal-part-of,B,D]])
+%      [temporal-part-of,B,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,B,C]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,A,D],[temporal-part-of,B,C]])
+%      [temporal-part-of,A,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,B,C],[temporal-part-of,B,D]] --> then_or([[identical,C,D],[temporal-part-of,A,C]])
+%      [temporal-part-of,B,C] -- in: [[has-first-instant,C,A],[has-first-instant,D,A],[has-last-instant,C,B],[has-last-instant,D,B],[instance-of,C,temporal-interval,C],[instance-of,D,temporal-interval,D],[temporal-part-of,A,C],[temporal-part-of,B,C]] --> then_or([[identical,C,D],[temporal-part-of,A,C],[temporal-part-of,B,C]])
 
 
 %  Axiom indices occurring in multiple axiom files:
@@ -250,7 +314,6 @@
 %   5. existence-instantiation.cl
 %      110 / 1 / Particulars exist at some time [nmq-1]
 %      111 / 2 / Every universal is instantiated at least once [mbf-1]
-%      112 / 3 / exists-at is dissective on first argument when it is a continuant [uns-1]
 %      113 / 4 / instance-of is dissective on third argument, a temporal region [qaf-1]
 %      114 / 5 / Relata of exists-at are particulars. [oap-1]
 %      115 / 6 / Relata of instance-of are particular, universal, temporal-region. [lqn-1]
@@ -289,7 +352,6 @@
 %      142 / 7 / Any continuant that doesn't s-depend or g-depend on something is an independant continuant [ilw-1]
 %      143 / 8 / An object aggregate has more than one member at at least one time [ibd-1]
 %      144 / 9 / all parts of an aggregate overlap some member [fsy-1]
-%      145 / 10 / If a material entity has a proper part, then at least one of its proper parts is not an immaterial entity [adm-1]
 %      146 / 11 / An object aggregate has member parts only disjoint objects [evk-1]
 
 %   9. occurrent-mereology.cl
@@ -342,7 +404,6 @@
 %      189 / 4 / If c participates in p at t and p occupies-temporal-region r then t is part of r [kxe-1]
 %      190 / 5 / participates-in is time indexed and has domain: independent-continuant but not spatial-region or specifically-dependent-continuant or generically-dependent-continuant  and range: process [ild-1]
 %      191 / 6 / At every time a specific dependent s participates in a process p there's a part of that time, during which there's an independent-continuant that s s-depends on, and that participates in p at that time [cgn-1]
-%      192 / 7 / If a generically dependent continuant participates in a process p then, if it is concretized as a process, that process is part of p, fand if concretized as an sdc then the bearer of that sdc participates in the process [fmm-1]
 
 %   12. spatial.cl
 %      193 / 1 / occurs-in and environs are inverse relations [uys-1]
@@ -416,7 +477,6 @@
 %      257 / 16 / Definition of specifically dependent continuant. [akq-1]
 %      258 / 17 / The material basis of a disposition is part of the bearer of the disposition [uxo-1]
 %      259 / 18 / specifically-depends-on has domain specifically-dependent-continuant and range specifically-dependent-continuant or independent-continuant but not spatial-region  [kkl-1]
-%      260 / 19 / At every time a specific dependent s participates in a process p there's a part of that time, during which there's an independent-continuant that s s-depends on, and that participates in p at that time [cgn-1]
 
 %   15. temporal-region.cl
 %      261 / 1 / has-last-instant and last-instant-of are inverse relations [wal-1]
@@ -433,7 +493,6 @@
 %      272 / 12 / has-first-instant is functional on second argument [fwf-1]
 %      273 / 13 / a proper temporal part of b means a is a temporal part of b and b a is not the same as b [aeu-1]
 %      274 / 14 / The only part of a temporal instant is itself [pir-2]
-%      275 / 15 / instance-of is dissective on third argument, a temporal region [qaf-1]
 %      276 / 16 / temporal-part-of is transitive [bfq-1]
 %      277 / 17 / The first and last time points for an instant are the instant itself [nfo-1]
 %      278 / 18 / temporal regions are instances at themselves [tvx-2]
@@ -441,22 +500,14 @@
 %      280 / 20 / has-last-instant has domain temporal-region and range temporal-instant [jtk-2]
 %      281 / 21 / proper-temporal-part-of is transitive [mns-1]
 %      282 / 22 / has-first-instant has domain temporal-region and range temporal-instant [fwk-2]
-%      283 / 23 / If the last instant of a temporal region precedes the first instant of another, then the first region precedes the second [qqv-1]
 %      284 / 24 / any temporal region has a first and last instant [daf-1]
 %      285 / 25 / All temporal regions are part of a temporal interval [mvd-1]
 %      286 / 26 / temporal-part-of has domain occurrent and range occurrent [ruj-1]
-%      287 / 27 / First instant of a temporal region that is not an instant precedes last instant [rzv-1]
-%      288 / 28 / If one temporal region precedes another then the first last time point precedes the second first time point [miz-1]
 %      289 / 29 / If a temporal-part-of b then if a is an instance of one-dimensional-temporal-region then b is an instance of one-dimensional-temporal-region [mei-2]
 %      290 / 30 / A one-dimensional temporal region has at least one interval as part [jhe-1]
 %      291 / 31 / If a has-temporal-part b then if a is an instance of zero-dimensional-temporal-region then b is an instance of zero-dimensional-temporal-region [bnt-2]
-%      292 / 32 / temporal instants are totally ordered [qnf-1]
 %      293 / 33 / temporal-region is the union of zero-dimensional-temporal-region and one-dimensional-temporal-region  [hgs-1]
-%      294 / 34 / If the last instant of a temporal region is the first instant of another, the first region precedes the second [suk-1]
 %      295 / 35 / If a has-temporal-part b then if a is an instance of one-dimensional-temporal-region then b is an instance of one-dimensional-temporal-region or zero-dimensional-temporal-region  [eeg-2]
-%      296 / 36 / A last instant is either part of an extended region or is preceded by it [acg-1]
-%      297 / 37 / A first instant is either part of an extended region or precedes it [qga-1]
-%      298 / 38 / If two temporal intervals do not overlap then one of them precedes the other [owb-1]
 %      299 / 39 / The first temporal instant is such that it precedes every part of the interval that doesn't have the first instant as part [ixz-1]
 %      300 / 40 / The last temporal instant is such that every part of the interval that doesn't have the last instant as part precedes it [nhd-1]
 %      301 / 41 / intervals have no internal gaps [ekm-1]
@@ -510,7 +561,6 @@
 %      347 / 40 / object is subclass of material-entity [vbm-1]
 %      348 / 41 / role is subclass of realizable-entity [tcp-1]
 %      349 / 42 / site is subclass of immaterial-entity [tcd-1]
-%      350 / 43 / If something is an instance of temporal region at t, then t is part of that temporal region [njq-1]
 %      351 / 44 / temporal-region is subclass of occurrent [ejl-1]
 %      352 / 45 / disposition, role are mutually disjoint [bwk-1]
 %      353 / 46 / process-boundary is subclass of occurrent [xot-1]

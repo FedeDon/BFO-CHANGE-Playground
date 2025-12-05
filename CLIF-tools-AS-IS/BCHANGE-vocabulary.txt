@@ -1,9 +1,10 @@
 % CONSTANTS USED:
 ot(s(car1)).
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp1)]
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp2)]
+   % [s(happens-to),v,s(car1),s(tt)]
    % [s(happens-to),s(comp1),s(car1),s(tt)]
    % [s(instance-of),s(car1),s(object),s(tt)]
+   % [s(proper-continuant-part-of),s(wheel1),s(car1),s(temp1)]
+   % [s(proper-continuant-part-of),s(wheel1),s(car1),s(temp2)]
 ot(s(change)).
    % [s(instance-of),v,s(change),v]
 ot(s(change-profile)).
@@ -12,6 +13,7 @@ ot(s(change-sequence)).
    % [s(instance-of),v,s(change-sequence),v]
 ot(s(comp1)).
    % [s(happens-to),s(comp1),s(car1),s(tt)]
+   % [s(identical),v,s(comp1)]
    % [s(instance-of),s(comp1),s(compositional-change),s(tt)]
 ot(s(compositional-change)).
    % [s(instance-of),s(comp1),s(compositional-change),s(tt)]
@@ -1073,11 +1075,11 @@ ot(s(specifically-dependent-continuant)).
    % [s(instance-of),v,s(specifically-dependent-continuant),v]
    % [s(universal),s(specifically-dependent-continuant)]
 ot(s(temp1)).
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp1)]
    % [s(has-first-instant),s(tt),s(temp1)]
+   % [s(proper-continuant-part-of),s(wheel1),s(car1),s(temp1)]
 ot(s(temp2)).
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp2)]
    % [s(has-last-instant),s(tt),s(temp2)]
+   % [s(proper-continuant-part-of),s(wheel1),s(car1),s(temp2)]
 ot(s(temporal-instant)).
    % [s(identical),s(continuant),s(temporal-instant)]
    % [s(identical),s(continuant-fiat-boundary),s(temporal-instant)]
@@ -1151,6 +1153,7 @@ ot(s(temporal-interval)).
    % [s(identical),s(zero-dimensional-spatial-region),s(temporal-interval)]
    % [s(identical),s(zero-dimensional-temporal-region),s(temporal-interval)]
    % [s(instance-of),v,s(temporal-interval),v]
+   % [s(instance-of),s(tt),s(temporal-interval),s(tt)]
    % [s(universal),s(temporal-interval)]
 ot(s(temporal-region)).
    % [s(identical),s(continuant),s(temporal-region)]
@@ -1229,11 +1232,13 @@ ot(s(three-dimensional-spatial-region)).
    % [s(instance-of),v,s(three-dimensional-spatial-region),v]
    % [s(universal),s(three-dimensional-spatial-region)]
 ot(s(tt)).
+   % [s(happens-to),v,s(car1),s(tt)]
    % [s(happens-to),s(comp1),s(car1),s(tt)]
    % [s(has-first-instant),s(tt),s(temp1)]
    % [s(has-last-instant),s(tt),s(temp2)]
    % [s(instance-of),s(car1),s(object),s(tt)]
    % [s(instance-of),s(comp1),s(compositional-change),s(tt)]
+   % [s(instance-of),s(tt),s(temporal-interval),s(tt)]
    % [s(instance-of),s(wheel1),s(object),s(tt)]
 ot(s(two-dimensional-spatial-region)).
    % [s(identical),s(continuant),s(two-dimensional-spatial-region)]
@@ -1275,9 +1280,9 @@ ot(s(two-dimensional-spatial-region)).
 ot(s(type-replacement)).
    % [s(instance-of),v,s(type-replacement),v]
 ot(s(wheel1)).
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp1)]
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp2)]
    % [s(instance-of),s(wheel1),s(object),s(tt)]
+   % [s(proper-continuant-part-of),s(wheel1),s(car1),s(temp1)]
+   % [s(proper-continuant-part-of),s(wheel1),s(car1),s(temp2)]
 ot(s(zero-dimensional-spatial-region)).
    % [s(identical),s(continuant),s(zero-dimensional-spatial-region)]
    % [s(identical),s(continuant-fiat-boundary),s(zero-dimensional-spatial-region)]
@@ -1366,8 +1371,6 @@ pr(s(concretizes)).
    % [s(concretizes),v,v,v]
 pr(s(continuant-part-of)).
    % [s(continuant-part-of),v,v,v]
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp1)]
-   % [s(continuant-part-of),s(wheel1),s(car1),s(temp2)]
 pr(s(entity)).
    % [s(entity),v]
 pr(s(environs)).
@@ -1388,6 +1391,7 @@ pr(s(happens-throughout)).
    % [s(happens-throughout),v,v]
 pr(s(happens-to)).
    % [s(happens-to),v,v,v]
+   % [s(happens-to),v,s(car1),s(tt)]
    % [s(happens-to),s(comp1),s(car1),s(tt)]
 pr(s(has-continuant-part)).
    % [s(has-continuant-part),v,v,v]
@@ -1421,6 +1425,7 @@ pr(s(history-of)).
    % [s(history-of),v,v]
 pr(s(identical)).
    % [s(identical),v,v]
+   % [s(identical),v,s(comp1)]
    % [s(identical),s(continuant),s(continuant-fiat-boundary)]
    % [s(identical),s(continuant),s(disposition)]
    % [s(identical),s(continuant),s(fiat-line)]
@@ -2072,6 +2077,7 @@ pr(s(instance-of)).
    % [s(instance-of),v,s(zero-dimensional-temporal-region),v]
    % [s(instance-of),s(car1),s(object),s(tt)]
    % [s(instance-of),s(comp1),s(compositional-change),s(tt)]
+   % [s(instance-of),s(tt),s(temporal-interval),s(tt)]
    % [s(instance-of),s(wheel1),s(object),s(tt)]
 pr(s(is-carrier-of)).
    % [s(is-carrier-of),v,v,v]
@@ -2115,6 +2121,8 @@ pr(s(precedes)).
    % [s(precedes),v,v]
 pr(s(proper-continuant-part-of)).
    % [s(proper-continuant-part-of),v,v,v]
+   % [s(proper-continuant-part-of),s(wheel1),s(car1),s(temp1)]
+   % [s(proper-continuant-part-of),s(wheel1),s(car1),s(temp2)]
 pr(s(proper-occurrent-part-of)).
    % [s(proper-occurrent-part-of),v,v]
 pr(s(proper-temporal-part-of)).
