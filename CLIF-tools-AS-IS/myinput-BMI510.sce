@@ -48,6 +48,7 @@ To be done:
 		participates-in
 		particular
 		precedes
+		proper-continuant-part-of 
 		proper-temporal-part-of
 		proper-occurrent-part-of
 		replaces-type
@@ -66,41 +67,63 @@ To be done:
 
 
 
-(cl:comment ' 
-
 
 	(cl:comment "A car has a part, then loses it and this is compositional change [sce-020]"
 	   (and 
 	        (instance-of car1 object tt)
 			(instance-of wheel1 object tt)
+			(instance-of tt temporal-interval tt)
 			(instance-of comp1 compositional-change tt)
 			(has-first-instant tt temp1)  
 			(has-last-instant tt temp2)
 			(happens-to comp1 car1 tt)
-	        (continuant-part-of wheel1 car1 temp1) 
-		    (not(continuant-part-of wheel1 car1 temp2))
+	        (proper-continuant-part-of wheel1 car1 temp1) 
+		    (not(proper-continuant-part-of wheel1 car1 temp2))
+			(forall (ch) (if (happens-to ch car1 tt) (= ch comp1)))))
+
+		)    
+	)
+
+
+(cl:comment ' 
+
+
+	(cl:comment "A car has a part, then loses it and this is not compositional change [sce-020bis]"
+	   (and 
+	        (instance-of car1 object tt)
+			(instance-of wheel1 object tt)
+		    (instance-0f tt temporal-interval tt)
+			(not (instance-of comp1 compositional-change tt))
+			(has-first-instant tt temp1)  
+			(has-last-instant tt temp2)
+			(happens-to comp1 car1 tt)
+	        (proper-continuant-part-of wheel1 car1 temp1) 
+		    (not(proper-continuant-part-of wheel1 car1 temp2))
 
 		)    
 	)
 
 
 
- (cl:comment ".......c1 [dec-000]"  
-	   (and (particular c1) 
-	        (particular t1) 
-			(particular x1)
-	    )
- )
+
+
+	(cl:comment ".......c1 [dec-000]"  
+		(and (particular c1) 
+				(particular t1) 
+				(particular x1)
+			)
+	)
 
 
 	(cl:comment "A car has a quality, then loses it and this is qualitative change [sce-024]"
 	   (and 
-	        (instance-of car1 object t)
-			(instance-of q1 disposition t)
-			(instance-of c qualitative-change t)
-			(has-first-instant t t1)  
-			(has-last-instant t t2)
-			(happens-to c car1 t)
+	        (instance-of car1 object tt)
+			(instance-of q1 disposition tt)
+			(instance-0f tt temporal-interval tt)
+			(instance-of ch1 qualitative-change tt)
+			(has-first-instant tt t1)  
+			(has-last-instant tt t2)
+			(happens-to ch1 car1 tt)
 	        (inheres-in q1 car1 t1) 
 		    (not(inheres-in q1 car1 t2))
 
@@ -110,39 +133,41 @@ To be done:
 
 	(cl:comment "A car has a disposition, then loses it and this is dispositional change [sce-025]"
 	   (and 
-	        (instance-of car1 object t)
-			(instance-of d1 disposition t)
-			(instance-of c dispositional-change t)
-			(has-first-instant t t1)  
-			(has-last-instant t t2)
-			(happens-to c car1 t)
+	        (instance-of car1 object tt)
+			(instance-of d1 disposition tt)
+			(instance-0f tt temporal-interval tt)
+			(instance-of ch1 dispositional-change tt)
+			(has-first-instant tt t1)  
+			(has-last-instant tt t2)
+			(happens-to ch1 car1 tt)
 	        (inheres-in d1 car1 t1) 
 		    (not(inheres-in d1 car1 t2))
 
 		)    
 	)
 
-  ' )
+
   
 	(cl:comment "Bob Dylan gains the role of Nobel Prize nominee, but does not participate in the process of notimation[sce-026]"
 	   (and 
-	        (instance-of bd object t)
-			(instance-of r1 role t)
-            (instance-of p1 process t)
-			(instance-of c role-gain t) 
-			(has-first-instant t t1)  
-			(has-last-instant t t2)
-			(happens-to c bd t)
+	        (instance-of bd object tt)
+			(instance-of r1 role tt)
+            (instance-of p1 process tt)
+			(instance-0f tt temporal-interval tt)
+			(instance-of ch1 role-gain tt) 
+			(has-first-instant tt t1)  
+			(has-last-instant tt t2)
+			(happens-to ch1 bd tt)
 	        (inheres-in r1 bd) 
 			(not (exists-at r1 t1))
 			(exists-at r1 t2) 
-		    (not(participates-in bd p1 t))
+		    (not(participates-in bd p1 tt))
 
 		)    
 	)
 
 
-
+  ' )
 
 
 
@@ -158,12 +183,13 @@ To be done:
 
 	(cl:comment "A spatial region has a part, then loses it and this is compositional change [sce-021]"
 	   (and 
-	        (instance-of s1 spatial-region t)
-			(instance-of w1 object t)
-			(instance-of c compositional-change t)
-			(has-first-instant t t1)  
-			(has-last-instant t t2)
-			(happens-to c s1 t)
+	        (instance-of s1 spatial-region tt)
+			(instance-of w1 object tt)
+			(instance-0f tt temporal-interval tt)
+			(instance-of ch1 compositional-change tt)
+			(has-first-instant tt t1)  
+			(has-last-instant tt t2)
+			(happens-to ch1 s1 tt)
 	        (continuant-part-of w1 s1 t1) 
 		    (not(continuant-part-of w1 s1 t2))
 
@@ -172,12 +198,13 @@ To be done:
 
 (cl:comment "A quality has a part, then loses it and this is compositional change [sce-022]"
 	   (and 
-	        (instance-of q1 quality t)
-			(instance-of w1 object t)
-			(instance-of c compositional-change t)
-			(has-first-instant t t1)  
-			(has-last-instant t t2)
-			(happens-to c q1 t)
+	        (instance-of q1 quality tt)
+			(instance-of w1 object tt)
+			(instance-0f tt temporal-interval tt)
+			(instance-of ch1 compositional-change tt)
+			(has-first-instant tt t1)  
+			(has-last-instant tt t2)
+			(happens-to ch1 q1 tt)
 	        (continuant-part-of w1 q1 t1) 
 		    (not(continuant-part-of w1 q1 t2))
 
@@ -186,33 +213,69 @@ To be done:
 
 	(cl:comment "A car has a part, then loses it and this is NOT compositional change [sce-023]"
 	   (and 
-	        (instance-of car1 object t)
-			(instance-of w1 object t)
-			(not (instance-of c compositional-change t) )
-			(has-first-instant t t1)  
-			(has-last-instant t t2)
-			(happens-to c car1 t)
+	        (instance-of car1 object tt)
+			(instance-of w1 object tt)
+			(instance-0f tt temporal-interval tt)
+			(not (instance-of ch1 compositional-change tt) )
+			(has-first-instant tt t1)  
+			(has-last-instant tt t2)
+			(happens-to ch1 car1 tt)
 	        (continuant-part-of w1 car1 t1) 
 		    (not(continuant-part-of w1 car1 t2))
 
 		)    
 	)
 
-	(cl:comment "Bob Dylan is in a role gain change,, but gains no role[sce-027]"
+	(cl:comment "Bob Dylan is in a role gain change, but gains no role[sce-027]"
 	   (and 
-	        (instance-of bd object t)
-			(instance-of r1 role t)
-			(instance-of c role-gain t) 
-			(has-first-instant t t1)  
-			(has-last-instant t t2)
-			(happens-to c bd t)
+	        (instance-of bd object tt)
+			(instance-of r1 role tt)
+			(instance-0f tt temporal-interval tt)
+			(instance-of ch1 role-gain tt) 
+			(has-first-instant tt t1)  
+			(has-last-instant tt t2)
+			(happens-to ch1 bd tt)
 			(not( exists (x)  
-			        (and (instance-of x role t)
+			        (and (instance-of x role tt)
 					     (inheres-in x bd) 
 			             (not (exists-at r1 t1))
 			             (exists-at r1 t2)   ) ))
 		)  
+	)
 
+	(cl:comment "alice did not love bob, then she does, and this is not a relational gain [sce-028]"
+	   (and 
+	        (instance-of a1 object tt)
+			(instance-of b1 object tt)
+			(instance-0f tt temporal-interval tt)
+			(instance-of r1 relational-quality tt)
+			(instance-of ch1 relational-loss tt) 
+			(has-first-instant tt t1)  
+			(has-last-instant tt t2)
+			(happens-to ch1 a1 tt)
+			(inheres-in r1 a1)			
+			(inheres-in r1 b1)
+			(not( exists-at r1 t1) )
+        	(exists-at r1 t2)
+	   )
+	)
+
+	(cl:comment "alice is next to bob, then not anymore, and this is not a relational loss [sce-029]"
+	   (and 
+	        (instance-of a1 object tt)
+			(instance-of b1 object tt)
+			(instance-0f tt temporal-interval tt)
+			(instance-of r1 relational-quality tt)
+			(instance-of ch1 relational-loss tt) 
+			(has-first-instant tt t1)  
+			(has-last-instant tt t2)
+			(happens-to ch1 a1 tt)
+			(inheres-in r1 a1)			
+			(inheres-in r1 b1)
+			(exists-at r1 t1)
+			(not( exists-at r1 t2) )
+	   )
+	)
 
 
   ' )

@@ -48,6 +48,7 @@ To be done:
 		participates-in
 		particular
 		precedes
+		proper-continuant-part-of 
 		proper-temporal-part-of
 		proper-occurrent-part-of
 		replaces-type
@@ -81,15 +82,17 @@ To be done:
  
 
 	(cl:comment "A material entity changes location before and after a temporal region if it occupies different spatial regions at two temporal parts of that temporal region [bmi-01]"
-		(forall (tlc x t)
+		(forall (x ch t)
 		  (if
-		   (and 
-		    (instance-of tlc total-location-change t)
-			(happens-to tlc x t) )     
+		   (exists (ch)
+				(and 
+					(instance-of ch total-location-change t)
+					(happens-to ch x t) )  )   
 		   (exists (t1 t2)     
 			  (and
 				(has-first-instant t t1)  
 				(has-last-instant t t2)   
+				(instance-of t temporal-interval t) 
 				(forall (l1 l2)
 				  (if
 					(and 
@@ -107,15 +110,18 @@ To be done:
 
 
 	(cl:comment "A material entity moves or teleport during a temporal region if it occupies spatial regions that are not part of the other at two temporal parts of that temporal region [bmi-01]."
-		(forall (m x t)
+		(forall (x t)
 		  (if
 		   (and 
-		    (instance-of m motion t)
-			(happens-to m x t) )     
+		   (exists (ch)
+				(and 
+					(instance-of ch motion t)
+					(happens-to ch x t) )  )     
 		   (exists (t1 t2)     
 			  (and
 				(has-first-instant t t1)  
 				(has-last-instant t t2)   
+				(instance-of t temporal-interval t) 
 				(forall (l1 l2)
 				  (if
 					(and 
@@ -152,18 +158,21 @@ To be done:
 	
 
 	(cl:comment "A material entity undergoes compositional change during a temporal region if it gains or loses a continuant part between the first and last instant of that temporal region [bmi-03]"
-		(forall (ch x t)
+		(forall (x t)
 		  (iff   
-		    (instance-of ch compositional-change t)  
-			(happens-to ch x t)        
+		   (exists (ch)
+				(and 
+					(instance-of ch compositional-change t)
+					(happens-to ch x t) )  )       
 			(exists (t1 t2)          
 			  (and
 				(has-first-instant t t1)  
-				(has-last-instant t t2)   
+				(has-last-instant t t2) 
+				(instance-of t temporal-interval t)   
 				  (exists (y)
 					(or 
-					   (and (continuant-part-of y x t1) (not(continuant-part-of y x t2)) ) 
-					   (and (not(continuant-part-of y x t1)) (continuant-part-of y x t2) ) 
+					   (and (proper-continuant-part-of y x t1) (not(proper-continuant-part-of y x t2)) ) 
+					   (and (not(proper-continuant-part-of y x t1)) (proper-continuant-part-of y x t2) ) 
 					)   ))))) )  
 
 
@@ -173,12 +182,15 @@ To be done:
 	(cl:comment "A material entity undergoes qualitative change during a temporal region if it gains or loses a quality between the first and last instant of that temporal region [bmi-04]"
 		(forall (x t)
 		  (iff   
-			(instance-of ch qualitative-change t)  
-			(happens-to ch x t)        
+		    (exists (ch)
+				(and 
+					(instance-of ch qualitative-change t)
+					(happens-to ch x t) )  )   
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
-				(has-last-instant t t2)    
+				(has-last-instant t t2) 
+				(instance-of t temporal-interval t)    
 				  (exists (y)
 				    (and (instance-of y quality t) 
 					     (inheres-in y x)   
@@ -195,12 +207,15 @@ To be done:
 	(cl:comment "A material entity undergoes dispositional change during a temporal region if it gains or loses a disposition between the first and last instant of that temporal region [bmi-05]"
 		(forall (x t)
 		  (iff   
-			(instance-of ch dispositional-change t)  
-			(happens-to ch x t)        
+		   (exists (ch)
+				(and 
+					(instance-of ch dispositional-change t)
+					(happens-to ch x t) )  )     
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
-				(has-last-instant t t2)    
+				(has-last-instant t t2)  
+				(instance-of t temporal-interval t)   
 				  (exists (y)
 				    (and(instance-of y disposition t)    
 						(inheres-in y x)   
@@ -221,19 +236,20 @@ To be done:
 	   (universal role-gain) )
 
 	(cl:comment "A material entity undergoes role gain during a temporal region if it gains a role between the first and last instant of that temporal region [bmi-06]"
-		(forall (x t)
-		  (if  
-		  (exists (ch)
-			(and (instance-of ch role-gain t)  
-			     (happens-to ch x t)       ) )
+	   (forall (x t)
+		 (iff  
+		    (exists (ch)
+			  (and (instance-of ch role-gain t)  
+			       (happens-to ch x t)       ) )
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
-				(has-last-instant t t2)    
+				(has-last-instant t t2)  
+				(instance-of t temporal-interval t)  
 				  (exists (y)
 				    (and (instance-of y role t)    
 						 (inheres-in y x)   
-						  (and (not(exists-at y t1)) (exists-at y t2) ) 
+						 (and (not(exists-at y t1)) (exists-at y t2) ) 
 					)   )))) ))  
 
 
@@ -244,13 +260,15 @@ To be done:
 	(cl:comment "A material entity undergoes role loss during a temporal region if it loses a role between the first and last instant of that temporal region [bmi-07]"
 		(forall (x t)
 		  (iff   
-			(and
-			  (instance-of ch role-loss t)  
-			  (happens-to ch x t)      )   
+		   (exists (ch)
+				(and 
+					(instance-of ch role-loss t)
+					(happens-to ch x t) )  )     
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
-				(has-last-instant t t2)    
+				(has-last-instant t t2) 
+				(instance-of t temporal-interval t)    
 				  (exists (y)
 				    (and (instance-of y role t)    
 						 (inheres-in y x)   
@@ -264,13 +282,15 @@ To be done:
 	(cl:comment "A material entity undergoes relational gain during a temporal region if it gains a relational quality between the first and last instant of that temporal region [bmi-09]"
 		(forall (x t)
 		  (iff  
-		   (and
-			  (instance-of ch relational-gain t)  
-			  (happens-to ch x t)   )     
+		   (exists (ch)
+				(and 
+					(instance-of ch relational-gain t)
+					(happens-to ch x t) )  )      
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
 				(has-last-instant t t2)    
+				(instance-of t temporal-interval t) 
 				  (exists (y)
 				    (and (instance-of y relational-quality t)    
 						(inheres-in y x)   
@@ -281,15 +301,17 @@ To be done:
 	   (universal relational-loss) )
 
 	(cl:comment "A material entity undergoes relational loss during a temporal region if it loses a relational quality between the first and last instant of that temporal region [bmi-09]"
-		(forall (x t)
+		(forall (x ch t)
 		  (iff   
-			(and 
-			  (instance-of ch relational-loss t)  
-			  (happens-to ch x t)   )     
+		   (exists (ch)
+				(and 
+					(instance-of ch relational-loss t)
+					(happens-to ch x t) )  )    
 			(exists (t1 t2)       
 			  (and
 				(has-first-instant t t1)  
-				(has-last-instant t t2)    
+				(has-last-instant t t2)   
+				(instance-of t temporal-interval t)  
 				  (exists (y)
 				    (and (instance-of y relational-quality t)    
 						(inheres-in y x)   

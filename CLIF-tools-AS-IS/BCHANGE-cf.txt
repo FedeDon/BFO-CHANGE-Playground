@@ -1,29 +1,29 @@
 % Clausal form: each separate clause is a list of disjunctions.
 
 
-% Bob Dylan gains the role of Nobel Prize nominee, but does not participate in the process of notimation[sce-026]
-posax(1,0,"SCE-sce-026",[[0,'instance-of',bd,object,t]]).
-posax(2,0,"SCE-sce-026",[[0,'instance-of',r1,role,t]]).
-posax(3,0,"SCE-sce-026",[[0,'instance-of',p1,process,t]]).
-posax(4,0,"SCE-sce-026",[[0,'instance-of',c,'role-gain',t]]).
-posax(5,0,"SCE-sce-026",[[0,'has-first-instant',t,t1]]).
-posax(6,0,"SCE-sce-026",[[0,'has-last-instant',t,t2]]).
-posax(7,0,"SCE-sce-026",[[0,'happens-to',c,bd,t]]).
-posax(8,0,"SCE-sce-026",[[0,'inheres-in',r1,bd]]).
-posax(9,0,"SCE-sce-026",[[-1,'exists-at',r1,t1]]).
-posax(10,0,"SCE-sce-026",[[0,'exists-at',r1,t2]]).
-posax(11,0,"SCE-sce-026",[[-1,'participates-in',bd,p1,t]]).
+% A car has a part, then loses it and this is compositional change [sce-020]
+posax(1,0,"SCE-sce-020",[[0,'instance-of',car1,object,tt]]).
+posax(2,0,"SCE-sce-020",[[0,'instance-of',wheel1,object,tt]]).
+posax(3,0,"SCE-sce-020",[[0,'instance-of',comp1,'compositional-change',tt]]).
+posax(4,0,"SCE-sce-020",[[0,'has-first-instant',tt,temp1]]).
+posax(5,0,"SCE-sce-020",[[0,'has-last-instant',tt,temp2]]).
+posax(6,0,"SCE-sce-020",[[0,'happens-to',comp1,car1,tt]]).
+posax(7,0,"SCE-sce-020",[[0,'continuant-part-of',wheel1,car1,temp1]]).
+posax(8,0,"SCE-sce-020",[[-1,'continuant-part-of',wheel1,car1,temp2]]).
 
 % role-gain declaration  [dec-06]
-posax(12,0,"BFOCE-dec-06",[[0,universal,'role-gain']]).
+posax(9,0,"BFOCE-dec-06",[[0,universal,'role-gain']]).
 
 % A material entity undergoes role gain during a temporal region if it gains a role between the first and last instant of that temporal region [bmi-06]
-posax(13,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'has-last-instant',C,[sk3,B,C]]]).
-posax(14,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'has-first-instant',C,[sk2,B,C]]]).
-posax(15,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'instance-of',[sk1,B,C],role,C]]).
-posax(16,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'inheres-in',[sk1,B,C],B]]).
-posax(17,1,"BFOCE-bmi-06",[[-1,'exists-at',[sk1,B,C],[sk2,B,C]],[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C]]).
-posax(18,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'exists-at',[sk1,B,C],[sk3,B,C]]]).
+posax(10,1,"BFOCE-bmi-06",[[-1,'exists-at',A,C],[-1,'has-first-instant',E,B],[-1,'has-last-instant',E,C],[-1,'inheres-in',A,D],[-1,'instance-of',A,role,E],[-1,'instance-of',E,'temporal-interval',E],[0,'exists-at',A,B],[0,'instance-of',[sk1,D,E],'role-gain',E]]).
+posax(11,1,"BFOCE-bmi-06",[[-1,'exists-at',A,C],[-1,'has-first-instant',E,B],[-1,'has-last-instant',E,C],[-1,'inheres-in',A,D],[-1,'instance-of',A,role,E],[-1,'instance-of',E,'temporal-interval',E],[0,'exists-at',A,B],[0,'happens-to',[sk1,D,E],D,E]]).
+posax(12,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'exists-at',[sk2,B,C],[sk4,B,C]]]).
+posax(13,1,"BFOCE-bmi-06",[[-1,'exists-at',[sk2,B,C],[sk3,B,C]],[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C]]).
+posax(14,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'inheres-in',[sk2,B,C],B]]).
+posax(15,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'instance-of',[sk2,B,C],role,C]]).
+posax(16,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'has-first-instant',C,[sk3,B,C]]]).
+posax(17,1,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'has-last-instant',C,[sk4,B,C]]]).
+posax(18,0,"BFOCE-bmi-06",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'role-gain',C],[0,'instance-of',C,'temporal-interval',C]]).
 
 % extrinsic change  [dec-08] 
 posax(19,0,"BFOCE-dec-08",[[0,universal,'extrinsic-change']]).
@@ -59,8 +59,8 @@ posax(32,0,"BFOCE-htr-03",[[-1,'exists-throughout',A,B],[-1,'instance-of',A,chan
 posax(33,0,"BFOCE-htr-04",[[-1,'happens-throughout',B,A],[-1,'happens-throughout',B,C],[0,identical,A,C]]).
 
 % at any time t a change ch exists, t is a temporal part of the temporal region throughout which ch happens [htr-05]
-posax(34,1,"BFOCE-htr-05",[[-1,'instance-of',A,change,B],[0,'temporal-part-of',B,[sk4,A,B]]]).
-posax(35,1,"BFOCE-htr-05",[[-1,'instance-of',A,change,B],[0,'happens-throughout',A,[sk4,A,B]]]).
+posax(34,1,"BFOCE-htr-05",[[-1,'instance-of',A,change,B],[0,'temporal-part-of',B,[sk5,A,B]]]).
+posax(35,1,"BFOCE-htr-05",[[-1,'instance-of',A,change,B],[0,'happens-throughout',A,[sk5,A,B]]]).
 
 % all changes are occurrents [cha-01]
 posax(36,0,"BFOCE-cha-01",[[-1,'instance-of',A,change,B],[0,'instance-of',A,occurrent,B]]).
@@ -72,21 +72,21 @@ posax(39,0,"BFOCE-cha-02",[[-1,'happens-to',A,B,C],[0,'instance-of',C,'temporal-
 posax(40,0,"BFOCE-cha-02",[[-1,'happens-to',A,B,C],[0,'instance-of',B,continuant,C]]).
 
 % happens-in has domain change and range process [cha-03]
-posax(41,1,"BFOCE-cha-03",[[-1,'happens-in',A,B],[0,'instance-of',A,change,[sk5,A,B]]]).
-posax(42,1,"BFOCE-cha-03",[[-1,'happens-in',A,B],[0,'instance-of',B,process,[sk5,A,B]]]).
+posax(41,1,"BFOCE-cha-03",[[-1,'happens-in',A,B],[0,'instance-of',A,change,[sk6,A,B]]]).
+posax(42,1,"BFOCE-cha-03",[[-1,'happens-in',A,B],[0,'instance-of',B,process,[sk6,A,B]]]).
 
 % if a change exists, there exists also a process in which the change happens, and a continuant to which the change happens [cha-04]
-posax(43,1,"BFOCE-cha-04",[[-1,'happens-throughout',A,B],[0,'participates-in',[sk6,A,B],[sk7,A,B],[sk8,A,B]]]).
-posax(44,1,"BFOCE-cha-04",[[-1,'happens-throughout',A,B],[0,'happens-to',A,[sk6,A,B],[sk8,A,B]]]).
-posax(45,1,"BFOCE-cha-04",[[-1,'happens-throughout',A,B],[0,'happens-in',A,[sk7,A,B]]]).
+posax(43,1,"BFOCE-cha-04",[[-1,'happens-throughout',A,B],[0,'participates-in',[sk7,A,B],[sk8,A,B],[sk9,A,B]]]).
+posax(44,1,"BFOCE-cha-04",[[-1,'happens-throughout',A,B],[0,'happens-to',A,[sk7,A,B],[sk9,A,B]]]).
+posax(45,1,"BFOCE-cha-04",[[-1,'happens-throughout',A,B],[0,'happens-in',A,[sk8,A,B]]]).
 
 % any change happens to a continuant that participates in a process in which the change happens [cha-05]
-posax(46,1,"BFOCE-cha-05",[[-1,'happens-to',A,B,C],[0,'participates-in',B,[sk9,A,B,C],C]]).
-posax(47,1,"BFOCE-cha-05",[[-1,'happens-to',A,B,C],[0,'happens-in',A,[sk9,A,B,C]]]).
+posax(46,1,"BFOCE-cha-05",[[-1,'happens-to',A,B,C],[0,'participates-in',B,[sk10,A,B,C],C]]).
+posax(47,1,"BFOCE-cha-05",[[-1,'happens-to',A,B,C],[0,'happens-in',A,[sk10,A,B,C]]]).
 
 % any change happens in a process in which participates a continuant to which the change happens [cha-06]
-posax(48,1,"BFOCE-cha-06",[[-1,'happens-in',A,B],[0,'participates-in',[sk10,A,B],B,[sk11,A,B]]]).
-posax(49,1,"BFOCE-cha-06",[[-1,'happens-in',A,B],[0,'happens-to',A,[sk10,A,B],[sk11,A,B]]]).
+posax(48,1,"BFOCE-cha-06",[[-1,'happens-in',A,B],[0,'participates-in',[sk11,A,B],B,[sk12,A,B]]]).
+posax(49,1,"BFOCE-cha-06",[[-1,'happens-in',A,B],[0,'happens-to',A,[sk11,A,B],[sk12,A,B]]]).
 
 % at all times a change that happens to a continuant and in a process that continuant participates in that process [cha-07]
 posax(50,0,"BFOCE-cha-07",[[-1,'happens-in',B,A],[-1,'happens-to',B,C,D],[0,'participates-in',C,A,D]]).
@@ -99,7 +99,7 @@ posax(52,0,"BFOCE-ext-02",[[-1,'instance-of',A,'existence-change',B],[0,'instanc
 posax(53,0,"BFOCE-ext-02",[[-1,'instance-of',A,'existence-change',B],[-1,'instance-of',A,individuation,B],[-1,'instance-of',A,termination,B]]).
 
 % existence changes happen only to continuants [ext-03]
-posax(54,1,"BFOCE-ext-03",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'existence-change',C],[0,'instance-of',B,continuant,[sk12,A,B,C]]]).
+posax(54,1,"BFOCE-ext-03",[[-1,'happens-to',A,B,C],[-1,'instance-of',A,'existence-change',C],[0,'instance-of',B,continuant,[sk13,A,B,C]]]).
 
 % all individuations are existence changes [ind-01]
 posax(55,0,"BFOCE-ind-01",[[-1,'instance-of',A,individuation,B],[0,'instance-of',A,'existence-change',B]]).
@@ -114,18 +114,18 @@ posax(59,0,"BFOCE-ind-02",[[-1,'individuates-at',A,B],[0,'instance-of',A,continu
 posax(60,0,"BFOCE-ind-03",[[-1,'exists-throughout',A,C],[-1,'individuates-at',A,B],[0,'has-first-instant',C,B]]).
 
 % a particular individuates at the last instant of the temporal region throughout which the individuation happens [ind-04]
-posax(61,1,"BFOCE-ind-04",[[-1,'happens-throughout',A,B],[-1,'has-last-instant',B,[sk14,A,B]],[-1,'instance-of',A,individuation,B],[0,'individuates-at',[sk13,A,B],[sk14,A,B]]]).
-posax(62,1,"BFOCE-ind-04",[[-1,'happens-throughout',A,B],[-1,'individuates-at',[sk13,A,B],[sk14,A,B]],[-1,'instance-of',A,individuation,B],[0,'has-last-instant',B,[sk14,A,B]]]).
+posax(61,1,"BFOCE-ind-04",[[-1,'happens-throughout',A,B],[-1,'has-last-instant',B,[sk15,A,B]],[-1,'instance-of',A,individuation,B],[0,'individuates-at',[sk14,A,B],[sk15,A,B]]]).
+posax(62,1,"BFOCE-ind-04",[[-1,'happens-throughout',A,B],[-1,'individuates-at',[sk14,A,B],[sk15,A,B]],[-1,'instance-of',A,individuation,B],[0,'has-last-instant',B,[sk15,A,B]]]).
 
 % a particular x individuates at a time which is the last instant of the temporal region throughout which some individuation s happens whereby s happens to x if x is a continuant or s happens to a continuant c which participates in x [ind-05]
-posax(63,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[-1,'instance-of',A,process,B],[0,'instance-of',[sk15,A,B],continuant,B]]).
-posax(64,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[-1,'instance-of',A,process,B],[0,'participates-in',[sk15,A,B],A,B]]).
-posax(65,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[-1,'instance-of',A,process,B],[0,'happens-to',[sk16,A,B],[sk15,A,B],B]]).
-posax(66,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[0,'has-last-instant',[sk17,A,B],B]]).
-posax(67,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[0,'happens-throughout',[sk16,A,B],[sk17,A,B]]]).
-posax(68,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[0,'instance-of',[sk16,A,B],individuation,[sk17,A,B]]]).
-posax(69,1,"BFOCE-ind-05",[[-1,'happens-to',[sk16,A,B],A,B],[-1,'individuates-at',A,B],[0,'instance-of',A,continuant,B]]).
-posax(70,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[-1,'instance-of',A,continuant,B],[0,'happens-to',[sk16,A,B],A,B]]).
+posax(63,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[-1,'instance-of',A,process,B],[0,'instance-of',[sk16,A,B],continuant,B]]).
+posax(64,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[-1,'instance-of',A,process,B],[0,'participates-in',[sk16,A,B],A,B]]).
+posax(65,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[-1,'instance-of',A,process,B],[0,'happens-to',[sk17,A,B],[sk16,A,B],B]]).
+posax(66,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[0,'has-last-instant',[sk18,A,B],B]]).
+posax(67,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[0,'happens-throughout',[sk17,A,B],[sk18,A,B]]]).
+posax(68,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[0,'instance-of',[sk17,A,B],individuation,[sk18,A,B]]]).
+posax(69,1,"BFOCE-ind-05",[[-1,'happens-to',[sk17,A,B],A,B],[-1,'individuates-at',A,B],[0,'instance-of',A,continuant,B]]).
+posax(70,1,"BFOCE-ind-05",[[-1,'individuates-at',A,B],[-1,'instance-of',A,continuant,B],[0,'happens-to',[sk17,A,B],A,B]]).
 
 % all terminations are existence changes [ter-01]
 posax(71,0,"BFOCE-ter-01",[[-1,'instance-of',A,termination,B],[0,'instance-of',A,'existence-change',B]]).
@@ -144,33 +144,33 @@ posax(77,0,"BFOCE-ter-04",[[-1,'happens-to',B,A,D],[-1,'instance-of',A,continuan
 posax(78,0,"BFOCE-ter-04",[[-1,'happens-to',B,A,D],[-1,'instance-of',A,continuant,C],[-1,'instance-of',B,termination,C],[0,'ceases-to-exist-at',A,D]]).
 
 % if a continuant ceases to exist at a time, a termination happens to it at that time [ter-05]
-posax(79,1,"BFOCE-ter-05",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,continuant,B],[0,'happens-to',[sk18,A,B],A,B]]).
-posax(80,1,"BFOCE-ter-05",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,continuant,B],[0,'has-last-instant',[sk19,A,B],B]]).
-posax(81,1,"BFOCE-ter-05",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,continuant,B],[0,'instance-of',[sk18,A,B],termination,[sk19,A,B]]]).
+posax(79,1,"BFOCE-ter-05",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,continuant,B],[0,'happens-to',[sk19,A,B],A,B]]).
+posax(80,1,"BFOCE-ter-05",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,continuant,B],[0,'has-last-instant',[sk20,A,B],B]]).
+posax(81,1,"BFOCE-ter-05",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,continuant,B],[0,'instance-of',[sk19,A,B],termination,[sk20,A,B]]]).
 
 % if a process ceases to exist at t, it exists for the last time at t [ter-06]
-posax(82,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'has-last-instant',[sk22,A,B],B]]).
-posax(83,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'exists-throughout',A,[sk22,A,B]]]).
-posax(84,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'temporal-part-of',[sk21,A,B],B]]).
-posax(85,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'happens-in',[sk20,A,B],A]]).
-posax(86,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'instance-of',[sk20,A,B],termination,[sk21,A,B]]]).
+posax(82,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'has-last-instant',[sk23,A,B],B]]).
+posax(83,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'exists-throughout',A,[sk23,A,B]]]).
+posax(84,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'temporal-part-of',[sk22,A,B],B]]).
+posax(85,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'happens-in',[sk21,A,B],A]]).
+posax(86,1,"BFOCE-ter-06",[[-1,'ceases-to-exist-at',A,B],[-1,'instance-of',A,process,B],[0,'instance-of',[sk21,A,B],termination,[sk22,A,B]]]).
 
 % all instantiation changes are changes [ins-01]
 posax(87,0,"BFOCE-ins-01",[[-1,'instance-of',A,'instantiation-change',B],[0,'instance-of',A,change,B]]).
 
 % an instantiation change happens to a continuant c when not all the universals instantiated by c prior to the change are instantiated by c after the change or vice versa [ins-02]
-posax(88,1,"BFOCE-ins-02",[[-1,'happens-throughout',A,C],[-1,'happens-to',A,B,C],[-1,'instance-of',A,'instantiation-change',C],[-1,'instance-of',B,[sk23,A,B,C],[sk24,A,B,C]],[-1,'instance-of',B,[sk23,A,B,C],[sk25,A,B,C]]]).
-posax(89,1,"BFOCE-ins-02",[[-1,'happens-throughout',A,C],[-1,'happens-to',A,B,C],[-1,'instance-of',A,'instantiation-change',C],[0,'has-last-instant',C,[sk25,A,B,C]]]).
-posax(90,1,"BFOCE-ins-02",[[-1,'happens-throughout',A,C],[-1,'happens-to',A,B,C],[-1,'instance-of',A,'instantiation-change',C],[0,'has-first-instant',C,[sk24,A,B,C]]]).
+posax(88,1,"BFOCE-ins-02",[[-1,'happens-throughout',A,C],[-1,'happens-to',A,B,C],[-1,'instance-of',A,'instantiation-change',C],[-1,'instance-of',B,[sk24,A,B,C],[sk25,A,B,C]],[-1,'instance-of',B,[sk24,A,B,C],[sk26,A,B,C]]]).
+posax(89,1,"BFOCE-ins-02",[[-1,'happens-throughout',A,C],[-1,'happens-to',A,B,C],[-1,'instance-of',A,'instantiation-change',C],[0,'has-last-instant',C,[sk26,A,B,C]]]).
+posax(90,1,"BFOCE-ins-02",[[-1,'happens-throughout',A,C],[-1,'happens-to',A,B,C],[-1,'instance-of',A,'instantiation-change',C],[0,'has-first-instant',C,[sk25,A,B,C]]]).
 
 % an instantiation change happens to a continuant c when not all the universals instantiated by c prior to the change are instantiated by c after the change or vice versa (strong version) [ins-03]
-posax(91,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'has-first-instant',[sk27,A,B,C,D],C],[0,'has-last-instant',[sk27,A,B,C,D],C],[0,identical,C,D],[0,'instance-of',A,B,D]]).
-posax(92,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'has-last-instant',[sk27,A,B,C,D],C],[0,'has-last-instant',[sk27,A,B,C,D],D],[0,identical,C,D],[0,'instance-of',A,B,D]]).
-posax(93,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'has-first-instant',[sk27,A,B,C,D],C],[0,'has-first-instant',[sk27,A,B,C,D],D],[0,identical,C,D],[0,'instance-of',A,B,D]]).
-posax(94,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'has-first-instant',[sk27,A,B,C,D],D],[0,'has-last-instant',[sk27,A,B,C,D],D],[0,identical,C,D],[0,'instance-of',A,B,D]]).
-posax(95,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,identical,C,D],[0,'instance-of',A,B,D],[0,'instance-of',[sk26,A,B,C,D],'instantiation-change',[sk27,A,B,C,D]]]).
-posax(96,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'happens-throughout',[sk26,A,B,C,D],[sk27,A,B,C,D]],[0,identical,C,D],[0,'instance-of',A,B,D]]).
-posax(97,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'happens-to',[sk26,A,B,C,D],A,[sk27,A,B,C,D]],[0,identical,C,D],[0,'instance-of',A,B,D]]).
+posax(91,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'has-first-instant',[sk28,A,B,C,D],C],[0,'has-last-instant',[sk28,A,B,C,D],C],[0,identical,C,D],[0,'instance-of',A,B,D]]).
+posax(92,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'has-last-instant',[sk28,A,B,C,D],C],[0,'has-last-instant',[sk28,A,B,C,D],D],[0,identical,C,D],[0,'instance-of',A,B,D]]).
+posax(93,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'has-first-instant',[sk28,A,B,C,D],C],[0,'has-first-instant',[sk28,A,B,C,D],D],[0,identical,C,D],[0,'instance-of',A,B,D]]).
+posax(94,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'has-first-instant',[sk28,A,B,C,D],D],[0,'has-last-instant',[sk28,A,B,C,D],D],[0,identical,C,D],[0,'instance-of',A,B,D]]).
+posax(95,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,identical,C,D],[0,'instance-of',A,B,D],[0,'instance-of',[sk27,A,B,C,D],'instantiation-change',[sk28,A,B,C,D]]]).
+posax(96,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'happens-throughout',[sk27,A,B,C,D],[sk28,A,B,C,D]],[0,identical,C,D],[0,'instance-of',A,B,D]]).
+posax(97,1,"BFOCE-ins-03",[[-1,'exists-at',A,D],[-1,'instance-of',A,B,C],[0,'happens-to',[sk27,A,B,C,D],A,[sk28,A,B,C,D]],[0,identical,C,D],[0,'instance-of',A,B,D]]).
 posax(98,0,"BFOCE-ins-03",[[-1,'exists-at',C,F],[-1,'happens-throughout',A,B],[-1,'happens-to',A,C,B],[-1,'has-first-instant',B,F],[-1,'has-last-instant',B,E],[-1,'instance-of',A,'instantiation-change',B],[-1,'instance-of',C,D,E],[-1,'instance-of',C,D,F],[0,identical,E,F]]).
 posax(99,0,"BFOCE-ins-03",[[-1,'exists-at',C,F],[-1,'happens-throughout',A,B],[-1,'happens-to',A,C,B],[-1,'has-first-instant',B,E],[-1,'has-last-instant',B,F],[-1,'instance-of',A,'instantiation-change',B],[-1,'instance-of',C,D,E],[-1,'instance-of',C,D,F],[0,identical,E,F]]).
 
@@ -183,21 +183,21 @@ posax(102,0,"BFOCE-spe-02",[[-1,'gains-type',A,B,C],[0,universal,B]]).
 posax(103,0,"BFOCE-spe-02",[[-1,'gains-type',A,B,C],[0,'instance-of',A,continuant,C]]).
 
 % if a specialization happens to a continuant, that continuant gains a type [spe-03]
-posax(104,1,"BFOCE-spe-03",[[-1,'happens-to',B,A,C],[-1,'instance-of',B,specialization,C],[0,'gains-type',A,[sk28,A,B,C],C]]).
+posax(104,1,"BFOCE-spe-03",[[-1,'happens-to',B,A,C],[-1,'instance-of',B,specialization,C],[0,'gains-type',A,[sk29,A,B,C],C]]).
 
 % if a continuant gains a type, a specialization happens to it [spe-04]
-posax(105,1,"BFOCE-spe-04",[[-1,'gains-type',A,B,C],[0,'happens-to',[sk29,A,B,C],A,C]]).
-posax(106,1,"BFOCE-spe-04",[[-1,'gains-type',A,B,C],[0,'instance-of',[sk29,A,B,C],specialization,C]]).
+posax(105,1,"BFOCE-spe-04",[[-1,'gains-type',A,B,C],[0,'happens-to',[sk30,A,B,C],A,C]]).
+posax(106,1,"BFOCE-spe-04",[[-1,'gains-type',A,B,C],[0,'instance-of',[sk30,A,B,C],specialization,C]]).
 
 % a continuant c gains a type iff c becomes instance of a type while keeping all existing instantiations [spe-05]
-posax(107,1,"BFOCE-spe-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,identical,[sk32,A,B,C,D,E],D],[-1,'instance-of',C,D,B],[0,'gains-type',C,D,E],[0,'instance-of',C,D,A]]).
-posax(108,1,"BFOCE-spe-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,'instance-of',C,D,B],[0,'gains-type',C,D,E],[0,'instance-of',C,D,A],[0,'instance-of',C,[sk32,A,B,C,D,E],A]]).
-posax(109,1,"BFOCE-spe-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,'instance-of',C,D,B],[-1,'instance-of',C,[sk32,A,B,C,D,E],B],[0,'gains-type',C,D,E],[0,'instance-of',C,D,A]]).
-posax(110,1,"BFOCE-spe-05",[[-1,'gains-type',A,B,C],[0,'has-first-instant',C,[sk30,A,B,C]]]).
-posax(111,1,"BFOCE-spe-05",[[-1,'gains-type',A,B,C],[-1,'instance-of',A,B,[sk30,A,B,C]]]).
-posax(112,1,"BFOCE-spe-05",[[-1,'gains-type',A,B,C],[0,'has-last-instant',C,[sk31,A,B,C]]]).
-posax(113,1,"BFOCE-spe-05",[[-1,'gains-type',A,B,C],[0,'instance-of',A,B,[sk31,A,B,C]]]).
-posax(114,1,"BFOCE-spe-05",[[-1,'gains-type',B,C,D],[-1,'instance-of',B,A,[sk30,B,C,D]],[0,identical,A,C],[0,'instance-of',B,A,[sk31,B,C,D]]]).
+posax(107,1,"BFOCE-spe-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,identical,[sk33,A,B,C,D,E],D],[-1,'instance-of',C,D,B],[0,'gains-type',C,D,E],[0,'instance-of',C,D,A]]).
+posax(108,1,"BFOCE-spe-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,'instance-of',C,D,B],[0,'gains-type',C,D,E],[0,'instance-of',C,D,A],[0,'instance-of',C,[sk33,A,B,C,D,E],A]]).
+posax(109,1,"BFOCE-spe-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,'instance-of',C,D,B],[-1,'instance-of',C,[sk33,A,B,C,D,E],B],[0,'gains-type',C,D,E],[0,'instance-of',C,D,A]]).
+posax(110,1,"BFOCE-spe-05",[[-1,'gains-type',A,B,C],[0,'has-first-instant',C,[sk31,A,B,C]]]).
+posax(111,1,"BFOCE-spe-05",[[-1,'gains-type',A,B,C],[-1,'instance-of',A,B,[sk31,A,B,C]]]).
+posax(112,1,"BFOCE-spe-05",[[-1,'gains-type',A,B,C],[0,'has-last-instant',C,[sk32,A,B,C]]]).
+posax(113,1,"BFOCE-spe-05",[[-1,'gains-type',A,B,C],[0,'instance-of',A,B,[sk32,A,B,C]]]).
+posax(114,1,"BFOCE-spe-05",[[-1,'gains-type',B,C,D],[-1,'instance-of',B,A,[sk31,B,C,D]],[0,identical,A,C],[0,'instance-of',B,A,[sk32,B,C,D]]]).
 
 % all generalizations are instantiation changes [gen-01]
 posax(115,0,"BFOCE-gen-01",[[-1,'instance-of',A,generalization,B],[0,'instance-of',A,'instantiation-change',B]]).
@@ -208,20 +208,20 @@ posax(117,0,"BFOCE-gen-02",[[-1,'loses-type',A,B,C],[0,universal,B]]).
 posax(118,0,"BFOCE-gen-02",[[-1,'loses-type',A,B,C],[0,'instance-of',A,continuant,C]]).
 
 % if a generalization happens to a continuant, that continuant loses a type [gen-03]
-posax(119,1,"BFOCE-gen-03",[[-1,'happens-to',B,A,C],[-1,'instance-of',B,generalization,C],[0,'loses-type',A,[sk33,A,B,C],C]]).
+posax(119,1,"BFOCE-gen-03",[[-1,'happens-to',B,A,C],[-1,'instance-of',B,generalization,C],[0,'loses-type',A,[sk34,A,B,C],C]]).
 
 % if a continuant loses a type, a generalization happens to it [gen-04]
-posax(120,1,"BFOCE-gen-04",[[-1,'loses-type',A,B,C],[0,'happens-to',[sk34,A,B,C],A,C]]).
-posax(121,1,"BFOCE-gen-04",[[-1,'loses-type',A,B,C],[0,'instance-of',[sk34,A,B,C],generalization,C]]).
+posax(120,1,"BFOCE-gen-04",[[-1,'loses-type',A,B,C],[0,'happens-to',[sk35,A,B,C],A,C]]).
+posax(121,1,"BFOCE-gen-04",[[-1,'loses-type',A,B,C],[0,'instance-of',[sk35,A,B,C],generalization,C]]).
 
 % a continuant loses a type whenever it doesn't instantiate a type it did before and doesn't gain a type [gen-05]
-posax(122,1,"BFOCE-gen-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,'instance-of',C,D,A],[-1,'instance-of',C,[sk37,A,B,C,D,E],A],[0,'instance-of',C,D,B],[0,'loses-type',C,D,E]]).
-posax(123,1,"BFOCE-gen-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,'instance-of',C,D,A],[0,'instance-of',C,D,B],[0,'instance-of',C,[sk37,A,B,C,D,E],B],[0,'loses-type',C,D,E]]).
-posax(124,1,"BFOCE-gen-05",[[-1,'loses-type',A,B,C],[0,'has-first-instant',C,[sk35,A,B,C]]]).
-posax(125,1,"BFOCE-gen-05",[[-1,'loses-type',A,B,C],[0,'instance-of',A,B,[sk35,A,B,C]]]).
-posax(126,1,"BFOCE-gen-05",[[-1,'loses-type',A,B,C],[0,'has-last-instant',C,[sk36,A,B,C]]]).
-posax(127,1,"BFOCE-gen-05",[[-1,'instance-of',A,B,[sk36,A,B,C]],[-1,'loses-type',A,B,C]]).
-posax(128,1,"BFOCE-gen-05",[[-1,'instance-of',B,A,[sk36,B,C,D]],[-1,'loses-type',B,C,D],[0,'instance-of',B,A,[sk35,B,C,D]]]).
+posax(122,1,"BFOCE-gen-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,'instance-of',C,D,A],[-1,'instance-of',C,[sk38,A,B,C,D,E],A],[0,'instance-of',C,D,B],[0,'loses-type',C,D,E]]).
+posax(123,1,"BFOCE-gen-05",[[-1,'has-first-instant',E,A],[-1,'has-last-instant',E,B],[-1,'instance-of',C,D,A],[0,'instance-of',C,D,B],[0,'instance-of',C,[sk38,A,B,C,D,E],B],[0,'loses-type',C,D,E]]).
+posax(124,1,"BFOCE-gen-05",[[-1,'loses-type',A,B,C],[0,'has-first-instant',C,[sk36,A,B,C]]]).
+posax(125,1,"BFOCE-gen-05",[[-1,'loses-type',A,B,C],[0,'instance-of',A,B,[sk36,A,B,C]]]).
+posax(126,1,"BFOCE-gen-05",[[-1,'loses-type',A,B,C],[0,'has-last-instant',C,[sk37,A,B,C]]]).
+posax(127,1,"BFOCE-gen-05",[[-1,'instance-of',A,B,[sk37,A,B,C]],[-1,'loses-type',A,B,C]]).
+posax(128,1,"BFOCE-gen-05",[[-1,'instance-of',B,A,[sk37,B,C,D]],[-1,'loses-type',B,C,D],[0,'instance-of',B,A,[sk36,B,C,D]]]).
 
 % all type replacements are instantiation changes [trp-01]
 posax(129,0,"BFOCE-trp-01",[[-1,'instance-of',A,'type-replacement',B],[0,'instance-of',A,'instantiation-change',B]]).
@@ -233,23 +233,23 @@ posax(132,0,"BFOCE-trp-02",[[-1,'replaces-type',A,B,C,D],[0,universal,B]]).
 posax(133,0,"BFOCE-trp-02",[[-1,'replaces-type',A,B,C,D],[0,'instance-of',A,continuant,D]]).
 
 % if a type replacement happens to a continuant, that continuant replaces a type [trp-03]
-posax(134,1,"BFOCE-trp-03",[[-1,'happens-to',B,A,C],[-1,'instance-of',B,'type-replacement',C],[0,'replaces-type',A,[sk38,A,B,C],[sk39,A,B,C],C]]).
+posax(134,1,"BFOCE-trp-03",[[-1,'happens-to',B,A,C],[-1,'instance-of',B,'type-replacement',C],[0,'replaces-type',A,[sk39,A,B,C],[sk40,A,B,C],C]]).
 
 % if a continuant replaces a type, a type-replacement happens to it [trp-04]
-posax(135,1,"BFOCE-trp-04",[[-1,'replaces-type',A,B,C,D],[0,'happens-to',[sk40,A,B,C,D],A,D]]).
-posax(136,1,"BFOCE-trp-04",[[-1,'replaces-type',A,B,C,D],[0,'instance-of',[sk40,A,B,C,D],'type-replacement',D]]).
+posax(135,1,"BFOCE-trp-04",[[-1,'replaces-type',A,B,C,D],[0,'happens-to',[sk41,A,B,C,D],A,D]]).
+posax(136,1,"BFOCE-trp-04",[[-1,'replaces-type',A,B,C,D],[0,'instance-of',[sk41,A,B,C,D],'type-replacement',D]]).
 
 % a continuant c replaces a type u1 for u2 whenever all the univerals (except u1) c instantiates before the replacement are also instantiated by c (in addition to u2) after the replacement [trp-05]
-posax(137,1,"BFOCE-trp-05",[[-1,'has-first-instant',F,A],[-1,'has-last-instant',F,B],[-1,identical,[sk43,A,B,C,D,E,F],D],[-1,'instance-of',C,D,A],[-1,'instance-of',C,E,B],[0,'instance-of',C,D,B],[0,'instance-of',C,E,A],[0,'replaces-type',C,D,E,F]]).
-posax(138,1,"BFOCE-trp-05",[[-1,'has-first-instant',F,A],[-1,'has-last-instant',F,B],[-1,'instance-of',C,D,A],[-1,'instance-of',C,E,B],[0,'instance-of',C,D,B],[0,'instance-of',C,E,A],[0,'instance-of',C,[sk43,A,B,C,D,E,F],A],[0,'replaces-type',C,D,E,F]]).
-posax(139,1,"BFOCE-trp-05",[[-1,'has-first-instant',F,A],[-1,'has-last-instant',F,B],[-1,'instance-of',C,D,A],[-1,'instance-of',C,E,B],[-1,'instance-of',C,[sk43,A,B,C,D,E,F],B],[0,'instance-of',C,D,B],[0,'instance-of',C,E,A],[0,'replaces-type',C,D,E,F]]).
-posax(140,1,"BFOCE-trp-05",[[-1,'replaces-type',A,B,C,D],[0,'has-first-instant',D,[sk41,A,B,C,D]]]).
-posax(141,1,"BFOCE-trp-05",[[-1,'replaces-type',A,B,C,D],[0,'instance-of',A,B,[sk41,A,B,C,D]]]).
-posax(142,1,"BFOCE-trp-05",[[-1,'instance-of',A,C,[sk41,A,B,C,D]],[-1,'replaces-type',A,B,C,D]]).
-posax(143,1,"BFOCE-trp-05",[[-1,'replaces-type',A,B,C,D],[0,'has-last-instant',D,[sk42,A,B,C,D]]]).
-posax(144,1,"BFOCE-trp-05",[[-1,'replaces-type',A,B,C,D],[0,'instance-of',A,C,[sk42,A,B,C,D]]]).
-posax(145,1,"BFOCE-trp-05",[[-1,'instance-of',A,B,[sk42,A,B,C,D]],[-1,'replaces-type',A,B,C,D]]).
-posax(146,1,"BFOCE-trp-05",[[-1,'instance-of',B,A,[sk41,B,C,D,E]],[-1,'replaces-type',B,C,D,E],[0,identical,A,C],[0,'instance-of',B,A,[sk42,B,C,D,E]]]).
+posax(137,1,"BFOCE-trp-05",[[-1,'has-first-instant',F,A],[-1,'has-last-instant',F,B],[-1,identical,[sk44,A,B,C,D,E,F],D],[-1,'instance-of',C,D,A],[-1,'instance-of',C,E,B],[0,'instance-of',C,D,B],[0,'instance-of',C,E,A],[0,'replaces-type',C,D,E,F]]).
+posax(138,1,"BFOCE-trp-05",[[-1,'has-first-instant',F,A],[-1,'has-last-instant',F,B],[-1,'instance-of',C,D,A],[-1,'instance-of',C,E,B],[0,'instance-of',C,D,B],[0,'instance-of',C,E,A],[0,'instance-of',C,[sk44,A,B,C,D,E,F],A],[0,'replaces-type',C,D,E,F]]).
+posax(139,1,"BFOCE-trp-05",[[-1,'has-first-instant',F,A],[-1,'has-last-instant',F,B],[-1,'instance-of',C,D,A],[-1,'instance-of',C,E,B],[-1,'instance-of',C,[sk44,A,B,C,D,E,F],B],[0,'instance-of',C,D,B],[0,'instance-of',C,E,A],[0,'replaces-type',C,D,E,F]]).
+posax(140,1,"BFOCE-trp-05",[[-1,'replaces-type',A,B,C,D],[0,'has-first-instant',D,[sk42,A,B,C,D]]]).
+posax(141,1,"BFOCE-trp-05",[[-1,'replaces-type',A,B,C,D],[0,'instance-of',A,B,[sk42,A,B,C,D]]]).
+posax(142,1,"BFOCE-trp-05",[[-1,'instance-of',A,C,[sk42,A,B,C,D]],[-1,'replaces-type',A,B,C,D]]).
+posax(143,1,"BFOCE-trp-05",[[-1,'replaces-type',A,B,C,D],[0,'has-last-instant',D,[sk43,A,B,C,D]]]).
+posax(144,1,"BFOCE-trp-05",[[-1,'replaces-type',A,B,C,D],[0,'instance-of',A,C,[sk43,A,B,C,D]]]).
+posax(145,1,"BFOCE-trp-05",[[-1,'instance-of',A,B,[sk43,A,B,C,D]],[-1,'replaces-type',A,B,C,D]]).
+posax(146,1,"BFOCE-trp-05",[[-1,'instance-of',B,A,[sk42,B,C,D,E]],[-1,'replaces-type',B,C,D,E],[0,identical,A,C],[0,'instance-of',B,A,[sk43,B,C,D,E]]]).
 
 % all simple-changes are mono-sequential changes [sch-01]
 posax(147,0,"BFOCE-sch-01",[[-1,'instance-of',A,'simple-change',B],[0,'instance-of',A,'mono-sequential-change',B]]).
@@ -269,12 +269,12 @@ posax(152,0,"BFOCE-cch-02",[[-1,'happens-throughout',B,C],[-1,'instance-of',B,'m
 posax(153,0,"BFOCE-cch-02",[[-1,'happens-throughout',A,C],[-1,'happens-throughout',B,C],[-1,'instance-of',A,change,C],[-1,'instance-of',B,'mono-sequential-change',C],[0,'temporal-layer-of',A,B]]).
 
 % mono-sequential-change-of has domain mono-sequential change and range continuant [cch-03]
-posax(154,1,"BFOCE-cch-03",[[-1,'mono-sequential-change-of',A,B],[0,'instance-of',B,continuant,[sk44,A,B]]]).
-posax(155,1,"BFOCE-cch-03",[[-1,'mono-sequential-change-of',A,B],[0,'instance-of',A,'mono-sequential-change',[sk44,A,B]]]).
+posax(154,1,"BFOCE-cch-03",[[-1,'mono-sequential-change-of',A,B],[0,'instance-of',B,continuant,[sk45,A,B]]]).
+posax(155,1,"BFOCE-cch-03",[[-1,'mono-sequential-change-of',A,B],[0,'instance-of',A,'mono-sequential-change',[sk45,A,B]]]).
 
 % if x is a mono-sequential-change-of y then x is a mono-sequential change and all temporal layers of x are changes that happen to y [cch-04]
-posax(156,1,"BFOCE-cch-04",[[-1,'mono-sequential-change-of',B,C],[-1,'temporal-layer-of',A,B],[0,'happens-to',A,C,[sk45,A,B,C]]]).
-posax(157,1,"BFOCE-cch-04",[[-1,'mono-sequential-change-of',B,C],[-1,'temporal-layer-of',A,B],[0,'instance-of',C,continuant,[sk45,A,B,C]]]).
+posax(156,1,"BFOCE-cch-04",[[-1,'mono-sequential-change-of',B,C],[-1,'temporal-layer-of',A,B],[0,'happens-to',A,C,[sk46,A,B,C]]]).
+posax(157,1,"BFOCE-cch-04",[[-1,'mono-sequential-change-of',B,C],[-1,'temporal-layer-of',A,B],[0,'instance-of',C,continuant,[sk46,A,B,C]]]).
 
 % x mono-sequential-change-of c if x is a mono-sequential change and all temporal layers of x are changes that happen to c [cch-05]
 posax(158,0,"BFOCE-cch-05",[[-1,'happens-to',C,D,E],[-1,'instance-of',A,'mono-sequential-change',B],[-1,'temporal-layer-of',C,A],[0,'mono-sequential-change-of',A,D]]).
@@ -283,10 +283,10 @@ posax(158,0,"BFOCE-cch-05",[[-1,'happens-to',C,D,E],[-1,'instance-of',A,'mono-se
 posax(159,0,"BFOCE-chs-01",[[-1,'instance-of',A,'change-sequence',B],[0,'instance-of',A,change,B]]).
 
 % is-sequence-part-of has domain mono-sequential change and range change sequence [chs-02]
-posax(160,1,"BFOCE-chs-02",[[-1,'is-sequence-part-of',B,A],[0,'proper-temporal-part-of',[sk47,A,B],[sk46,A,B]]]).
+posax(160,1,"BFOCE-chs-02",[[-1,'is-sequence-part-of',B,A],[0,'proper-temporal-part-of',[sk48,A,B],[sk47,A,B]]]).
 posax(161,0,"BFOCE-chs-02",[[-1,'is-sequence-part-of',B,A],[0,'proper-temporal-part-of',B,A]]).
-posax(162,1,"BFOCE-chs-02",[[-1,'is-sequence-part-of',B,A],[0,'instance-of',B,'mono-sequential-change',[sk47,A,B]]]).
-posax(163,1,"BFOCE-chs-02",[[-1,'is-sequence-part-of',B,A],[0,'instance-of',A,'change-sequence',[sk46,A,B]]]).
+posax(162,1,"BFOCE-chs-02",[[-1,'is-sequence-part-of',B,A],[0,'instance-of',B,'mono-sequential-change',[sk48,A,B]]]).
+posax(163,1,"BFOCE-chs-02",[[-1,'is-sequence-part-of',B,A],[0,'instance-of',A,'change-sequence',[sk47,A,B]]]).
 
 % a change sequence is a change whose proper-temporal parts that are mono-sequential changes are temporally ordered [chs-03]
 posax(164,0,"BFOCE-chs-03",[[-1,'happens-throughout',C,D],[-1,'instance-of',C,'change-sequence',D],[-1,'is-sequence-part-of',A,C],[-1,'is-sequence-part-of',B,C],[0,identical,A,B],[0,precedes,A,B],[0,precedes,B,A]]).
@@ -295,23 +295,23 @@ posax(164,0,"BFOCE-chs-03",[[-1,'happens-throughout',C,D],[-1,'instance-of',C,'c
 posax(165,0,"BFOCE-chp-01",[[-1,'instance-of',A,'change-profile',B],[0,'instance-of',A,'change-sequence',B]]).
 
 % change-profile-of has domain change-profile and range continuant [chp-02]
-posax(166,1,"BFOCE-chp-02",[[-1,'change-profile-of',A,B],[0,'instance-of',B,continuant,[sk48,A,B]]]).
-posax(167,1,"BFOCE-chp-02",[[-1,'change-profile-of',A,B],[0,'instance-of',A,'change-profile',[sk48,A,B]]]).
+posax(166,1,"BFOCE-chp-02",[[-1,'change-profile-of',A,B],[0,'instance-of',B,continuant,[sk49,A,B]]]).
+posax(167,1,"BFOCE-chp-02",[[-1,'change-profile-of',A,B],[0,'instance-of',A,'change-profile',[sk49,A,B]]]).
 
 % a change profile is a change sequence whose sequence parts are mono-sequential changes all of which are simple changes that happen to the same continuant [chp-03]
-posax(168,1,"BFOCE-chp-03",[[-1,'instance-of',D,'change-profile',A],[-1,'is-sequence-part-of',C,D],[-1,'temporal-layer-of',B,C],[0,'instance-of',B,'simple-change',[sk50,B,C,D]]]).
-posax(169,1,"BFOCE-chp-03",[[-1,'instance-of',D,'change-profile',A],[-1,'is-sequence-part-of',C,D],[-1,'temporal-layer-of',B,C],[0,'happens-to',B,[sk49,B,C,D],[sk50,B,C,D]]]).
-posax(170,1,"BFOCE-chp-03",[[-1,'instance-of',D,'change-profile',A],[-1,'is-sequence-part-of',C,D],[-1,'temporal-layer-of',B,C],[0,'change-profile-of',D,[sk49,B,C,D]]]).
+posax(168,1,"BFOCE-chp-03",[[-1,'instance-of',D,'change-profile',A],[-1,'is-sequence-part-of',C,D],[-1,'temporal-layer-of',B,C],[0,'instance-of',B,'simple-change',[sk51,B,C,D]]]).
+posax(169,1,"BFOCE-chp-03",[[-1,'instance-of',D,'change-profile',A],[-1,'is-sequence-part-of',C,D],[-1,'temporal-layer-of',B,C],[0,'happens-to',B,[sk50,B,C,D],[sk51,B,C,D]]]).
+posax(170,1,"BFOCE-chp-03",[[-1,'instance-of',D,'change-profile',A],[-1,'is-sequence-part-of',C,D],[-1,'temporal-layer-of',B,C],[0,'change-profile-of',D,[sk50,B,C,D]]]).
 
 % if x is a change profile of y, then all sequence parts of x are mono-sequential changes all of which are simple changes that happen to y [chp-04]
-posax(171,1,"BFOCE-chp-04",[[-1,'change-profile-of',C,D],[-1,'is-sequence-part-of',B,C],[-1,'temporal-layer-of',A,B],[0,'happens-to',A,D,[sk51,A,B,C,D]]]).
-posax(172,1,"BFOCE-chp-04",[[-1,'change-profile-of',C,D],[-1,'is-sequence-part-of',B,C],[-1,'temporal-layer-of',A,B],[0,'instance-of',A,'simple-change',[sk51,A,B,C,D]]]).
+posax(171,1,"BFOCE-chp-04",[[-1,'change-profile-of',C,D],[-1,'is-sequence-part-of',B,C],[-1,'temporal-layer-of',A,B],[0,'happens-to',A,D,[sk52,A,B,C,D]]]).
+posax(172,1,"BFOCE-chp-04",[[-1,'change-profile-of',C,D],[-1,'is-sequence-part-of',B,C],[-1,'temporal-layer-of',A,B],[0,'instance-of',A,'simple-change',[sk52,A,B,C,D]]]).
 
 % a is a temporal layer of b iff a is an occurrent part of b, both exists throughout the same time, but neither are temporal regions [tlo-01]
 posax(173,0,"BFOCE-tlo-01",[[-1,'temporal-layer-of',A,B],[0,'occurrent-part-of',A,B]]).
-posax(174,1,"BFOCE-tlo-01",[[-1,'instance-of',A,'temporal-region',[sk52,A,B]],[-1,'temporal-layer-of',A,B]]).
-posax(175,1,"BFOCE-tlo-01",[[-1,'temporal-layer-of',A,B],[0,'exists-throughout',A,[sk52,A,B]]]).
-posax(176,1,"BFOCE-tlo-01",[[-1,'temporal-layer-of',A,B],[0,'exists-throughout',B,[sk52,A,B]]]).
+posax(174,1,"BFOCE-tlo-01",[[-1,'instance-of',A,'temporal-region',[sk53,A,B]],[-1,'temporal-layer-of',A,B]]).
+posax(175,1,"BFOCE-tlo-01",[[-1,'temporal-layer-of',A,B],[0,'exists-throughout',A,[sk53,A,B]]]).
+posax(176,1,"BFOCE-tlo-01",[[-1,'temporal-layer-of',A,B],[0,'exists-throughout',B,[sk53,A,B]]]).
 posax(177,0,"BFOCE-tlo-01",[[-1,'exists-throughout',B,A],[-1,'exists-throughout',C,A],[-1,'occurrent-part-of',B,C],[0,'instance-of',B,'temporal-region',A],[0,'temporal-layer-of',B,C]]).
 
 % temporal-layer-of is transitive [tlo-02]
@@ -403,19 +403,19 @@ posax(212,0,"BFO-bfv-1",[[-1,'has-continuant-part',A,B,C],[-1,'instance-of',A,'z
 posax(213,0,"BFO-xpg-1",[[-1,'proper-continuant-part-of',A,B,D],[-1,'proper-continuant-part-of',B,C,E],[-1,'temporal-part-of',D,E],[0,'proper-continuant-part-of',A,C,D]]).
 
 % A fiat line occupies a one-dimensional spatial region [kcq-1]
-posax(214,1,"BFO-kcq-1",[[-1,'instance-of',A,'fiat-line',B],[0,'instance-of',[sk53,A,B],'one-dimensional-spatial-region',[sk54,A,B]]]).
-posax(215,1,"BFO-kcq-1",[[-1,'instance-of',A,'fiat-line',B],[0,'occupies-spatial-region',A,[sk53,A,B],[sk54,A,B]]]).
-posax(216,1,"BFO-kcq-1",[[-1,'instance-of',A,'fiat-line',B],[0,'temporal-part-of',[sk54,A,B],B]]).
+posax(214,1,"BFO-kcq-1",[[-1,'instance-of',A,'fiat-line',B],[0,'instance-of',[sk54,A,B],'one-dimensional-spatial-region',[sk55,A,B]]]).
+posax(215,1,"BFO-kcq-1",[[-1,'instance-of',A,'fiat-line',B],[0,'occupies-spatial-region',A,[sk54,A,B],[sk55,A,B]]]).
+posax(216,1,"BFO-kcq-1",[[-1,'instance-of',A,'fiat-line',B],[0,'temporal-part-of',[sk55,A,B],B]]).
 
 % A fiat point occupies a zero-dimensional spatial region [alm-1]
-posax(217,1,"BFO-alm-1",[[-1,'instance-of',A,'fiat-point',B],[0,'instance-of',[sk56,A,B],'zero-dimensional-spatial-region',[sk55,A,B]]]).
-posax(218,1,"BFO-alm-1",[[-1,'instance-of',A,'fiat-point',B],[0,'occupies-spatial-region',A,[sk56,A,B],[sk55,A,B]]]).
-posax(219,1,"BFO-alm-1",[[-1,'instance-of',A,'fiat-point',B],[0,'temporal-part-of',[sk55,A,B],B]]).
+posax(217,1,"BFO-alm-1",[[-1,'instance-of',A,'fiat-point',B],[0,'instance-of',[sk57,A,B],'zero-dimensional-spatial-region',[sk56,A,B]]]).
+posax(218,1,"BFO-alm-1",[[-1,'instance-of',A,'fiat-point',B],[0,'occupies-spatial-region',A,[sk57,A,B],[sk56,A,B]]]).
+posax(219,1,"BFO-alm-1",[[-1,'instance-of',A,'fiat-point',B],[0,'temporal-part-of',[sk56,A,B],B]]).
 
 % A fiat surface occupies a two-dimensional spatial region [fpl-1]
-posax(220,1,"BFO-fpl-1",[[-1,'instance-of',A,'fiat-surface',B],[0,'instance-of',[sk57,A,B],'two-dimensional-spatial-region',[sk58,A,B]]]).
-posax(221,1,"BFO-fpl-1",[[-1,'instance-of',A,'fiat-surface',B],[0,'occupies-spatial-region',A,[sk57,A,B],[sk58,A,B]]]).
-posax(222,1,"BFO-fpl-1",[[-1,'instance-of',A,'fiat-surface',B],[0,'temporal-part-of',[sk58,A,B],B]]).
+posax(220,1,"BFO-fpl-1",[[-1,'instance-of',A,'fiat-surface',B],[0,'instance-of',[sk58,A,B],'two-dimensional-spatial-region',[sk59,A,B]]]).
+posax(221,1,"BFO-fpl-1",[[-1,'instance-of',A,'fiat-surface',B],[0,'occupies-spatial-region',A,[sk58,A,B],[sk59,A,B]]]).
+posax(222,1,"BFO-fpl-1",[[-1,'instance-of',A,'fiat-surface',B],[0,'temporal-part-of',[sk59,A,B],B]]).
 
 % If a has-continuant-part b then if a is an instance of material-entity then b is an instance of site or continuant-fiat-boundary or material-entity  [mic-1]
 posax(223,0,"BFO-mic-1",[[-1,'has-continuant-part',A,B,C],[-1,'instance-of',A,'material-entity',C],[0,'instance-of',B,'continuant-fiat-boundary',C],[0,'instance-of',B,'material-entity',C],[0,'instance-of',B,site,C]]).
@@ -424,10 +424,10 @@ posax(223,0,"BFO-mic-1",[[-1,'has-continuant-part',A,B,C],[-1,'instance-of',A,'m
 posax(224,0,"BFO-wne-1",[[-1,'has-continuant-part',A,B,C],[-1,'instance-of',A,'one-dimensional-spatial-region',C],[0,'instance-of',B,'one-dimensional-spatial-region',C],[0,'instance-of',B,'zero-dimensional-spatial-region',C]]).
 
 % If at all times that two object-aggreates exist each is part of the other, then they are identical [glc-1]
-posax(225,1,"BFO-glc-1",[[-1,'continuant-part-of',B,C,A],[-1,'continuant-part-of',B,C,[sk59,B,C]],[-1,'continuant-part-of',C,B,A],[-1,'continuant-part-of',C,B,[sk59,B,C]],[-1,'instance-of',B,'object-aggregate',A],[0,identical,B,C]]).
-posax(226,1,"BFO-glc-1",[[-1,'continuant-part-of',B,C,A],[-1,'continuant-part-of',C,B,A],[-1,'continuant-part-of',C,B,[sk59,B,C]],[-1,'instance-of',B,'object-aggregate',A],[0,'continuant-part-of',C,B,[sk59,B,C]],[0,identical,B,C]]).
-posax(227,1,"BFO-glc-1",[[-1,'continuant-part-of',B,C,A],[-1,'continuant-part-of',B,C,[sk59,B,C]],[-1,'continuant-part-of',C,B,A],[-1,'instance-of',B,'object-aggregate',A],[0,'continuant-part-of',B,C,[sk59,B,C]],[0,identical,B,C]]).
-posax(228,1,"BFO-glc-1",[[-1,'continuant-part-of',B,C,A],[-1,'continuant-part-of',C,B,A],[-1,'instance-of',B,'object-aggregate',A],[0,'continuant-part-of',B,C,[sk59,B,C]],[0,'continuant-part-of',C,B,[sk59,B,C]],[0,identical,B,C]]).
+posax(225,1,"BFO-glc-1",[[-1,'continuant-part-of',B,C,A],[-1,'continuant-part-of',B,C,[sk60,B,C]],[-1,'continuant-part-of',C,B,A],[-1,'continuant-part-of',C,B,[sk60,B,C]],[-1,'instance-of',B,'object-aggregate',A],[0,identical,B,C]]).
+posax(226,1,"BFO-glc-1",[[-1,'continuant-part-of',B,C,A],[-1,'continuant-part-of',C,B,A],[-1,'continuant-part-of',C,B,[sk60,B,C]],[-1,'instance-of',B,'object-aggregate',A],[0,'continuant-part-of',C,B,[sk60,B,C]],[0,identical,B,C]]).
+posax(227,1,"BFO-glc-1",[[-1,'continuant-part-of',B,C,A],[-1,'continuant-part-of',B,C,[sk60,B,C]],[-1,'continuant-part-of',C,B,A],[-1,'instance-of',B,'object-aggregate',A],[0,'continuant-part-of',B,C,[sk60,B,C]],[0,identical,B,C]]).
+posax(228,1,"BFO-glc-1",[[-1,'continuant-part-of',B,C,A],[-1,'continuant-part-of',C,B,A],[-1,'instance-of',B,'object-aggregate',A],[0,'continuant-part-of',B,C,[sk60,B,C]],[0,'continuant-part-of',C,B,[sk60,B,C]],[0,identical,B,C]]).
 
 % The dimensionality of the region of something occupying a one dimensional spatial region does not change [qfe-1]
 posax(229,0,"BFO-qfe-1",[[-1,'instance-of',E,'one-dimensional-spatial-region',A],[-1,'occupies-spatial-region',D,C,B],[-1,'occupies-spatial-region',D,E,A],[0,'instance-of',C,'one-dimensional-spatial-region',B]]).
@@ -442,9 +442,9 @@ posax(231,0,"BFO-fok-1",[[-1,'instance-of',E,'zero-dimensional-spatial-region',A
 posax(232,0,"BFO-rlf-1",[[-1,'instance-of',E,'three-dimensional-spatial-region',A],[-1,'occupies-spatial-region',D,C,B],[-1,'occupies-spatial-region',D,E,A],[0,'instance-of',C,'three-dimensional-spatial-region',B]]).
 
 % If a material entity has a proper part, then at least one of its proper parts is not an immaterial entity [adm-1]
-posax(233,1,"BFO-adm-1",[[-1,'continuant-part-of',A,B,C],[-1,'instance-of',B,'material-entity',C],[-1,'instance-of',[sk60,B,C],'immaterial-entity',C],[0,identical,A,B]]).
-posax(234,1,"BFO-adm-1",[[-1,'continuant-part-of',A,B,C],[-1,'instance-of',B,'material-entity',C],[0,'continuant-part-of',[sk60,B,C],B,C],[0,identical,A,B]]).
-posax(235,1,"BFO-adm-1",[[-1,'continuant-part-of',A,B,C],[-1,identical,[sk60,B,C],B],[-1,'instance-of',B,'material-entity',C],[0,identical,A,B]]).
+posax(233,1,"BFO-adm-1",[[-1,'continuant-part-of',A,B,C],[-1,'instance-of',B,'material-entity',C],[-1,'instance-of',[sk61,B,C],'immaterial-entity',C],[0,identical,A,B]]).
+posax(234,1,"BFO-adm-1",[[-1,'continuant-part-of',A,B,C],[-1,'instance-of',B,'material-entity',C],[0,'continuant-part-of',[sk61,B,C],B,C],[0,identical,A,B]]).
+posax(235,1,"BFO-adm-1",[[-1,'continuant-part-of',A,B,C],[-1,identical,[sk61,B,C],B],[-1,'instance-of',B,'material-entity',C],[0,identical,A,B]]).
 
 % If a has-continuant-part b then if a is an instance of two-dimensional-spatial-region then b is an instance of two-dimensional-spatial-region or one-dimensional-spatial-region or zero-dimensional-spatial-region  [hbn-1]
 posax(236,0,"BFO-hbn-1",[[-1,'has-continuant-part',A,B,C],[-1,'instance-of',A,'two-dimensional-spatial-region',C],[0,'instance-of',B,'one-dimensional-spatial-region',C],[0,'instance-of',B,'two-dimensional-spatial-region',C],[0,'instance-of',B,'zero-dimensional-spatial-region',C]]).
@@ -453,22 +453,22 @@ posax(236,0,"BFO-hbn-1",[[-1,'has-continuant-part',A,B,C],[-1,'instance-of',A,'t
 posax(237,0,"BFO-tab-1",[[-1,'continuant-part-of',B,C,A],[-1,'continuant-part-of',C,B,A],[-1,'instance-of',B,'independent-continuant',A],[-1,'instance-of',C,'independent-continuant',A],[0,identical,B,C],[0,'instance-of',B,'object-aggregate',A],[0,'instance-of',C,'object-aggregate',A]]).
 
 % continuant-part-of has weak supplementation [fyf-1]
-posax(238,1,"BFO-fyf-1",[[-1,'continuant-part-of',A,C,B],[-1,'continuant-part-of',A,[sk61,B,C,D],B],[-1,'continuant-part-of',C,D,B],[-1,'instance-of',A,continuant,B],[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,continuant,B],[-1,'instance-of',D,continuant,B],[0,identical,C,D]]).
-posax(239,1,"BFO-fyf-1",[[-1,'continuant-part-of',B,C,A],[-1,identical,[sk61,A,B,C],C],[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,continuant,A],[-1,'instance-of',C,continuant,A],[0,identical,B,C]]).
-posax(240,1,"BFO-fyf-1",[[-1,'continuant-part-of',B,C,A],[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,continuant,A],[-1,'instance-of',C,continuant,A],[0,'continuant-part-of',[sk61,A,B,C],C,A],[0,identical,B,C]]).
-posax(241,1,"BFO-fyf-1",[[-1,'continuant-part-of',B,C,A],[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,continuant,A],[-1,'instance-of',C,continuant,A],[0,identical,B,C],[0,'instance-of',[sk61,A,B,C],continuant,A]]).
+posax(238,1,"BFO-fyf-1",[[-1,'continuant-part-of',A,C,B],[-1,'continuant-part-of',A,[sk62,B,C,D],B],[-1,'continuant-part-of',C,D,B],[-1,'instance-of',A,continuant,B],[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,continuant,B],[-1,'instance-of',D,continuant,B],[0,identical,C,D]]).
+posax(239,1,"BFO-fyf-1",[[-1,'continuant-part-of',B,C,A],[-1,identical,[sk62,A,B,C],C],[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,continuant,A],[-1,'instance-of',C,continuant,A],[0,identical,B,C]]).
+posax(240,1,"BFO-fyf-1",[[-1,'continuant-part-of',B,C,A],[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,continuant,A],[-1,'instance-of',C,continuant,A],[0,'continuant-part-of',[sk62,A,B,C],C,A],[0,identical,B,C]]).
+posax(241,1,"BFO-fyf-1",[[-1,'continuant-part-of',B,C,A],[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,continuant,A],[-1,'instance-of',C,continuant,A],[0,identical,B,C],[0,'instance-of',[sk62,A,B,C],continuant,A]]).
 
 % continuant-part-of has a unique product at a time [gzr-1]
-posax(242,1,"BFO-gzr-1",[[-1,'continuant-part-of',A,C,E],[-1,'continuant-part-of',A,D,E],[-1,'continuant-part-of',B,[sk62,C,D,E],E],[-1,'instance-of',A,continuant,E],[-1,'instance-of',B,continuant,E],[-1,'instance-of',C,continuant,E],[-1,'instance-of',D,continuant,E],[-1,'instance-of',E,'temporal-region',E],[0,'continuant-part-of',B,C,E]]).
-posax(243,1,"BFO-gzr-1",[[-1,'continuant-part-of',A,C,E],[-1,'continuant-part-of',A,D,E],[-1,'continuant-part-of',B,[sk62,C,D,E],E],[-1,'instance-of',A,continuant,E],[-1,'instance-of',B,continuant,E],[-1,'instance-of',C,continuant,E],[-1,'instance-of',D,continuant,E],[-1,'instance-of',E,'temporal-region',E],[0,'continuant-part-of',B,D,E]]).
-posax(244,1,"BFO-gzr-1",[[-1,'continuant-part-of',A,C,E],[-1,'continuant-part-of',A,D,E],[-1,'continuant-part-of',B,C,E],[-1,'continuant-part-of',B,D,E],[-1,'instance-of',A,continuant,E],[-1,'instance-of',B,continuant,E],[-1,'instance-of',C,continuant,E],[-1,'instance-of',D,continuant,E],[-1,'instance-of',E,'temporal-region',E],[0,'continuant-part-of',B,[sk62,C,D,E],E]]).
-posax(245,1,"BFO-gzr-1",[[-1,'continuant-part-of',A,B,D],[-1,'continuant-part-of',A,C,D],[-1,'instance-of',A,continuant,D],[-1,'instance-of',B,continuant,D],[-1,'instance-of',C,continuant,D],[-1,'instance-of',D,'temporal-region',D],[0,'instance-of',[sk62,B,C,D],continuant,D]]).
+posax(242,1,"BFO-gzr-1",[[-1,'continuant-part-of',A,C,E],[-1,'continuant-part-of',A,D,E],[-1,'continuant-part-of',B,[sk63,C,D,E],E],[-1,'instance-of',A,continuant,E],[-1,'instance-of',B,continuant,E],[-1,'instance-of',C,continuant,E],[-1,'instance-of',D,continuant,E],[-1,'instance-of',E,'temporal-region',E],[0,'continuant-part-of',B,C,E]]).
+posax(243,1,"BFO-gzr-1",[[-1,'continuant-part-of',A,C,E],[-1,'continuant-part-of',A,D,E],[-1,'continuant-part-of',B,[sk63,C,D,E],E],[-1,'instance-of',A,continuant,E],[-1,'instance-of',B,continuant,E],[-1,'instance-of',C,continuant,E],[-1,'instance-of',D,continuant,E],[-1,'instance-of',E,'temporal-region',E],[0,'continuant-part-of',B,D,E]]).
+posax(244,1,"BFO-gzr-1",[[-1,'continuant-part-of',A,C,E],[-1,'continuant-part-of',A,D,E],[-1,'continuant-part-of',B,C,E],[-1,'continuant-part-of',B,D,E],[-1,'instance-of',A,continuant,E],[-1,'instance-of',B,continuant,E],[-1,'instance-of',C,continuant,E],[-1,'instance-of',D,continuant,E],[-1,'instance-of',E,'temporal-region',E],[0,'continuant-part-of',B,[sk63,C,D,E],E]]).
+posax(245,1,"BFO-gzr-1",[[-1,'continuant-part-of',A,B,D],[-1,'continuant-part-of',A,C,D],[-1,'instance-of',A,continuant,D],[-1,'instance-of',B,continuant,D],[-1,'instance-of',C,continuant,D],[-1,'instance-of',D,'temporal-region',D],[0,'instance-of',[sk63,B,C,D],continuant,D]]).
 
 % Particulars exist at some time [nmq-1]
-posax(246,1,"BFO-nmq-1",[[-1,particular,A],[0,'exists-at',A,[sk63,A]]]).
+posax(246,1,"BFO-nmq-1",[[-1,particular,A],[0,'exists-at',A,[sk64,A]]]).
 
 % Every universal is instantiated at least once [mbf-1]
-posax(247,1,"BFO-mbf-1",[[-1,universal,A],[0,'instance-of',[sk64,A],A,[sk65,A]]]).
+posax(247,1,"BFO-mbf-1",[[-1,universal,A],[0,'instance-of',[sk65,A],A,[sk66,A]]]).
 
 % instance-of is dissective on third argument, a temporal region [qaf-1]
 posax(248,0,"BFO-qaf-1",[[-1,'instance-of',A,B,C],[-1,'temporal-part-of',D,C],[0,'instance-of',A,B,D]]).
@@ -484,18 +484,18 @@ posax(253,0,"BFO-lqn-1",[[-1,'instance-of',A,B,C],[0,universal,B]]).
 posax(254,0,"BFO-lqn-1",[[-1,'instance-of',A,B,C],[0,particular,A]]).
 
 % There is always something that exists [nis-1]
-posax(255,1,"BFO-nis-1",[[-1,'instance-of',A,'temporal-region',A],[0,'instance-of',[sk67,A],[sk66,A],A]]).
-posax(256,1,"BFO-nis-1",[[-1,'instance-of',A,'temporal-region',A],[0,particular,[sk67,A]]]).
-posax(257,1,"BFO-nis-1",[[-1,'instance-of',A,'temporal-region',A],[0,universal,[sk66,A]]]).
-posax(258,1,"BFO-nis-1",[[-1,identical,[sk67,A],A],[-1,'instance-of',A,'temporal-region',A]]).
+posax(255,1,"BFO-nis-1",[[-1,'instance-of',A,'temporal-region',A],[0,'instance-of',[sk68,A],[sk67,A],A]]).
+posax(256,1,"BFO-nis-1",[[-1,'instance-of',A,'temporal-region',A],[0,particular,[sk68,A]]]).
+posax(257,1,"BFO-nis-1",[[-1,'instance-of',A,'temporal-region',A],[0,universal,[sk67,A]]]).
+posax(258,1,"BFO-nis-1",[[-1,identical,[sk68,A],A],[-1,'instance-of',A,'temporal-region',A]]).
 
 % if m is a material entity, then there is some one-dimensional temporal region during which m exists [zuw-1]
-posax(259,1,"BFO-zuw-1",[[-1,'instance-of',B,'material-entity',A],[0,'exists-at',B,[sk68,B]]]).
-posax(260,1,"BFO-zuw-1",[[-1,'instance-of',B,'material-entity',A],[0,'instance-of',[sk68,B],'one-dimensional-temporal-region',[sk68,B]]]).
+posax(259,1,"BFO-zuw-1",[[-1,'instance-of',B,'material-entity',A],[0,'exists-at',B,[sk69,B]]]).
+posax(260,1,"BFO-zuw-1",[[-1,'instance-of',B,'material-entity',A],[0,'instance-of',[sk69,B],'one-dimensional-temporal-region',[sk69,B]]]).
 
 % If you exist you instatiate a universal and vice-versa [bee-1]
-posax(261,1,"BFO-bee-1",[[-1,'exists-at',A,B],[-1,'instance-of',B,'temporal-region',B],[-1,particular,A],[0,universal,[sk69,A,B]]]).
-posax(262,1,"BFO-bee-1",[[-1,'exists-at',A,B],[-1,'instance-of',B,'temporal-region',B],[-1,particular,A],[0,'instance-of',A,[sk69,A,B],B]]).
+posax(261,1,"BFO-bee-1",[[-1,'exists-at',A,B],[-1,'instance-of',B,'temporal-region',B],[-1,particular,A],[0,universal,[sk70,A,B]]]).
+posax(262,1,"BFO-bee-1",[[-1,'exists-at',A,B],[-1,'instance-of',B,'temporal-region',B],[-1,particular,A],[0,'instance-of',A,[sk70,A,B],B]]).
 posax(263,0,"BFO-bee-1",[[-1,'exists-at',A,B],[-1,'instance-of',B,'temporal-region',B],[-1,particular,A],[0,'instance-of',B,'temporal-region',B]]).
 posax(264,0,"BFO-bee-1",[[-1,'instance-of',B,A,C],[-1,'instance-of',C,'temporal-region',C],[-1,universal,A],[0,particular,B]]).
 posax(265,0,"BFO-bee-1",[[-1,'instance-of',B,A,C],[-1,'instance-of',C,'temporal-region',C],[-1,universal,A],[0,'instance-of',C,'temporal-region',C]]).
@@ -513,13 +513,13 @@ posax(270,0,"BFO-mvp-1",[[-1,'is-carrier-of',C,B,A],[0,'generically-depends-on',
 posax(271,0,"BFO-nyz-1",[[-1,concretizes,A,B,C],[-1,'temporal-part-of',D,C],[0,concretizes,A,B,D]]).
 
 % A generically dependent continuant is at all times at which it exists concretized by something [ibk-1]
-posax(272,1,"BFO-ibk-1",[[-1,'instance-of',B,'generically-dependent-continuant',A],[0,concretizes,[sk70,A,B],B,[sk71,A,B]]]).
-posax(273,1,"BFO-ibk-1",[[-1,'instance-of',B,'generically-dependent-continuant',A],[0,'temporal-part-of',[sk71,A,B],A]]).
+posax(272,1,"BFO-ibk-1",[[-1,'instance-of',B,'generically-dependent-continuant',A],[0,concretizes,[sk71,A,B],B,[sk72,A,B]]]).
+posax(273,1,"BFO-ibk-1",[[-1,'instance-of',B,'generically-dependent-continuant',A],[0,'temporal-part-of',[sk72,A,B],A]]).
 
 % a g-dependent continuant b g-depends on an independent continuant c at t means: there inheres in c at t an s-dependent continuant which concretizes b at t [otx-1]
-posax(274,1,"BFO-otx-1",[[-1,'generically-depends-on',A,B,C],[0,concretizes,[sk72,A,B,C],A,[sk73,A,B,C]]]).
-posax(275,1,"BFO-otx-1",[[-1,'generically-depends-on',A,B,C],[0,'inheres-in',[sk72,A,B,C],B]]).
-posax(276,1,"BFO-otx-1",[[-1,'generically-depends-on',A,B,C],[0,'temporal-part-of',[sk73,A,B,C],C]]).
+posax(274,1,"BFO-otx-1",[[-1,'generically-depends-on',A,B,C],[0,concretizes,[sk73,A,B,C],A,[sk74,A,B,C]]]).
+posax(275,1,"BFO-otx-1",[[-1,'generically-depends-on',A,B,C],[0,'inheres-in',[sk73,A,B,C],B]]).
+posax(276,1,"BFO-otx-1",[[-1,'generically-depends-on',A,B,C],[0,'temporal-part-of',[sk74,A,B,C],C]]).
 
 % concretizes is time indexed and has domain: specifically-dependent-continuant or process  and range: generically-dependent-continuant [rog-1]
 posax(277,0,"BFO-rog-1",[[-1,concretizes,A,B,C],[0,'instance-of',C,'temporal-region',C]]).
@@ -536,14 +536,14 @@ posax(283,0,"BFO-ekp-1",[[-1,'generically-depends-on',A,B,C],[-1,'instance-of',B
 posax(284,0,"BFO-cik-1",[[-1,concretizes,G,E,D],[-1,'inheres-in',G,F],[-1,'instance-of',E,'generically-dependent-continuant',B],[-1,'instance-of',F,'independent-continuant',A],[-1,'instance-of',G,'specifically-dependent-continuant',C],[0,'generically-depends-on',E,F,D]]).
 
 % If a generically dependent continuant participates in a process p then, if it is concretized as a process, that process is part of p, fand if concretized as an sdc then the bearer of that sdc participates in the process [fmm-1]
-posax(285,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'exists-at',[sk76,A,B,C],[sk75,A,B,C]],[0,'participates-in',[sk74,A,B,C],B,[sk75,A,B,C]]]).
-posax(286,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'exists-at',[sk76,A,B,C],[sk75,A,B,C]],[0,'specifically-depends-on',[sk76,A,B,C],[sk74,A,B,C]]]).
-posax(287,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'exists-at',[sk76,A,B,C],[sk75,A,B,C]],[0,'instance-of',[sk76,A,B,C],'specifically-dependent-continuant',[sk75,A,B,C]]]).
-posax(288,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'occurrent-part-of',[sk76,A,B,C],B],[0,'participates-in',[sk74,A,B,C],B,[sk75,A,B,C]]]).
-posax(289,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'occurrent-part-of',[sk76,A,B,C],B],[0,'specifically-depends-on',[sk76,A,B,C],[sk74,A,B,C]]]).
-posax(290,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'instance-of',[sk76,A,B,C],'specifically-dependent-continuant',[sk75,A,B,C]],[0,'occurrent-part-of',[sk76,A,B,C],B]]).
-posax(291,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,concretizes,[sk76,A,B,C],A,[sk75,A,B,C]]]).
-posax(292,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'temporal-part-of',[sk75,A,B,C],C]]).
+posax(285,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'exists-at',[sk77,A,B,C],[sk76,A,B,C]],[0,'participates-in',[sk75,A,B,C],B,[sk76,A,B,C]]]).
+posax(286,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'exists-at',[sk77,A,B,C],[sk76,A,B,C]],[0,'specifically-depends-on',[sk77,A,B,C],[sk75,A,B,C]]]).
+posax(287,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'exists-at',[sk77,A,B,C],[sk76,A,B,C]],[0,'instance-of',[sk77,A,B,C],'specifically-dependent-continuant',[sk76,A,B,C]]]).
+posax(288,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'occurrent-part-of',[sk77,A,B,C],B],[0,'participates-in',[sk75,A,B,C],B,[sk76,A,B,C]]]).
+posax(289,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'occurrent-part-of',[sk77,A,B,C],B],[0,'specifically-depends-on',[sk77,A,B,C],[sk75,A,B,C]]]).
+posax(290,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'instance-of',[sk77,A,B,C],'specifically-dependent-continuant',[sk76,A,B,C]],[0,'occurrent-part-of',[sk77,A,B,C],B]]).
+posax(291,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,concretizes,[sk77,A,B,C],A,[sk76,A,B,C]]]).
+posax(292,1,"BFO-fmm-1",[[-1,'instance-of',A,'generically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'temporal-part-of',[sk76,A,B,C],C]]).
 
 % history-of and has-history are inverse relations [abx-1]
 posax(293,0,"BFO-abx-1",[[-1,'history-of',A,B],[0,'has-history',B,A]]).
@@ -556,10 +556,10 @@ posax(295,0,"BFO-zek-1",[[-1,'history-of',A,B],[-1,'history-of',A,C],[0,identica
 posax(296,0,"BFO-woe-1",[[-1,'history-of',A,B],[-1,'history-of',C,B],[0,identical,A,C]]).
 
 % every history is the history of something [vvy-1]
-posax(297,1,"BFO-vvy-1",[[-1,'instance-of',B,history,A],[0,'history-of',B,[sk77,B]]]).
+posax(297,1,"BFO-vvy-1",[[-1,'instance-of',B,history,A],[0,'history-of',B,[sk78,B]]]).
 
 % every material-entity has a history [okt-1]
-posax(298,1,"BFO-okt-1",[[-1,'instance-of',B,'material-entity',A],[0,'history-of',[sk78,B],B]]).
+posax(298,1,"BFO-okt-1",[[-1,'instance-of',B,'material-entity',A],[0,'history-of',[sk79,B],B]]).
 
 % a material entity participates in its history [lga-1]
 posax(299,0,"BFO-lga-1",[[-1,'exists-at',C,A],[-1,'history-of',B,C],[0,'participates-in',C,B,A]]).
@@ -569,8 +569,8 @@ posax(300,0,"BFO-uzz-1",[[-1,'history-of',C,B],[-1,'instance-of',C,history,A],[0
 posax(301,0,"BFO-uzz-1",[[-1,'history-of',C,B],[-1,'instance-of',B,'material-entity',A],[0,'instance-of',C,history,A]]).
 
 % history-of has domain history and range material-entity [rph-1]
-posax(302,1,"BFO-rph-1",[[-1,'history-of',A,B],[0,'instance-of',B,'material-entity',[sk80,A,B]]]).
-posax(303,1,"BFO-rph-1",[[-1,'history-of',A,B],[0,'instance-of',A,history,[sk79,A,B]]]).
+posax(302,1,"BFO-rph-1",[[-1,'history-of',A,B],[0,'instance-of',B,'material-entity',[sk81,A,B]]]).
+posax(303,1,"BFO-rph-1",[[-1,'history-of',A,B],[0,'instance-of',A,history,[sk80,A,B]]]).
 
 % member-part-of and has-member-part are inverse relations [jrm-1]
 posax(304,0,"BFO-jrm-1",[[-1,'member-part-of',B,C,A],[0,'has-member-part',C,B,A]]).
@@ -580,8 +580,8 @@ posax(305,0,"BFO-jrm-1",[[-1,'has-member-part',C,B,A],[0,'member-part-of',B,C,A]
 posax(306,0,"BFO-yip-1",[[-1,'member-part-of',A,B,C],[-1,'temporal-part-of',D,C],[0,'member-part-of',A,B,D]]).
 
 % An object aggregate always has at least one member [uhs-1]
-posax(307,1,"BFO-uhs-1",[[-1,'instance-of',A,'object-aggregate',B],[0,'member-part-of',[sk81,A,B],A,B]]).
-posax(308,1,"BFO-uhs-1",[[-1,'instance-of',A,'object-aggregate',B],[0,'instance-of',[sk81,A,B],object,B]]).
+posax(307,1,"BFO-uhs-1",[[-1,'instance-of',A,'object-aggregate',B],[0,'member-part-of',[sk82,A,B],A,B]]).
+posax(308,1,"BFO-uhs-1",[[-1,'instance-of',A,'object-aggregate',B],[0,'instance-of',[sk82,A,B],object,B]]).
 
 % member-part-of is time indexed and has domain: object and range: object-aggregate [dvq-1]
 posax(309,0,"BFO-dvq-1",[[-1,'member-part-of',A,B,C],[0,'instance-of',C,'temporal-region',C]]).
@@ -589,40 +589,40 @@ posax(310,0,"BFO-dvq-1",[[-1,'member-part-of',A,B,C],[0,'instance-of',B,'object-
 posax(311,0,"BFO-dvq-1",[[-1,'member-part-of',A,B,C],[0,'instance-of',A,object,C]]).
 
 % A fiat object part =def a proper part of an object [yir-1]
-posax(312,1,"BFO-yir-1",[[-1,'instance-of',A,'fiat-object-part',B],[0,'instance-of',[sk82,A,B],object,B]]).
-posax(313,1,"BFO-yir-1",[[-1,'instance-of',A,'fiat-object-part',B],[0,'proper-continuant-part-of',A,[sk82,A,B],B]]).
+posax(312,1,"BFO-yir-1",[[-1,'instance-of',A,'fiat-object-part',B],[0,'instance-of',[sk83,A,B],object,B]]).
+posax(313,1,"BFO-yir-1",[[-1,'instance-of',A,'fiat-object-part',B],[0,'proper-continuant-part-of',A,[sk83,A,B],B]]).
 posax(314,0,"BFO-yir-1",[[-1,'instance-of',A,'fiat-object-part',B],[-1,'instance-of',A,'immaterial-entity',B]]).
 posax(315,0,"BFO-yir-1",[[-1,'instance-of',A,object,C],[-1,'proper-continuant-part-of',B,A,C],[0,'instance-of',B,'fiat-object-part',C],[0,'instance-of',B,'immaterial-entity',C]]).
 
 % i is an immaterial entity = Def. i is an independent continuant that has no material entities as parts. [udu-1]
-posax(316,1,"BFO-udu-1",[[-1,'instance-of',A,'independent-continuant',B],[0,'instance-of',A,'immaterial-entity',B],[0,'instance-of',[sk83,A,B],'material-entity',B]]).
-posax(317,1,"BFO-udu-1",[[-1,'instance-of',A,'independent-continuant',B],[0,'continuant-part-of',[sk83,A,B],A,B],[0,'instance-of',A,'immaterial-entity',B]]).
+posax(316,1,"BFO-udu-1",[[-1,'instance-of',A,'independent-continuant',B],[0,'instance-of',A,'immaterial-entity',B],[0,'instance-of',[sk84,A,B],'material-entity',B]]).
+posax(317,1,"BFO-udu-1",[[-1,'instance-of',A,'independent-continuant',B],[0,'continuant-part-of',[sk84,A,B],A,B],[0,'instance-of',A,'immaterial-entity',B]]).
 posax(318,0,"BFO-udu-1",[[-1,'instance-of',A,'immaterial-entity',B],[0,'instance-of',A,'independent-continuant',B]]).
 posax(319,0,"BFO-udu-1",[[-1,'continuant-part-of',A,B,C],[-1,'instance-of',A,'material-entity',C],[-1,'instance-of',B,'immaterial-entity',C]]).
 
 % Any continuant that doesn't s-depend or g-depend on something is an independant continuant [ilw-1]
 posax(320,0,"BFO-ilw-1",[[-1,'instance-of',C,'independent-continuant',A],[-1,'specifically-depends-on',C,B]]).
 posax(321,0,"BFO-ilw-1",[[-1,'generically-depends-on',D,B,C],[-1,'instance-of',D,'independent-continuant',A]]).
-posax(322,1,"BFO-ilw-1",[[-1,'instance-of',B,'independent-continuant',A],[0,'instance-of',B,continuant,[sk84,B]]]).
-posax(323,1,"BFO-ilw-1",[[-1,'instance-of',B,continuant,A],[0,'generically-depends-on',B,[sk86,B],[sk87,B]],[0,'instance-of',B,'independent-continuant',[sk85,B]],[0,'specifically-depends-on',B,[sk86,B]]]).
+posax(322,1,"BFO-ilw-1",[[-1,'instance-of',B,'independent-continuant',A],[0,'instance-of',B,continuant,[sk85,B]]]).
+posax(323,1,"BFO-ilw-1",[[-1,'instance-of',B,continuant,A],[0,'generically-depends-on',B,[sk87,B],[sk88,B]],[0,'instance-of',B,'independent-continuant',[sk86,B]],[0,'specifically-depends-on',B,[sk87,B]]]).
 
 % An object aggregate has more than one member at at least one time [ibd-1]
-posax(324,1,"BFO-ibd-1",[[-1,'instance-of',B,'object-aggregate',A],[0,'member-part-of',[sk89,B],B,[sk90,B]]]).
-posax(325,1,"BFO-ibd-1",[[-1,'instance-of',B,'object-aggregate',A],[0,'instance-of',[sk89,B],object,[sk90,B]]]).
-posax(326,1,"BFO-ibd-1",[[-1,'instance-of',B,'object-aggregate',A],[0,'member-part-of',[sk88,B],B,[sk90,B]]]).
-posax(327,1,"BFO-ibd-1",[[-1,'instance-of',B,'object-aggregate',A],[0,'instance-of',[sk88,B],object,[sk90,B]]]).
-posax(328,1,"BFO-ibd-1",[[-1,identical,[sk88,B],[sk89,B]],[-1,'instance-of',B,'object-aggregate',A]]).
+posax(324,1,"BFO-ibd-1",[[-1,'instance-of',B,'object-aggregate',A],[0,'member-part-of',[sk90,B],B,[sk91,B]]]).
+posax(325,1,"BFO-ibd-1",[[-1,'instance-of',B,'object-aggregate',A],[0,'instance-of',[sk90,B],object,[sk91,B]]]).
+posax(326,1,"BFO-ibd-1",[[-1,'instance-of',B,'object-aggregate',A],[0,'member-part-of',[sk89,B],B,[sk91,B]]]).
+posax(327,1,"BFO-ibd-1",[[-1,'instance-of',B,'object-aggregate',A],[0,'instance-of',[sk89,B],object,[sk91,B]]]).
+posax(328,1,"BFO-ibd-1",[[-1,identical,[sk89,B],[sk90,B]],[-1,'instance-of',B,'object-aggregate',A]]).
 
 % all parts of an aggregate overlap some member [fsy-1]
-posax(329,1,"BFO-fsy-1",[[-1,'instance-of',B,'object-aggregate',A],[-1,'proper-continuant-part-of',C,B,A],[0,'member-part-of',[sk92,A,B,C],B,A]]).
-posax(330,1,"BFO-fsy-1",[[-1,'instance-of',B,'object-aggregate',A],[-1,'proper-continuant-part-of',C,B,A],[0,'continuant-part-of',[sk91,A,B,C],C,A]]).
-posax(331,1,"BFO-fsy-1",[[-1,'instance-of',B,'object-aggregate',A],[-1,'proper-continuant-part-of',C,B,A],[0,'continuant-part-of',[sk91,A,B,C],[sk92,A,B,C],A]]).
+posax(329,1,"BFO-fsy-1",[[-1,'instance-of',B,'object-aggregate',A],[-1,'proper-continuant-part-of',C,B,A],[0,'member-part-of',[sk93,A,B,C],B,A]]).
+posax(330,1,"BFO-fsy-1",[[-1,'instance-of',B,'object-aggregate',A],[-1,'proper-continuant-part-of',C,B,A],[0,'continuant-part-of',[sk92,A,B,C],C,A]]).
+posax(331,1,"BFO-fsy-1",[[-1,'instance-of',B,'object-aggregate',A],[-1,'proper-continuant-part-of',C,B,A],[0,'continuant-part-of',[sk92,A,B,C],[sk93,A,B,C],A]]).
 
 % An object aggregate has member parts only disjoint objects [evk-1]
-posax(332,1,"BFO-evk-1",[[-1,'instance-of',A,object,C],[-1,'instance-of',B,'object-aggregate',C],[-1,'proper-continuant-part-of',A,B,C],[0,'continuant-part-of',[sk94,A,B,C],[sk95,A,B,C],C],[0,'member-part-of',A,B,C]]).
-posax(333,1,"BFO-evk-1",[[-1,'instance-of',A,object,C],[-1,'instance-of',B,'object-aggregate',C],[-1,'proper-continuant-part-of',A,B,C],[0,'continuant-part-of',[sk94,A,B,C],A,C],[0,'member-part-of',A,B,C]]).
-posax(334,1,"BFO-evk-1",[[-1,identical,A,[sk95,A,B,C]],[-1,'instance-of',A,object,C],[-1,'instance-of',B,'object-aggregate',C],[-1,'proper-continuant-part-of',A,B,C],[0,'member-part-of',A,B,C]]).
-posax(335,1,"BFO-evk-1",[[-1,'instance-of',A,object,C],[-1,'instance-of',B,'object-aggregate',C],[-1,'proper-continuant-part-of',A,B,C],[0,'member-part-of',A,B,C],[0,'member-part-of',[sk95,A,B,C],B,C]]).
+posax(332,1,"BFO-evk-1",[[-1,'instance-of',A,object,C],[-1,'instance-of',B,'object-aggregate',C],[-1,'proper-continuant-part-of',A,B,C],[0,'continuant-part-of',[sk95,A,B,C],[sk96,A,B,C],C],[0,'member-part-of',A,B,C]]).
+posax(333,1,"BFO-evk-1",[[-1,'instance-of',A,object,C],[-1,'instance-of',B,'object-aggregate',C],[-1,'proper-continuant-part-of',A,B,C],[0,'continuant-part-of',[sk95,A,B,C],A,C],[0,'member-part-of',A,B,C]]).
+posax(334,1,"BFO-evk-1",[[-1,identical,A,[sk96,A,B,C]],[-1,'instance-of',A,object,C],[-1,'instance-of',B,'object-aggregate',C],[-1,'proper-continuant-part-of',A,B,C],[0,'member-part-of',A,B,C]]).
+posax(335,1,"BFO-evk-1",[[-1,'instance-of',A,object,C],[-1,'instance-of',B,'object-aggregate',C],[-1,'proper-continuant-part-of',A,B,C],[0,'member-part-of',A,B,C],[0,'member-part-of',[sk96,A,B,C],B,C]]).
 posax(336,0,"BFO-evk-1",[[-1,'member-part-of',A,B,C],[0,'instance-of',A,object,C]]).
 posax(337,0,"BFO-evk-1",[[-1,'member-part-of',A,B,C],[0,'instance-of',B,'object-aggregate',C]]).
 posax(338,0,"BFO-evk-1",[[-1,'member-part-of',A,B,C],[0,'proper-continuant-part-of',A,B,C]]).
@@ -658,82 +658,82 @@ posax(351,0,"BFO-gjl-2",[[-1,'instance-of',B,'temporal-region',B],[-1,'occurrent
 posax(352,0,"BFO-gjl-2",[[-1,'instance-of',A,'temporal-region',A],[-1,'occurrent-part-of',A,B],[0,'instance-of',B,'temporal-region',B]]).
 
 % occurrent-part-of has domain occurrent and range occurrent [zmr-1]
-posax(353,1,"BFO-zmr-1",[[-1,'occurrent-part-of',A,B],[0,'instance-of',B,occurrent,[sk97,A,B]]]).
-posax(354,1,"BFO-zmr-1",[[-1,'occurrent-part-of',A,B],[0,'instance-of',A,occurrent,[sk96,A,B]]]).
+posax(353,1,"BFO-zmr-1",[[-1,'occurrent-part-of',A,B],[0,'instance-of',B,occurrent,[sk98,A,B]]]).
+posax(354,1,"BFO-zmr-1",[[-1,'occurrent-part-of',A,B],[0,'instance-of',A,occurrent,[sk97,A,B]]]).
 
 % If a occurrent-part-of b then if a is an instance of process then b is an instance of process [csk-1]
-posax(355,1,"BFO-csk-1",[[-1,'instance-of',B,process,A],[-1,'occurrent-part-of',B,C],[0,'instance-of',C,process,[sk98,B,C]]]).
+posax(355,1,"BFO-csk-1",[[-1,'instance-of',B,process,A],[-1,'occurrent-part-of',B,C],[0,'instance-of',C,process,[sk99,B,C]]]).
 
 % proper-temporal-part-of has domain occurrent and range occurrent [ees-1]
-posax(356,1,"BFO-ees-1",[[-1,'proper-temporal-part-of',A,B],[0,'instance-of',B,occurrent,[sk100,A,B]]]).
-posax(357,1,"BFO-ees-1",[[-1,'proper-temporal-part-of',A,B],[0,'instance-of',A,occurrent,[sk99,A,B]]]).
+posax(356,1,"BFO-ees-1",[[-1,'proper-temporal-part-of',A,B],[0,'instance-of',B,occurrent,[sk101,A,B]]]).
+posax(357,1,"BFO-ees-1",[[-1,'proper-temporal-part-of',A,B],[0,'instance-of',A,occurrent,[sk100,A,B]]]).
 
 % proper-occurrent-part-of has domain occurrent and range occurrent [yhc-1]
-posax(358,1,"BFO-yhc-1",[[-1,'proper-occurrent-part-of',A,B],[0,'instance-of',B,occurrent,[sk102,A,B]]]).
-posax(359,1,"BFO-yhc-1",[[-1,'proper-occurrent-part-of',A,B],[0,'instance-of',A,occurrent,[sk101,A,B]]]).
+posax(358,1,"BFO-yhc-1",[[-1,'proper-occurrent-part-of',A,B],[0,'instance-of',B,occurrent,[sk103,A,B]]]).
+posax(359,1,"BFO-yhc-1",[[-1,'proper-occurrent-part-of',A,B],[0,'instance-of',A,occurrent,[sk102,A,B]]]).
 
 % every process has a process boundary [aff-1]
-posax(360,1,"BFO-aff-1",[[-1,'instance-of',B,process,A],[0,'occurrent-part-of',[sk103,B],B]]).
-posax(361,1,"BFO-aff-1",[[-1,'instance-of',B,process,A],[0,'instance-of',[sk103,B],'process-boundary',[sk104,B]]]).
+posax(360,1,"BFO-aff-1",[[-1,'instance-of',B,process,A],[0,'occurrent-part-of',[sk104,B],B]]).
+posax(361,1,"BFO-aff-1",[[-1,'instance-of',B,process,A],[0,'instance-of',[sk104,B],'process-boundary',[sk105,B]]]).
 
 % definition of temporal part for temporal regions [cmy-2]
 posax(362,0,"BFO-cmy-2",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,'temporal-region',B],[-1,'occurrent-part-of',A,B],[0,'temporal-part-of',A,B]]).
 posax(363,0,"BFO-cmy-2",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,'temporal-region',B],[-1,'temporal-part-of',A,B],[0,'occurrent-part-of',A,B]]).
 
 % If a has-occurrent-part b then if a is an instance of process-boundary then b is an instance of process-boundary [hdk-1]
-posax(364,1,"BFO-hdk-1",[[-1,'has-occurrent-part',B,C],[-1,'instance-of',B,'process-boundary',A],[0,'instance-of',C,'process-boundary',[sk105,B,C]]]).
+posax(364,1,"BFO-hdk-1",[[-1,'has-occurrent-part',B,C],[-1,'instance-of',B,'process-boundary',A],[0,'instance-of',C,'process-boundary',[sk106,B,C]]]).
 
 % If a occurrent-part-of b then if a is an instance of spatiotemporal-region then b is an instance of spatiotemporal-region, and vice-versa [myl-1]
-posax(365,1,"BFO-myl-1",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'occurrent-part-of',B,C],[0,'instance-of',B,'spatiotemporal-region',[sk106,B,C]]]).
-posax(366,1,"BFO-myl-1",[[-1,'instance-of',B,'spatiotemporal-region',A],[-1,'occurrent-part-of',B,C],[0,'instance-of',C,'spatiotemporal-region',[sk107,B,C]]]).
+posax(365,1,"BFO-myl-1",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'occurrent-part-of',B,C],[0,'instance-of',B,'spatiotemporal-region',[sk107,B,C]]]).
+posax(366,1,"BFO-myl-1",[[-1,'instance-of',B,'spatiotemporal-region',A],[-1,'occurrent-part-of',B,C],[0,'instance-of',C,'spatiotemporal-region',[sk108,B,C]]]).
 
 % If a has-occurrent-part b then if a is an instance of process then b is an instance of process or process-boundary  [ccz-1]
-posax(367,1,"BFO-ccz-1",[[-1,'has-occurrent-part',B,C],[-1,'instance-of',B,process,A],[0,'instance-of',C,process,[sk108,B,C]],[0,'instance-of',C,'process-boundary',[sk108,B,C]]]).
+posax(367,1,"BFO-ccz-1",[[-1,'has-occurrent-part',B,C],[-1,'instance-of',B,process,A],[0,'instance-of',C,process,[sk109,B,C]],[0,'instance-of',C,'process-boundary',[sk109,B,C]]]).
 
 % If a occurrent-part-of b then if a is an instance of process-boundary then b is an instance of process or process-boundary  [ptm-1]
-posax(368,1,"BFO-ptm-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'occurrent-part-of',B,C],[0,'instance-of',C,process,[sk109,B,C]],[0,'instance-of',C,'process-boundary',[sk109,B,C]]]).
+posax(368,1,"BFO-ptm-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'occurrent-part-of',B,C],[0,'instance-of',C,process,[sk110,B,C]],[0,'instance-of',C,'process-boundary',[sk110,B,C]]]).
 
 % a process boundary is any temporal part of a process that has no proper temporal parts. [esh-1]
-posax(369,1,"BFO-esh-1",[[-1,'instance-of',B,'process-boundary',A],[0,'instance-of',[sk110,B],'temporal-instant',[sk110,B]]]).
-posax(370,1,"BFO-esh-1",[[-1,'instance-of',B,'process-boundary',A],[0,'occupies-temporal-region',B,[sk110,B]]]).
-posax(371,1,"BFO-esh-1",[[-1,'instance-of',B,'process-boundary',A],[0,'instance-of',[sk112,B],process,[sk111,B]]]).
-posax(372,1,"BFO-esh-1",[[-1,'instance-of',B,'process-boundary',A],[0,'temporal-part-of',B,[sk112,B]]]).
-posax(373,1,"BFO-esh-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',C,process,B],[-1,'occupies-temporal-region',D,A],[-1,'temporal-part-of',D,C],[0,'instance-of',D,'process-boundary',[sk113,D]]]).
+posax(369,1,"BFO-esh-1",[[-1,'instance-of',B,'process-boundary',A],[0,'instance-of',[sk111,B],'temporal-instant',[sk111,B]]]).
+posax(370,1,"BFO-esh-1",[[-1,'instance-of',B,'process-boundary',A],[0,'occupies-temporal-region',B,[sk111,B]]]).
+posax(371,1,"BFO-esh-1",[[-1,'instance-of',B,'process-boundary',A],[0,'instance-of',[sk113,B],process,[sk112,B]]]).
+posax(372,1,"BFO-esh-1",[[-1,'instance-of',B,'process-boundary',A],[0,'temporal-part-of',B,[sk113,B]]]).
+posax(373,1,"BFO-esh-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',C,process,B],[-1,'occupies-temporal-region',D,A],[-1,'temporal-part-of',D,C],[0,'instance-of',D,'process-boundary',[sk114,D]]]).
 
 % occurrent-part-of has a unique product [hpc-1]
-posax(374,1,"BFO-hpc-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',D,occurrent,A],[-1,'instance-of',E,occurrent,A],[-1,'occurrent-part-of',B,D],[-1,'occurrent-part-of',B,E],[-1,'occurrent-part-of',C,[sk114,D,E]],[0,'occurrent-part-of',C,D]]).
-posax(375,1,"BFO-hpc-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',D,occurrent,A],[-1,'instance-of',E,occurrent,A],[-1,'occurrent-part-of',B,D],[-1,'occurrent-part-of',B,E],[-1,'occurrent-part-of',C,[sk114,D,E]],[0,'occurrent-part-of',C,E]]).
-posax(376,1,"BFO-hpc-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',D,occurrent,A],[-1,'instance-of',E,occurrent,A],[-1,'occurrent-part-of',B,D],[-1,'occurrent-part-of',B,E],[-1,'occurrent-part-of',C,D],[-1,'occurrent-part-of',C,E],[0,'occurrent-part-of',C,[sk114,D,E]]]).
+posax(374,1,"BFO-hpc-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',D,occurrent,A],[-1,'instance-of',E,occurrent,A],[-1,'occurrent-part-of',B,D],[-1,'occurrent-part-of',B,E],[-1,'occurrent-part-of',C,[sk115,D,E]],[0,'occurrent-part-of',C,D]]).
+posax(375,1,"BFO-hpc-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',D,occurrent,A],[-1,'instance-of',E,occurrent,A],[-1,'occurrent-part-of',B,D],[-1,'occurrent-part-of',B,E],[-1,'occurrent-part-of',C,[sk115,D,E]],[0,'occurrent-part-of',C,E]]).
+posax(376,1,"BFO-hpc-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',D,occurrent,A],[-1,'instance-of',E,occurrent,A],[-1,'occurrent-part-of',B,D],[-1,'occurrent-part-of',B,E],[-1,'occurrent-part-of',C,D],[-1,'occurrent-part-of',C,E],[0,'occurrent-part-of',C,[sk115,D,E]]]).
 
 % At least one process boundary needs to be at the first or last instant of the process it bounds [qsp-1]
-posax(377,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'instance-of',[sk117,B],'process-boundary',[sk118,B]]]).
-posax(378,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'occupies-temporal-region',[sk117,B],[sk118,B]]]).
-posax(379,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'occurrent-part-of',[sk117,B],B]]).
-posax(380,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'occupies-temporal-region',B,[sk119,B]]]).
-posax(381,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'has-first-instant',[sk119,B],[sk116,B]]]).
-posax(382,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'has-last-instant',[sk119,B],[sk115,B]]]).
-posax(383,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,identical,[sk118,B],[sk115,B]],[0,identical,[sk118,B],[sk116,B]]]).
+posax(377,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'instance-of',[sk118,B],'process-boundary',[sk119,B]]]).
+posax(378,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'occupies-temporal-region',[sk118,B],[sk119,B]]]).
+posax(379,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'occurrent-part-of',[sk118,B],B]]).
+posax(380,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'occupies-temporal-region',B,[sk120,B]]]).
+posax(381,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'has-first-instant',[sk120,B],[sk117,B]]]).
+posax(382,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,'has-last-instant',[sk120,B],[sk116,B]]]).
+posax(383,1,"BFO-qsp-1",[[-1,'instance-of',B,process,A],[0,identical,[sk119,B],[sk116,B]],[0,identical,[sk119,B],[sk117,B]]]).
 
 % b temporal part c (both spatiotemporal regions) iff b temporal projection is part of c's temporal projection, and for all parts of b's existence, if it spatially-projects-onto s at that time, then so does c [eom-2]
-posax(384,1,"BFO-eom-2",[[-1,'instance-of',E,'spatiotemporal-region',A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,[sk121,E,F]],[-1,'spatially-projects-onto',E,C,D],[-1,'temporal-part-of',E,F],[0,'spatially-projects-onto',E,[sk120,D,E,F],D]]).
-posax(385,1,"BFO-eom-2",[[-1,'instance-of',E,'spatiotemporal-region',A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,[sk121,E,F]],[-1,'spatially-projects-onto',E,C,D],[-1,'temporal-part-of',E,F],[0,'spatially-projects-onto',F,[sk120,D,E,F],D]]).
-posax(386,1,"BFO-eom-2",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'temporal-part-of',C,D],[0,'temporally-projects-onto',C,[sk121,C,D]]]).
-posax(387,1,"BFO-eom-2",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'temporal-part-of',C,D],[0,'temporally-projects-onto',D,[sk122,C,D]]]).
-posax(388,1,"BFO-eom-2",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'temporal-part-of',C,D],[0,'occurrent-part-of',[sk121,C,D],[sk122,C,D]]]).
-posax(389,1,"BFO-eom-2",[[-1,'instance-of',E,'spatiotemporal-region',A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[-1,'temporally-projects-onto',E,C],[-1,'temporally-projects-onto',F,D],[0,'spatially-projects-onto',E,[sk123,C,D,E,F],[sk124,C,D,E,F]],[0,'temporal-part-of',E,F]]).
-posax(390,1,"BFO-eom-2",[[-1,'instance-of',E,'spatiotemporal-region',A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[-1,'temporally-projects-onto',E,C],[-1,'temporally-projects-onto',F,D],[0,'occurrent-part-of',[sk124,C,D,E,F],C],[0,'temporal-part-of',E,F]]).
-posax(391,1,"BFO-eom-2",[[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'instance-of',G,'spatiotemporal-region',C],[-1,'occurrent-part-of',D,E],[-1,'spatially-projects-onto',F,A,[sk124,D,E,F,G]],[-1,'spatially-projects-onto',G,A,[sk124,D,E,F,G]],[-1,'temporally-projects-onto',F,D],[-1,'temporally-projects-onto',G,E],[0,'temporal-part-of',F,G]]).
+posax(384,1,"BFO-eom-2",[[-1,'instance-of',E,'spatiotemporal-region',A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,[sk122,E,F]],[-1,'spatially-projects-onto',E,C,D],[-1,'temporal-part-of',E,F],[0,'spatially-projects-onto',E,[sk121,D,E,F],D]]).
+posax(385,1,"BFO-eom-2",[[-1,'instance-of',E,'spatiotemporal-region',A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,[sk122,E,F]],[-1,'spatially-projects-onto',E,C,D],[-1,'temporal-part-of',E,F],[0,'spatially-projects-onto',F,[sk121,D,E,F],D]]).
+posax(386,1,"BFO-eom-2",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'temporal-part-of',C,D],[0,'temporally-projects-onto',C,[sk122,C,D]]]).
+posax(387,1,"BFO-eom-2",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'temporal-part-of',C,D],[0,'temporally-projects-onto',D,[sk123,C,D]]]).
+posax(388,1,"BFO-eom-2",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'temporal-part-of',C,D],[0,'occurrent-part-of',[sk122,C,D],[sk123,C,D]]]).
+posax(389,1,"BFO-eom-2",[[-1,'instance-of',E,'spatiotemporal-region',A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[-1,'temporally-projects-onto',E,C],[-1,'temporally-projects-onto',F,D],[0,'spatially-projects-onto',E,[sk124,C,D,E,F],[sk125,C,D,E,F]],[0,'temporal-part-of',E,F]]).
+posax(390,1,"BFO-eom-2",[[-1,'instance-of',E,'spatiotemporal-region',A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[-1,'temporally-projects-onto',E,C],[-1,'temporally-projects-onto',F,D],[0,'occurrent-part-of',[sk125,C,D,E,F],C],[0,'temporal-part-of',E,F]]).
+posax(391,1,"BFO-eom-2",[[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'instance-of',G,'spatiotemporal-region',C],[-1,'occurrent-part-of',D,E],[-1,'spatially-projects-onto',F,A,[sk125,D,E,F,G]],[-1,'spatially-projects-onto',G,A,[sk125,D,E,F,G]],[-1,'temporally-projects-onto',F,D],[-1,'temporally-projects-onto',G,E],[0,'temporal-part-of',F,G]]).
 
 % Two spatiotemporal regions are parts when they are temporal parts and their spatial projects are always parts [txf-1]
-posax(392,1,"BFO-txf-1",[[-1,'exists-at',D,C],[-1,'instance-of',D,'spatiotemporal-region',A],[-1,'instance-of',E,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,E],[0,'temporal-part-of',[sk127,C,D,E],C]]).
-posax(393,1,"BFO-txf-1",[[-1,'exists-at',D,C],[-1,'instance-of',D,'spatiotemporal-region',A],[-1,'instance-of',E,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,E],[0,'spatially-projects-onto',D,[sk125,C,D,E],[sk127,C,D,E]]]).
-posax(394,1,"BFO-txf-1",[[-1,'exists-at',D,C],[-1,'instance-of',D,'spatiotemporal-region',A],[-1,'instance-of',E,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,E],[0,'spatially-projects-onto',E,[sk126,C,D,E],[sk127,C,D,E]]]).
-posax(395,1,"BFO-txf-1",[[-1,'exists-at',D,C],[-1,'instance-of',D,'spatiotemporal-region',A],[-1,'instance-of',E,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,E],[0,'continuant-part-of',[sk125,C,D,E],[sk126,C,D,E],[sk127,C,D,E]]]).
-posax(396,1,"BFO-txf-1",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[0,'temporal-part-of',[sk128,C,D],[sk129,C,D]]]).
-posax(397,1,"BFO-txf-1",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[0,'temporally-projects-onto',D,[sk129,C,D]]]).
-posax(398,1,"BFO-txf-1",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[0,'temporally-projects-onto',C,[sk128,C,D]]]).
-posax(399,1,"BFO-txf-1",[[-1,'continuant-part-of',A,B,C],[-1,'instance-of',H,'spatiotemporal-region',F],[-1,'instance-of',I,'spatiotemporal-region',G],[-1,'spatially-projects-onto',H,A,C],[-1,'spatially-projects-onto',I,B,C],[-1,'temporal-part-of',C,[sk130,H,I]],[-1,'temporal-part-of',D,E],[-1,'temporally-projects-onto',H,D],[-1,'temporally-projects-onto',I,E],[0,'occurrent-part-of',H,I]]).
-posax(400,1,"BFO-txf-1",[[-1,'instance-of',E,'spatiotemporal-region',C],[-1,'instance-of',F,'spatiotemporal-region',D],[-1,'temporal-part-of',A,B],[-1,'temporally-projects-onto',E,A],[-1,'temporally-projects-onto',F,B],[0,'exists-at',E,[sk130,E,F]],[0,'occurrent-part-of',E,F]]).
+posax(392,1,"BFO-txf-1",[[-1,'exists-at',D,C],[-1,'instance-of',D,'spatiotemporal-region',A],[-1,'instance-of',E,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,E],[0,'temporal-part-of',[sk128,C,D,E],C]]).
+posax(393,1,"BFO-txf-1",[[-1,'exists-at',D,C],[-1,'instance-of',D,'spatiotemporal-region',A],[-1,'instance-of',E,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,E],[0,'spatially-projects-onto',D,[sk126,C,D,E],[sk128,C,D,E]]]).
+posax(394,1,"BFO-txf-1",[[-1,'exists-at',D,C],[-1,'instance-of',D,'spatiotemporal-region',A],[-1,'instance-of',E,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,E],[0,'spatially-projects-onto',E,[sk127,C,D,E],[sk128,C,D,E]]]).
+posax(395,1,"BFO-txf-1",[[-1,'exists-at',D,C],[-1,'instance-of',D,'spatiotemporal-region',A],[-1,'instance-of',E,'spatiotemporal-region',B],[-1,'occurrent-part-of',D,E],[0,'continuant-part-of',[sk126,C,D,E],[sk127,C,D,E],[sk128,C,D,E]]]).
+posax(396,1,"BFO-txf-1",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[0,'temporal-part-of',[sk129,C,D],[sk130,C,D]]]).
+posax(397,1,"BFO-txf-1",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[0,'temporally-projects-onto',D,[sk130,C,D]]]).
+posax(398,1,"BFO-txf-1",[[-1,'instance-of',C,'spatiotemporal-region',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',C,D],[0,'temporally-projects-onto',C,[sk129,C,D]]]).
+posax(399,1,"BFO-txf-1",[[-1,'continuant-part-of',A,B,C],[-1,'instance-of',H,'spatiotemporal-region',F],[-1,'instance-of',I,'spatiotemporal-region',G],[-1,'spatially-projects-onto',H,A,C],[-1,'spatially-projects-onto',I,B,C],[-1,'temporal-part-of',C,[sk131,H,I]],[-1,'temporal-part-of',D,E],[-1,'temporally-projects-onto',H,D],[-1,'temporally-projects-onto',I,E],[0,'occurrent-part-of',H,I]]).
+posax(400,1,"BFO-txf-1",[[-1,'instance-of',E,'spatiotemporal-region',C],[-1,'instance-of',F,'spatiotemporal-region',D],[-1,'temporal-part-of',A,B],[-1,'temporally-projects-onto',E,A],[-1,'temporally-projects-onto',F,B],[0,'exists-at',E,[sk131,E,F]],[0,'occurrent-part-of',E,F]]).
 
 % precedes and preceded-by are inverse relations [tib-1]
 posax(401,0,"BFO-tib-1",[[-1,precedes,A,B],[0,'preceded-by',B,A]]).
@@ -749,8 +749,8 @@ posax(404,0,"BFO-ctz-1",[[-1,precedes,A,B],[-1,precedes,B,C],[0,precedes,A,C]]).
 posax(405,0,"BFO-qqv-1",[[-1,'has-first-instant',B,D],[-1,'has-last-instant',A,C],[-1,precedes,C,D],[0,precedes,A,B]]).
 
 % precedes has domain occurrent and range occurrent [sen-1]
-posax(406,1,"BFO-sen-1",[[-1,precedes,A,B],[0,'instance-of',B,occurrent,[sk132,A,B]]]).
-posax(407,1,"BFO-sen-1",[[-1,precedes,A,B],[0,'instance-of',A,occurrent,[sk131,A,B]]]).
+posax(406,1,"BFO-sen-1",[[-1,precedes,A,B],[0,'instance-of',B,occurrent,[sk133,A,B]]]).
+posax(407,1,"BFO-sen-1",[[-1,precedes,A,B],[0,'instance-of',A,occurrent,[sk132,A,B]]]).
 
 % If you are part of something that precedes something else, you also precede it [wix-1]
 posax(408,0,"BFO-wix-1",[[-1,'occurrent-part-of',C,A],[-1,'occurrent-part-of',D,B],[-1,precedes,A,B],[0,precedes,C,D]]).
@@ -780,13 +780,13 @@ posax(417,0,"BFO-qga-1",[[-1,'has-first-instant',B,A],[-1,'instance-of',A,'tempo
 posax(418,0,"BFO-qga-1",[[-1,'has-first-instant',B,A],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-region',B],[0,'instance-of',B,'temporal-instant',B],[0,precedes,A,B],[0,'temporal-part-of',A,B]]).
 
 % If two temporal intervals do not overlap then one of them precedes the other [owb-1]
-posax(419,1,"BFO-owb-1",[[-1,'instance-of',A,'temporal-interval',A],[-1,'instance-of',B,'temporal-interval',B],[0,precedes,A,B],[0,precedes,B,A],[0,'temporal-part-of',[sk133,A,B],B]]).
-posax(420,1,"BFO-owb-1",[[-1,'instance-of',A,'temporal-interval',A],[-1,'instance-of',B,'temporal-interval',B],[0,precedes,A,B],[0,precedes,B,A],[0,'temporal-part-of',[sk133,A,B],A]]).
+posax(419,1,"BFO-owb-1",[[-1,'instance-of',A,'temporal-interval',A],[-1,'instance-of',B,'temporal-interval',B],[0,precedes,A,B],[0,precedes,B,A],[0,'temporal-part-of',[sk134,A,B],B]]).
+posax(420,1,"BFO-owb-1",[[-1,'instance-of',A,'temporal-interval',A],[-1,'instance-of',B,'temporal-interval',B],[0,precedes,A,B],[0,precedes,B,A],[0,'temporal-part-of',[sk134,A,B],A]]).
 
 % If you temporally occupy part of something that precedes something else, you also precede it [wff-1]
-posax(421,1,"BFO-wff-1",[[-1,precedes,A,B],[0,identical,[sk134,A,B],A],[0,'occupies-temporal-region',A,[sk134,A,B]],[0,'temporally-projects-onto',A,[sk134,A,B]]]).
-posax(422,1,"BFO-wff-1",[[-1,precedes,A,B],[0,identical,[sk135,A,B],B],[0,'occupies-temporal-region',B,[sk135,A,B]],[0,'temporally-projects-onto',B,[sk135,A,B]]]).
-posax(423,1,"BFO-wff-1",[[-1,precedes,A,B],[0,precedes,[sk134,A,B],[sk135,A,B]]]).
+posax(421,1,"BFO-wff-1",[[-1,precedes,A,B],[0,identical,[sk135,A,B],A],[0,'occupies-temporal-region',A,[sk135,A,B]],[0,'temporally-projects-onto',A,[sk135,A,B]]]).
+posax(422,1,"BFO-wff-1",[[-1,precedes,A,B],[0,identical,[sk136,A,B],B],[0,'occupies-temporal-region',B,[sk136,A,B]],[0,'temporally-projects-onto',B,[sk136,A,B]]]).
+posax(423,1,"BFO-wff-1",[[-1,precedes,A,B],[0,precedes,[sk135,A,B],[sk136,A,B]]]).
 posax(424,0,"BFO-wff-1",[[-1,identical,B,D],[-1,'occupies-temporal-region',C,A],[-1,precedes,A,B],[0,precedes,C,D]]).
 posax(425,0,"BFO-wff-1",[[-1,'occupies-temporal-region',C,A],[-1,precedes,A,B],[-1,'temporally-projects-onto',D,B],[0,precedes,C,D]]).
 posax(426,0,"BFO-wff-1",[[-1,'occupies-temporal-region',C,A],[-1,'occupies-temporal-region',D,B],[-1,precedes,A,B],[0,precedes,C,D]]).
@@ -798,15 +798,15 @@ posax(431,0,"BFO-wff-1",[[-1,identical,A,C],[-1,precedes,A,B],[-1,'temporally-pr
 posax(432,0,"BFO-wff-1",[[-1,identical,A,C],[-1,'occupies-temporal-region',D,B],[-1,precedes,A,B],[0,precedes,C,D]]).
 
 % If two processes that occupy temporal intervals do not overlap, one of them precedes the other [duz-1]
-posax(433,1,"BFO-duz-1",[[-1,'instance-of',C,'temporal-interval',C],[-1,'instance-of',D,'temporal-interval',D],[-1,'occupies-temporal-region',A,C],[-1,'occupies-temporal-region',B,D],[0,precedes,A,B],[0,precedes,B,A],[0,'temporal-part-of',[sk136,A,B,C,D],D]]).
-posax(434,1,"BFO-duz-1",[[-1,'instance-of',C,'temporal-interval',C],[-1,'instance-of',D,'temporal-interval',D],[-1,'occupies-temporal-region',A,C],[-1,'occupies-temporal-region',B,D],[0,precedes,A,B],[0,precedes,B,A],[0,'temporal-part-of',[sk136,A,B,C,D],C]]).
+posax(433,1,"BFO-duz-1",[[-1,'instance-of',C,'temporal-interval',C],[-1,'instance-of',D,'temporal-interval',D],[-1,'occupies-temporal-region',A,C],[-1,'occupies-temporal-region',B,D],[0,precedes,A,B],[0,precedes,B,A],[0,'temporal-part-of',[sk137,A,B,C,D],D]]).
+posax(434,1,"BFO-duz-1",[[-1,'instance-of',C,'temporal-interval',C],[-1,'instance-of',D,'temporal-interval',D],[-1,'occupies-temporal-region',A,C],[-1,'occupies-temporal-region',B,D],[0,precedes,A,B],[0,precedes,B,A],[0,'temporal-part-of',[sk137,A,B,C,D],C]]).
 
 % participates-in and has-participant are inverse relations [xjr-1]
 posax(435,0,"BFO-xjr-1",[[-1,'participates-in',B,C,A],[0,'has-participant',C,B,A]]).
 posax(436,0,"BFO-xjr-1",[[-1,'has-participant',C,B,A],[0,'participates-in',B,C,A]]).
 
 % At every time a process exists it has a participant [trl-1]
-posax(437,1,"BFO-trl-1",[[-1,'instance-of',A,process,B],[0,'participates-in',[sk137,A,B],A,B]]).
+posax(437,1,"BFO-trl-1",[[-1,'instance-of',A,process,B],[0,'participates-in',[sk138,A,B],A,B]]).
 
 % participates-in is dissective on third argument, a temporal region [yjm-1]
 posax(438,0,"BFO-yjm-1",[[-1,'participates-in',A,B,C],[-1,'temporal-part-of',D,C],[0,'participates-in',A,B,D]]).
@@ -821,12 +821,12 @@ posax(442,0,"BFO-ild-1",[[-1,'participates-in',A,B,C],[0,'instance-of',C,'tempor
 posax(443,0,"BFO-ild-1",[[-1,'participates-in',A,B,C],[0,'instance-of',B,process,C]]).
 
 % At every time a specific dependent s participates in a process p there's a part of that time, during which there's an independent-continuant that s s-depends on, and that participates in p at that time [cgn-1]
-posax(444,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'participates-in',[sk139,A,B,C],B,[sk138,A,B,C]]]).
-posax(445,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'specifically-depends-on',A,[sk139,A,B,C]]]).
-posax(446,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'instance-of',[sk139,A,B,C],'spatial-region',[sk138,A,B,C]],[-1,'participates-in',A,B,C]]).
-posax(447,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'instance-of',[sk139,A,B,C],'independent-continuant',[sk138,A,B,C]]]).
-posax(448,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'temporal-part-of',[sk138,A,B,C],C]]).
-posax(449,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'instance-of',[sk138,A,B,C],'temporal-region',[sk138,A,B,C]]]).
+posax(444,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'participates-in',[sk140,A,B,C],B,[sk139,A,B,C]]]).
+posax(445,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'specifically-depends-on',A,[sk140,A,B,C]]]).
+posax(446,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'instance-of',[sk140,A,B,C],'spatial-region',[sk139,A,B,C]],[-1,'participates-in',A,B,C]]).
+posax(447,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'instance-of',[sk140,A,B,C],'independent-continuant',[sk139,A,B,C]]]).
+posax(448,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'temporal-part-of',[sk139,A,B,C],C]]).
+posax(449,1,"BFO-cgn-1",[[-1,'instance-of',A,'specifically-dependent-continuant',C],[-1,'participates-in',A,B,C],[0,'instance-of',[sk139,A,B,C],'temporal-region',[sk139,A,B,C]]]).
 
 % occurs-in and environs are inverse relations [uys-1]
 posax(450,0,"BFO-uys-1",[[-1,'occurs-in',A,B],[0,environs,B,A]]).
@@ -867,26 +867,26 @@ posax(462,0,"BFO-ets-1",[[-1,'located-in',A,B,D],[-1,'located-in',B,C,E],[-1,'te
 posax(463,0,"BFO-wte-1",[[-1,'instance-of',A,'continuant-fiat-boundary',C],[-1,'location-of',A,B,C],[0,'instance-of',B,'continuant-fiat-boundary',C]]).
 
 % All spatial regions are part of a 3-dimensional spatial region [xcx-1]
-posax(464,1,"BFO-xcx-1",[[-1,'instance-of',A,'spatial-region',B],[0,'continuant-part-of',A,[sk143,A,B],B]]).
-posax(465,1,"BFO-xcx-1",[[-1,'instance-of',A,'spatial-region',B],[0,'instance-of',[sk143,A,B],'three-dimensional-spatial-region',B]]).
+posax(464,1,"BFO-xcx-1",[[-1,'instance-of',A,'spatial-region',B],[0,'continuant-part-of',A,[sk144,A,B],B]]).
+posax(465,1,"BFO-xcx-1",[[-1,'instance-of',A,'spatial-region',B],[0,'instance-of',[sk144,A,B],'three-dimensional-spatial-region',B]]).
 
 % occurs-in is lower bound location [czc-1]
-posax(466,1,"BFO-czc-1",[[-1,'continuant-part-of',B,C,[sk144,A,B,C]],[-1,'exists-at',C,[sk144,A,B,C]],[-1,'occurs-in',A,B],[0,'continuant-part-of',B,C,[sk144,A,B,C]],[0,'occurs-in',A,C]]).
-posax(467,1,"BFO-czc-1",[[-1,'continuant-part-of',B,C,[sk144,A,B,C]],[-1,'exists-at',C,[sk144,A,B,C]],[-1,'occurs-in',A,B],[0,'exists-at',C,[sk144,A,B,C]],[0,'occurs-in',A,C]]).
-posax(468,1,"BFO-czc-1",[[-1,'continuant-part-of',B,C,[sk144,A,B,C]],[-1,'exists-at',A,[sk144,A,B,C]],[-1,'exists-at',C,[sk144,A,B,C]],[-1,'occurs-in',A,B],[0,'occurs-in',A,C]]).
-posax(469,1,"BFO-czc-1",[[-1,'occurs-in',A,B],[0,'continuant-part-of',B,C,[sk144,A,B,C]],[0,'exists-at',A,[sk144,A,B,C]],[0,'occurs-in',A,C]]).
-posax(470,1,"BFO-czc-1",[[-1,'occurs-in',A,B],[0,'exists-at',A,[sk144,A,B,C]],[0,'exists-at',C,[sk144,A,B,C]],[0,'occurs-in',A,C]]).
-posax(471,1,"BFO-czc-1",[[-1,'exists-at',A,[sk144,A,B,C]],[-1,'occurs-in',A,B],[0,'exists-at',A,[sk144,A,B,C]],[0,'occurs-in',A,C]]).
+posax(466,1,"BFO-czc-1",[[-1,'continuant-part-of',B,C,[sk145,A,B,C]],[-1,'exists-at',C,[sk145,A,B,C]],[-1,'occurs-in',A,B],[0,'continuant-part-of',B,C,[sk145,A,B,C]],[0,'occurs-in',A,C]]).
+posax(467,1,"BFO-czc-1",[[-1,'continuant-part-of',B,C,[sk145,A,B,C]],[-1,'exists-at',C,[sk145,A,B,C]],[-1,'occurs-in',A,B],[0,'exists-at',C,[sk145,A,B,C]],[0,'occurs-in',A,C]]).
+posax(468,1,"BFO-czc-1",[[-1,'continuant-part-of',B,C,[sk145,A,B,C]],[-1,'exists-at',A,[sk145,A,B,C]],[-1,'exists-at',C,[sk145,A,B,C]],[-1,'occurs-in',A,B],[0,'occurs-in',A,C]]).
+posax(469,1,"BFO-czc-1",[[-1,'occurs-in',A,B],[0,'continuant-part-of',B,C,[sk145,A,B,C]],[0,'exists-at',A,[sk145,A,B,C]],[0,'occurs-in',A,C]]).
+posax(470,1,"BFO-czc-1",[[-1,'occurs-in',A,B],[0,'exists-at',A,[sk145,A,B,C]],[0,'exists-at',C,[sk145,A,B,C]],[0,'occurs-in',A,C]]).
+posax(471,1,"BFO-czc-1",[[-1,'exists-at',A,[sk145,A,B,C]],[-1,'occurs-in',A,B],[0,'exists-at',A,[sk145,A,B,C]],[0,'occurs-in',A,C]]).
 
 % If something is located in something else then the region of the first is part of the region of the second [uas-1]
-posax(472,1,"BFO-uas-1",[[-1,'located-in',A,B,C],[0,'continuant-part-of',[sk145,A,B,C],[sk146,A,B,C],[sk147,A,B,C]]]).
-posax(473,1,"BFO-uas-1",[[-1,'located-in',A,B,C],[0,'occupies-spatial-region',B,[sk146,A,B,C],[sk147,A,B,C]]]).
-posax(474,1,"BFO-uas-1",[[-1,'located-in',A,B,C],[0,'occupies-spatial-region',A,[sk145,A,B,C],[sk147,A,B,C]]]).
-posax(475,1,"BFO-uas-1",[[-1,'located-in',A,B,C],[0,'temporal-part-of',[sk147,A,B,C],C]]).
+posax(472,1,"BFO-uas-1",[[-1,'located-in',A,B,C],[0,'continuant-part-of',[sk146,A,B,C],[sk147,A,B,C],[sk148,A,B,C]]]).
+posax(473,1,"BFO-uas-1",[[-1,'located-in',A,B,C],[0,'occupies-spatial-region',B,[sk147,A,B,C],[sk148,A,B,C]]]).
+posax(474,1,"BFO-uas-1",[[-1,'located-in',A,B,C],[0,'occupies-spatial-region',A,[sk146,A,B,C],[sk148,A,B,C]]]).
+posax(475,1,"BFO-uas-1",[[-1,'located-in',A,B,C],[0,'temporal-part-of',[sk148,A,B,C],C]]).
 
 % occurs-in has domain process or process-boundary  and range material-entity or site  [tfw-1]
-posax(476,1,"BFO-tfw-1",[[-1,'occurs-in',A,B],[0,'instance-of',B,'material-entity',[sk149,A,B]],[0,'instance-of',B,site,[sk149,A,B]]]).
-posax(477,1,"BFO-tfw-1",[[-1,'occurs-in',A,B],[0,'instance-of',A,process,[sk148,A,B]],[0,'instance-of',A,'process-boundary',[sk148,A,B]]]).
+posax(476,1,"BFO-tfw-1",[[-1,'occurs-in',A,B],[0,'instance-of',B,'material-entity',[sk150,A,B]],[0,'instance-of',B,site,[sk150,A,B]]]).
+posax(477,1,"BFO-tfw-1",[[-1,'occurs-in',A,B],[0,'instance-of',A,process,[sk149,A,B]],[0,'instance-of',A,'process-boundary',[sk149,A,B]]]).
 
 % spatial regions don't change what they are part of. [mlb-1]
 posax(478,0,"BFO-mlb-1",[[-1,'continuant-part-of',B,D,C],[-1,'continuant-part-of',E,D,A],[-1,'instance-of',D,'spatial-region',A],[0,'continuant-part-of',E,D,C]]).
@@ -915,18 +915,18 @@ posax(490,0,"BFO-bge-1",[[-1,'located-in',A,B,C],[0,'instance-of',B,'independent
 posax(491,0,"BFO-bge-1",[[-1,'instance-of',B,'spatial-region',C],[-1,'located-in',A,B,C]]).
 
 % at all times t, there's a part of t when c occupies-spatial-region r iff every part of c occupies a part of r, and there isn't a smaller part of r that c occupies. [grv-1]
-posax(492,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk153,A,B,C]],[0,'occupies-spatial-region',A,[sk150,A,B,C],[sk153,A,B,C]],[0,'occupies-spatial-region',[sk152,A,B,C],[sk151,A,B,C],[sk153,A,B,C]]]).
-posax(493,1,"BFO-grv-1",[[-1,'continuant-part-of',[sk151,A,B,C],B,[sk153,A,B,C]],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk153,A,B,C]],[0,'occupies-spatial-region',A,[sk150,A,B,C],[sk153,A,B,C]]]).
-posax(494,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk152,A,B,C],A,[sk153,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk153,A,B,C]],[0,'occupies-spatial-region',A,[sk150,A,B,C],[sk153,A,B,C]]]).
-posax(495,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk150,A,B,C],B,[sk153,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk153,A,B,C]],[0,'occupies-spatial-region',[sk152,A,B,C],[sk151,A,B,C],[sk153,A,B,C]]]).
-posax(496,1,"BFO-grv-1",[[-1,'continuant-part-of',[sk151,A,B,C],B,[sk153,A,B,C]],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk150,A,B,C],B,[sk153,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk153,A,B,C]]]).
-posax(497,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk150,A,B,C],B,[sk153,A,B,C]],[0,'continuant-part-of',[sk152,A,B,C],A,[sk153,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk153,A,B,C]]]).
-posax(498,1,"BFO-grv-1",[[-1,identical,[sk150,A,B,C],B],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk153,A,B,C]],[0,'occupies-spatial-region',[sk152,A,B,C],[sk151,A,B,C],[sk153,A,B,C]]]).
-posax(499,1,"BFO-grv-1",[[-1,'continuant-part-of',[sk151,A,B,C],B,[sk153,A,B,C]],[-1,identical,[sk150,A,B,C],B],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk153,A,B,C]]]).
-posax(500,1,"BFO-grv-1",[[-1,identical,[sk150,A,B,C],B],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk152,A,B,C],A,[sk153,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk153,A,B,C]]]).
-posax(501,1,"BFO-grv-1",[[-1,'continuant-part-of',B,C,[sk153,C,D,E]],[-1,'instance-of',C,'independent-continuant',E],[-1,'instance-of',D,'spatial-region',E],[-1,'occupies-spatial-region',B,A,[sk153,C,D,E]],[-1,'occupies-spatial-region',C,D,[sk153,C,D,E]],[0,'continuant-part-of',A,D,[sk153,C,D,E]],[0,'instance-of',C,'spatial-region',E]]).
-posax(502,1,"BFO-grv-1",[[-1,'continuant-part-of',A,C,[sk153,B,C,D]],[-1,'instance-of',B,'independent-continuant',D],[-1,'instance-of',C,'spatial-region',D],[-1,'occupies-spatial-region',B,A,[sk153,B,C,D]],[-1,'occupies-spatial-region',B,C,[sk153,B,C,D]],[0,identical,A,C],[0,'instance-of',B,'spatial-region',D]]).
-posax(503,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'temporal-part-of',[sk153,A,B,C],C]]).
+posax(492,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk154,A,B,C]],[0,'occupies-spatial-region',A,[sk151,A,B,C],[sk154,A,B,C]],[0,'occupies-spatial-region',[sk153,A,B,C],[sk152,A,B,C],[sk154,A,B,C]]]).
+posax(493,1,"BFO-grv-1",[[-1,'continuant-part-of',[sk152,A,B,C],B,[sk154,A,B,C]],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk154,A,B,C]],[0,'occupies-spatial-region',A,[sk151,A,B,C],[sk154,A,B,C]]]).
+posax(494,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk153,A,B,C],A,[sk154,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk154,A,B,C]],[0,'occupies-spatial-region',A,[sk151,A,B,C],[sk154,A,B,C]]]).
+posax(495,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk151,A,B,C],B,[sk154,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk154,A,B,C]],[0,'occupies-spatial-region',[sk153,A,B,C],[sk152,A,B,C],[sk154,A,B,C]]]).
+posax(496,1,"BFO-grv-1",[[-1,'continuant-part-of',[sk152,A,B,C],B,[sk154,A,B,C]],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk151,A,B,C],B,[sk154,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk154,A,B,C]]]).
+posax(497,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk151,A,B,C],B,[sk154,A,B,C]],[0,'continuant-part-of',[sk153,A,B,C],A,[sk154,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk154,A,B,C]]]).
+posax(498,1,"BFO-grv-1",[[-1,identical,[sk151,A,B,C],B],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk154,A,B,C]],[0,'occupies-spatial-region',[sk153,A,B,C],[sk152,A,B,C],[sk154,A,B,C]]]).
+posax(499,1,"BFO-grv-1",[[-1,'continuant-part-of',[sk152,A,B,C],B,[sk154,A,B,C]],[-1,identical,[sk151,A,B,C],B],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk154,A,B,C]]]).
+posax(500,1,"BFO-grv-1",[[-1,identical,[sk151,A,B,C],B],[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'continuant-part-of',[sk153,A,B,C],A,[sk154,A,B,C]],[0,'instance-of',A,'spatial-region',C],[0,'occupies-spatial-region',A,B,[sk154,A,B,C]]]).
+posax(501,1,"BFO-grv-1",[[-1,'continuant-part-of',B,C,[sk154,C,D,E]],[-1,'instance-of',C,'independent-continuant',E],[-1,'instance-of',D,'spatial-region',E],[-1,'occupies-spatial-region',B,A,[sk154,C,D,E]],[-1,'occupies-spatial-region',C,D,[sk154,C,D,E]],[0,'continuant-part-of',A,D,[sk154,C,D,E]],[0,'instance-of',C,'spatial-region',E]]).
+posax(502,1,"BFO-grv-1",[[-1,'continuant-part-of',A,C,[sk154,B,C,D]],[-1,'instance-of',B,'independent-continuant',D],[-1,'instance-of',C,'spatial-region',D],[-1,'occupies-spatial-region',B,A,[sk154,B,C,D]],[-1,'occupies-spatial-region',B,C,[sk154,B,C,D]],[0,identical,A,C],[0,'instance-of',B,'spatial-region',D]]).
+posax(503,1,"BFO-grv-1",[[-1,'instance-of',A,'independent-continuant',C],[-1,'instance-of',B,'spatial-region',C],[0,'instance-of',A,'spatial-region',C],[0,'temporal-part-of',[sk154,A,B,C],C]]).
 
 % If something occupies a temporal region, then it exists at that region [bmc-1]
 posax(504,0,"BFO-bmc-1",[[-1,'occupies-temporal-region',A,B],[0,'exists-at',A,B]]).
@@ -947,22 +947,22 @@ posax(508,0,"BFO-fdb-1",[[-1,'spatially-projects-onto',A,B,C],[-1,'spatially-pro
 posax(509,0,"BFO-uqt-1",[[-1,'occupies-spatiotemporal-region',A,B],[-1,'occupies-spatiotemporal-region',A,C],[0,identical,B,C]]).
 
 % occurs-in is a lower bound on second argument [yex-1]
-posax(510,1,"BFO-yex-1",[[-1,'exists-at',A,[sk154,A,B,C]],[-1,'located-in',B,C,[sk154,A,B,C]],[-1,'occurs-in',A,B],[0,'occurs-in',A,C]]).
-posax(511,1,"BFO-yex-1",[[-1,'located-in',B,C,[sk154,A,B,C]],[-1,'occurs-in',A,B],[0,'located-in',B,C,[sk154,A,B,C]],[0,'occurs-in',A,C]]).
-posax(512,1,"BFO-yex-1",[[-1,'exists-at',A,[sk154,A,B,C]],[-1,'occurs-in',A,B],[0,'exists-at',A,[sk154,A,B,C]],[0,'occurs-in',A,C]]).
-posax(513,1,"BFO-yex-1",[[-1,'occurs-in',A,B],[0,'exists-at',A,[sk154,A,B,C]],[0,'located-in',B,C,[sk154,A,B,C]],[0,'occurs-in',A,C]]).
+posax(510,1,"BFO-yex-1",[[-1,'exists-at',A,[sk155,A,B,C]],[-1,'located-in',B,C,[sk155,A,B,C]],[-1,'occurs-in',A,B],[0,'occurs-in',A,C]]).
+posax(511,1,"BFO-yex-1",[[-1,'located-in',B,C,[sk155,A,B,C]],[-1,'occurs-in',A,B],[0,'located-in',B,C,[sk155,A,B,C]],[0,'occurs-in',A,C]]).
+posax(512,1,"BFO-yex-1",[[-1,'exists-at',A,[sk155,A,B,C]],[-1,'occurs-in',A,B],[0,'exists-at',A,[sk155,A,B,C]],[0,'occurs-in',A,C]]).
+posax(513,1,"BFO-yex-1",[[-1,'occurs-in',A,B],[0,'exists-at',A,[sk155,A,B,C]],[0,'located-in',B,C,[sk155,A,B,C]],[0,'occurs-in',A,C]]).
 
 % If a occupies-spatial-region b then if a is an instance of site then b is an instance of three-dimensional-spatial-region [uqb-1]
 posax(514,0,"BFO-uqb-1",[[-1,'instance-of',A,site,C],[-1,'occupies-spatial-region',A,B,C],[0,'instance-of',B,'three-dimensional-spatial-region',C]]).
 
 % The temporal region during which a process occurs is the same as that which the spatiotemporal region the process occupies temporally projects onto [cur-1]
-posax(515,1,"BFO-cur-1",[[-1,'occupies-temporal-region',A,B],[0,'occupies-spatiotemporal-region',A,[sk155,A,B]]]).
-posax(516,1,"BFO-cur-1",[[-1,'occupies-temporal-region',A,B],[0,'temporally-projects-onto',[sk155,A,B],B]]).
+posax(515,1,"BFO-cur-1",[[-1,'occupies-temporal-region',A,B],[0,'occupies-spatiotemporal-region',A,[sk156,A,B]]]).
+posax(516,1,"BFO-cur-1",[[-1,'occupies-temporal-region',A,B],[0,'temporally-projects-onto',[sk156,A,B],B]]).
 posax(517,0,"BFO-cur-1",[[-1,'occupies-spatiotemporal-region',B,A],[-1,'temporally-projects-onto',A,C],[0,'occupies-temporal-region',B,C]]).
 
 % temporally-projects-onto has domain spatiotemporal-region and range temporal-region [cvr-2]
 posax(518,0,"BFO-cvr-2",[[-1,'temporally-projects-onto',A,B],[0,'instance-of',B,'temporal-region',B]]).
-posax(519,1,"BFO-cvr-2",[[-1,'temporally-projects-onto',A,B],[0,'instance-of',A,'spatiotemporal-region',[sk156,A,B]]]).
+posax(519,1,"BFO-cvr-2",[[-1,'temporally-projects-onto',A,B],[0,'instance-of',A,'spatiotemporal-region',[sk157,A,B]]]).
 
 % If a occupies-spatial-region b then if a is an instance of material-entity then b is an instance of three-dimensional-spatial-region [ocw-1]
 posax(520,0,"BFO-ocw-1",[[-1,'instance-of',A,'material-entity',C],[-1,'occupies-spatial-region',A,B,C],[0,'instance-of',B,'three-dimensional-spatial-region',C]]).
@@ -971,16 +971,16 @@ posax(520,0,"BFO-ocw-1",[[-1,'instance-of',A,'material-entity',C],[-1,'occupies-
 posax(521,0,"BFO-atz-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'occupies-temporal-region',B,C],[0,'instance-of',C,'temporal-instant',C]]).
 
 % for every process there's a corresponding spatiotemporal-region [qyy-1]
-posax(522,1,"BFO-qyy-1",[[-1,'instance-of',B,process,A],[0,'occupies-spatiotemporal-region',B,[sk157,B]]]).
-posax(523,1,"BFO-qyy-1",[[-1,'instance-of',B,'process-boundary',A],[0,'occupies-spatiotemporal-region',B,[sk157,B]]]).
+posax(522,1,"BFO-qyy-1",[[-1,'instance-of',B,process,A],[0,'occupies-spatiotemporal-region',B,[sk158,B]]]).
+posax(523,1,"BFO-qyy-1",[[-1,'instance-of',B,'process-boundary',A],[0,'occupies-spatiotemporal-region',B,[sk158,B]]]).
 
 % Spatiotemporal regions always project on to some temporal region [scq-1]
-posax(524,1,"BFO-scq-1",[[-1,'instance-of',B,'spatiotemporal-region',A],[0,'temporally-projects-onto',B,[sk158,B]]]).
-posax(525,1,"BFO-scq-1",[[-1,'instance-of',B,'spatiotemporal-region',A],[0,'instance-of',[sk158,B],'temporal-region',[sk158,B]]]).
+posax(524,1,"BFO-scq-1",[[-1,'instance-of',B,'spatiotemporal-region',A],[0,'temporally-projects-onto',B,[sk159,B]]]).
+posax(525,1,"BFO-scq-1",[[-1,'instance-of',B,'spatiotemporal-region',A],[0,'instance-of',[sk159,B],'temporal-region',[sk159,B]]]).
 
 % Every temporal region is a projection from a spatiotemporal region [xco-2]
-posax(526,1,"BFO-xco-2",[[-1,'instance-of',A,'temporal-region',A],[0,'temporally-projects-onto',[sk160,A],A]]).
-posax(527,1,"BFO-xco-2",[[-1,'instance-of',A,'temporal-region',A],[0,'instance-of',[sk160,A],'spatiotemporal-region',[sk159,A]]]).
+posax(526,1,"BFO-xco-2",[[-1,'instance-of',A,'temporal-region',A],[0,'temporally-projects-onto',[sk161,A],A]]).
+posax(527,1,"BFO-xco-2",[[-1,'instance-of',A,'temporal-region',A],[0,'instance-of',[sk161,A],'spatiotemporal-region',[sk160,A]]]).
 
 % spatially-projects-onto is time indexed and has domain: spatiotemporal-region and range: spatial-region [blj-1]
 posax(528,0,"BFO-blj-1",[[-1,'spatially-projects-onto',A,B,C],[0,'instance-of',C,'temporal-region',C]]).
@@ -989,24 +989,24 @@ posax(530,0,"BFO-blj-1",[[-1,'spatially-projects-onto',A,B,C],[0,'instance-of',A
 
 % occupies-temporal-region has domain process or process-boundary  and range temporal-region [lyx-2]
 posax(531,0,"BFO-lyx-2",[[-1,'occupies-temporal-region',A,B],[0,'instance-of',B,'temporal-region',B]]).
-posax(532,1,"BFO-lyx-2",[[-1,'occupies-temporal-region',A,B],[0,'instance-of',A,process,[sk161,A,B]],[0,'instance-of',A,'process-boundary',[sk161,A,B]]]).
+posax(532,1,"BFO-lyx-2",[[-1,'occupies-temporal-region',A,B],[0,'instance-of',A,process,[sk162,A,B]],[0,'instance-of',A,'process-boundary',[sk162,A,B]]]).
 
 % Spatiotemporal regions always project on to some spatial region at any time [geq-1]
-posax(533,1,"BFO-geq-1",[[-1,'instance-of',A,'spatiotemporal-region',B],[0,'spatially-projects-onto',A,[sk162,A,B],[sk163,A,B]]]).
-posax(534,1,"BFO-geq-1",[[-1,'instance-of',A,'spatiotemporal-region',B],[0,'instance-of',[sk162,A,B],'spatial-region',[sk163,A,B]]]).
-posax(535,1,"BFO-geq-1",[[-1,'instance-of',A,'spatiotemporal-region',B],[0,'temporal-part-of',[sk163,A,B],B]]).
+posax(533,1,"BFO-geq-1",[[-1,'instance-of',A,'spatiotemporal-region',B],[0,'spatially-projects-onto',A,[sk163,A,B],[sk164,A,B]]]).
+posax(534,1,"BFO-geq-1",[[-1,'instance-of',A,'spatiotemporal-region',B],[0,'instance-of',[sk163,A,B],'spatial-region',[sk164,A,B]]]).
+posax(535,1,"BFO-geq-1",[[-1,'instance-of',A,'spatiotemporal-region',B],[0,'temporal-part-of',[sk164,A,B],B]]).
 
 % Every spatial region is a projection from a spatiotemporal region [mdb-1]
-posax(536,1,"BFO-mdb-1",[[-1,'instance-of',B,'spatial-region',A],[0,'spatially-projects-onto',[sk166,B],B,[sk165,B]]]).
-posax(537,1,"BFO-mdb-1",[[-1,'instance-of',B,'spatial-region',A],[0,'instance-of',[sk166,B],'spatiotemporal-region',[sk164,B]]]).
+posax(536,1,"BFO-mdb-1",[[-1,'instance-of',B,'spatial-region',A],[0,'spatially-projects-onto',[sk167,B],B,[sk166,B]]]).
+posax(537,1,"BFO-mdb-1",[[-1,'instance-of',B,'spatial-region',A],[0,'instance-of',[sk167,B],'spatiotemporal-region',[sk165,B]]]).
 
 % occupies-spatiotemporal-region has domain process or process-boundary  and range spatiotemporal-region [vvo-1]
-posax(538,1,"BFO-vvo-1",[[-1,'occupies-spatiotemporal-region',A,B],[0,'instance-of',B,'spatiotemporal-region',[sk167,A,B]]]).
-posax(539,1,"BFO-vvo-1",[[-1,'occupies-spatiotemporal-region',A,B],[0,'instance-of',A,process,[sk168,A,B]],[0,'instance-of',A,'process-boundary',[sk168,A,B]]]).
+posax(538,1,"BFO-vvo-1",[[-1,'occupies-spatiotemporal-region',A,B],[0,'instance-of',B,'spatiotemporal-region',[sk168,A,B]]]).
+posax(539,1,"BFO-vvo-1",[[-1,'occupies-spatiotemporal-region',A,B],[0,'instance-of',A,process,[sk169,A,B]],[0,'instance-of',A,'process-boundary',[sk169,A,B]]]).
 
 % A process occupies at least a temporal interval [fzy-1]
-posax(540,1,"BFO-fzy-1",[[-1,'instance-of',B,process,A],[-1,'occupies-temporal-region',B,C],[0,'temporal-part-of',[sk169,B,C],C]]).
-posax(541,1,"BFO-fzy-1",[[-1,'instance-of',B,process,A],[-1,'occupies-temporal-region',B,C],[0,'instance-of',[sk169,B,C],'temporal-interval',[sk169,B,C]]]).
+posax(540,1,"BFO-fzy-1",[[-1,'instance-of',B,process,A],[-1,'occupies-temporal-region',B,C],[0,'temporal-part-of',[sk170,B,C],C]]).
+posax(541,1,"BFO-fzy-1",[[-1,'instance-of',B,process,A],[-1,'occupies-temporal-region',B,C],[0,'instance-of',[sk170,B,C],'temporal-interval',[sk170,B,C]]]).
 
 % If one occurrent is part of another, then the temporal region of the first is part of the temporal region of the second [jiv-1]
 posax(542,0,"BFO-jiv-1",[[-1,'instance-of',C,process,B],[-1,'instance-of',D,process,A],[-1,'occupies-temporal-region',C,E],[-1,'occupies-temporal-region',D,F],[-1,'occurrent-part-of',C,D],[0,'temporal-part-of',E,F]]).
@@ -1021,66 +1021,66 @@ posax(547,0,"BFO-iqe-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,proc
 % If a process or process boundary is part of another, their spatiotemporal regions are part too [kqv-1]
 posax(548,0,"BFO-kqv-1",[[-1,'instance-of',E,'process-boundary',C],[-1,'instance-of',F,'process-boundary',D],[-1,'occupies-spatiotemporal-region',E,A],[-1,'occupies-spatiotemporal-region',F,B],[-1,'occurrent-part-of',A,B],[0,'occurrent-part-of',E,F]]).
 posax(549,0,"BFO-kqv-1",[[-1,'instance-of',E,'process-boundary',C],[-1,'instance-of',F,process,D],[-1,'occupies-spatiotemporal-region',E,A],[-1,'occupies-spatiotemporal-region',F,B],[-1,'occurrent-part-of',A,B],[0,'occurrent-part-of',E,F]]).
-posax(550,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',[sk170,C,D],[sk171,C,D]]]).
-posax(551,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',[sk170,C,D],[sk171,C,D]]]).
-posax(552,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',D,[sk171,C,D]]]).
-posax(553,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',D,[sk171,C,D]]]).
-posax(554,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',C,[sk170,C,D]]]).
-posax(555,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',C,[sk170,C,D]]]).
+posax(550,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',[sk171,C,D],[sk172,C,D]]]).
+posax(551,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',[sk171,C,D],[sk172,C,D]]]).
+posax(552,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',D,[sk172,C,D]]]).
+posax(553,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',D,[sk172,C,D]]]).
+posax(554,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',C,[sk171,C,D]]]).
+posax(555,1,"BFO-kqv-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',C,[sk171,C,D]]]).
 posax(556,0,"BFO-kqv-1",[[-1,'instance-of',E,process,C],[-1,'instance-of',F,'process-boundary',D],[-1,'occupies-spatiotemporal-region',E,A],[-1,'occupies-spatiotemporal-region',F,B],[-1,'occurrent-part-of',A,B],[0,'occurrent-part-of',E,F]]).
 posax(557,0,"BFO-kqv-1",[[-1,'instance-of',E,process,C],[-1,'instance-of',F,process,D],[-1,'occupies-spatiotemporal-region',E,A],[-1,'occupies-spatiotemporal-region',F,B],[-1,'occurrent-part-of',A,B],[0,'occurrent-part-of',E,F]]).
-posax(558,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',[sk170,C,D],[sk171,C,D]]]).
-posax(559,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',[sk170,C,D],[sk171,C,D]]]).
-posax(560,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',D,[sk171,C,D]]]).
-posax(561,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',D,[sk171,C,D]]]).
-posax(562,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',C,[sk170,C,D]]]).
-posax(563,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',C,[sk170,C,D]]]).
+posax(558,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',[sk171,C,D],[sk172,C,D]]]).
+posax(559,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',[sk171,C,D],[sk172,C,D]]]).
+posax(560,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',D,[sk172,C,D]]]).
+posax(561,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',D,[sk172,C,D]]]).
+posax(562,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'process-boundary',B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',C,[sk171,C,D]]]).
+posax(563,1,"BFO-kqv-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,process,B],[-1,'occurrent-part-of',C,D],[0,'occupies-spatiotemporal-region',C,[sk171,C,D]]]).
 
 % process or process-boundary p occupies-temporal-region t iff every part of p temporally occupies a part of t, and there isn't a smaller part of t that p occupies. [tao-1]
-posax(564,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk172,B,C]],[0,'occupies-temporal-region',[sk174,B,C],[sk173,B,C]]]).
-posax(565,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk173,B,C],C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk172,B,C]]]).
-posax(566,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk172,B,C]],[0,'occurrent-part-of',[sk174,B,C],B]]).
-posax(567,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',[sk174,B,C],[sk173,B,C]],[0,'occurrent-part-of',[sk172,B,C],C]]).
-posax(568,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk173,B,C],C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk172,B,C],C]]).
-posax(569,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk172,B,C],C],[0,'occurrent-part-of',[sk174,B,C],B]]).
-posax(570,1,"BFO-tao-1",[[-1,identical,[sk172,B,C],C],[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',[sk174,B,C],[sk173,B,C]]]).
-posax(571,1,"BFO-tao-1",[[-1,identical,[sk172,B,C],C],[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk173,B,C],C],[0,'occupies-temporal-region',B,C]]).
-posax(572,1,"BFO-tao-1",[[-1,identical,[sk172,B,C],C],[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk174,B,C],B]]).
+posax(564,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk173,B,C]],[0,'occupies-temporal-region',[sk175,B,C],[sk174,B,C]]]).
+posax(565,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk174,B,C],C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk173,B,C]]]).
+posax(566,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk173,B,C]],[0,'occurrent-part-of',[sk175,B,C],B]]).
+posax(567,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',[sk175,B,C],[sk174,B,C]],[0,'occurrent-part-of',[sk173,B,C],C]]).
+posax(568,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk174,B,C],C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk173,B,C],C]]).
+posax(569,1,"BFO-tao-1",[[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk173,B,C],C],[0,'occurrent-part-of',[sk175,B,C],B]]).
+posax(570,1,"BFO-tao-1",[[-1,identical,[sk173,B,C],C],[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',[sk175,B,C],[sk174,B,C]]]).
+posax(571,1,"BFO-tao-1",[[-1,identical,[sk173,B,C],C],[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk174,B,C],C],[0,'occupies-temporal-region',B,C]]).
+posax(572,1,"BFO-tao-1",[[-1,identical,[sk173,B,C],C],[-1,'instance-of',B,'process-boundary',A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk175,B,C],B]]).
 posax(573,0,"BFO-tao-1",[[-1,'instance-of',D,'process-boundary',A],[-1,'instance-of',E,'temporal-region',E],[-1,'occupies-temporal-region',C,B],[-1,'occupies-temporal-region',D,E],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',B,E]]).
 posax(574,0,"BFO-tao-1",[[-1,'instance-of',C,'process-boundary',B],[-1,'instance-of',D,'temporal-region',D],[-1,'occupies-temporal-region',C,A],[-1,'occupies-temporal-region',C,D],[-1,'occurrent-part-of',A,D],[0,identical,A,D]]).
-posax(575,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk172,B,C]],[0,'occupies-temporal-region',[sk174,B,C],[sk173,B,C]]]).
-posax(576,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk173,B,C],C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk172,B,C]]]).
-posax(577,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk172,B,C]],[0,'occurrent-part-of',[sk174,B,C],B]]).
-posax(578,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',[sk174,B,C],[sk173,B,C]],[0,'occurrent-part-of',[sk172,B,C],C]]).
-posax(579,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk173,B,C],C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk172,B,C],C]]).
-posax(580,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk172,B,C],C],[0,'occurrent-part-of',[sk174,B,C],B]]).
-posax(581,1,"BFO-tao-1",[[-1,identical,[sk172,B,C],C],[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',[sk174,B,C],[sk173,B,C]]]).
-posax(582,1,"BFO-tao-1",[[-1,identical,[sk172,B,C],C],[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk173,B,C],C],[0,'occupies-temporal-region',B,C]]).
-posax(583,1,"BFO-tao-1",[[-1,identical,[sk172,B,C],C],[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk174,B,C],B]]).
+posax(575,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk173,B,C]],[0,'occupies-temporal-region',[sk175,B,C],[sk174,B,C]]]).
+posax(576,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk174,B,C],C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk173,B,C]]]).
+posax(577,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',B,[sk173,B,C]],[0,'occurrent-part-of',[sk175,B,C],B]]).
+posax(578,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',[sk175,B,C],[sk174,B,C]],[0,'occurrent-part-of',[sk173,B,C],C]]).
+posax(579,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk174,B,C],C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk173,B,C],C]]).
+posax(580,1,"BFO-tao-1",[[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk173,B,C],C],[0,'occurrent-part-of',[sk175,B,C],B]]).
+posax(581,1,"BFO-tao-1",[[-1,identical,[sk173,B,C],C],[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occupies-temporal-region',[sk175,B,C],[sk174,B,C]]]).
+posax(582,1,"BFO-tao-1",[[-1,identical,[sk173,B,C],C],[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[-1,'occurrent-part-of',[sk174,B,C],C],[0,'occupies-temporal-region',B,C]]).
+posax(583,1,"BFO-tao-1",[[-1,identical,[sk173,B,C],C],[-1,'instance-of',B,process,A],[-1,'instance-of',C,'temporal-region',C],[0,'occupies-temporal-region',B,C],[0,'occurrent-part-of',[sk175,B,C],B]]).
 posax(584,0,"BFO-tao-1",[[-1,'instance-of',D,process,A],[-1,'instance-of',E,'temporal-region',E],[-1,'occupies-temporal-region',C,B],[-1,'occupies-temporal-region',D,E],[-1,'occurrent-part-of',C,D],[0,'occurrent-part-of',B,E]]).
 posax(585,0,"BFO-tao-1",[[-1,'instance-of',C,process,B],[-1,'instance-of',D,'temporal-region',D],[-1,'occupies-temporal-region',C,A],[-1,'occupies-temporal-region',C,D],[-1,'occurrent-part-of',A,D],[0,identical,A,D]]).
 
 % process p (or boundary) occupies-spatiotemporal-region st iff every part of p  occupies-spatiotemporal-region a part of st, and there isn't a smaller part of st that p occupies. [dki-1]
-posax(586,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk175,C,D]],[0,'occupies-spatiotemporal-region',[sk177,C,D],[sk176,C,D]]]).
-posax(587,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk176,C,D],D],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk175,C,D]]]).
-posax(588,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk175,C,D]],[0,'occurrent-part-of',[sk177,C,D],C]]).
-posax(589,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',[sk177,C,D],[sk176,C,D]],[0,'occurrent-part-of',[sk175,C,D],D]]).
-posax(590,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk176,C,D],D],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk175,C,D],D]]).
-posax(591,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk175,C,D],D],[0,'occurrent-part-of',[sk177,C,D],C]]).
-posax(592,1,"BFO-dki-1",[[-1,identical,[sk175,C,D],D],[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',[sk177,C,D],[sk176,C,D]]]).
-posax(593,1,"BFO-dki-1",[[-1,identical,[sk175,C,D],D],[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk176,C,D],D],[0,'occupies-spatiotemporal-region',C,D]]).
-posax(594,1,"BFO-dki-1",[[-1,identical,[sk175,C,D],D],[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk177,C,D],C]]).
+posax(586,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk176,C,D]],[0,'occupies-spatiotemporal-region',[sk178,C,D],[sk177,C,D]]]).
+posax(587,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk177,C,D],D],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk176,C,D]]]).
+posax(588,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk176,C,D]],[0,'occurrent-part-of',[sk178,C,D],C]]).
+posax(589,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',[sk178,C,D],[sk177,C,D]],[0,'occurrent-part-of',[sk176,C,D],D]]).
+posax(590,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk177,C,D],D],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk176,C,D],D]]).
+posax(591,1,"BFO-dki-1",[[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk176,C,D],D],[0,'occurrent-part-of',[sk178,C,D],C]]).
+posax(592,1,"BFO-dki-1",[[-1,identical,[sk176,C,D],D],[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',[sk178,C,D],[sk177,C,D]]]).
+posax(593,1,"BFO-dki-1",[[-1,identical,[sk176,C,D],D],[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk177,C,D],D],[0,'occupies-spatiotemporal-region',C,D]]).
+posax(594,1,"BFO-dki-1",[[-1,identical,[sk176,C,D],D],[-1,'instance-of',C,'process-boundary',A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk178,C,D],C]]).
 posax(595,0,"BFO-dki-1",[[-1,'instance-of',E,'process-boundary',A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occupies-spatiotemporal-region',D,C],[-1,'occupies-spatiotemporal-region',E,F],[-1,'occurrent-part-of',D,E],[0,'occurrent-part-of',C,F]]).
 posax(596,0,"BFO-dki-1",[[-1,'instance-of',D,'process-boundary',B],[-1,'instance-of',E,'spatiotemporal-region',C],[-1,'occupies-spatiotemporal-region',D,A],[-1,'occupies-spatiotemporal-region',D,E],[-1,'occurrent-part-of',A,E],[0,identical,A,E]]).
-posax(597,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk175,C,D]],[0,'occupies-spatiotemporal-region',[sk177,C,D],[sk176,C,D]]]).
-posax(598,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk176,C,D],D],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk175,C,D]]]).
-posax(599,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk175,C,D]],[0,'occurrent-part-of',[sk177,C,D],C]]).
-posax(600,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',[sk177,C,D],[sk176,C,D]],[0,'occurrent-part-of',[sk175,C,D],D]]).
-posax(601,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk176,C,D],D],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk175,C,D],D]]).
-posax(602,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk175,C,D],D],[0,'occurrent-part-of',[sk177,C,D],C]]).
-posax(603,1,"BFO-dki-1",[[-1,identical,[sk175,C,D],D],[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',[sk177,C,D],[sk176,C,D]]]).
-posax(604,1,"BFO-dki-1",[[-1,identical,[sk175,C,D],D],[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk176,C,D],D],[0,'occupies-spatiotemporal-region',C,D]]).
-posax(605,1,"BFO-dki-1",[[-1,identical,[sk175,C,D],D],[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk177,C,D],C]]).
+posax(597,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk176,C,D]],[0,'occupies-spatiotemporal-region',[sk178,C,D],[sk177,C,D]]]).
+posax(598,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk177,C,D],D],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk176,C,D]]]).
+posax(599,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',C,[sk176,C,D]],[0,'occurrent-part-of',[sk178,C,D],C]]).
+posax(600,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',[sk178,C,D],[sk177,C,D]],[0,'occurrent-part-of',[sk176,C,D],D]]).
+posax(601,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk177,C,D],D],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk176,C,D],D]]).
+posax(602,1,"BFO-dki-1",[[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk176,C,D],D],[0,'occurrent-part-of',[sk178,C,D],C]]).
+posax(603,1,"BFO-dki-1",[[-1,identical,[sk176,C,D],D],[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occupies-spatiotemporal-region',[sk178,C,D],[sk177,C,D]]]).
+posax(604,1,"BFO-dki-1",[[-1,identical,[sk176,C,D],D],[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[-1,'occurrent-part-of',[sk177,C,D],D],[0,'occupies-spatiotemporal-region',C,D]]).
+posax(605,1,"BFO-dki-1",[[-1,identical,[sk176,C,D],D],[-1,'instance-of',C,process,A],[-1,'instance-of',D,'spatiotemporal-region',B],[0,'occupies-spatiotemporal-region',C,D],[0,'occurrent-part-of',[sk178,C,D],C]]).
 posax(606,0,"BFO-dki-1",[[-1,'instance-of',E,process,A],[-1,'instance-of',F,'spatiotemporal-region',B],[-1,'occupies-spatiotemporal-region',D,C],[-1,'occupies-spatiotemporal-region',E,F],[-1,'occurrent-part-of',D,E],[0,'occurrent-part-of',C,F]]).
 posax(607,0,"BFO-dki-1",[[-1,'instance-of',D,process,B],[-1,'instance-of',E,'spatiotemporal-region',C],[-1,'occupies-spatiotemporal-region',D,A],[-1,'occupies-spatiotemporal-region',D,E],[-1,'occurrent-part-of',A,E],[0,identical,A,E]]).
 
@@ -1101,14 +1101,14 @@ posax(614,0,"BFO-yct-1",[[-1,'specifically-depends-on',A,B],[0,'specifically-dep
 posax(615,0,"BFO-yct-1",[[-1,'specifically-depended-on-by',B,A],[0,'specifically-depends-on',A,B]]).
 
 % When a role is realized the bearer of the role participates in the realization process [grx-1]
-posax(616,1,"BFO-grx-1",[[-1,'inheres-in',A,C],[-1,realizes,B,A],[0,'participates-in',C,B,[sk178,A,B,C]]]).
+posax(616,1,"BFO-grx-1",[[-1,'inheres-in',A,C],[-1,realizes,B,A],[0,'participates-in',C,B,[sk179,A,B,C]]]).
 
 % has-material-basis is dissective on third argument, a temporal region [hnl-1]
 posax(617,0,"BFO-hnl-1",[[-1,'has-material-basis',A,B,C],[-1,'temporal-part-of',D,C],[0,'has-material-basis',A,B,D]]).
 
 % realizes has domain process and range realizable-entity [oot-1]
-posax(618,1,"BFO-oot-1",[[-1,realizes,A,B],[0,'instance-of',B,'realizable-entity',[sk180,A,B]]]).
-posax(619,1,"BFO-oot-1",[[-1,realizes,A,B],[0,'instance-of',A,process,[sk179,A,B]]]).
+posax(618,1,"BFO-oot-1",[[-1,realizes,A,B],[0,'instance-of',B,'realizable-entity',[sk181,A,B]]]).
+posax(619,1,"BFO-oot-1",[[-1,realizes,A,B],[0,'instance-of',A,process,[sk180,A,B]]]).
 
 % specifically-depends-on is transitive [myu-1]
 posax(620,0,"BFO-myu-1",[[-1,'specifically-depends-on',A,B],[-1,'specifically-depends-on',B,C],[0,identical,A,C],[0,'specifically-depends-on',A,C]]).
@@ -1117,9 +1117,9 @@ posax(620,0,"BFO-myu-1",[[-1,'specifically-depends-on',A,B],[-1,'specifically-de
 posax(621,0,"BFO-nfe-1",[[-1,'continuant-part-of',A,C,B],[-1,'continuant-part-of',A,D,B],[-1,'specifically-depends-on',C,D]]).
 
 % A realizable entity exists at least at the beginning of the realization process [vhg-1]
-posax(622,1,"BFO-vhg-1",[[-1,realizes,B,A],[0,'exists-at',A,[sk182,A,B]]]).
-posax(623,1,"BFO-vhg-1",[[-1,realizes,B,A],[0,'has-first-instant',[sk181,A,B],[sk182,A,B]]]).
-posax(624,1,"BFO-vhg-1",[[-1,realizes,B,A],[0,'occupies-temporal-region',B,[sk181,A,B]]]).
+posax(622,1,"BFO-vhg-1",[[-1,realizes,B,A],[0,'exists-at',A,[sk183,A,B]]]).
+posax(623,1,"BFO-vhg-1",[[-1,realizes,B,A],[0,'has-first-instant',[sk182,A,B],[sk183,A,B]]]).
+posax(624,1,"BFO-vhg-1",[[-1,realizes,B,A],[0,'occupies-temporal-region',B,[sk182,A,B]]]).
 
 % has-material-basis is time indexed and has domain: disposition and range: material-entity [cfs-1]
 posax(625,0,"BFO-cfs-1",[[-1,'has-material-basis',A,B,C],[0,'instance-of',C,'temporal-region',C]]).
@@ -1128,41 +1128,41 @@ posax(627,0,"BFO-cfs-1",[[-1,'has-material-basis',A,B,C],[0,'instance-of',A,disp
 
 % If s s-depends-on c then there's at least one time when they both exist and whenever s exists, c must also exist [iyu-1]
 posax(628,0,"BFO-iyu-1",[[-1,'exists-at',B,A],[-1,'specifically-depends-on',B,C],[0,'exists-at',C,A]]).
-posax(629,1,"BFO-iyu-1",[[-1,'specifically-depends-on',A,B],[0,'exists-at',A,[sk183,A,B]]]).
-posax(630,1,"BFO-iyu-1",[[-1,'specifically-depends-on',A,B],[0,'exists-at',B,[sk183,A,B]]]).
+posax(629,1,"BFO-iyu-1",[[-1,'specifically-depends-on',A,B],[0,'exists-at',A,[sk184,A,B]]]).
+posax(630,1,"BFO-iyu-1",[[-1,'specifically-depends-on',A,B],[0,'exists-at',B,[sk184,A,B]]]).
 
 % No role changes type during its existence [bks-1]
 posax(631,0,"BFO-bks-1",[[-1,'instance-of',E,role,B],[-1,'instance-of',E,D,A],[-1,'instance-of',E,D,C],[0,'instance-of',E,role,A]]).
 posax(632,0,"BFO-bks-1",[[-1,'instance-of',E,role,A],[-1,'instance-of',E,role,B],[-1,'instance-of',E,D,C],[0,'instance-of',E,D,A]]).
 
 % DEFINITION: b is a relational quality = Def. b is a quality and there exists distinct c and d such that at all times t, b inheres in c if and only b specifically-depends-on. [dbp-1]
-posax(633,1,"BFO-dbp-1",[[-1,'instance-of',B,'relational-quality',A],[0,'specifically-depends-on',B,[sk185,B]]]).
-posax(634,1,"BFO-dbp-1",[[-1,'instance-of',B,'relational-quality',A],[0,'inheres-in',B,[sk184,B]]]).
-posax(635,1,"BFO-dbp-1",[[-1,identical,[sk184,B],[sk185,B]],[-1,'instance-of',B,'relational-quality',A]]).
-posax(636,1,"BFO-dbp-1",[[-1,'instance-of',B,'relational-quality',A],[0,'instance-of',B,quality,[sk186,B]]]).
-posax(637,1,"BFO-dbp-1",[[-1,'inheres-in',D,A],[-1,'instance-of',D,quality,C],[-1,'specifically-depends-on',D,B],[0,identical,A,B],[0,'instance-of',D,'relational-quality',[sk187,D]]]).
+posax(633,1,"BFO-dbp-1",[[-1,'instance-of',B,'relational-quality',A],[0,'specifically-depends-on',B,[sk186,B]]]).
+posax(634,1,"BFO-dbp-1",[[-1,'instance-of',B,'relational-quality',A],[0,'inheres-in',B,[sk185,B]]]).
+posax(635,1,"BFO-dbp-1",[[-1,identical,[sk185,B],[sk186,B]],[-1,'instance-of',B,'relational-quality',A]]).
+posax(636,1,"BFO-dbp-1",[[-1,'instance-of',B,'relational-quality',A],[0,'instance-of',B,quality,[sk187,B]]]).
+posax(637,1,"BFO-dbp-1",[[-1,'inheres-in',D,A],[-1,'instance-of',D,quality,C],[-1,'specifically-depends-on',D,B],[0,identical,A,B],[0,'instance-of',D,'relational-quality',[sk188,D]]]).
 
 % a inheres_in b =Def. a is a specifically dependent continuant and b is an independent continuant that is not a spatial region and a s-depends_on b. [tht-1]
-posax(638,1,"BFO-tht-1",[[-1,'inheres-in',A,B],[-1,'instance-of',B,'spatial-region',[sk188,A,B]]]).
-posax(639,1,"BFO-tht-1",[[-1,'inheres-in',A,B],[0,'instance-of',B,'independent-continuant',[sk188,A,B]]]).
-posax(640,1,"BFO-tht-1",[[-1,'inheres-in',A,B],[0,'instance-of',A,'specifically-dependent-continuant',[sk188,A,B]]]).
+posax(638,1,"BFO-tht-1",[[-1,'inheres-in',A,B],[-1,'instance-of',B,'spatial-region',[sk189,A,B]]]).
+posax(639,1,"BFO-tht-1",[[-1,'inheres-in',A,B],[0,'instance-of',B,'independent-continuant',[sk189,A,B]]]).
+posax(640,1,"BFO-tht-1",[[-1,'inheres-in',A,B],[0,'instance-of',A,'specifically-dependent-continuant',[sk189,A,B]]]).
 posax(641,0,"BFO-tht-1",[[-1,'inheres-in',A,B],[0,'specifically-depends-on',A,B]]).
 posax(642,0,"BFO-tht-1",[[-1,'instance-of',B,'specifically-dependent-continuant',A],[-1,'instance-of',C,'independent-continuant',A],[-1,'specifically-depends-on',B,C],[0,'inheres-in',B,C],[0,'instance-of',C,'spatial-region',A]]).
 
 % Definition of specifically dependent continuant. [akq-1]
-posax(643,1,"BFO-akq-1",[[-1,'instance-of',B,'specifically-dependent-continuant',A],[0,'instance-of',B,continuant,[sk190,B]]]).
-posax(644,1,"BFO-akq-1",[[-1,'instance-of',B,'specifically-dependent-continuant',A],[0,'instance-of',[sk189,B],'independent-continuant',[sk190,B]]]).
-posax(645,1,"BFO-akq-1",[[-1,'instance-of',B,'specifically-dependent-continuant',A],[-1,'instance-of',[sk189,B],'spatial-region',[sk190,B]]]).
-posax(646,1,"BFO-akq-1",[[-1,'instance-of',B,'specifically-dependent-continuant',A],[0,'specifically-depends-on',B,[sk189,B]]]).
-posax(647,1,"BFO-akq-1",[[-1,'instance-of',A,'independent-continuant',B],[-1,'instance-of',C,continuant,B],[-1,'specifically-depends-on',C,A],[0,'instance-of',A,'spatial-region',B],[0,'instance-of',C,'specifically-dependent-continuant',[sk191,C]]]).
+posax(643,1,"BFO-akq-1",[[-1,'instance-of',B,'specifically-dependent-continuant',A],[0,'instance-of',B,continuant,[sk191,B]]]).
+posax(644,1,"BFO-akq-1",[[-1,'instance-of',B,'specifically-dependent-continuant',A],[0,'instance-of',[sk190,B],'independent-continuant',[sk191,B]]]).
+posax(645,1,"BFO-akq-1",[[-1,'instance-of',B,'specifically-dependent-continuant',A],[-1,'instance-of',[sk190,B],'spatial-region',[sk191,B]]]).
+posax(646,1,"BFO-akq-1",[[-1,'instance-of',B,'specifically-dependent-continuant',A],[0,'specifically-depends-on',B,[sk190,B]]]).
+posax(647,1,"BFO-akq-1",[[-1,'instance-of',A,'independent-continuant',B],[-1,'instance-of',C,continuant,B],[-1,'specifically-depends-on',C,A],[0,'instance-of',A,'spatial-region',B],[0,'instance-of',C,'specifically-dependent-continuant',[sk192,C]]]).
 
 % The material basis of a disposition is part of the bearer of the disposition [uxo-1]
 posax(648,0,"BFO-uxo-1",[[-1,'has-material-basis',F,E,D],[-1,'inheres-in',F,G],[-1,'instance-of',E,'material-entity',C],[-1,'instance-of',F,disposition,B],[-1,'instance-of',G,'material-entity',A],[0,'continuant-part-of',E,G,D]]).
 
 % specifically-depends-on has domain specifically-dependent-continuant and range specifically-dependent-continuant or independent-continuant but not spatial-region  [kkl-1]
-posax(649,1,"BFO-kkl-1",[[-1,'specifically-depends-on',A,B],[0,'instance-of',B,'independent-continuant',[sk193,A,B]],[0,'instance-of',B,'specifically-dependent-continuant',[sk193,A,B]]]).
-posax(650,1,"BFO-kkl-1",[[-1,'instance-of',B,'spatial-region',[sk193,A,B]],[-1,'specifically-depends-on',A,B],[0,'instance-of',B,'specifically-dependent-continuant',[sk193,A,B]]]).
-posax(651,1,"BFO-kkl-1",[[-1,'specifically-depends-on',A,B],[0,'instance-of',A,'specifically-dependent-continuant',[sk192,A,B]]]).
+posax(649,1,"BFO-kkl-1",[[-1,'specifically-depends-on',A,B],[0,'instance-of',B,'independent-continuant',[sk194,A,B]],[0,'instance-of',B,'specifically-dependent-continuant',[sk194,A,B]]]).
+posax(650,1,"BFO-kkl-1",[[-1,'instance-of',B,'spatial-region',[sk194,A,B]],[-1,'specifically-depends-on',A,B],[0,'instance-of',B,'specifically-dependent-continuant',[sk194,A,B]]]).
+posax(651,1,"BFO-kkl-1",[[-1,'specifically-depends-on',A,B],[0,'instance-of',A,'specifically-dependent-continuant',[sk193,A,B]]]).
 
 % has-last-instant and last-instant-of are inverse relations [wal-1]
 posax(652,0,"BFO-wal-1",[[-1,'has-last-instant',A,B],[0,'last-instant-of',B,A]]).
@@ -1221,8 +1221,8 @@ posax(674,0,"BFO-nfo-1",[[-1,'instance-of',A,'temporal-instant',A],[0,'has-last-
 posax(675,0,"BFO-nfo-1",[[-1,'has-first-instant',A,A],[-1,'has-last-instant',A,A],[0,'instance-of',A,'temporal-instant',A]]).
 
 % temporal regions are instances at themselves [tvx-2]
-posax(676,1,"BFO-tvx-2",[[-1,'instance-of',A,B,A],[0,'instance-of',A,'temporal-region',[sk196,A,B]]]).
-posax(677,1,"BFO-tvx-2",[[-1,'instance-of',A,B,A],[0,'instance-of',A,B,[sk196,A,B]]]).
+posax(676,1,"BFO-tvx-2",[[-1,'instance-of',A,B,A],[0,'instance-of',A,'temporal-region',[sk197,A,B]]]).
+posax(677,1,"BFO-tvx-2",[[-1,'instance-of',A,B,A],[0,'instance-of',A,B,[sk197,A,B]]]).
 posax(678,0,"BFO-tvx-2",[[-1,'instance-of',B,'temporal-region',A],[-1,'instance-of',B,C,A],[0,'instance-of',B,C,B]]).
 
 % If a temporal-part-of b then if a is an instance of temporal-region then b is an instance of temporal-region, and vice-versa [mjn-2]
@@ -1241,23 +1241,23 @@ posax(684,0,"BFO-fwk-2",[[-1,'has-first-instant',A,B],[0,'instance-of',B,'tempor
 posax(685,0,"BFO-fwk-2",[[-1,'has-first-instant',A,B],[0,'instance-of',A,'temporal-region',A]]).
 
 % any temporal region has a first and last instant [daf-1]
-posax(686,1,"BFO-daf-1",[[-1,'instance-of',A,'temporal-region',A],[0,'has-last-instant',A,[sk198,A]]]).
-posax(687,1,"BFO-daf-1",[[-1,'instance-of',A,'temporal-region',A],[0,'has-first-instant',A,[sk197,A]]]).
+posax(686,1,"BFO-daf-1",[[-1,'instance-of',A,'temporal-region',A],[0,'has-last-instant',A,[sk199,A]]]).
+posax(687,1,"BFO-daf-1",[[-1,'instance-of',A,'temporal-region',A],[0,'has-first-instant',A,[sk198,A]]]).
 
 % All temporal regions are part of a temporal interval [mvd-1]
-posax(688,1,"BFO-mvd-1",[[-1,'instance-of',A,'temporal-region',A],[0,'temporal-part-of',A,[sk199,A]]]).
-posax(689,1,"BFO-mvd-1",[[-1,'instance-of',A,'temporal-region',A],[0,'instance-of',[sk199,A],'temporal-interval',[sk199,A]]]).
+posax(688,1,"BFO-mvd-1",[[-1,'instance-of',A,'temporal-region',A],[0,'temporal-part-of',A,[sk200,A]]]).
+posax(689,1,"BFO-mvd-1",[[-1,'instance-of',A,'temporal-region',A],[0,'instance-of',[sk200,A],'temporal-interval',[sk200,A]]]).
 
 % temporal-part-of has domain occurrent and range occurrent [ruj-1]
-posax(690,1,"BFO-ruj-1",[[-1,'temporal-part-of',A,B],[0,'instance-of',B,occurrent,[sk201,A,B]]]).
-posax(691,1,"BFO-ruj-1",[[-1,'temporal-part-of',A,B],[0,'instance-of',A,occurrent,[sk200,A,B]]]).
+posax(690,1,"BFO-ruj-1",[[-1,'temporal-part-of',A,B],[0,'instance-of',B,occurrent,[sk202,A,B]]]).
+posax(691,1,"BFO-ruj-1",[[-1,'temporal-part-of',A,B],[0,'instance-of',A,occurrent,[sk201,A,B]]]).
 
 % If a temporal-part-of b then if a is an instance of one-dimensional-temporal-region then b is an instance of one-dimensional-temporal-region [mei-2]
 posax(692,0,"BFO-mei-2",[[-1,'instance-of',A,'one-dimensional-temporal-region',A],[-1,'temporal-part-of',A,B],[0,'instance-of',B,'one-dimensional-temporal-region',B]]).
 
 % A one-dimensional temporal region has at least one interval as part [jhe-1]
-posax(693,1,"BFO-jhe-1",[[-1,'instance-of',A,'one-dimensional-temporal-region',A],[0,'instance-of',[sk202,A],'temporal-interval',[sk202,A]]]).
-posax(694,1,"BFO-jhe-1",[[-1,'instance-of',A,'one-dimensional-temporal-region',A],[0,'temporal-part-of',[sk202,A],A]]).
+posax(693,1,"BFO-jhe-1",[[-1,'instance-of',A,'one-dimensional-temporal-region',A],[0,'instance-of',[sk203,A],'temporal-interval',[sk203,A]]]).
+posax(694,1,"BFO-jhe-1",[[-1,'instance-of',A,'one-dimensional-temporal-region',A],[0,'temporal-part-of',[sk203,A],A]]).
 
 % If a has-temporal-part b then if a is an instance of zero-dimensional-temporal-region then b is an instance of zero-dimensional-temporal-region [bnt-2]
 posax(695,0,"BFO-bnt-2",[[-1,'has-temporal-part',A,B],[-1,'instance-of',A,'zero-dimensional-temporal-region',A],[0,'instance-of',B,'zero-dimensional-temporal-region',B]]).
@@ -1278,15 +1278,15 @@ posax(699,0,"BFO-nhd-1",[[-1,'has-last-instant',C,B],[-1,'instance-of',B,'tempor
 posax(700,0,"BFO-ekm-1",[[-1,'has-first-instant',A,B],[-1,'has-first-instant',D,E],[-1,'has-last-instant',A,C],[-1,'has-last-instant',D,F],[-1,'instance-of',D,'temporal-interval',D],[-1,precedes,C,F],[-1,precedes,E,B],[0,'temporal-part-of',A,D]]).
 
 % temporal-part-of has weak-supplementation [vbw-1]
-posax(701,1,"BFO-vbw-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'proper-temporal-part-of',B,C],[-1,'temporal-part-of',A,B],[-1,'temporal-part-of',A,[sk204,B,C]]]).
-posax(702,1,"BFO-vbw-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,'temporal-region',B],[-1,'proper-temporal-part-of',A,B],[0,'proper-temporal-part-of',[sk204,A,B],B]]).
+posax(701,1,"BFO-vbw-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'proper-temporal-part-of',B,C],[-1,'temporal-part-of',A,B],[-1,'temporal-part-of',A,[sk205,B,C]]]).
+posax(702,1,"BFO-vbw-1",[[-1,'instance-of',A,'temporal-region',A],[-1,'instance-of',B,'temporal-region',B],[-1,'proper-temporal-part-of',A,B],[0,'proper-temporal-part-of',[sk205,A,B],B]]).
 
 % any temporal instant that precedes the last instant of an interval and which is preceded by the first instant is part of the interval [zlp-1]
 posax(703,0,"BFO-zlp-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-interval',B],[-1,'proper-temporal-part-of',A,B],[0,'has-first-instant',B,A],[0,'has-last-instant',B,A],[0,'instance-of',B,'temporal-interval',B]]).
-posax(704,1,"BFO-zlp-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-interval',B],[-1,'proper-temporal-part-of',A,B],[0,'has-first-instant',B,A],[0,'has-first-instant',B,[sk205,A,B]],[0,'has-last-instant',B,A]]).
-posax(705,1,"BFO-zlp-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-interval',B],[-1,'proper-temporal-part-of',A,B],[0,'has-first-instant',B,A],[0,'has-last-instant',B,A],[0,'has-last-instant',B,[sk206,A,B]]]).
-posax(706,1,"BFO-zlp-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-interval',B],[-1,'proper-temporal-part-of',A,B],[0,'has-first-instant',B,A],[0,'has-last-instant',B,A],[0,precedes,A,[sk206,A,B]]]).
-posax(707,1,"BFO-zlp-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-interval',B],[-1,'proper-temporal-part-of',A,B],[0,'has-first-instant',B,A],[0,'has-last-instant',B,A],[0,precedes,[sk205,A,B],A]]).
+posax(704,1,"BFO-zlp-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-interval',B],[-1,'proper-temporal-part-of',A,B],[0,'has-first-instant',B,A],[0,'has-first-instant',B,[sk206,A,B]],[0,'has-last-instant',B,A]]).
+posax(705,1,"BFO-zlp-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-interval',B],[-1,'proper-temporal-part-of',A,B],[0,'has-first-instant',B,A],[0,'has-last-instant',B,A],[0,'has-last-instant',B,[sk207,A,B]]]).
+posax(706,1,"BFO-zlp-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-interval',B],[-1,'proper-temporal-part-of',A,B],[0,'has-first-instant',B,A],[0,'has-last-instant',B,A],[0,precedes,A,[sk207,A,B]]]).
+posax(707,1,"BFO-zlp-1",[[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-interval',B],[-1,'proper-temporal-part-of',A,B],[0,'has-first-instant',B,A],[0,'has-last-instant',B,A],[0,precedes,[sk206,A,B],A]]).
 posax(708,0,"BFO-zlp-1",[[-1,'has-first-instant',D,A],[-1,'has-last-instant',D,B],[-1,'instance-of',C,'temporal-instant',C],[-1,'instance-of',D,'temporal-interval',D],[-1,precedes,A,C],[-1,precedes,C,B],[0,'has-first-instant',D,C],[0,'has-last-instant',D,C],[0,'proper-temporal-part-of',C,D]]).
 
 % two intervals are identical if their first and last instants are the same and if an instant is part of one of the intervals it is also part of the other [xkl-1]
@@ -1308,10 +1308,10 @@ posax(723,0,"BFO-xkl-1",[[-1,'has-first-instant',C,A],[-1,'has-first-instant',D,
 posax(724,0,"BFO-xkl-1",[[-1,'has-first-instant',C,A],[-1,'has-first-instant',D,A],[-1,'has-last-instant',C,B],[-1,'has-last-instant',D,B],[-1,'instance-of',C,'temporal-interval',C],[-1,'instance-of',D,'temporal-interval',D],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,identical,C,D],[0,'temporal-part-of',A,C],[0,'temporal-part-of',B,C]]).
 
 % temporal-part-of has unique-product [wsg-2]
-posax(725,1,"BFO-wsg-2",[[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'instance-of',D,'temporal-region',D],[-1,'instance-of',[sk207,C,D],'temporal-region',[sk207,C,D]],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',A,D],[-1,'temporal-part-of',B,[sk207,C,D]],[0,'temporal-part-of',B,C]]).
-posax(726,1,"BFO-wsg-2",[[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'instance-of',D,'temporal-region',D],[-1,'instance-of',[sk207,C,D],'temporal-region',[sk207,C,D]],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',A,D],[-1,'temporal-part-of',B,[sk207,C,D]],[0,'temporal-part-of',B,D]]).
-posax(727,1,"BFO-wsg-2",[[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'instance-of',D,'temporal-region',D],[-1,'instance-of',[sk207,C,D],'temporal-region',[sk207,C,D]],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',A,D],[-1,'temporal-part-of',B,C],[-1,'temporal-part-of',B,D],[0,'temporal-part-of',B,[sk207,C,D]]]).
-posax(728,1,"BFO-wsg-2",[[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'temporal-part-of',A,B],[-1,'temporal-part-of',A,C],[0,'instance-of',[sk207,B,C],'temporal-region',[sk207,B,C]]]).
+posax(725,1,"BFO-wsg-2",[[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'instance-of',D,'temporal-region',D],[-1,'instance-of',[sk208,C,D],'temporal-region',[sk208,C,D]],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',A,D],[-1,'temporal-part-of',B,[sk208,C,D]],[0,'temporal-part-of',B,C]]).
+posax(726,1,"BFO-wsg-2",[[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'instance-of',D,'temporal-region',D],[-1,'instance-of',[sk208,C,D],'temporal-region',[sk208,C,D]],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',A,D],[-1,'temporal-part-of',B,[sk208,C,D]],[0,'temporal-part-of',B,D]]).
+posax(727,1,"BFO-wsg-2",[[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'instance-of',D,'temporal-region',D],[-1,'instance-of',[sk208,C,D],'temporal-region',[sk208,C,D]],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',A,D],[-1,'temporal-part-of',B,C],[-1,'temporal-part-of',B,D],[0,'temporal-part-of',B,[sk208,C,D]]]).
+posax(728,1,"BFO-wsg-2",[[-1,'instance-of',B,'temporal-region',B],[-1,'instance-of',C,'temporal-region',C],[-1,'temporal-part-of',A,B],[-1,'temporal-part-of',A,C],[0,'instance-of',[sk208,B,C],'temporal-region',[sk208,B,C]]]).
 
 % An interval has no gaps [nui-1]
 posax(729,0,"BFO-nui-1",[[-1,'has-first-instant',A,B],[-1,'has-first-instant',D,E],[-1,'has-last-instant',A,C],[-1,'has-last-instant',D,F],[-1,identical,B,E],[-1,identical,C,F],[-1,'instance-of',D,'temporal-interval',D],[-1,'temporal-part-of',E,D],[-1,'temporal-part-of',F,D],[0,'instance-of',A,'temporal-instant',A],[0,'temporal-part-of',A,D]]).
@@ -1320,18 +1320,18 @@ posax(731,0,"BFO-nui-1",[[-1,'has-first-instant',A,B],[-1,'has-first-instant',D,
 posax(732,0,"BFO-nui-1",[[-1,'has-first-instant',A,B],[-1,'has-first-instant',D,E],[-1,'has-last-instant',A,C],[-1,'has-last-instant',D,F],[-1,'instance-of',D,'temporal-interval',D],[-1,precedes,C,F],[-1,precedes,E,B],[0,'instance-of',A,'temporal-instant',A],[0,'temporal-part-of',A,D]]).
 
 % intervals have no gaps - strong version - every two instants without another in between bound an interval [cop-1]
-posax(733,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'instance-of',[sk208,A,B,C,D,E],'temporal-interval',[sk208,A,B,C,D,E]],[0,'instance-of',[sk209,A,B,C,D,E],'temporal-instant',[sk209,A,B,C,D,E]]]).
-posax(734,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-first-instant',[sk208,A,B,C,D,E],A],[0,'instance-of',[sk209,A,B,C,D,E],'temporal-instant',[sk209,A,B,C,D,E]]]).
-posax(735,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-last-instant',[sk208,A,B,C,D,E],B],[0,'instance-of',[sk209,A,B,C,D,E],'temporal-instant',[sk209,A,B,C,D,E]]]).
-posax(736,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'instance-of',[sk209,A,B,C,D,E],'temporal-instant',[sk209,A,B,C,D,E]],[0,'temporal-part-of',[sk208,A,B,C,D,E],C]]).
-posax(737,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'instance-of',[sk208,A,B,C,D,E],'temporal-interval',[sk208,A,B,C,D,E]],[0,precedes,A,[sk209,A,B,C,D,E]]]).
-posax(738,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-first-instant',[sk208,A,B,C,D,E],A],[0,precedes,A,[sk209,A,B,C,D,E]]]).
-posax(739,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-last-instant',[sk208,A,B,C,D,E],B],[0,precedes,A,[sk209,A,B,C,D,E]]]).
-posax(740,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,precedes,A,[sk209,A,B,C,D,E]],[0,'temporal-part-of',[sk208,A,B,C,D,E],C]]).
-posax(741,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'instance-of',[sk208,A,B,C,D,E],'temporal-interval',[sk208,A,B,C,D,E]],[0,precedes,[sk209,A,B,C,D,E],B]]).
-posax(742,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-first-instant',[sk208,A,B,C,D,E],A],[0,precedes,[sk209,A,B,C,D,E],B]]).
-posax(743,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-last-instant',[sk208,A,B,C,D,E],B],[0,precedes,[sk209,A,B,C,D,E],B]]).
-posax(744,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,precedes,[sk209,A,B,C,D,E],B],[0,'temporal-part-of',[sk208,A,B,C,D,E],C]]).
+posax(733,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'instance-of',[sk209,A,B,C,D,E],'temporal-interval',[sk209,A,B,C,D,E]],[0,'instance-of',[sk210,A,B,C,D,E],'temporal-instant',[sk210,A,B,C,D,E]]]).
+posax(734,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-first-instant',[sk209,A,B,C,D,E],A],[0,'instance-of',[sk210,A,B,C,D,E],'temporal-instant',[sk210,A,B,C,D,E]]]).
+posax(735,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-last-instant',[sk209,A,B,C,D,E],B],[0,'instance-of',[sk210,A,B,C,D,E],'temporal-instant',[sk210,A,B,C,D,E]]]).
+posax(736,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'instance-of',[sk210,A,B,C,D,E],'temporal-instant',[sk210,A,B,C,D,E]],[0,'temporal-part-of',[sk209,A,B,C,D,E],C]]).
+posax(737,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'instance-of',[sk209,A,B,C,D,E],'temporal-interval',[sk209,A,B,C,D,E]],[0,precedes,A,[sk210,A,B,C,D,E]]]).
+posax(738,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-first-instant',[sk209,A,B,C,D,E],A],[0,precedes,A,[sk210,A,B,C,D,E]]]).
+posax(739,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-last-instant',[sk209,A,B,C,D,E],B],[0,precedes,A,[sk210,A,B,C,D,E]]]).
+posax(740,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,precedes,A,[sk210,A,B,C,D,E]],[0,'temporal-part-of',[sk209,A,B,C,D,E],C]]).
+posax(741,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'instance-of',[sk209,A,B,C,D,E],'temporal-interval',[sk209,A,B,C,D,E]],[0,precedes,[sk210,A,B,C,D,E],B]]).
+posax(742,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-first-instant',[sk209,A,B,C,D,E],A],[0,precedes,[sk210,A,B,C,D,E],B]]).
+posax(743,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,'has-last-instant',[sk209,A,B,C,D,E],B],[0,precedes,[sk210,A,B,C,D,E],B]]).
+posax(744,1,"BFO-cop-1",[[-1,'has-first-instant',C,D],[-1,'has-last-instant',C,E],[-1,'instance-of',A,'temporal-instant',A],[-1,'instance-of',B,'temporal-instant',B],[-1,'instance-of',C,'temporal-interval',C],[-1,precedes,A,B],[-1,'temporal-part-of',A,C],[-1,'temporal-part-of',B,C],[0,precedes,[sk210,A,B,C,D,E],B],[0,'temporal-part-of',[sk209,A,B,C,D,E],C]]).
 
 % role is a universal [ewm-1]
 posax(745,0,"BFO-ewm-1",[[0,universal,role]]).

@@ -1,0 +1,9 @@
+testID," scenarioID"," scenario file :string",axiom files: LIST," hypothesis"," outcome"," generated table"
+1,,myinput-BMI510.sce,"[BFO202, change, change-BMI510]",model
+2,,myinput-BMI510.sce,"[BFO202, change, change-BMI510]",,
+3,,myinput-BMI510.sce,,,
+4,,myinput-BMI510.sce,"[BFO202, change, change-BMI510]",antimodel,
+5,,myinput-BMI510.sce,,,
+,,,,,
+,,,,,
+,,,,,
