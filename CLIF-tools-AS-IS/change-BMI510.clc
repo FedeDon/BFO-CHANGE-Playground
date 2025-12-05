@@ -253,7 +253,7 @@ To be done:
 					)   )))) ))  
 
 
-(cl:comment '   
+ 
     (cl:comment "role-loss declaration  [dec-07]"  
 	   (universal role-loss) )
 
@@ -317,7 +317,7 @@ To be done:
 						(inheres-in y x)   
 						(and (exists-at y t1) (not(exists-at y t2)) ) 
 					)   ))))) )  
-  ' )
+
 
 
     (cl:comment "extrinsic change  [dec-08] "  
