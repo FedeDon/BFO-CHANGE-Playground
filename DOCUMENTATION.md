@@ -23,7 +23,7 @@ The first part `1,1,[],[]` can be ignored, it is just some indexing that increas
 IN the Kowalski rules there is no IFF connective, so an original CLIF axioms is split into two sentences IF and ONLY-IF connectives. 
 Inside some of these conditionals which are inside the `kow()` predicates there are consequents that are disjuncts, and this is indicated with 
 `kow(if([[list]]), then-or([[list]]))`
-This terms like `if()` and `then-or()` are not part of the Prolog vocabulary, but something construed ad hoc by Werner. 
+This terms like `if()` and `then-or()` are not part of the Prolog vocabulary, but something construed ad hoc as a Prolog predicate. 
 What the kow() predicates d is to convert predicate logic sentences in propositional logic sentences. There is a nuance with existentially quantified sentences, since skolemization must be done there. In this translation done by the parser "the semantics changes a little bit", and not all is completely valid overall, but the advantage is that if there is an inconsistency in the automatically translated axiom outputted by the parser, then there is also an inconsistency in the original axiom in CLIF.
 A certain rule in this format ends with a `false`, since it is a negation inside a universal quantifier. It signals that the conditions in the formula cannot be all satified at the same time. For example, this rule says that spatial regions cannot change, since you cannot both be a spatial region and also change:
 `r(18,2,[],[],"BFOCE-cha-02",kow(if([['happens-to',A,B,C],['instance-of',B,'spatial-region',C]]),false)).`
@@ -84,6 +84,20 @@ s(start)
 ```
 
 
+ 
+### REASONER FILE
+The file with the reasoner is another Prolog file, called BFO2020style-CLIFreasoner - Working20250415.pl. The reasoner can modify some of its parameters, like the Skolem Cycles, with a `"CLIFreasonerinit.txt"` file, that is used to tell which files to open, like other "init" files particular scenarios, and files that have name `"*-kowalski.txt"`, that for us are the axioms transformed by the parse . If you give it something that is consistent, nothing will happen for a long time (until it hits a threshold).
+Now we open a `mytest-input.txt` file, where particular scenarios are already written. By default, they are all commented out, and deleting the Prolog comment symbols will make them actionable by the reasoner. 
+To start the reasoner, we just click on it, and SWI-Prolog begins to run. The Output of the reasoner is an excel file, "CLIFreasoner-inconsistency-proof.csv", that is self explanatory, and lists all the facts in this model, or antimodel, that were inputted or deduced as existing, numbering them in column B with an ID. It is easier to read this file from bottom up, where the input facts are used, while inconsistencies, if any, are on the top.
+As an example, check the above-mentioned ready-made bad fact that will cause an inconsistency and an excel file with the inconsistency is generated, as expected:  input rows are for the premises used and the lines in which they live is reported in a column; facts 7 and 10 are inconsistent with one another, as column M states with the value "inc",and column E states "inconsistency". On the same column M you see "mpp" is for Arrow-elimination rule, "modus ponendo ponens". The prover can make assumptions too. The index "21", seen in column K, is for the rule used to generate the inconsistency, and of course it is a rule within the `posax()` predicate in the BCHANGE-cf.txt file.
+<img width="1666" height="356" alt="Screenshot 2025-10-29 192611" src="https://github.com/user-attachments/assets/6bfbb43f-ec78-4562-a4db-53fb8470a619" />
+
+
+If no inconsistency is found, NO inconsistency csv file is generated. In another way, the reasoner will create a smaller model just for the input. We presently do not know if the reasoner is powerful enough to generate a complete model, or just some model that satisfy the input and axioms. 
+The methodology is this: we write axioms, we create particular scenarios and we hypothesize whether they will fail or not. Then the reasoner will give the answer, and we can mark the result on a comment line, like "should fail and does...". Then we backtrack what we modeled and see why our expectations were not met, maybe modifying the axioms in question. 
+If an excel file that was outputted is of interest to you, change its name, otherwise at the next run the reasoner will overwrite it!  
+"sk1" are the individuals generated in the reasoner for the assumptions. There is a separate file that tells you all the "sk-" . There is a specific CLIFreasoner-main_skolems.txt file for all the Skolem functions generated in the reasoning, and usually just a fraction of them is used in the proof of the inconsistency excel file. This depends on the Skolem cycles, which can be set prior to the reasoning.
+The Reasoner tries to use as fewer variables as possible. 
 
 
 
