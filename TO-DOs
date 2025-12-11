@@ -1,1 +1,33 @@
-....
+PROCESS METAPHYSICS TODOs
+- Take Varzi’s description of Brutus killing Cesar with increasing details. Model all those details. Most of them DO NOT give subclasses of events! they just expand our knowledge of that portion or reality. Use the modeling to say how NOT to model subclasses of events, as some adjectives do not model qualities (e.g. heir of Charlemagne)
+- Good claim: no bare particulars. Similarly, there are no bare processes. OK, but what properties for processes? (is bareness lack of inherence or lack of instantiation?)
+
+CHANGE METAPHYSICS TODOs
+- Read more on change signaled by a "difference in predicates". This seems too linguistic and does not guide the metaphysical theory enough
+- Find examples for every sub-type for change not mentioned in the paper by Werner and Alan
+- Work on the definition or elucidation of BFO:Change
+- Model speed, and not as a bfo:Quality !! use space and time only.  (but i need movement first!!)
+- After defining speed, we can go on to the rest of cinematics and newtonian mechanics
+- Find out if type-change is an intrinsic change or not
+
+CLIF TODOs
+- Trim down tautologies in current change-BMI510 axioms via Kowalski file
+- run some Composition Output scenarios according to the Reflexion Word doc
+- Many BFO202O CLIF axioms with an OR actually needed a XOR. Find and replace them to save computation time
+- Some BFO2020 axioms are useless, like continuant -> entity, says Werner, since bfo:entity is never used in any axiom (so far...)
+- Make a Github issue in BFO2020:  axiom scr-1 is redundant, since the tehn-or has Continuant-part-of V identity. It should be Proper-part-of V identity
+- Email Alan, then in case make Github issue: In BFO continuant-part-of is not antisymmetric! It is so only for continuants that are not Obj_aggregates. Isn't it better to have a predicate that always behave in the same way, and make a different cousin predicate for another class? like member-of?
+- GitHub Issue: Do we really need junky mereology in BFO? this does not deny the cosmos expanding or whatever. Why not adding it. See the benefit of stopping. Plus, maybe reasoning with the mereology univ can be useful. show examples
+- make a documentation of Werner's papers and weird homebrew syntax
+- decoupling newly introduced universal ((BFO:Change) from all old universals. Is there a quicker way? (wait, maybe BFO;Change = BFO:process)   isn't done already by cl:outofdiscourse??) 
+- Check if mereological Harmony principles (location-extension) are respected in BFO2020 
+- Test scenario for movement:   i bend my whole arm, but i am not bending wholly, everywhere in my body
+- Test scenario: if I bend my arm, I also move wholly
+- Check the Individuation Change axiom! when a process starts to exists, there is an individuation change, which implied a new process.... infinite recursion? stopped by skolemization, but still annoying
+- Edit BFO: Werner wants shapes for spatial regions too, despite Barry. At the moment, Spatial region are forbidden to have SDC according to BFO-2020.
+- CHECK PUT THE REGION CONNECTION CALCULUS   RCC-8
+- Add taxonomical axioms to connect all as types under bfo:change or the like!
+- define STASIS:  Negative axioms on change, plus positive axioms on endurance are enough
+- define "Substantial" "and "qualitative" change are good for Werner, but not in the present BFOCE at the moment. Maybe represent 
+- DO some tests without the SLOW BFO axioms (like [toc-1]) and hope for the best
+
