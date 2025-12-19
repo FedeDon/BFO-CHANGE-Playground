@@ -3,35 +3,42 @@
 
 
 %  Predicates with uncommon placement of variables (v) or constants (s):
-%    "exists-at" most often (73) used with arguments [v,v]. Exceptions are: 
-%       "[exists-at,r1,t1]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
-%       "[exists-at,r1,t2]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
 %    "happens-to" most often (34) used with arguments [v,v,v]. Exceptions are: 
-%       "[happens-to,v1,a1,tt]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
-%       "[happens-to,v1,b1,tt]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
-%       "[happens-to,ch1,a1,tt]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
+%       "[happens-to,ch1,liv1,tt]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
 %    "has-first-instant" most often (52) used with arguments [v,v]. Exceptions are: 
-%       "[has-first-instant,tt,t1]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
+%       "[has-first-instant,tt,t1]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
 %    "has-last-instant" most often (57) used with arguments [v,v]. Exceptions are: 
-%       "[has-last-instant,tt,t2]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
-%    "inheres-in" most often (18) used with arguments [v,v]. Exceptions are: 
-%       "[inheres-in,r1,a1]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
-%       "[inheres-in,r1,b1]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
+%       "[has-last-instant,tt,t2]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
 %    "instance-of" most often (56) used with arguments [v,v,v]. Exceptions are: 
-%       "[instance-of,a1,object,tt]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
-%       "[instance-of,b1,object,tt]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
-%       "[instance-of,ch1,relational-gain,tt]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
-%       "[instance-of,r1,relational-quality,tt]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
-%       "[instance-of,tt,temporal-interval,tt]" in axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
+%       "[instance-of,ch1,total-location-change,tt]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%       "[instance-of,liv1,object,tt]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%       "[instance-of,r1,spatial-region,tt]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%       "[instance-of,r2,spatial-region,tt]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%       "[instance-of,tt,temporal-interval,tt]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%    "occupies-spatial-region" most often (28) used with arguments [v,v,v]. Exceptions are: 
+%       "[occupies-spatial-region,liv1,sr1,t1]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%       "[occupies-spatial-region,liv1,sr2,t2]" in axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
 
 
 %  Terms used less or equal than set in rare_term_use() in init-file:
+%    "ch1" used in:
+%       axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
 %    "extrinsic-change" used in:
 %       axiom 9 [BFOCE-dec-08] in file change-BMI510.clc
+%    "r1" used in:
+%       axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%    "r2" used in:
+%       axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%    "sr1" used in:
+%       axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%    "sr2" used in:
+%       axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
 %    "t1" used in:
-%       axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
+%       axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
 %    "t2" used in:
-%       axiom 1 [SCE-sce-028] in file myinput-BMI510.sce
+%       axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
+%    "total-location-change" used in:
+%       axiom 1 [SCE-sce-031] in file myinput-BMI510.sce
 
 
 
@@ -41,18 +48,17 @@
 %          extrinsic-change in ['change-BMI510.clc']
 %    Comparing term/predicate occurrences in SCE relative to BFOCE.
 %      Terms in SCE missing the relation "instance-of" while 96% of terms in BFOCE have it:
-%          a1 in ['myinput-BMI510.sce']
-%          b1 in ['myinput-BMI510.sce']
 %          ch1 in ['myinput-BMI510.sce']
+%          liv1 in ['myinput-BMI510.sce']
 %          object in ['myinput-BMI510.sce']
 %          r1 in ['myinput-BMI510.sce']
+%          r2 in ['myinput-BMI510.sce']
+%          sr1 in ['myinput-BMI510.sce']
+%          sr2 in ['myinput-BMI510.sce']
 %          t1 in ['myinput-BMI510.sce']
 %          t2 in ['myinput-BMI510.sce']
+%          total-location-change in ['myinput-BMI510.sce']
 %          tt in ['myinput-BMI510.sce']
-%    Comparing term/predicate occurrences internally in SCE:
-%      Terms in SCE missing the relation "instance-of" while 82% of terms in SCE have it:
-%          t1 in ['myinput-BMI510.sce']
-%          t2 in ['myinput-BMI510.sce']
 
 
 
@@ -209,7 +215,7 @@
 %  <Unique ID>/<Order in axiom file>/<Comment>:
 
 %   1. myinput-BMI510.sce
-%      1 / 1 / ANTIMOD alice did not love bob, then she does, and this is not a relational gain [sce-028]
+%      1 / 1 / A liver is moving during a transplant for a time, but he does not change spatial region [sce-031]
 
 %   2. change-BMI510.clc
 %      2 / 1 / role-gain declaration  [dec-06]

@@ -1,33 +1,33 @@
 
 kow(if([['instance-of',A,'temporal-region',A],['temporal-part-of',B,A]]),then(['instance-of',B,'temporal-region',B]))
 kow(if([['instance-of',A,'temporal-region',A],['temporal-part-of',A,B]]),then(['instance-of',B,'temporal-region',B]))
-[715,BFO-mjn-2] [716,BFO-mjn-2] 
-[716,BFO-mjn-2] removed.
+[712,BFO-mjn-2] [713,BFO-mjn-2] 
+[713,BFO-mjn-2] removed.
 
 kow(if([['member-part-of',A,B,C]]),then(['instance-of',B,'object-aggregate',C]))
 kow(if([['member-part-of',A,B,C]]),then(['instance-of',B,'object-aggregate',C]))
-[346,BFO-dvq-1] [373,BFO-evk-1] 
-[373,BFO-evk-1] removed.
+[343,BFO-dvq-1] [370,BFO-evk-1] 
+[370,BFO-evk-1] removed.
 
 kow(if([['member-part-of',A,B,C]]),then(['instance-of',A,object,C]))
 kow(if([['member-part-of',A,B,C]]),then(['instance-of',A,object,C]))
-[347,BFO-dvq-1] [372,BFO-evk-1] 
-[372,BFO-evk-1] removed.
+[344,BFO-dvq-1] [369,BFO-evk-1] 
+[369,BFO-evk-1] removed.
 
 kow(if([['instance-of',A,'immaterial-entity',B]]),then(['instance-of',A,'independent-continuant',B]))
 kow(if([['instance-of',A,'immaterial-entity',B]]),then(['instance-of',A,'independent-continuant',B]))
-[354,BFO-udu-1] [839,BFO-bzp-1] 
-[839,BFO-bzp-1] removed.
+[351,BFO-udu-1] [836,BFO-bzp-1] 
+[836,BFO-bzp-1] removed.
 
 kow(if([['instance-of',A,'temporal-region',A]]),then(['temporal-part-of',A,A]))
 kow(if([['instance-of',A,'temporal-region',B]]),then(['temporal-part-of',B,A]))
-[695,BFO-dbj-2] [698,BFO-njq-1] 
-[698,BFO-njq-1] removed.
+[692,BFO-dbj-2] [695,BFO-njq-1] 
+[695,BFO-njq-1] removed.
 
 kow(if([['instance-of',A,B,C],['temporal-part-of',D,C]]),then(['instance-of',A,B,D]))
 kow(if([['instance-of',A,'temporal-region',A],['temporal-part-of',B,A]]),then(['instance-of',B,'temporal-region',B]))
-[284,BFO-qaf-1] [715,BFO-mjn-2] 
-[715,BFO-mjn-2] removed.
+[281,BFO-qaf-1] [712,BFO-mjn-2] 
+[712,BFO-mjn-2] removed.
 
 Detected inverse relations
 eqp(BFO-eld-1,has-continuant-part,BFO-eld-1,continuant-part-of,c)

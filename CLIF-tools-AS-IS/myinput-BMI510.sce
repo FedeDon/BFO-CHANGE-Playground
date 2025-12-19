@@ -107,14 +107,6 @@ To be done:
 
 
 
-	(cl:comment ".......c1 [dec-000]"  
-		(and (particular c1) 
-				(particular t1) 
-				(particular x1)
-			)
-	)
-
-
 	(cl:comment "A car has a quality, then loses it and this is qualitative change [sce-024]"
 	   (and 
 	        (instance-of car1 object tt)
@@ -273,7 +265,7 @@ To be done:
 			(has-first-instant tt t1)  
 			(has-last-instant tt t2)
 			(happens-to ch1 a1 tt)
-			(happens-to ch1 b1 tt)
+			(not (happens-to ch1 b1 tt))
 			(inheres-in r1 a1)			
 			(inheres-in r1 b1)
 			(not( exists-at r1 t1) )
@@ -282,10 +274,6 @@ To be done:
 			(forall (ch) (if (happens-to ch b1 tt) (= ch ch1)))
 	   )
 	)
-
-
-
-  ' )
 
 	(cl:comment "ANTIMOD alice did not love bob, then she does, and this is not a relational gain [sce-028]"
 	   (and 
@@ -305,6 +293,24 @@ To be done:
 			(forall (ch) (if (happens-to ch b1 tt) (= ch ch1)))
 	   )
 	)
+
+  ' )
+
+	(cl:comment "A liver is moving during a transplant for a time, but he does not change spatial region [sce-031]"
+		(and 
+				(instance-of liv1 object tt)
+				(instance-of tt temporal-interval tt)
+				(instance-of r1 spatial-region tt)
+				(instance-of r2 spatial-region tt)
+				(instance-of ch1 total-location-change tt)
+				(has-first-instant tt t1)  
+				(has-last-instant tt t2)
+				(happens-to ch1 liv1 tt)
+				(occupies-spatial-region liv1 sr1 t1)
+				(occupies-spatial-region liv1 sr2 t2)
+				(= sr1 sr2)
+		)
+		)
 
 
 

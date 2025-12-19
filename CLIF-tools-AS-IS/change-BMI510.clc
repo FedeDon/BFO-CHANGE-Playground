@@ -82,7 +82,7 @@ To be done:
  
 
 	(cl:comment "A material entity changes location before and after a temporal region if it occupies different spatial regions at two temporal parts of that temporal region [bmi-01]"
-		(forall (x ch t)
+		(forall (x t)
 		  (if
 		   (exists (ch)
 				(and 
@@ -300,8 +300,8 @@ To be done:
     (cl:comment "relational-loss declaration  [dec-10]"  
 	   (universal relational-loss) )
 
-	(cl:comment "A material entity undergoes relational loss during a temporal region if it loses a relational quality between the first and last instant of that temporal region [bmi-09]"
-		(forall (x ch t)
+	(cl:comment "A material entity undergoes relational loss during a temporal region if it loses a relational quality between the first and last instant of that temporal region [bmi-10]"
+		(forall (x t)
 		  (iff   
 		   (exists (ch)
 				(and 
