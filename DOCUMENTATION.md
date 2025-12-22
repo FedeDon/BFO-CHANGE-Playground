@@ -3,23 +3,23 @@
 ## PARSING
 
 ### PARSER FILE
-Parser created by Werner to Transform the CLIF file into Kowalski Rules (Horn Clauses readable by SWI-Prolog), and the kow()  predicate is everywhere. The kow() transforms FOL into propositional logic sentences. 
-The parser checks the syntax only. It is enough to check if there are tautologies or not , plus more
+Parser created by Werner to Transform the CLIF files into Kowalski Rules. Such rules are a further transformation of clauses in Clausal Normal Form by representing the negative literals as conditions for the positive literals to be true. The rules are readable by SWI-Prolog, by being embedded in the 'kow()' compound.  
+The parser checks the syntax of individual axioms, identifies tautological clauses and performs sanity checks on the use of predicates, variables and constants.
 
 The parser is a .pl file that is just invoked and automatically gets the BFO2020.cl file and the change.cl file as inputs. The output is generated within the BCHANGE-comments.txt file, the BCHANGE-cf.txt file and some others.
 There might be Error and Warning errors. For example: all these CLIF rules are then translated by the parser into Kowalski rules, and the tautologies are listed in the Warning messages. 
 
 The parser considers within the scope of an individual axiom all symbols that are used as arguments in a predicate within that axiom and that are not quantified, to be constants. That behavior has not changed. 
 
-Prolog is fragile to encodings , so watch out for invisible character in your editor or copy pasting from other note editors.
+Prolog is fragile to encodings , so watch out for invisible character in your editor or copy pasting from other note editors, especially with respect to end-of-line markers which are different for MsWindows, Unix and Mac environments.
 Prolog suggested version  9.2.9/1    
-Unique name assumption. Prolog assumes that different constant names refer to different entities, UNLIKE OWL or CLIF. You can still  unify constants in Prolog ex: =(john , jim). this is dues to the fact that  Closed World Assumption implies Unique name assumption  (Prolog has CWA). 
+Unique name assumption. Prolog assumes that different constant names refer to different entities, UNLIKE OWL or CLIF. You can still state constants in Prolog to be identical ex: =(john , jim). this is due to the fact that  Closed World Assumption implies Unique name assumption  (Prolog has CWA). 
 
 
 ### KOWALSKI FILE
 The BCHANGE-kowalski.txt results when all the axioms are read by the parser and translated into Kowalski rules that then the reasoner can work on. "The are actually easy to interpret". The initial big predicate `r()` wraps an entire rule or axiom. For example:
 `r(1,1,[],[],"BFOCE-ett-01",kow(if([['exists-throughout',A,B]]),then([particular,A]))).`
-The first part `1,1,[],[]` can be ignored, it is just some indexing that increase the efficiency of the reasoner. Then we have a string with the ontology name and the axiom ID. Then the actual rule inside the `kow()` predicate, which is a conditional statement composed of prolog lists, that can be understood as sentences with predicates and arguments, like `['exists-throughout',A,B]` stands for the CLIF phrasing `(exists-throughout A B)`.
+The first part `1,1,[],[]` can be ignored, it is just some indexing information that increase the efficiency of the reasoner. Then we have a string with the ontology name and the axiom ID. Then the actual rule inside the `kow()` predicate, which is a conditional statement composed of prolog lists, that can be understood as sentences with predicates and arguments, like `['exists-throughout',A,B]` stands for the CLIF phrasing `(exists-throughout A B)`.
 IN the Kowalski rules there is no IFF connective, so an original CLIF axioms is split into two sentences IF and ONLY-IF connectives. 
 Inside some of these conditionals which are inside the `kow()` predicates there are consequents that are disjuncts, and this is indicated with 
 `kow(if([[list]]), then-or([[list]]))`
