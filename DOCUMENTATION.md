@@ -19,12 +19,12 @@ Unique name assumption. Prolog assumes that different constant names refer to di
 ### KOWALSKI FILE
 The BCHANGE-kowalski.txt results when all the axioms are read by the parser and translated into Kowalski rules that then the reasoner can work on. "The are actually easy to interpret". The initial big predicate `r()` wraps an entire rule or axiom. For example:
 `r(1,1,[],[],"BFOCE-ett-01",kow(if([['exists-throughout',A,B]]),then([particular,A]))).`
-The first part `1,1,[],[]` can be ignored, it is just some indexing information that increase the efficiency of the reasoner. Then we have a string with the ontology name and the axiom ID. Then the actual rule inside the `kow()` predicate, which is a conditional statement composed of prolog lists, that can be understood as sentences with predicates and arguments, like `['exists-throughout',A,B]` stands for the CLIF phrasing `(exists-throughout A B)`.
-IN the Kowalski rules there is no IFF connective, so an original CLIF axioms is split into two sentences IF and ONLY-IF connectives. 
-Inside some of these conditionals which are inside the `kow()` predicates there are consequents that are disjuncts, and this is indicated with 
+The first part `1,1,[],[]` can be ignored, it is just some indexing information that increase the efficiency of the reasoner. Then we have a string with the ontology name and the axiom ID. Then the actual rule inside the `kow()` compound, which is a conditional statement composed of prolog lists, that can be understood as sentences with predicates and arguments, like `['exists-throughout',A,B]` stands for the CLIF phrasing `(exists-throughout A B)`.
+IN the Kowalski rules there is no IFF connective, so an original CLIF axiom is first transformed to CNF and then to Kowalski-rules. 
+Inside some of these conditionals which are inside the `kow()` predicates there are consequents that are positive disjuncts, aka alternative facts, and this is indicated with 
 `kow(if([[list]]), then-or([[list]]))`
 This terms like `if()` and `then-or()` are not part of the Prolog vocabulary, but something construed ad hoc as a Prolog predicate. 
-What the kow() predicates d is to convert predicate logic sentences in propositional logic sentences. There is a nuance with existentially quantified sentences, since skolemization must be done there. In this translation done by the parser "the semantics changes a little bit", and not all is completely valid overall, but the advantage is that if there is an inconsistency in the automatically translated axiom outputted by the parser, then there is also an inconsistency in the original axiom in CLIF.
+What the parser does is to convert predicate logic sentences in propositional logic sentences. There is a nuance with existentially quantified sentences, since skolemization must be done there. In this translation done by the parser "the semantics changes a little bit", and not all is completely valid overall, but the advantage is that if there is an inconsistency in the automatically translated axiom outputted by the parser, then there is also an inconsistency in the original axiom in CLIF.
 A certain rule in this format ends with a `false`, since it is a negation inside a universal quantifier. It signals that the conditions in the formula cannot be all satified at the same time. For example, this rule says that spatial regions cannot change, since you cannot both be a spatial region and also change:
 `r(18,2,[],[],"BFOCE-cha-02",kow(if([['happens-to',A,B,C],['instance-of',B,'spatial-region',C]]),false)).`
 After some hundreds of line of translated rules, we get to lines like
@@ -37,7 +37,7 @@ That can be ignored, since it is just information used by the reasoner, like Sko
 For decidability reasons, the CLIF axioms are transformed via Skolemization, which does not guarantee logical equivalence with the original axioms.
 `[e,1, [A,B]]`  is a  syntax with Prolog lists that exemplifies a Skolemization, where a CLIF axiom was transformed in a readable way for SWI-Prolog. Where the CLIF axiom had existentially quantified variables, those are substituted with special functions.
 Ex:   sk176  `[e,166,[a,[e,156,[r1,t1]],t1]`
-Here `e` is the function, and the occurrences of `e` are not the same function. In fact, "e" is used a placeholder for a precise names of various Skolem functions.
+Here `e,166` is a skolem function which is distinct from `e,156`. In fact, "e" is used to indicate a Skolem function and the number following 'e' an identifier for each unique function.
 
 
 
@@ -48,11 +48,11 @@ The CLIFParserinit.txt is a file read as input by the parser and we can write ou
 ontology("BFOCE",["*.clc"]).	% Declare all filenames with extention 'clc' as belonging to BFOCE
 ontology("BFO",["*.cl"]).
 ```
-All the .cl files must be in the same directory to be run. The .cl  and .clc   file extensions "have no meaning", and they are not universally recognized standard. Nonetheless, the extension must be specified for the parser to pick the right files, so do not change that without changing the call of the files.
-Importantly, a following line says which ontology is using which ontology, so what axioms refer to other axioms. There is a special Prolog predicate for that, whse second argument is a list of the ontologies that are used, which can be many. In this case, the bfo:Change axioms use the BFO202 axioms:
+All the .cl files must not be in the same directory to be run. The .cl  and .clc   file extensions "have no meaning", and they are not universally recognized standard. Nonetheless, the extension must be specified for the parser to pick the right files, and identify the ontology they belong to, so do not change that without changing the call of the files.
+Importantly, a following line says which ontology is using which ontology, so what axioms refer to other axioms. There is a special Prolog predicate for that, wh0se second argument is a list of the ontologies that are used, which can be many. In this case, the bfo:Change axioms use the BFO202 axioms:
 `ont_uses("BFOCE", ["BFO"]).`
 After this, there are lines specifying how much output do we want, and this can be adjusted to the computer we are using, if fast or not.
-Cool thing: this parser can statistically try to tell you if you misspelled something, or f there are some novel and strange occurrences compared to the rest of he file. An Editing distance algorithms is used, among others. This is very handy for debugging. For example: no name of universal in BFO has less than four characters, so a warning is fired when you use a shorter name.
+Cool thing: this parser can statistically try to tell you if you misspelled something, or f there are some novel and strange occurrences compared to the rest of he file. An Editing distance algorithm is used, among others. This is very handy for debugging. For example: no name of universal in BFO has less than four characters, so a warning is fired when you use a shorter name.
 Showcase of various functions of the parser and how fast they MUST be: typo detection (0.95 sec),  minimum constant length (1sec) , rar term use (2sec)  etc...
 If you use a relationship, it must be in the cl:outdiscourse, as an implemented requirement, and we just used "happen-throughout" instead of "happens-throughout".
 Do not touch these predicates and formulas, as the comment in the file says . 
