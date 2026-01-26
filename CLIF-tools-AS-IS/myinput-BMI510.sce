@@ -294,8 +294,6 @@ To be done:
 	   )
 	)
 
-  ' )
-
 	(cl:comment "A liver is moving during a transplant for a time, but he does not change spatial region [sce-031]"
 		(and 
 				(instance-of liv1 object tt)
@@ -311,6 +309,24 @@ To be done:
 				(= sr1 sr2)
 		)
 		)
+
+
+  ' )
+
+
+
+	(cl:comment "A ball is moving while its speed is zero [sce-032]"
+		(and 
+				(instance-of ball1 object tt)
+				(instance-of tt temporal-interval tt)
+				(instance-of ch1 motion tt)
+				(instance-of speed1 speed tt)
+				(happens-to ch1 ball1 tt) 
+				(inheres-in speed1 ball1)
+				(= speed1 n0)
+			)
+		)
+		
 
 
 

@@ -1,7 +1,11 @@
 % CONSTANTS USED:
+ot(s(ball1)).
+   % [s(happens-to),s(ch1),s(ball1),s(tt)]
+   % [s(inheres-in),s(speed1),s(ball1)]
+   % [s(instance-of),s(ball1),s(object),s(tt)]
 ot(s(ch1)).
-   % [s(happens-to),s(ch1),s(liv1),s(tt)]
-   % [s(instance-of),s(ch1),s(total-location-change),s(tt)]
+   % [s(happens-to),s(ch1),s(ball1),s(tt)]
+   % [s(instance-of),s(ch1),s(motion),s(tt)]
 ot(s(change)).
    % [s(instance-of),v,s(change),v]
 ot(s(change-profile)).
@@ -462,11 +466,6 @@ ot(s(individuation)).
    % [s(instance-of),v,s(individuation),v]
 ot(s(instantiation-change)).
    % [s(instance-of),v,s(instantiation-change),v]
-ot(s(liv1)).
-   % [s(happens-to),s(ch1),s(liv1),s(tt)]
-   % [s(instance-of),s(liv1),s(object),s(tt)]
-   % [s(occupies-spatial-region),s(liv1),s(sr1),s(t1)]
-   % [s(occupies-spatial-region),s(liv1),s(sr2),s(t2)]
 ot(s(material-entity)).
    % [s(identical),s(continuant),s(material-entity)]
    % [s(identical),s(material-entity),s(continuant-fiat-boundary)]
@@ -506,6 +505,10 @@ ot(s(material-entity)).
    % [s(universal),s(material-entity)]
 ot(s(mono-sequential-change)).
    % [s(instance-of),v,s(mono-sequential-change),v]
+ot(s(motion)).
+   % [s(instance-of),s(ch1),s(motion),s(tt)]
+ot(s(n0)).
+   % [s(identical),s(speed1),s(n0)]
 ot(s(object)).
    % [s(identical),s(continuant),s(object)]
    % [s(identical),s(material-entity),s(object)]
@@ -542,7 +545,7 @@ ot(s(object)).
    % [s(identical),s(object),s(zero-dimensional-spatial-region)]
    % [s(identical),s(object),s(zero-dimensional-temporal-region)]
    % [s(instance-of),v,s(object),v]
-   % [s(instance-of),s(liv1),s(object),s(tt)]
+   % [s(instance-of),s(ball1),s(object),s(tt)]
    % [s(universal),s(object)]
 ot(s(object-aggregate)).
    % [s(identical),s(continuant),s(object-aggregate)]
@@ -803,10 +806,6 @@ ot(s(quality)).
    % [s(identical),s(zero-dimensional-spatial-region),s(quality)]
    % [s(instance-of),v,s(quality),v]
    % [s(universal),s(quality)]
-ot(s(r1)).
-   % [s(instance-of),s(r1),s(spatial-region),s(tt)]
-ot(s(r2)).
-   % [s(instance-of),s(r2),s(spatial-region),s(tt)]
 ot(s(realizable-entity)).
    % [s(identical),s(continuant),s(realizable-entity)]
    % [s(identical),s(continuant-fiat-boundary),s(realizable-entity)]
@@ -1005,8 +1004,6 @@ ot(s(spatial-region)).
    % [s(identical),s(spatial-region),s(zero-dimensional-spatial-region)]
    % [s(identical),s(spatial-region),s(zero-dimensional-temporal-region)]
    % [s(instance-of),v,s(spatial-region),v]
-   % [s(instance-of),s(r1),s(spatial-region),s(tt)]
-   % [s(instance-of),s(r2),s(spatial-region),s(tt)]
    % [s(universal),s(spatial-region)]
 ot(s(spatiotemporal-region)).
    % [s(identical),s(continuant),s(spatiotemporal-region)]
@@ -1084,18 +1081,12 @@ ot(s(specifically-dependent-continuant)).
    % [s(identical),s(zero-dimensional-spatial-region),s(specifically-dependent-continuant)]
    % [s(instance-of),v,s(specifically-dependent-continuant),v]
    % [s(universal),s(specifically-dependent-continuant)]
-ot(s(sr1)).
-   % [s(identical),s(sr1),s(sr2)]
-   % [s(occupies-spatial-region),s(liv1),s(sr1),s(t1)]
-ot(s(sr2)).
-   % [s(identical),s(sr1),s(sr2)]
-   % [s(occupies-spatial-region),s(liv1),s(sr2),s(t2)]
-ot(s(t1)).
-   % [s(has-first-instant),s(tt),s(t1)]
-   % [s(occupies-spatial-region),s(liv1),s(sr1),s(t1)]
-ot(s(t2)).
-   % [s(has-last-instant),s(tt),s(t2)]
-   % [s(occupies-spatial-region),s(liv1),s(sr2),s(t2)]
+ot(s(speed)).
+   % [s(instance-of),s(speed1),s(speed),s(tt)]
+ot(s(speed1)).
+   % [s(identical),s(speed1),s(n0)]
+   % [s(inheres-in),s(speed1),s(ball1)]
+   % [s(instance-of),s(speed1),s(speed),s(tt)]
 ot(s(temporal-instant)).
    % [s(identical),s(continuant),s(temporal-instant)]
    % [s(identical),s(continuant-fiat-boundary),s(temporal-instant)]
@@ -1247,16 +1238,11 @@ ot(s(three-dimensional-spatial-region)).
    % [s(identical),s(three-dimensional-spatial-region),s(zero-dimensional-temporal-region)]
    % [s(instance-of),v,s(three-dimensional-spatial-region),v]
    % [s(universal),s(three-dimensional-spatial-region)]
-ot(s(total-location-change)).
-   % [s(instance-of),s(ch1),s(total-location-change),s(tt)]
 ot(s(tt)).
-   % [s(happens-to),s(ch1),s(liv1),s(tt)]
-   % [s(has-first-instant),s(tt),s(t1)]
-   % [s(has-last-instant),s(tt),s(t2)]
-   % [s(instance-of),s(ch1),s(total-location-change),s(tt)]
-   % [s(instance-of),s(liv1),s(object),s(tt)]
-   % [s(instance-of),s(r1),s(spatial-region),s(tt)]
-   % [s(instance-of),s(r2),s(spatial-region),s(tt)]
+   % [s(happens-to),s(ch1),s(ball1),s(tt)]
+   % [s(instance-of),s(ball1),s(object),s(tt)]
+   % [s(instance-of),s(ch1),s(motion),s(tt)]
+   % [s(instance-of),s(speed1),s(speed),s(tt)]
    % [s(instance-of),s(tt),s(temporal-interval),s(tt)]
 ot(s(two-dimensional-spatial-region)).
    % [s(identical),s(continuant),s(two-dimensional-spatial-region)]
@@ -1399,23 +1385,22 @@ pr(s(gains-type)).
    % [s(gains-type),v,v,v]
 pr(s(generically-depends-on)).
    % [s(generically-depends-on),v,v,v]
+pr(s(greater-than)).
 pr(s(happens-in)).
    % [s(happens-in),v,v]
 pr(s(happens-throughout)).
    % [s(happens-throughout),v,v]
 pr(s(happens-to)).
    % [s(happens-to),v,v,v]
-   % [s(happens-to),s(ch1),s(liv1),s(tt)]
+   % [s(happens-to),s(ch1),s(ball1),s(tt)]
 pr(s(has-continuant-part)).
    % [s(has-continuant-part),v,v,v]
 pr(s(has-first-instant)).
    % [s(has-first-instant),v,v]
-   % [s(has-first-instant),s(tt),s(t1)]
 pr(s(has-history)).
    % [s(has-history),v,v]
 pr(s(has-last-instant)).
    % [s(has-last-instant),v,v]
-   % [s(has-last-instant),s(tt),s(t2)]
 pr(s(has-material-basis)).
    % [s(has-material-basis),v,v,v]
 pr(s(has-member-part)).
@@ -1954,7 +1939,7 @@ pr(s(identical)).
    % [s(identical),s(specifically-dependent-continuant),s(temporal-interval)]
    % [s(identical),s(specifically-dependent-continuant),s(temporal-region)]
    % [s(identical),s(specifically-dependent-continuant),s(zero-dimensional-temporal-region)]
-   % [s(identical),s(sr1),s(sr2)]
+   % [s(identical),s(speed1),s(n0)]
    % [s(identical),s(temporal-instant),s(history)]
    % [s(identical),s(temporal-instant),s(one-dimensional-temporal-region)]
    % [s(identical),s(temporal-instant),s(spatiotemporal-region)]
@@ -2038,6 +2023,7 @@ pr(s(individuates-at)).
    % [s(individuates-at),v,v]
 pr(s(inheres-in)).
    % [s(inheres-in),v,v]
+   % [s(inheres-in),s(speed1),s(ball1)]
 pr(s(instance-of)).
    % [s(instance-of),v,v,v]
    % [s(instance-of),v,s(change),v]
@@ -2091,10 +2077,9 @@ pr(s(instance-of)).
    % [s(instance-of),v,s(type-replacement),v]
    % [s(instance-of),v,s(zero-dimensional-spatial-region),v]
    % [s(instance-of),v,s(zero-dimensional-temporal-region),v]
-   % [s(instance-of),s(ch1),s(total-location-change),s(tt)]
-   % [s(instance-of),s(liv1),s(object),s(tt)]
-   % [s(instance-of),s(r1),s(spatial-region),s(tt)]
-   % [s(instance-of),s(r2),s(spatial-region),s(tt)]
+   % [s(instance-of),s(ball1),s(object),s(tt)]
+   % [s(instance-of),s(ch1),s(motion),s(tt)]
+   % [s(instance-of),s(speed1),s(speed),s(tt)]
    % [s(instance-of),s(tt),s(temporal-interval),s(tt)]
 pr(s(is-carrier-of)).
    % [s(is-carrier-of),v,v,v]
@@ -2119,8 +2104,6 @@ pr(s(mono-sequential-change-of)).
    % [s(mono-sequential-change-of),v,v]
 pr(s(occupies-spatial-region)).
    % [s(occupies-spatial-region),v,v,v]
-   % [s(occupies-spatial-region),s(liv1),s(sr1),s(t1)]
-   % [s(occupies-spatial-region),s(liv1),s(sr2),s(t2)]
 pr(s(occupies-spatiotemporal-region)).
    % [s(occupies-spatiotemporal-region),v,v]
 pr(s(occupies-temporal-region)).

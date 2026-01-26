@@ -31,6 +31,7 @@ To be done:
 		exists-at
 		exists-throughout
 		gains-type
+		greater-than
 		happens-in
 		happens-throughout
 		happens-to
@@ -77,8 +78,21 @@ To be done:
 		 (overlaps x y t) )
 		      ))
 
+    (cl:comment   "greater than is irreflexive, transitive, and total [aux-02]"
+			(and 
+			(forall (x) (not (greater-than x x)))
 
-(cl:comment "NEW tentative axioms introduced in Fall2025 for BMI510")
+			((forall (x y z)
+			(if (and (greater-than x y) (greater-than y z))
+				(greater-than x z)))  )
+
+			((forall (x y)
+	      	(or (= x y) (greater-than x y) (greater-than y x))) )
+			) )
+
+
+
+(cl:comment "NEW tentative axioms introduced in Fall2025 for BMI510 and Srping2026 for BMI610")
  
 
 	(cl:comment "A material entity changes location before and after a temporal region if it occupies different spatial regions at two temporal parts of that temporal region [bmi-01]"
@@ -109,7 +123,7 @@ To be done:
 	
 
 
-	(cl:comment "A material entity moves or teleport during a temporal region if it occupies spatial regions that are not part of the other at two temporal parts of that temporal region [bmi-01]."
+	(cl:comment "A material entity moves or teleport during a temporal region if it occupies spatial regions that are not part of one another at two temporal parts of that temporal region [bmi-01]."
 		(forall (x t)
 		  (if
 		   (and 
@@ -148,6 +162,29 @@ To be done:
 					 ) )  )
 			(instance-of m motion2 t)
 		       )   )  ) 
+
+
+    (cl:comment "speed [dec-11]"
+	   (universal speed) )
+
+	(cl:comment "during motion, the object that is moving has some speed greater than zero [bmi-013]"
+		(forall (x t)
+		(if
+			(exists (ch)
+			(and
+				(instance-of ch motion t)
+				(happens-to ch x t)))
+			(exists (s)
+			(and
+				(instance-of s speed t)
+				(inheres-in s x)
+				(greater-than s n0))  )))
+			)
+
+
+		   
+
+
 
 
 (cl:comment 'INTRINSIC CHANGES' )
