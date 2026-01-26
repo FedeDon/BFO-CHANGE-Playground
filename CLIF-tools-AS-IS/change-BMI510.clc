@@ -62,12 +62,11 @@ To be done:
  )
 
 
-(cl:comment ' 
+
 (cl:comment "auxiliary axioms" )
 
 
  
-
     (cl:comment   "overlap [aux-01]"  
 	   (forall (x y t)
 	   (iff 
@@ -261,7 +260,7 @@ To be done:
 						(and (not(exists-at y t1)) (exists-at y t2) )  
 					    )
 					)   ))))) )  
-  ' )
+ 
 
 
 
