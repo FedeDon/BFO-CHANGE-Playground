@@ -12,6 +12,9 @@ ot(s(change-profile)).
    % [s(instance-of),v,s(change-profile),v]
 ot(s(change-sequence)).
    % [s(instance-of),v,s(change-sequence),v]
+ot(s(compositional-change)).
+   % [s(instance-of),v,s(compositional-change),v]
+   % [s(universal),s(compositional-change)]
 ot(s(continuant)).
    % [s(identical),s(continuant),s(continuant-fiat-boundary)]
    % [s(identical),s(continuant),s(disposition)]
@@ -123,6 +126,9 @@ ot(s(disposition)).
    % [s(identical),s(zero-dimensional-spatial-region),s(disposition)]
    % [s(instance-of),v,s(disposition),v]
    % [s(universal),s(disposition)]
+ot(s(dispositional-change)).
+   % [s(instance-of),v,s(dispositional-change),v]
+   % [s(universal),s(dispositional-change)]
 ot(s(existence-change)).
    % [s(instance-of),v,s(existence-change),v]
 ot(s(extrinsic-change)).
@@ -506,8 +512,13 @@ ot(s(material-entity)).
 ot(s(mono-sequential-change)).
    % [s(instance-of),v,s(mono-sequential-change),v]
 ot(s(motion)).
+   % [s(instance-of),v,s(motion),v]
    % [s(instance-of),s(ch1),s(motion),s(tt)]
+ot(s(motion2)).
+   % [s(instance-of),v,s(motion2),v]
+   % [s(universal),s(motion2)]
 ot(s(n0)).
+   % [s(greater-than),v,s(n0)]
    % [s(identical),s(speed1),s(n0)]
 ot(s(object)).
    % [s(identical),s(continuant),s(object)]
@@ -769,6 +780,9 @@ ot(s(process-boundary)).
    % [s(identical),s(zero-dimensional-spatial-region),s(process-boundary)]
    % [s(instance-of),v,s(process-boundary),v]
    % [s(universal),s(process-boundary)]
+ot(s(qualitative-change)).
+   % [s(instance-of),v,s(qualitative-change),v]
+   % [s(universal),s(qualitative-change)]
 ot(s(quality)).
    % [s(identical),s(continuant),s(quality)]
    % [s(identical),s(continuant-fiat-boundary),s(quality)]
@@ -1082,7 +1096,9 @@ ot(s(specifically-dependent-continuant)).
    % [s(instance-of),v,s(specifically-dependent-continuant),v]
    % [s(universal),s(specifically-dependent-continuant)]
 ot(s(speed)).
+   % [s(instance-of),v,s(speed),v]
    % [s(instance-of),s(speed1),s(speed),s(tt)]
+   % [s(universal),s(speed)]
 ot(s(speed1)).
    % [s(identical),s(speed1),s(n0)]
    % [s(inheres-in),s(speed1),s(ball1)]
@@ -1238,6 +1254,9 @@ ot(s(three-dimensional-spatial-region)).
    % [s(identical),s(three-dimensional-spatial-region),s(zero-dimensional-temporal-region)]
    % [s(instance-of),v,s(three-dimensional-spatial-region),v]
    % [s(universal),s(three-dimensional-spatial-region)]
+ot(s(total-location-change)).
+   % [s(instance-of),v,s(total-location-change),v]
+   % [s(universal),s(total-location-change)]
 ot(s(tt)).
    % [s(happens-to),s(ch1),s(ball1),s(tt)]
    % [s(instance-of),s(ball1),s(object),s(tt)]
@@ -1386,6 +1405,8 @@ pr(s(gains-type)).
 pr(s(generically-depends-on)).
    % [s(generically-depends-on),v,v,v]
 pr(s(greater-than)).
+   % [s(greater-than),v,v]
+   % [s(greater-than),v,s(n0)]
 pr(s(happens-in)).
    % [s(happens-in),v,v]
 pr(s(happens-throughout)).
@@ -2029,9 +2050,11 @@ pr(s(instance-of)).
    % [s(instance-of),v,s(change),v]
    % [s(instance-of),v,s(change-profile),v]
    % [s(instance-of),v,s(change-sequence),v]
+   % [s(instance-of),v,s(compositional-change),v]
    % [s(instance-of),v,s(continuant),v]
    % [s(instance-of),v,s(continuant-fiat-boundary),v]
    % [s(instance-of),v,s(disposition),v]
+   % [s(instance-of),v,s(dispositional-change),v]
    % [s(instance-of),v,s(existence-change),v]
    % [s(instance-of),v,s(fiat-line),v]
    % [s(instance-of),v,s(fiat-object-part),v]
@@ -2047,6 +2070,8 @@ pr(s(instance-of)).
    % [s(instance-of),v,s(instantiation-change),v]
    % [s(instance-of),v,s(material-entity),v]
    % [s(instance-of),v,s(mono-sequential-change),v]
+   % [s(instance-of),v,s(motion),v]
+   % [s(instance-of),v,s(motion2),v]
    % [s(instance-of),v,s(object),v]
    % [s(instance-of),v,s(object-aggregate),v]
    % [s(instance-of),v,s(occurrent),v]
@@ -2054,6 +2079,7 @@ pr(s(instance-of)).
    % [s(instance-of),v,s(one-dimensional-temporal-region),v]
    % [s(instance-of),v,s(process),v]
    % [s(instance-of),v,s(process-boundary),v]
+   % [s(instance-of),v,s(qualitative-change),v]
    % [s(instance-of),v,s(quality),v]
    % [s(instance-of),v,s(realizable-entity),v]
    % [s(instance-of),v,s(relational-gain),v]
@@ -2068,11 +2094,13 @@ pr(s(instance-of)).
    % [s(instance-of),v,s(spatiotemporal-region),v]
    % [s(instance-of),v,s(specialization),v]
    % [s(instance-of),v,s(specifically-dependent-continuant),v]
+   % [s(instance-of),v,s(speed),v]
    % [s(instance-of),v,s(temporal-instant),v]
    % [s(instance-of),v,s(temporal-interval),v]
    % [s(instance-of),v,s(temporal-region),v]
    % [s(instance-of),v,s(termination),v]
    % [s(instance-of),v,s(three-dimensional-spatial-region),v]
+   % [s(instance-of),v,s(total-location-change),v]
    % [s(instance-of),v,s(two-dimensional-spatial-region),v]
    % [s(instance-of),v,s(type-replacement),v]
    % [s(instance-of),v,s(zero-dimensional-spatial-region),v]
@@ -2113,6 +2141,7 @@ pr(s(occurrent-part-of)).
 pr(s(occurs-in)).
    % [s(occurs-in),v,v]
 pr(s(overlaps)).
+   % [s(overlaps),v,v,v]
 pr(s(participates-in)).
    % [s(participates-in),v,v,v]
 pr(s(particular)).
@@ -2148,9 +2177,11 @@ pr(s(uni-equivalent)).
    % [s(uni-equivalent),v,v,v]
 pr(s(universal)).
    % [s(universal),v]
+   % [s(universal),s(compositional-change)]
    % [s(universal),s(continuant)]
    % [s(universal),s(continuant-fiat-boundary)]
    % [s(universal),s(disposition)]
+   % [s(universal),s(dispositional-change)]
    % [s(universal),s(extrinsic-change)]
    % [s(universal),s(fiat-line)]
    % [s(universal),s(fiat-object-part)]
@@ -2162,6 +2193,7 @@ pr(s(universal)).
    % [s(universal),s(immaterial-entity)]
    % [s(universal),s(independent-continuant)]
    % [s(universal),s(material-entity)]
+   % [s(universal),s(motion2)]
    % [s(universal),s(object)]
    % [s(universal),s(object-aggregate)]
    % [s(universal),s(occurrent)]
@@ -2169,6 +2201,7 @@ pr(s(universal)).
    % [s(universal),s(one-dimensional-temporal-region)]
    % [s(universal),s(process)]
    % [s(universal),s(process-boundary)]
+   % [s(universal),s(qualitative-change)]
    % [s(universal),s(quality)]
    % [s(universal),s(realizable-entity)]
    % [s(universal),s(relational-gain)]
@@ -2181,10 +2214,12 @@ pr(s(universal)).
    % [s(universal),s(spatial-region)]
    % [s(universal),s(spatiotemporal-region)]
    % [s(universal),s(specifically-dependent-continuant)]
+   % [s(universal),s(speed)]
    % [s(universal),s(temporal-instant)]
    % [s(universal),s(temporal-interval)]
    % [s(universal),s(temporal-region)]
    % [s(universal),s(three-dimensional-spatial-region)]
+   % [s(universal),s(total-location-change)]
    % [s(universal),s(two-dimensional-spatial-region)]
    % [s(universal),s(zero-dimensional-spatial-region)]
    % [s(universal),s(zero-dimensional-temporal-region)]
@@ -2231,7 +2266,6 @@ pr(s(universal)).
   % s(o2p)
   % s(o1p)
   % s(f2)
-  % s(l1)
   % s(i2)
   % s(i1)
   % s(st2)
@@ -2256,7 +2290,6 @@ pr(s(universal)).
   % s(w)
   % s(overlap)
   % s(mp)
-  % s(m)
   % s(s1)
   % s(tp)
   % s(fp)
@@ -2271,7 +2304,6 @@ pr(s(universal)).
   % s(ch1)
   % s(tc)
   % s(ts)
-  % s(z)
   % s(cch)
   % s(chs)
   % s(c1)
@@ -2281,13 +2313,18 @@ pr(s(universal)).
   % s(u)
   % s(ins)
   % s(o)
-  % s(s)
   % s(c)
   % s(tr)
   % s(p)
-  % s(t)
-  % s(x)
+  % s(s)
+  % s(m)
+  % s(tlc)
   % s(t2)
   % s(t1)
-  % s(y)
+  % s(l2)
+  % s(l1)
   % s(ch)
+  % s(t)
+  % s(y)
+  % s(x)
+  % s(z)

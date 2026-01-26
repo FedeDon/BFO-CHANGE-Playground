@@ -19,9 +19,11 @@ To be done:
 	- tighter integration with BFO2020 relations
 	- ...'
 
- (cl:text
+  (cl:text
 
-  (cl:ttl Proposal for BFO2020 extension for changes
+ (cl:ttl "Proposal for BFO2020 extension for changes"
+
+
 
    (cl:outdiscourse 
 		change-profile-of
@@ -59,7 +61,7 @@ To be done:
 		uni-equivalent
 		universal
 
- )
+    )
 
 
 
@@ -125,7 +127,6 @@ To be done:
 	(cl:comment "A material entity moves or teleport during a temporal region if it occupies spatial regions that are not part of one another at two temporal parts of that temporal region [bmi-01]."
 		(forall (x t)
 		  (if
-		   (and 
 		   (exists (ch)
 				(and 
 					(instance-of ch motion t)
@@ -141,7 +142,7 @@ To be done:
 					  (occupies-spatial-region x l1 t1)
 					  (occupies-spatial-region x l2 t2))
 				    (not (or (continuant-part-of l1 l2 t) (continuant-part-of l2 l1 t)  ) )
-					)))))  ) ) 
+					))))  ) ) )
 
 
 	(cl:comment "motion2 [dec-02]"
